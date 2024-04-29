@@ -4,8 +4,5 @@
 format: jb-book
 root: intro
 chapters:
-- file: markdown
-- file: notebooks
-- file: markdown-notebooks
-- file: chapters\Web_scraping_intro
-- file: chapters\Scraping_wikipedia_birds
+- file: chapter/web_scraping_intro
+- file: chapter/scraping_wikipedia_birds
