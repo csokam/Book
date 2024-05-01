@@ -1,0 +1,49 @@
+Traceback (most recent call last):
+  File "c:\Python312\Lib\site-packages\jupyter_cache\executors\utils.py", line 58, in single_nb_execution
+    executenb(
+  File "c:\Python312\Lib\site-packages\nbclient\client.py", line 1314, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\csoka\AppData\Roaming\Python\Python312\site-packages\jupyter_core\utils\__init__.py", line 173, in wrapped
+    return loop.run_until_complete(inner)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Python312\Lib\asyncio\base_events.py", line 664, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "c:\Python312\Lib\site-packages\nbclient\client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "c:\Python312\Lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "c:\Python312\Lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+from PIL import Image, ImageDraw
+import random
+
+img = Image.open("test_1.png")
+img_width = img.width
+img_height = img.height
+tile_size = 20
+display(img)
+------------------
+
+
+[1;31m---------------------------------------------------------------------------[0m
+[1;31mFileNotFoundError[0m                         Traceback (most recent call last)
+Cell [1;32mIn[1], line 4[0m
+[0;32m      1[0m [38;5;28;01mfrom[39;00m [38;5;21;01mPIL[39;00m [38;5;28;01mimport[39;00m Image, ImageDraw
+[0;32m      2[0m [38;5;28;01mimport[39;00m [38;5;21;01mrandom[39;00m
+[1;32m----> 4[0m img [38;5;241m=[39m [43mImage[49m[38;5;241;43m.[39;49m[43mopen[49m[43m([49m[38;5;124;43m"[39;49m[38;5;124;43mtest_1.png[39;49m[38;5;124;43m"[39;49m[43m)[49m
+[0;32m      5[0m img_width [38;5;241m=[39m img[38;5;241m.[39mwidth
+[0;32m      6[0m img_height [38;5;241m=[39m img[38;5;241m.[39mheight
+
+File [1;32mc:\Python312\Lib\site-packages\PIL\Image.py:3243[0m, in [0;36mopen[1;34m(fp, mode, formats)[0m
+[0;32m   3240[0m     filename [38;5;241m=[39m fp
+[0;32m   3242[0m [38;5;28;01mif[39;00m filename:
+[1;32m-> 3243[0m     fp [38;5;241m=[39m [43mbuiltins[49m[38;5;241;43m.[39;49m[43mopen[49m[43m([49m[43mfilename[49m[43m,[49m[43m [49m[38;5;124;43m"[39;49m[38;5;124;43mrb[39;49m[38;5;124;43m"[39;49m[43m)[49m
+[0;32m   3244[0m     exclusive_fp [38;5;241m=[39m [38;5;28;01mTrue[39;00m
+[0;32m   3246[0m [38;5;28;01mtry[39;00m:
+
+[1;31mFileNotFoundError[0m: [Errno 2] No such file or directory: 'test_1.png'
+
