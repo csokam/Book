@@ -1,5 +1,14 @@
 jupyter-book
 matplotlib
+seaborn
+plotly
 numpy
 bs4
 requests
+noise
+nbformat
+random
+PIL
+pillow
+math
+pandas

@@ -4,5 +4,21 @@
 format: jb-book
 root: intro
 chapters:
-- file: chapter/web_scraping_intro
-- file: chapter/scraping_wikipedia_birds
+- file: chapters/web_scraping_intro
+- file: chapters/scraping_wikipedia_birds
+- file: chapters/generative_1_circle
+- file: chapters/generative_2_triangles
+- file: chapters/generative_3_circlerows
+- file: chapters/generative_4_dots
+- file: chapters/generative_5_rectangle
+#- file: chapters/generative_6_map
+- file: chapters/generative_7_packing
+- file: chapters/generative_8_tiles
+- file: chapters/generative_9_rasterize
+- file: chapters/generative_10_lines
+- file: chapters/generative_11_patterns
+- file: chapters/generative_12_random
+- file: chapters/visualization
+- file: chapters/visualization_pandas
+- file: chapters/l-system
+
