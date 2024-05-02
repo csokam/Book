@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
@@ -60,7 +60,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/generative_3_circlerows';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Szükséges könyvtárak telepítése és importálása" href="generative_4_dots.html" />
+    <link rel="next" title="Véletlen számok és Perlin zaj - vonaldiagramon" href="generative_4_dots.html" />
     <link rel="prev" title="Háromszög csempék" href="generative_2_triangles.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -176,37 +176,33 @@
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Webes adatbányászat - Web Scraping</span></p>
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="web_scraping_intro.html">Adatbányászat - Web scraping</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="scraping_wikipedia_birds.html">Wikipédia madárcsaládok</a></li>
-<li class="toctree-l1"><a class="reference internal" href="generative_1_circle.html">Szükséges könyvtárak telepítése és importálása</a></li>
-
-
-
-
-
-
-
-
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Adatvizualizáció - Data Visualization</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="visualization.html">Adatvizualizáció</a></li>
+<li class="toctree-l1"><a class="reference internal" href="visualization_pandas.html">Vizualizáció Pandas könyvtár segítségével</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Generatív képalkotás - Generative art</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="generative_1_intro.html">PIL bevezetés - variációk egy témára</a></li>
 <li class="toctree-l1"><a class="reference internal" href="generative_2_triangles.html">Háromszög csempék</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Sorokat alkotó körök</a></li>
-<li class="toctree-l1"><a class="reference internal" href="generative_4_dots.html">Szükséges könyvtárak telepítése és importálása</a></li>
-
-
-
-
-
-
-
-<li class="toctree-l1"><a class="reference internal" href="generative_5_rectangle.html">PIL bevezetés - variációk egy témára</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generative_4_dots.html">Véletlen számok és Perlin zaj - vonaldiagramon</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generative_5_circle.html">Véletlen számok és Perlin zaj - körvonalon</a></li>
 <li class="toctree-l1"><a class="reference internal" href="generative_7_packing.html">Halmozó algoritmus</a></li>
 <li class="toctree-l1"><a class="reference internal" href="generative_8_tiles.html">Csempék</a></li>
 <li class="toctree-l1"><a class="reference internal" href="generative_9_rasterize.html">Raszterizálás</a></li>
 <li class="toctree-l1"><a class="reference internal" href="generative_10_lines.html">Véletlen vonalak</a></li>
 <li class="toctree-l1"><a class="reference internal" href="generative_11_patterns.html">Minták létrehozása</a></li>
 <li class="toctree-l1"><a class="reference internal" href="generative_12_random.html">Fokozatos kitöltés</a></li>
-<li class="toctree-l1"><a class="reference internal" href="visualization.html">Adatvizualizáció</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">L-rendszerek</span></p>
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="l-system.html">Az L-rendszer</a></li>
 </ul>
 
@@ -356,7 +352,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#szukseges-konytarak-telepitese">Szükséges könytárak telepítése</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#szukseges-konytarak-telepitese-es-importalasa">Szükséges könytárak telepítése és importálása</a></li>
 </ul>
             </nav>
         </div>
@@ -370,7 +366,7 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="sorokat-alkoto-korok">
 <h1>Sorokat alkotó körök<a class="headerlink" href="#sorokat-alkoto-korok" title="Link to this heading">#</a></h1>
-<p><img alt="image.png" src="chapters/attachment:image.png" /></p>
+<p><img alt="generative_4" src="../_images/generative_4.png" /></p>
 <ul class="simple">
 <li><p>egymást részben fedő körök sorokat alkotnak</p></li>
 <li><p>kitöltésre több szín eltérő gyakorisággal</p></li>
@@ -379,21 +375,20 @@ document.write(`
 <li><p>adott sorban a körök mérete egységes, de pozíciójukban eltolás mutatkozik</p></li>
 <li><p>minden sorhoz tartozik egy eltérő színű kör, aminek sugara jellemzően kisebb</p></li>
 </ul>
-<section id="szukseges-konytarak-telepitese">
-<h2>Szükséges könytárak telepítése<a class="headerlink" href="#szukseges-konytarak-telepitese" title="Link to this heading">#</a></h2>
+<p><b>Forrás: </b><span id="id1">[]</span></p>
+<section id="szukseges-konytarak-telepitese-es-importalasa">
+<h2>Szükséges könytárak telepítése és importálása<a class="headerlink" href="#szukseges-konytarak-telepitese-es-importalasa" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span><span class="p">,</span> <span class="n">ImageDraw</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">random</span>
-
-<span class="c1">#https://www.reddit.com/r/generative/comments/1bak16o/foliage/</span>
 </pre></div>
 </div>
 </div>
 </div>
 <p>A körök helyzetét befolyásoló tényezők (eltolás, méret, átfedés) miatt célszerű volt a középpontot és sugár alapján meghatározni a rajzoláshoz szükséges paramétereket.</p>
-<p><img alt="image.png" src="chapters/attachment:image.png" /></p>
+<p><img alt="generative_8" src="../_images/generative_8.png" /></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">drawEllipse</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">r</span><span class="p">,</span><span class="n">color</span><span class="p">):</span> 
@@ -451,7 +446,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/ad96d28f63ac297b470bd158b756e383397d54b37abd312a294d4b50e05a8081.png" src="../_images/ad96d28f63ac297b470bd158b756e383397d54b37abd312a294d4b50e05a8081.png" />
+<img alt="../_images/12240fc7a58aca4d2466b6567dc9a190bf0ebc0bd730d2bc85736cab52f26656.png" src="../_images/12240fc7a58aca4d2466b6567dc9a190bf0ebc0bd730d2bc85736cab52f26656.png" />
 </div>
 </div>
 </section>
@@ -501,7 +496,7 @@ document.write(`
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Szükséges könyvtárak telepítése és importálása</p>
+        <p class="prev-next-title">Véletlen számok és Perlin zaj - vonaldiagramon</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -521,7 +516,7 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#szukseges-konytarak-telepitese">Szükséges könytárak telepítése</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#szukseges-konytarak-telepitese-es-importalasa">Szükséges könytárak telepítése és importálása</a></li>
 </ul>
   </nav></div>
 

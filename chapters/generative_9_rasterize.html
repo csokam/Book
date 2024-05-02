@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
@@ -176,37 +176,33 @@
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Webes adatbányászat - Web Scraping</span></p>
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="web_scraping_intro.html">Adatbányászat - Web scraping</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="scraping_wikipedia_birds.html">Wikipédia madárcsaládok</a></li>
-<li class="toctree-l1"><a class="reference internal" href="generative_1_circle.html">Szükséges könyvtárak telepítése és importálása</a></li>
-
-
-
-
-
-
-
-
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Adatvizualizáció - Data Visualization</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="visualization.html">Adatvizualizáció</a></li>
+<li class="toctree-l1"><a class="reference internal" href="visualization_pandas.html">Vizualizáció Pandas könyvtár segítségével</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Generatív képalkotás - Generative art</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="generative_1_intro.html">PIL bevezetés - variációk egy témára</a></li>
 <li class="toctree-l1"><a class="reference internal" href="generative_2_triangles.html">Háromszög csempék</a></li>
 <li class="toctree-l1"><a class="reference internal" href="generative_3_circlerows.html">Sorokat alkotó körök</a></li>
-<li class="toctree-l1"><a class="reference internal" href="generative_4_dots.html">Szükséges könyvtárak telepítése és importálása</a></li>
-
-
-
-
-
-
-
-<li class="toctree-l1"><a class="reference internal" href="generative_5_rectangle.html">PIL bevezetés - variációk egy témára</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generative_4_dots.html">Véletlen számok és Perlin zaj - vonaldiagramon</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generative_5_circle.html">Véletlen számok és Perlin zaj - körvonalon</a></li>
 <li class="toctree-l1"><a class="reference internal" href="generative_7_packing.html">Halmozó algoritmus</a></li>
 <li class="toctree-l1"><a class="reference internal" href="generative_8_tiles.html">Csempék</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Raszterizálás</a></li>
 <li class="toctree-l1"><a class="reference internal" href="generative_10_lines.html">Véletlen vonalak</a></li>
 <li class="toctree-l1"><a class="reference internal" href="generative_11_patterns.html">Minták létrehozása</a></li>
 <li class="toctree-l1"><a class="reference internal" href="generative_12_random.html">Fokozatos kitöltés</a></li>
-<li class="toctree-l1"><a class="reference internal" href="visualization.html">Adatvizualizáció</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">L-rendszerek</span></p>
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="l-system.html">Az L-rendszer</a></li>
 </ul>
 
@@ -360,6 +356,8 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="raszterizalas">
 <h1>Raszterizálás<a class="headerlink" href="#raszterizalas" title="Link to this heading">#</a></h1>
+<p>Képek manipulálására sok módszer létezik, ebben az esetben a viszonylag egyszerű reszterizálást fogjuk kreatívan felhasználni.</p>
+<p><b>Forrás: </b><span id="id1">[]</span></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span><span class="p">,</span> <span class="n">ImageDraw</span>
@@ -374,25 +372,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">4</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span><span class="p">,</span> <span class="n">ImageDraw</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">random</span>
-<span class="ne">----&gt; </span><span class="mi">4</span> <span class="n">img</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;test_1.png&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">img_width</span> <span class="o">=</span> <span class="n">img</span><span class="o">.</span><span class="n">width</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">img_height</span> <span class="o">=</span> <span class="n">img</span><span class="o">.</span><span class="n">height</span>
-
-<span class="nn">File c:\Python312\Lib\site-packages\PIL\Image.py:3243,</span> in <span class="ni">open</span><span class="nt">(fp, mode, formats)</span>
-<span class="g g-Whitespace">   </span><span class="mi">3240</span>     <span class="n">filename</span> <span class="o">=</span> <span class="n">fp</span>
-<span class="g g-Whitespace">   </span><span class="mi">3242</span> <span class="k">if</span> <span class="n">filename</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">3243</span>     <span class="n">fp</span> <span class="o">=</span> <span class="n">builtins</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">3244</span>     <span class="n">exclusive_fp</span> <span class="o">=</span> <span class="kc">True</span>
-<span class="g g-Whitespace">   </span><span class="mi">3246</span> <span class="k">try</span><span class="p">:</span>
-
-<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;test_1.png&#39;
-</pre></div>
-</div>
+<img alt="../_images/1ad9d60c4734fa7c950f45dd62c83a982f83e0e5c92ac1dba153dc2ee1949c7b.png" src="../_images/1ad9d60c4734fa7c950f45dd62c83a982f83e0e5c92ac1dba153dc2ee1949c7b.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -460,7 +440,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/2a3b2a2014fca58c4c5ed6514eaf6ae92d1749d09632b38bda6f53b70604cef0.png" src="../_images/2a3b2a2014fca58c4c5ed6514eaf6ae92d1749d09632b38bda6f53b70604cef0.png" />
+<img alt="../_images/58d7c43490f6fad4b602bcec6664b07bebe4b900e76b35bd772d119aa48525d9.png" src="../_images/58d7c43490f6fad4b602bcec6664b07bebe4b900e76b35bd772d119aa48525d9.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -493,7 +473,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/18e5e13b0a95994b4c5fd1f887c4b25f807c4644e6db08399c02a07ebb8286bc.png" src="../_images/18e5e13b0a95994b4c5fd1f887c4b25f807c4644e6db08399c02a07ebb8286bc.png" />
+<img alt="../_images/52146866887e91d65a51bc80779cc2c04cd78c732dd708c6569b3f9840bb5532.png" src="../_images/52146866887e91d65a51bc80779cc2c04cd78c732dd708c6569b3f9840bb5532.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -518,7 +498,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/4448f0ec0bf13b2633a86997c64b40a49f4e9915bf4ceb05acbb648b45e12d22.png" src="../_images/4448f0ec0bf13b2633a86997c64b40a49f4e9915bf4ceb05acbb648b45e12d22.png" />
+<img alt="../_images/af64fedfbb7e360f54898e8f1d85a02cbc3b9dd99384796096caa889a8a5d407.png" src="../_images/af64fedfbb7e360f54898e8f1d85a02cbc3b9dd99384796096caa889a8a5d407.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -545,7 +525,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/7354fab1f4d29441ccfb99787c76ca52881af99596aaef04e2b66aef55e21da7.png" src="../_images/7354fab1f4d29441ccfb99787c76ca52881af99596aaef04e2b66aef55e21da7.png" />
+<img alt="../_images/39a5a30e0c435f96e7bba1e03cf58d3733c58d22f39017a52486507952a31611.png" src="../_images/39a5a30e0c435f96e7bba1e03cf58d3733c58d22f39017a52486507952a31611.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -600,7 +580,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/249ea3caa41cb2b95853e0add14fecab614a5d83f83a3dd1ec90ad4328fd6dd0.png" src="../_images/249ea3caa41cb2b95853e0add14fecab614a5d83f83a3dd1ec90ad4328fd6dd0.png" />
+<img alt="../_images/ac36d9ab95de1a103bd2be06c8ecdff64c0f77e32ac187a9a009f6712f2a46a4.png" src="../_images/ac36d9ab95de1a103bd2be06c8ecdff64c0f77e32ac187a9a009f6712f2a46a4.png" />
 </div>
 </div>
 </section>
