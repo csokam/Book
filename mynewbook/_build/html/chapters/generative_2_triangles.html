@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
@@ -61,7 +61,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Sorokat alkotó körök" href="generative_3_circlerows.html" />
-    <link rel="prev" title="Szükséges könyvtárak telepítése és importálása" href="generative_1_circle.html" />
+    <link rel="prev" title="PIL bevezetés - variációk egy témára" href="generative_1_intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -176,37 +176,33 @@
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Webes adatbányászat - Web Scraping</span></p>
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="web_scraping_intro.html">Adatbányászat - Web scraping</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="scraping_wikipedia_birds.html">Wikipédia madárcsaládok</a></li>
-<li class="toctree-l1"><a class="reference internal" href="generative_1_circle.html">Szükséges könyvtárak telepítése és importálása</a></li>
-
-
-
-
-
-
-
-
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Adatvizualizáció - Data Visualization</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="visualization.html">Adatvizualizáció</a></li>
+<li class="toctree-l1"><a class="reference internal" href="visualization_pandas.html">Vizualizáció Pandas könyvtár segítségével</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Generatív képalkotás - Generative art</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="generative_1_intro.html">PIL bevezetés - variációk egy témára</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Háromszög csempék</a></li>
 <li class="toctree-l1"><a class="reference internal" href="generative_3_circlerows.html">Sorokat alkotó körök</a></li>
-<li class="toctree-l1"><a class="reference internal" href="generative_4_dots.html">Szükséges könyvtárak telepítése és importálása</a></li>
-
-
-
-
-
-
-
-<li class="toctree-l1"><a class="reference internal" href="generative_5_rectangle.html">PIL bevezetés - variációk egy témára</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generative_4_dots.html">Véletlen számok és Perlin zaj - vonaldiagramon</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generative_5_circle.html">Véletlen számok és Perlin zaj - körvonalon</a></li>
 <li class="toctree-l1"><a class="reference internal" href="generative_7_packing.html">Halmozó algoritmus</a></li>
 <li class="toctree-l1"><a class="reference internal" href="generative_8_tiles.html">Csempék</a></li>
 <li class="toctree-l1"><a class="reference internal" href="generative_9_rasterize.html">Raszterizálás</a></li>
 <li class="toctree-l1"><a class="reference internal" href="generative_10_lines.html">Véletlen vonalak</a></li>
 <li class="toctree-l1"><a class="reference internal" href="generative_11_patterns.html">Minták létrehozása</a></li>
 <li class="toctree-l1"><a class="reference internal" href="generative_12_random.html">Fokozatos kitöltés</a></li>
-<li class="toctree-l1"><a class="reference internal" href="visualization.html">Adatvizualizáció</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">L-rendszerek</span></p>
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="l-system.html">Az L-rendszer</a></li>
 </ul>
 
@@ -375,10 +371,10 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="haromszog-csempek">
 <h1>Háromszög csempék<a class="headerlink" href="#haromszog-csempek" title="Link to this heading">#</a></h1>
 <p>Minta a valóságban:</br>
-<img alt="image-2.png" src="chapters/attachment:image-2.png" /></p>
+<img alt="generative_2" src="../_images/generative_2.png" /></p>
 <p>Minta generálva:</br>
-<img alt="image.png" src="chapters/attachment:image.png" /></p>
-<p><a class="reference external" href="https://www.reddit.com/r/generative/comments/1abl4ju/genuary_2024_day_25_recreating_this_colorful/">https://www.reddit.com/r/generative/comments/1abl4ju/genuary_2024_day_25_recreating_this_colorful/</a> </br></p>
+<img alt="generative_3" src="../_images/generative_3.png" /></p>
+<p><b>Forrás:</b> <span id="id1">[]</span></p>
 <p><b>Jellemzők:</b></p>
 <ul class="simple">
 <li><p>a minta négyzetekből áll, amik felváltva egyik vagy másik átló szerint derékszögű háromszögekre vannak osztva</p></li>
@@ -388,7 +384,7 @@ document.write(`
 <section id="alapok">
 <h2>1. Alapok<a class="headerlink" href="#alapok" title="Link to this heading">#</a></h2>
 <p>Importáljuk a szükséges könyvtárakat és meghatározzuk az alap paramétereket.</p>
-<p><img alt="image.png" src="chapters/attachment:image.png" /></p>
+<p><img alt="generative_9" src="../_images/generative_9.png" /></p>
 </section>
 <section id="szukseges-konyvtarak-telepitese-es-importalasa">
 <h2>Szükséges könyvtárak telepítése és importálása<a class="headerlink" href="#szukseges-konyvtarak-telepitese-es-importalasa" title="Link to this heading">#</a></h2>
@@ -434,7 +430,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/c85d5bb8eda504b127e567438d94b4e217a09aeb51fa881d298e839a58142981.png" src="../_images/c85d5bb8eda504b127e567438d94b4e217a09aeb51fa881d298e839a58142981.png" />
+<img alt="../_images/710be7bc4057595e24c7262f0a519d9efaa59d0c261206673e513aed944d9d9d.png" src="../_images/710be7bc4057595e24c7262f0a519d9efaa59d0c261206673e513aed944d9d9d.png" />
 </div>
 </div>
 </section>
@@ -470,7 +466,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/7f32c6860ec86362ee1d5c329268fdc7f222f5b1c776b1c38a0edd5e13bbcc19.png" src="../_images/7f32c6860ec86362ee1d5c329268fdc7f222f5b1c776b1c38a0edd5e13bbcc19.png" />
+<img alt="../_images/fcd107608e990e6bdfaa7e312be595c27937fb84b0c9d5212a8da80ddce68cbf.png" src="../_images/fcd107608e990e6bdfaa7e312be595c27937fb84b0c9d5212a8da80ddce68cbf.png" />
 </div>
 </div>
 </section>
@@ -577,7 +573,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/95d9a3af63e7fc605d618158c31ba8d368a31667012f3a040e897651d6caee8c.png" src="../_images/95d9a3af63e7fc605d618158c31ba8d368a31667012f3a040e897651d6caee8c.png" />
+<img alt="../_images/b9d8e2da95c594ce7b2a2e618127e7f3e80395e0b2ad8282eef9fdafd71451bc.png" src="../_images/b9d8e2da95c594ce7b2a2e618127e7f3e80395e0b2ad8282eef9fdafd71451bc.png" />
 </div>
 </div>
 </section>
@@ -614,12 +610,12 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="generative_1_circle.html"
+       href="generative_1_intro.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Szükséges könyvtárak telepítése és importálása</p>
+        <p class="prev-next-title">PIL bevezetés - variációk egy témára</p>
       </div>
     </a>
     <a class="right-next"

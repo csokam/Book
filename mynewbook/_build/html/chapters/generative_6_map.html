@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
@@ -176,35 +176,33 @@
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Webes adatbányászat - Web Scraping</span></p>
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="web_scraping_intro.html">Adatbányászat - Web scraping</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="scraping_wikipedia_birds.html">Wikipédia madárcsaládok</a></li>
-<li class="toctree-l1"><a class="reference internal" href="generative_1_circle.html">Szükséges könyvtárak telepítése és importálása</a></li>
-
-
-
-
-
-
-
-
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Adatvizualizáció - Data Visualization</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="visualization.html">Adatvizualizáció</a></li>
+<li class="toctree-l1"><a class="reference internal" href="visualization_pandas.html">Vizualizáció Pandas könyvtár segítségével</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Generatív képalkotás - Generative art</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="generative_1_intro.html">PIL bevezetés - variációk egy témára</a></li>
 <li class="toctree-l1"><a class="reference internal" href="generative_2_triangles.html">Háromszög csempék</a></li>
 <li class="toctree-l1"><a class="reference internal" href="generative_3_circlerows.html">Sorokat alkotó körök</a></li>
-<li class="toctree-l1"><a class="reference internal" href="generative_4_dots.html">Szükséges könyvtárak telepítése és importálása</a></li>
-
-
-
-
-
-
-
-<li class="toctree-l1"><a class="reference internal" href="generative_5_rectangle.html">PIL bevezetés - variációk egy témára</a></li>
-<li class="toctree-l1"><a class="reference internal" href="generative_7_packing.html">Véletlen méretű és pozíciójú körök halmozása</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generative_4_dots.html">Véletlen számok és Perlin zaj - vonaldiagramon</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generative_5_circle.html">Véletlen számok és Perlin zaj - körvonalon</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generative_7_packing.html">Halmozó algoritmus</a></li>
 <li class="toctree-l1"><a class="reference internal" href="generative_8_tiles.html">Csempék</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generative_9_rasterize.html">Raszterizálás</a></li>
 <li class="toctree-l1"><a class="reference internal" href="generative_10_lines.html">Véletlen vonalak</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generative_11_patterns.html">Minták létrehozása</a></li>
 <li class="toctree-l1"><a class="reference internal" href="generative_12_random.html">Fokozatos kitöltés</a></li>
-<li class="toctree-l1"><a class="reference internal" href="visualization.html">Adatvizualizáció</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">L-rendszerek</span></p>
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="l-system.html">Az L-rendszer</a></li>
 </ul>
 
@@ -373,7 +371,7 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="szigetek">
 <h1>Szigetek<a class="headerlink" href="#szigetek" title="Link to this heading">#</a></h1>
-<p><a class="reference external" href="https://medium.com/&#64;yvanscher/playing-with-perlin-noise-generating-realistic-archipelagos-b59f004d8401">https://medium.com/&#64;yvanscher/playing-with-perlin-noise-generating-realistic-archipelagos-b59f004d8401</a></p>
+<p><b>Forrás: </b><span id="id1">[]</span></p>
 <section id="szigetek-generalasa-perlin-zajjal">
 <h2>Szigetek generálása Perlin zajjal<a class="headerlink" href="#szigetek-generalasa-perlin-zajjal" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
@@ -409,7 +407,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/dc0f92dfc444210b23cae12689c113f3b4408690f2718e20417655a7af9350c7.png" src="../_images/dc0f92dfc444210b23cae12689c113f3b4408690f2718e20417655a7af9350c7.png" />
+<img alt="../_images/e40be27041b70b0604e4e49882ecc6b433c58c9a5b7f1a9a89c8099f3e571526.png" src="../_images/e40be27041b70b0604e4e49882ecc6b433c58c9a5b7f1a9a89c8099f3e571526.png" />
 </div>
 </div>
 </section>
@@ -441,7 +439,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/83c4ed735829b0dee9b4ad671566a5b1b9d93011ddc32361d06b552d3a07be61.png" src="../_images/83c4ed735829b0dee9b4ad671566a5b1b9d93011ddc32361d06b552d3a07be61.png" />
+<img alt="../_images/41ce4aaeab3e1a14f3515cd6facb70d3c2ae87348d9aeb9bb22bc51a7f80b392.png" src="../_images/41ce4aaeab3e1a14f3515cd6facb70d3c2ae87348d9aeb9bb22bc51a7f80b392.png" />
 </div>
 </div>
 </section>
@@ -479,7 +477,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/694bc76e716a277d07f63abcf74e601cccebf653ca873bb259d45f7c72e8d8dc.png" src="../_images/694bc76e716a277d07f63abcf74e601cccebf653ca873bb259d45f7c72e8d8dc.png" />
+<img alt="../_images/b4627de09f400fbafadae3dd27c9cef1a021cbb17481013732eb61eef614bd3c.png" src="../_images/b4627de09f400fbafadae3dd27c9cef1a021cbb17481013732eb61eef614bd3c.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -509,7 +507,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/00ff5e1e661d7352521b33bf7549b5fa0699d778bf95575a19e8bb491691cf53.png" src="../_images/00ff5e1e661d7352521b33bf7549b5fa0699d778bf95575a19e8bb491691cf53.png" />
+<img alt="../_images/e5220e81bf277896b0b01f97f59a64a8d0409c229876594a47eeadff35491361.png" src="../_images/e5220e81bf277896b0b01f97f59a64a8d0409c229876594a47eeadff35491361.png" />
 </div>
 </div>
 </section>
@@ -565,7 +563,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/96a447be8b17b77260c6fa953b007a27e589975f8ba9d941c07576ad2a5fe6c5.png" src="../_images/96a447be8b17b77260c6fa953b007a27e589975f8ba9d941c07576ad2a5fe6c5.png" />
+<img alt="../_images/592ef89a97888ad481b9cb526857c7d727c6aa5678221618999e91592a089e6e.png" src="../_images/592ef89a97888ad481b9cb526857c7d727c6aa5678221618999e91592a089e6e.png" />
 </div>
 </div>
 </section>
@@ -613,7 +611,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/0b5aa4281cc7e18e2f6182f4ceee65d04602e333f16f2358cc5fa2ca42e46209.png" src="../_images/0b5aa4281cc7e18e2f6182f4ceee65d04602e333f16f2358cc5fa2ca42e46209.png" />
+<img alt="../_images/4aa159fc9c041f619153936ce62f73ddf3ceac3504a02182d0715ebc5a92d392.png" src="../_images/4aa159fc9c041f619153936ce62f73ddf3ceac3504a02182d0715ebc5a92d392.png" />
 </div>
 </div>
 </section>

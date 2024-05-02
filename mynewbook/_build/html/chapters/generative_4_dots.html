@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Szükséges könyvtárak telepítése és importálása &#8212; Témakörök Python oktatásához</title>
+    <title>Véletlen számok és Perlin zaj - vonaldiagramon &#8212; Témakörök Python oktatásához</title>
   
   
   
@@ -60,7 +60,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/generative_4_dots';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="PIL bevezetés - variációk egy témára" href="generative_5_rectangle.html" />
+    <link rel="next" title="Véletlen számok és Perlin zaj - körvonalon" href="generative_5_circle.html" />
     <link rel="prev" title="Sorokat alkotó körök" href="generative_3_circlerows.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -176,35 +176,33 @@
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Webes adatbányászat - Web Scraping</span></p>
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="web_scraping_intro.html">Adatbányászat - Web scraping</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="scraping_wikipedia_birds.html">Wikipédia madárcsaládok</a></li>
-<li class="toctree-l1"><a class="reference internal" href="generative_1_circle.html">Szükséges könyvtárak telepítése és importálása</a></li>
-
-
-
-
-
-
-
-
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Adatvizualizáció - Data Visualization</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="visualization.html">Adatvizualizáció</a></li>
+<li class="toctree-l1"><a class="reference internal" href="visualization_pandas.html">Vizualizáció Pandas könyvtár segítségével</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Generatív képalkotás - Generative art</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="generative_1_intro.html">PIL bevezetés - variációk egy témára</a></li>
 <li class="toctree-l1"><a class="reference internal" href="generative_2_triangles.html">Háromszög csempék</a></li>
 <li class="toctree-l1"><a class="reference internal" href="generative_3_circlerows.html">Sorokat alkotó körök</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Szükséges könyvtárak telepítése és importálása</a></li>
-
-
-
-
-
-
-
-<li class="toctree-l1"><a class="reference internal" href="generative_5_rectangle.html">PIL bevezetés - variációk egy témára</a></li>
-<li class="toctree-l1"><a class="reference internal" href="generative_7_packing.html">Véletlen méretű és pozíciójú körök halmozása</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Véletlen számok és Perlin zaj - vonaldiagramon</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generative_5_circle.html">Véletlen számok és Perlin zaj - körvonalon</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generative_7_packing.html">Halmozó algoritmus</a></li>
 <li class="toctree-l1"><a class="reference internal" href="generative_8_tiles.html">Csempék</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generative_9_rasterize.html">Raszterizálás</a></li>
 <li class="toctree-l1"><a class="reference internal" href="generative_10_lines.html">Véletlen vonalak</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generative_11_patterns.html">Minták létrehozása</a></li>
 <li class="toctree-l1"><a class="reference internal" href="generative_12_random.html">Fokozatos kitöltés</a></li>
-<li class="toctree-l1"><a class="reference internal" href="visualization.html">Adatvizualizáció</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">L-rendszerek</span></p>
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="l-system.html">Az L-rendszer</a></li>
 </ul>
 
@@ -344,7 +342,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Szükséges könyvtárak telepítése és importálása</h1>
+    <h1>Véletlen számok és Perlin zaj - vonaldiagramon</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -354,21 +352,20 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Szükséges könyvtárak telepítése és importálása</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#szinvalaszto">Színválasztó</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#szukseges-valtozok-es-kep-adatainak-meghatarozasa">Szükséges változók és kép adatainak meghatározása</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#rajzteruletet-kitolto-pontok-es-azokat-hatarolo-keret-letrehozasa">Rajzterületet kitöltő pontok és azokat határoló keret létrehozása</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#megoldas-veletlen-szamokkal">1. Megoldás véletlen számokkal</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">2. Megoldás véletlen számokkal</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#megoldas-perlin-zajjal">Megoldás Perlin zajjal</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#d-perlin-zaj">1D Perlin zaj</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#normalizalas">Normalizálás</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#perlin-es-normalizalt-ertekek-megjelnitese">Perlin és normalizált értékek megjelnítése</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#szukseges-konyvtarak-telepitese-es-importalasa">Szükséges könyvtárak telepítése és importálása</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#szinvalaszto">Színválasztó</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#szukseges-valtozok-es-kep-adatainak-meghatarozasa">Szükséges változók és kép adatainak meghatározása</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rajzteruletet-kitolto-pontok-es-azokat-hatarolo-keret-letrehozasa">Rajzterületet kitöltő pontok és azokat határoló keret létrehozása</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#megoldas-veletlen-szamokkal">1. Megoldás véletlen számokkal</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">2. Megoldás véletlen számokkal</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#megoldas-perlin-zajjal">Megoldás Perlin zajjal</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-perlin-zaj">1D Perlin zaj</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#normalizalas">Normalizálás</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#perlin-es-normalizalt-ertekek-megjelnitese">Perlin és normalizált értékek megjelnítése</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#megoldas">Megoldás</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#megoldas">Megoldás</a></li>
 </ul>
-
             </nav>
         </div>
     </div>
@@ -379,8 +376,12 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="szukseges-konyvtarak-telepitese-es-importalasa">
-<h1>Szükséges könyvtárak telepítése és importálása<a class="headerlink" href="#szukseges-konyvtarak-telepitese-es-importalasa" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="veletlen-szamok-es-perlin-zaj-vonaldiagramon">
+<h1>Véletlen számok és Perlin zaj - vonaldiagramon<a class="headerlink" href="#veletlen-szamok-es-perlin-zaj-vonaldiagramon" title="Link to this heading">#</a></h1>
+<p><b>Forrás: </b> <span id="id1">[]</span></p>
+<p>[&#64;moussa_2]</p>
+<section id="szukseges-konyvtarak-telepitese-es-importalasa">
+<h2>Szükséges könyvtárak telepítése és importálása<a class="headerlink" href="#szukseges-konyvtarak-telepitese-es-importalasa" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#%pip install noise</span>
@@ -390,9 +391,7 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#https://www.gorillasun.de/blog/making-of-grand-canyon/</span>
-
-<span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span><span class="p">,</span> <span class="n">ImageDraw</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span><span class="p">,</span> <span class="n">ImageDraw</span>
 <span class="kn">import</span> <span class="nn">random</span>
 <span class="kn">import</span> <span class="nn">noise</span>
 </pre></div>
@@ -401,7 +400,7 @@ document.write(`
 </div>
 </section>
 <section id="szinvalaszto">
-<h1>Színválasztó<a class="headerlink" href="#szinvalaszto" title="Link to this heading">#</a></h1>
+<h2>Színválasztó<a class="headerlink" href="#szinvalaszto" title="Link to this heading">#</a></h2>
 <p>Ez egy Függvény véletlen RBG értékek generálására.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -416,7 +415,7 @@ document.write(`
 </div>
 </section>
 <section id="szukseges-valtozok-es-kep-adatainak-meghatarozasa">
-<h1>Szükséges változók és kép adatainak meghatározása<a class="headerlink" href="#szukseges-valtozok-es-kep-adatainak-meghatarozasa" title="Link to this heading">#</a></h1>
+<h2>Szükséges változók és kép adatainak meghatározása<a class="headerlink" href="#szukseges-valtozok-es-kep-adatainak-meghatarozasa" title="Link to this heading">#</a></h2>
 <p>A kép meretét a sorok, oszlopok mennyisége és keret mérete alapján számítjuk.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -435,7 +434,7 @@ document.write(`
 </div>
 </section>
 <section id="rajzteruletet-kitolto-pontok-es-azokat-hatarolo-keret-letrehozasa">
-<h1>Rajzterületet kitöltő pontok és azokat határoló keret létrehozása<a class="headerlink" href="#rajzteruletet-kitolto-pontok-es-azokat-hatarolo-keret-letrehozasa" title="Link to this heading">#</a></h1>
+<h2>Rajzterületet kitöltő pontok és azokat határoló keret létrehozása<a class="headerlink" href="#rajzteruletet-kitolto-pontok-es-azokat-hatarolo-keret-letrehozasa" title="Link to this heading">#</a></h2>
 <p>A PIL könyvtár által kínált <code>draw.point</code> nem tartalmaz körvonalat és mérete nem állítható, emiatt célszerű a pontokat <code>draw.ellipse</code> utasítással rajzolni.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -451,7 +450,7 @@ document.write(`
 </div>
 </section>
 <section id="megoldas-veletlen-szamokkal">
-<h1>1. Megoldás véletlen számokkal<a class="headerlink" href="#megoldas-veletlen-szamokkal" title="Link to this heading">#</a></h1>
+<h2>1. Megoldás véletlen számokkal<a class="headerlink" href="#megoldas-veletlen-szamokkal" title="Link to this heading">#</a></h2>
 <p>Minden iterációban egy egységet halad jobbra a minta és a generált véletlen szám a választott sor magasságát (indexét) jelöli.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -479,12 +478,12 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/56171bc77938c31677b5d415c8066fb7586b178670b13323ec95b7f9a03af02e.png" src="../_images/56171bc77938c31677b5d415c8066fb7586b178670b13323ec95b7f9a03af02e.png" />
+<img alt="../_images/8f474f27db44f25a17335787e2126153ece0f480f9012d9c3f1d1bfcaf39b268.png" src="../_images/8f474f27db44f25a17335787e2126153ece0f480f9012d9c3f1d1bfcaf39b268.png" />
 </div>
 </div>
 </section>
-<section id="id1">
-<h1>2. Megoldás véletlen számokkal<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
+<section id="id2">
+<h2>2. Megoldás véletlen számokkal<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
 <p>Az alakzat a bal oldalon kezdődik és minden ismétlés során egy egységet mehet fel, le, vagy jobbra. A lépéseket szakaszonként rajzoljuk ki a <code>draw.line</code> utasítással. Véletlen számok generálása során ügyelnünk kell rá, hogy a rajzolt alakzat ne vándoroljon túl a keret határain. A véletlen számok jellegzetes “tüskéket” alakíthatnak ki az alsó, vagy felső határ mentén.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -519,12 +518,12 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/3c9aa109ef3cc3dccade72bd55955367cb726e035f535e1431244fd950603386.png" src="../_images/3c9aa109ef3cc3dccade72bd55955367cb726e035f535e1431244fd950603386.png" />
+<img alt="../_images/ca9e32a4593a8fe1a12c8c467e0792642c71d35956d105c1135e9af26394497d.png" src="../_images/ca9e32a4593a8fe1a12c8c467e0792642c71d35956d105c1135e9af26394497d.png" />
 </div>
 </div>
 </section>
 <section id="megoldas-perlin-zajjal">
-<h1>Megoldás Perlin zajjal<a class="headerlink" href="#megoldas-perlin-zajjal" title="Link to this heading">#</a></h1>
+<h2>Megoldás Perlin zajjal<a class="headerlink" href="#megoldas-perlin-zajjal" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#https://jameshfisher.com/2017/10/15/1d-perlin-noise/</span>
@@ -555,22 +554,22 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Sample at x=0.3116533190862626: -0.14150004258355386
-Sample at x=0.9186621038913763: -0.058383358538552414
-Sample at x=0.39593254157198754: -0.17924579238676097
-Sample at x=0.8371700858874292: -0.11394820000613232
-Sample at x=0.4156188557570629: -0.18630068473524566
-Sample at x=0.6341419166508138: -0.20328609600540531
-Sample at x=0.5916125825559929: -0.20956026567639258
-Sample at x=0.18983434164976154: -0.0750752958295331
-Sample at x=0.22459396261046227: -0.0944035300558998
-Sample at x=0.879028295869527: -0.08620015977848731
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Sample at x=0.3457891725820884: -0.07833691055503009
+Sample at x=0.3569427696196864: -0.08220148692035721
+Sample at x=0.7071166477644787: -0.12552279347416523
+Sample at x=0.41775563614403033: -0.10176330491900482
+Sample at x=0.782441304979752: -0.10692365115522562
+Sample at x=0.08984171764468896: -0.0006495025445002623
+Sample at x=0.26124469835957365: -0.047994203723830994
+Sample at x=0.9149281075571283: -0.04981332008162245
+Sample at x=0.44510542536875186: -0.10944339338340575
+Sample at x=0.3231552814100598: -0.07032594074443818
 </pre></div>
 </div>
 </div>
 </div>
 <section id="d-perlin-zaj">
-<h2>1D Perlin zaj<a class="headerlink" href="#d-perlin-zaj" title="Link to this heading">#</a></h2>
+<h3>1D Perlin zaj<a class="headerlink" href="#d-perlin-zaj" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">map_noise</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
@@ -590,7 +589,7 @@ Sample at x=0.879028295869527: -0.08620015977848731
 </div>
 </section>
 <section id="normalizalas">
-<h2>Normalizálás<a class="headerlink" href="#normalizalas" title="Link to this heading">#</a></h2>
+<h3>Normalizálás<a class="headerlink" href="#normalizalas" title="Link to this heading">#</a></h3>
 <p>A Perlin zaj értéket normalizálással átszámoljuk a szamunkra hasznos intervallumra ([4,24] közti egész számok).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -612,7 +611,7 @@ Sample at x=0.879028295869527: -0.08620015977848731
 </div>
 </section>
 <section id="perlin-es-normalizalt-ertekek-megjelnitese">
-<h2>Perlin és normalizált értékek megjelnítése<a class="headerlink" href="#perlin-es-normalizalt-ertekek-megjelnitese" title="Link to this heading">#</a></h2>
+<h3>Perlin és normalizált értékek megjelnítése<a class="headerlink" href="#perlin-es-normalizalt-ertekek-megjelnitese" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -639,7 +638,7 @@ Sample at x=0.879028295869527: -0.08620015977848731
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-0.32554924488067627 0.5267422795295715
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x1ac5e699070&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x1e4675795e0&gt;]
 </pre></div>
 </div>
 <img alt="../_images/df85003d1108bc7a7d36b9e6db7aec0c0cfbf13e0e648c6c5894cbcbf3b7bdbe.png" src="../_images/df85003d1108bc7a7d36b9e6db7aec0c0cfbf13e0e648c6c5894cbcbf3b7bdbe.png" />
@@ -648,7 +647,7 @@ Sample at x=0.879028295869527: -0.08620015977848731
 </section>
 </section>
 <section id="megoldas">
-<h1>Megoldás<a class="headerlink" href="#megoldas" title="Link to this heading">#</a></h1>
+<h2>Megoldás<a class="headerlink" href="#megoldas" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">map_noise</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
@@ -706,9 +705,10 @@ Sample at x=0.879028295869527: -0.08620015977848731
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/6bf340d9cfb1054f77e3e0de93a4cc68f6cdd0fd17658c7262c12986b5053a15.png" src="../_images/6bf340d9cfb1054f77e3e0de93a4cc68f6cdd0fd17658c7262c12986b5053a15.png" />
+<img alt="../_images/b53d742a1dcb15119c5bd7ccbb07f61ed1da27241d5514fa2fa272106f1552c7.png" src="../_images/b53d742a1dcb15119c5bd7ccbb07f61ed1da27241d5514fa2fa272106f1552c7.png" />
 </div>
 </div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -751,11 +751,11 @@ Sample at x=0.879028295869527: -0.08620015977848731
       </div>
     </a>
     <a class="right-next"
-       href="generative_5_rectangle.html"
+       href="generative_5_circle.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">PIL bevezetés - variációk egy témára</p>
+        <p class="prev-next-title">Véletlen számok és Perlin zaj - körvonalon</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -775,21 +775,20 @@ Sample at x=0.879028295869527: -0.08620015977848731
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Szükséges könyvtárak telepítése és importálása</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#szinvalaszto">Színválasztó</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#szukseges-valtozok-es-kep-adatainak-meghatarozasa">Szükséges változók és kép adatainak meghatározása</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#rajzteruletet-kitolto-pontok-es-azokat-hatarolo-keret-letrehozasa">Rajzterületet kitöltő pontok és azokat határoló keret létrehozása</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#megoldas-veletlen-szamokkal">1. Megoldás véletlen számokkal</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">2. Megoldás véletlen számokkal</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#megoldas-perlin-zajjal">Megoldás Perlin zajjal</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#d-perlin-zaj">1D Perlin zaj</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#normalizalas">Normalizálás</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#perlin-es-normalizalt-ertekek-megjelnitese">Perlin és normalizált értékek megjelnítése</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#szukseges-konyvtarak-telepitese-es-importalasa">Szükséges könyvtárak telepítése és importálása</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#szinvalaszto">Színválasztó</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#szukseges-valtozok-es-kep-adatainak-meghatarozasa">Szükséges változók és kép adatainak meghatározása</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rajzteruletet-kitolto-pontok-es-azokat-hatarolo-keret-letrehozasa">Rajzterületet kitöltő pontok és azokat határoló keret létrehozása</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#megoldas-veletlen-szamokkal">1. Megoldás véletlen számokkal</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">2. Megoldás véletlen számokkal</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#megoldas-perlin-zajjal">Megoldás Perlin zajjal</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-perlin-zaj">1D Perlin zaj</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#normalizalas">Normalizálás</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#perlin-es-normalizalt-ertekek-megjelnitese">Perlin és normalizált értékek megjelnítése</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#megoldas">Megoldás</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#megoldas">Megoldás</a></li>
 </ul>
-
   </nav></div>
 
 </div></div>

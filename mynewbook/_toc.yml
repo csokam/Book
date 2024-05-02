@@ -3,21 +3,29 @@
 
 format: jb-book
 root: intro
-chapters:
-- file: chapters/web_scraping_intro
-- file: chapters/scraping_wikipedia_birds
-- file: chapters/generative_1_circle
-- file: chapters/generative_2_triangles
-- file: chapters/generative_3_circlerows
-- file: chapters/generative_4_dots
-- file: chapters/generative_5_rectangle
-#- file: chapters/generative_6_map
-- file: chapters/generative_7_packing
-- file: chapters/generative_8_tiles
-- file: chapters/generative_9_rasterize
-- file: chapters/generative_10_lines
-- file: chapters/generative_11_patterns
-- file: chapters/generative_12_random
-- file: chapters/visualization
-- file: chapters/visualization_pandas
-- file: chapters/l-system
+parts:
+  - caption: Webes adatbányászat - Web Scraping    
+    chapters:
+    - file: chapters/web_scraping_intro
+    - file: chapters/scraping_wikipedia_birds
+  - caption: Adatvizualizáció - Data Visualization    
+    chapters: 
+    - file: chapters/visualization
+    - file: chapters/visualization_pandas
+  - caption: Generatív képalkotás - Generative art    
+    chapters:
+    - file: chapters/generative_1_intro
+    - file: chapters/generative_2_triangles
+    - file: chapters/generative_3_circlerows
+    - file: chapters/generative_4_dots
+    - file: chapters/generative_5_circle
+    #- file: chapters/generative_6_map
+    - file: chapters/generative_7_packing
+    - file: chapters/generative_8_tiles
+    - file: chapters/generative_9_rasterize
+    - file: chapters/generative_10_lines
+    - file: chapters/generative_11_patterns
+    - file: chapters/generative_12_random
+  - caption: L-rendszerek    
+    chapters:
+    - file: chapters/l-system
