@@ -29,6 +29,6 @@ Please <a href="" title="Reload this page" onclick="window.location.reload(false
 <p>See the error message at the bottom of this page for more&nbsp;information.</p>
 </div>
 </div>
-<div class="footer"><p>If you report this error to the Wikimedia System Administrators, please include the details below.</p><p class="text-muted"><code>Request from 178.40.175.226 via cp3080 cp3080, Varnish XID 923119071<br>Upstream caches: cp3080 int<br>Error: 403, Forbidden. Please comply with the User-Agent policy: https://meta.wikimedia.org/wiki/User-Agent_policy at Thu, 02 May 2024 22:17:04 GMT</code></p>
+<div class="footer"><p>If you report this error to the Wikimedia System Administrators, please include the details below.</p><p class="text-muted"><code>Request from 193.87.80.3 via cp3077 cp3077, Varnish XID 460275690<br>Upstream caches: cp3077 int<br>Error: 403, Forbidden. Please comply with the User-Agent policy: https://meta.wikimedia.org/wiki/User-Agent_policy at Wed, 22 May 2024 10:42:39 GMT</code></p>
 </div>
 </html>
