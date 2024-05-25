@@ -39,6 +39,6 @@ Here is a preview of the cell contents:
 -------------------
 ['f = open("data_plant.csv", "a", encoding = "utf-8")', '', 'for item in range(0,len(links)):    ', '    response = re.get(links[item])', '    soup = BeautifulSoup(response.text, "html.parser")']
 ...
-["    f.write(str(title) + ',' + str(description))    ", '    print("|", end="")', '    time.sleep(1)', '', 'f.close()']
+["    f.write(str(title) + ',' + str(description))    ", '    print("|", end="")', '    time.sleep(0.5)', '', 'f.close()']
 -------------------
 

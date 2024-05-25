@@ -179,7 +179,6 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="web_scraping_intro.html">Adatbányászat - Web scraping</a></li>
 
-<li class="toctree-l1"><a class="reference internal" href="scraping_wikipedia_birds.html">Wikipédia madárcsaládok</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Adatvizualizáció - Data Visualization</span></p>
 <ul class="nav bd-sidenav">
@@ -406,7 +405,7 @@ document.write(`
 <p>Formálisan következőképpen adható meg:</p>
 <p><b>G = (T; s; H)</b>, ahol <b>T</b> egy véges ábécé, <b>s</b> az axióma, <b>H</b> a szabályok halmaza.</p>
 <ul class="simple">
-<li><p>A <b>T</b> véges ábéce szimbólumokat tartalmaz, például X, F, +, [, ].</p></li>
+<li><p>A <b>T</b> véges ábécé szimbólumokat tartalmaz, például X, F, +, [, ].</p></li>
 <li><p>Az <b>s</b> axióma a kezdeti állapotot jelöli.</p></li>
 <li><p>A <b>H</b> szabályok halmaza, amelyek leírják az adott L-rendszerben végbemenő átmeneteket.</p></li>
 </ul>
@@ -443,7 +442,8 @@ document.write(`
 <span class="n">axiom</span> <span class="o">=</span> <span class="s1">&#39;A&#39;</span>
 <span class="n">new</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
 
-<span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Adja meg az iterációk számát: &quot;</span><span class="p">))</span>
+<span class="c1">#n = int(input(&quot;Adja meg az iterációk számát: &quot;))</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">5</span>
 
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;. iteráció: &quot;</span> <span class="o">+</span> <span class="n">axiom</span><span class="p">)</span>     
@@ -458,27 +458,11 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">StdinNotImplementedError</span><span class="g g-Whitespace">                  </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">6</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">axiom</span> <span class="o">=</span> <span class="s1">&#39;A&#39;</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">new</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
-<span class="ne">----&gt; </span><span class="mi">6</span> <span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Adja meg az iterációk számát: &quot;</span><span class="p">))</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
-<span class="g g-Whitespace">      </span><span class="mi">9</span>     <span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;. iteráció: &quot;</span> <span class="o">+</span> <span class="n">axiom</span><span class="p">)</span>     
-
-<span class="nn">File ~\AppData\Roaming\Python\Python312\site-packages\ipykernel\kernelbase.py:1260,</span> in <span class="ni">Kernel.raw_input</span><span class="nt">(self, prompt)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1258</span> <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_allow_stdin</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1259</span>     <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;raw_input was called, but this frontend does not support input requests.&quot;</span>
-<span class="ne">-&gt; </span><span class="mi">1260</span>     <span class="k">raise</span> <span class="n">StdinNotImplementedError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1261</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_input_request</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1262</span>     <span class="nb">str</span><span class="p">(</span><span class="n">prompt</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">1263</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_parent_ident</span><span class="p">[</span><span class="s2">&quot;shell&quot;</span><span class="p">],</span>
-<span class="g g-Whitespace">   </span><span class="mi">1264</span>     <span class="bp">self</span><span class="o">.</span><span class="n">get_parent</span><span class="p">(</span><span class="s2">&quot;shell&quot;</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">1265</span>     <span class="n">password</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1266</span> <span class="p">)</span>
-
-<span class="ne">StdinNotImplementedError</span>: raw_input was called, but this frontend does not support input requests.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0. iteráció: A
+1. iteráció: AB
+2. iteráció: ABB
+3. iteráció: ABBB
+4. iteráció: ABBBB
 </pre></div>
 </div>
 </div>
@@ -534,10 +518,27 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0. iteráció: X
-1. iteráció: F+[[X]-X]-F[-FX]+X
-2. iteráció: FF+[[F+[[X]-X]-F[-FX]+X]-F+[[X]-X]-F[-FX]+X]-FF[-FFF+[[X]-X]-F[-FX]+X]+F+[[X]-X]-F[-FX]+X
-3. iteráció: FFFF+[[FF+[[F+[[X]-X]-F[-FX]+X]-F+[[X]-X]-F[-FX]+X]-FF[-FFF+[[X]-X]-F[-FX]+X]+F+[[X]-X]-F[-FX]+X]-FF+[[F+[[X]-X]-F[-FX]+X]-F+[[X]-X]-F[-FX]+X]-FF[-FFF+[[X]-X]-F[-FX]+X]+F+[[X]-X]-F[-FX]+X]-FFFF[-FFFFFF+[[F+[[X]-X]-F[-FX]+X]-F+[[X]-X]-F[-FX]+X]-FF[-FFF+[[X]-X]-F[-FX]+X]+F+[[X]-X]-F[-FX]+X]+FF+[[F+[[X]-X]-F[-FX]+X]-F+[[X]-X]-F[-FX]+X]-FF[-FFF+[[X]-X]-F[-FX]+X]+F+[[X]-X]-F[-FX]+X
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">StdinNotImplementedError</span><span class="g g-Whitespace">                  </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">5</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1">#(X → F+[[X]-X]-F[-FX]+X), (F → FF)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">axiom</span> <span class="o">=</span> <span class="s1">&#39;X&#39;</span>
+<span class="ne">----&gt; </span><span class="mi">5</span> <span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Adja meg az iterációk számát: &quot;</span><span class="p">))</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span>     <span class="n">new</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+
+<span class="nn">File ~\AppData\Roaming\Python\Python312\site-packages\ipykernel\kernelbase.py:1260,</span> in <span class="ni">Kernel.raw_input</span><span class="nt">(self, prompt)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1258</span> <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_allow_stdin</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1259</span>     <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;raw_input was called, but this frontend does not support input requests.&quot;</span>
+<span class="ne">-&gt; </span><span class="mi">1260</span>     <span class="k">raise</span> <span class="n">StdinNotImplementedError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1261</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_input_request</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1262</span>     <span class="nb">str</span><span class="p">(</span><span class="n">prompt</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1263</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_parent_ident</span><span class="p">[</span><span class="s2">&quot;shell&quot;</span><span class="p">],</span>
+<span class="g g-Whitespace">   </span><span class="mi">1264</span>     <span class="bp">self</span><span class="o">.</span><span class="n">get_parent</span><span class="p">(</span><span class="s2">&quot;shell&quot;</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1265</span>     <span class="n">password</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1266</span> <span class="p">)</span>
+
+<span class="ne">StdinNotImplementedError</span>: raw_input was called, but this frontend does not support input requests.
 </pre></div>
 </div>
 </div>
@@ -781,6 +782,20 @@ Kimenet: F+F-F-F+F+F+F-F-F+F-F+F-F-F+F-F+F-F-F+F+F+F-F-F+F+F+F-F-F+F+F+F-F-F+F-F
 
 <span class="n">turtle</span><span class="o">.</span><span class="n">done</span><span class="p">()</span>
 <span class="n">turtle</span><span class="o">.</span><span class="n">exitonclick</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">Terminator</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">23</span>
+<span class="g g-Whitespace">     </span><span class="mi">20</span> <span class="n">turtle</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">22</span> <span class="n">turtle</span><span class="o">.</span><span class="n">done</span><span class="p">()</span>
+<span class="ne">---&gt; </span><span class="mi">23</span> <span class="n">turtle</span><span class="o">.</span><span class="n">exitonclick</span><span class="p">()</span>
+
+<span class="nn">File &lt;string&gt;:5,</span> in <span class="ni">exitonclick</span><span class="nt">()</span>
+
+<span class="ne">Terminator</span>: 
 </pre></div>
 </div>
 </div>

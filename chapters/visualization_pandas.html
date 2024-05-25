@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
@@ -180,7 +180,6 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="web_scraping_intro.html">Adatbányászat - Web scraping</a></li>
 
-<li class="toctree-l1"><a class="reference internal" href="scraping_wikipedia_birds.html">Wikipédia madárcsaládok</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Adatvizualizáció - Data Visualization</span></p>
 <ul class="current nav bd-sidenav">
@@ -329,7 +328,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -345,6 +346,17 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#konyvtar-telepitese-es-importalasa">Könyvtár telepítése és importálása</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adatok-megadasa">Adatok megadása</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dataframe-es-diagram-letrehozasa">Dataframe és diagram létrehozása</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vonaldiagram">Vonaldiagram</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -356,16 +368,131 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="vizualizacio-pandas-konyvtar-segitsegevel">
 <h1>Vizualizáció Pandas könyvtár segítségével<a class="headerlink" href="#vizualizacio-pandas-konyvtar-segitsegevel" title="Link to this heading">#</a></h1>
+<p>Annak ellenére, hogy nem elsődleges feladata, a Pandas könyvtár is képes alapvető vizualizációk elkészítésére. A diagramok készítése Matpltlib könyvtáron alapul, rajzoláshoz szükséges adatok megadása hasonló.</p>
+<p><b>Az elérhető diagramtípusok:</b></p>
+<ul class="simple">
+<li><p>‘bar’ vagy ‘barh’ - oszlop és sávdiagram</p></li>
+<li><p>‘hist’ - hisztogram</p></li>
+<li><p>‘box’ - dobozdiagram</p></li>
+<li><p>‘kde’ vagy ‘density’ - sűrűségdiagram</p></li>
+<li><p>‘area’ - terület diagram</p></li>
+<li><p>‘scatter’ - pont XY diagram</p></li>
+<li><p>‘hexbin’ - hatszögletű sűrűségdiagram</p></li>
+<li><p>‘pie’ - kördiagram</p></li>
+</ul>
+<p>A megfelelő diagram kiválasztása <code>.plot(kind=””)</code> paranccsal történik.</p>
+<section id="konyvtar-telepitese-es-importalasa">
+<h2>Könyvtár telepítése és importálása<a class="headerlink" href="#konyvtar-telepitese-es-importalasa" title="Link to this heading">#</a></h2>
+<div class="cell tag_skip docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">pip</span> install pandas
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pandas in c:\python312\lib\site-packages (2.1.2)Note: you may need to restart the kernel to use updated packages.
+
+Requirement already satisfied: numpy&lt;2,&gt;=1.26.0 in c:\python312\lib\site-packages (from pandas) (1.26.1)
+Requirement already satisfied: python-dateutil&gt;=2.8.2 in c:\python312\lib\site-packages (from pandas) (2.8.2)
+Requirement already satisfied: pytz&gt;=2020.1 in c:\python312\lib\site-packages (from pandas) (2023.3.post1)
+Requirement already satisfied: tzdata&gt;=2022.1 in c:\python312\lib\site-packages (from pandas) (2023.3)
+Requirement already satisfied: six&gt;=1.5 in c:\python312\lib\site-packages (from python-dateutil&gt;=2.8.2-&gt;pandas) (1.16.0)
+</pre></div>
+</div>
+</div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span> 
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="adatok-megadasa">
+<h2>Adatok megadása<a class="headerlink" href="#adatok-megadasa" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Hőmérséklet éjszaka&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">16</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">13</span><span class="p">,</span><span class="mi">13</span><span class="p">],</span> 
+    <span class="s1">&#39;Hőmérséklet nappal&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">16</span><span class="p">,</span><span class="mi">22</span><span class="p">,</span><span class="mi">27</span><span class="p">,</span><span class="mi">29</span><span class="p">,</span><span class="mi">17</span><span class="p">,</span><span class="mi">14</span><span class="p">,</span><span class="mi">19</span><span class="p">,</span><span class="mi">21</span><span class="p">,</span><span class="mi">22</span><span class="p">]}</span>
+<span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="dataframe-es-diagram-letrehozasa">
+<h2>Dataframe és diagram létrehozása<a class="headerlink" href="#dataframe-es-diagram-letrehozasa" title="Link to this heading">#</a></h2>
+<p>Először elkészítjük az adathalmazt a program számára.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
 
-<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">]</span>
-<span class="n">y</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Temp during night&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">16</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">13</span><span class="p">,</span><span class="mi">13</span><span class="p">],</span> 
-    <span class="s1">&#39;Temp during day&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">16</span><span class="p">,</span><span class="mi">22</span><span class="p">,</span><span class="mi">27</span><span class="p">,</span><span class="mi">29</span><span class="p">,</span><span class="mi">17</span><span class="p">,</span><span class="mi">14</span><span class="p">,</span><span class="mi">19</span><span class="p">,</span><span class="mi">21</span><span class="p">,</span><span class="mi">22</span><span class="p">]}</span>
-
-<span class="n">graph</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
-<span class="n">graph</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s2">&quot;line&quot;</span><span class="p">,</span> <span class="n">grid</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Időjárás előrejelzés&quot;</span><span class="p">,</span> 
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   Hőmérséklet éjszaka  Hőmérséklet nappal
+1                    8                  16
+2                   12                  22
+3                   16                  27
+4                   15                  29
+5                   12                  17
+6                    9                  14
+7                   11                  19
+8                   13                  21
+9                   13                  22
+</pre></div>
+</div>
+</div>
+</div>
+<p>A diagram megrajzolására több lehetőségünk is van. Vagy paraméterként megadjuk a típusát a <code>kind=””</code> formában a <code>df.plot()</code> utasításnál, vagy direkt úgy hívjuk meg a függvényt <code>df.plot.bar()</code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s2">&quot;barh&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: &gt;
+</pre></div>
+</div>
+<img alt="../_images/90fe22fc5588fd63ea70e55902fdf08aa276e90ce02e04105632f696b9e7cb84.png" src="../_images/90fe22fc5588fd63ea70e55902fdf08aa276e90ce02e04105632f696b9e7cb84.png" />
+</div>
+</div>
+<p>Adhatunk hozzá címet a <code>title=””</code> paraméter megadásával.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;Időjárás előrejelzés&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: title={&#39;center&#39;: &#39;Időjárás előrejelzés&#39;}&gt;
+</pre></div>
+</div>
+<img alt="../_images/8d2c3d41e6bc9bb9a66cb26ea5c16ef9f202721f7baf1c677ebb1ed8bf45c832.png" src="../_images/8d2c3d41e6bc9bb9a66cb26ea5c16ef9f202721f7baf1c677ebb1ed8bf45c832.png" />
+</div>
+</div>
+</section>
+<section id="vonaldiagram">
+<h2>Vonaldiagram<a class="headerlink" href="#vonaldiagram" title="Link to this heading">#</a></h2>
+<p>A diagram megjelenésének, fő részeinek meghatározása paramétereken (pl.: <code>kind</code>, <code>grid</code>, <code>title</code>, stb.) kereszül történik.</p>
+<p><b>Néhány fontosabb:</b></p>
+<ul class="simple">
+<li><p>figsize - ábra mérete</p></li>
+<li><p>title - cím</p></li>
+<li><p>grid - rácsvonal</p></li>
+<li><p>legend - jelmagyarázat</p></li>
+<li><p>xticks/yticks - x/y tengelyeken használt értékek</p></li>
+<li><p>xlim/ylim - x/y tengelyek limitálása</p></li>
+<li><p>xlabel/ylabel - x/y tengely elnevezése</p></li>
+</ul>
+<p>Bővebben: <a href=https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.plot.html>pandas.DataFrame.plot</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s2">&quot;line&quot;</span><span class="p">,</span> <span class="n">grid</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Időjárás előrejelzés&quot;</span><span class="p">,</span> 
         <span class="n">ylabel</span><span class="o">=</span><span class="s2">&quot;Hőmérséklet (°C)&quot;</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="s2">&quot;Napok&quot;</span><span class="p">,</span> <span class="n">xlim</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">9</span><span class="p">),</span> <span class="n">ls</span><span class="o">=</span><span class="s2">&quot;dashed&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -374,9 +501,10 @@ document.write(`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: title={&#39;center&#39;: &#39;Időjárás előrejelzés&#39;}, xlabel=&#39;Napok&#39;, ylabel=&#39;Hőmérséklet (°C)&#39;&gt;
 </pre></div>
 </div>
-<img alt="../_images/331c5fb47869e3ada4174ea6bfe695f1b32cd5587b1e7db4c08f3e0d29cbe60a.png" src="../_images/331c5fb47869e3ada4174ea6bfe695f1b32cd5587b1e7db4c08f3e0d29cbe60a.png" />
+<img alt="../_images/360e8beb22778dc3778b37c25e202eb554e3f5d00df85490f0bad96670dd1d77.png" src="../_images/360e8beb22778dc3778b37c25e202eb554e3f5d00df85490f0bad96670dd1d77.png" />
 </div>
 </div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -434,7 +562,23 @@ document.write(`
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"></div>
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#konyvtar-telepitese-es-importalasa">Könyvtár telepítése és importálása</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adatok-megadasa">Adatok megadása</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dataframe-es-diagram-letrehozasa">Dataframe és diagram létrehozása</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vonaldiagram">Vonaldiagram</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
