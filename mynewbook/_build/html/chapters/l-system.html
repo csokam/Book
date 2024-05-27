@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
@@ -42,7 +42,7 @@
   <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
     <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../_static/copybutton.js?v=f281be69"></script>
@@ -193,6 +193,7 @@
 <li class="toctree-l1"><a class="reference internal" href="generative_3_circlerows.html">Sorokat alkotó körök</a></li>
 <li class="toctree-l1"><a class="reference internal" href="generative_4_dots.html">Véletlen számok és Perlin zaj - vonaldiagramon</a></li>
 <li class="toctree-l1"><a class="reference internal" href="generative_5_circle.html">Véletlen számok és Perlin zaj - körvonalon</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../generative_6_map.html">Szigetek</a></li>
 <li class="toctree-l1"><a class="reference internal" href="generative_7_packing.html">Halmozó algoritmus</a></li>
 <li class="toctree-l1"><a class="reference internal" href="generative_8_tiles.html">Csempék</a></li>
 <li class="toctree-l1"><a class="reference internal" href="generative_9_rasterize.html">Raszterizálás</a></li>
@@ -410,11 +411,11 @@ document.write(`
 <li><p>Az <b>s</b> axióma a kezdeti állapotot jelöli.</p></li>
 <li><p>A <b>H</b> szabályok halmaza, amelyek leírják az adott L-rendszerben végbemenő átmeneteket.</p></li>
 </ul>
-<p><img alt="L-system.png" src="chapters/attachment:L-system-2.png" /></p>
+<p><img alt="l-system_1" src="../_images/l-system_1.png" /></p>
 <p>A <b>karakterek</b> és <b>szabályok</b> iteratív alkalmazásával geometriai alakzatokat lehet készíteni. Az alakzatok létrejötte az </b>axiómából</b> indul, majd a rendszer szabályait ismételten alkalmazva alakulnak ki. Minden iterációban a karakterláncot a szabályoknak megfelelően módosítják, és így alakul ki a végleges geometriai forma.</p>
 <p>Az L-rendszerek rendkívül hatékonyak lehetnek a növények struktúrájának modellezésére. A növények ágazódása, leveleinek elrendeződése és számos más aspektusa leírható szabályokkal és iterációkkal. Például, egy egyszerű L-rendszer képlet segítségével lehetséges faágakat és leveleket modellezni. Játékfejlesztésben például procedurális térképgenerálás, terep, növényzet létrehozásánál használatos.</p>
 <p>Az eredeti rendszerek determinisztikusak és önhasonlóság jellemzi őket.</p>
-<p><img alt="leaf_1.gif" src="chapters/attachment:leaf_1.gif" /></p>
+<p><img alt="l-system_2" src="../_images/l-system_2.gif" /></p>
 <p>Kipróbálható: <a class="reference external" href="https://kevs3d.co.uk/dev/lsystems/">https://kevs3d.co.uk/dev/lsystems/</a></p>
 <section id="l-rendszer-megvalositasa">
 <h3>L-rendszer megvalósítása:<a class="headerlink" href="#l-rendszer-megvalositasa" title="Link to this heading">#</a></h3>
@@ -528,16 +529,16 @@ document.write(`
 <span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
 <span class="g g-Whitespace">      </span><span class="mi">8</span>     <span class="n">new</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
 
-<span class="nn">File ~\AppData\Roaming\Python\Python310\site-packages\ipykernel\kernelbase.py:1250,</span> in <span class="ni">Kernel.raw_input</span><span class="nt">(self, prompt)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1248</span> <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_allow_stdin</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1249</span>     <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;raw_input was called, but this frontend does not support input requests.&quot;</span>
-<span class="ne">-&gt; </span><span class="mi">1250</span>     <span class="k">raise</span> <span class="n">StdinNotImplementedError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1251</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_input_request</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1252</span>     <span class="nb">str</span><span class="p">(</span><span class="n">prompt</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">1253</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_parent_ident</span><span class="p">[</span><span class="s2">&quot;shell&quot;</span><span class="p">],</span>
-<span class="g g-Whitespace">   </span><span class="mi">1254</span>     <span class="bp">self</span><span class="o">.</span><span class="n">get_parent</span><span class="p">(</span><span class="s2">&quot;shell&quot;</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">1255</span>     <span class="n">password</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1256</span> <span class="p">)</span>
+<span class="nn">File ~\AppData\Roaming\Python\Python312\site-packages\ipykernel\kernelbase.py:1260,</span> in <span class="ni">Kernel.raw_input</span><span class="nt">(self, prompt)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1258</span> <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_allow_stdin</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1259</span>     <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;raw_input was called, but this frontend does not support input requests.&quot;</span>
+<span class="ne">-&gt; </span><span class="mi">1260</span>     <span class="k">raise</span> <span class="n">StdinNotImplementedError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1261</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_input_request</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1262</span>     <span class="nb">str</span><span class="p">(</span><span class="n">prompt</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1263</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_parent_ident</span><span class="p">[</span><span class="s2">&quot;shell&quot;</span><span class="p">],</span>
+<span class="g g-Whitespace">   </span><span class="mi">1264</span>     <span class="bp">self</span><span class="o">.</span><span class="n">get_parent</span><span class="p">(</span><span class="s2">&quot;shell&quot;</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1265</span>     <span class="n">password</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1266</span> <span class="p">)</span>
 
 <span class="ne">StdinNotImplementedError</span>: raw_input was called, but this frontend does not support input requests.
 </pre></div>
@@ -585,6 +586,7 @@ document.write(`
 1. iteráció: F+F-F-F+F
 2. iteráció: F+F-F-F+F+F+F-F-F+F-F+F-F-F+F-F+F-F-F+F+F+F-F-F+F
 3. iteráció: F+F-F-F+F+F+F-F-F+F-F+F-F-F+F-F+F-F-F+F+F+F-F-F+F+F+F-F-F+F+F+F-F-F+F-F+F-F-F+F-F+F-F-F+F+F+F-F-F+F-F+F-F-F+F+F+F-F-F+F-F+F-F-F+F-F+F-F-F+F+F+F-F-F+F-F+F-F-F+F+F+F-F-F+F-F+F-F-F+F-F+F-F-F+F+F+F-F-F+F+F+F-F-F+F+F+F-F-F+F-F+F-F-F+F-F+F-F-F+F+F+F-F-F+F
+4. iteráció: F+F-F-F+F+F+F-F-F+F-F+F-F-F+F-F+F-F-F+F+F+F-F-F+F+F+F-F-F+F+F+F-F-F+F-F+F-F-F+F-F+F-F-F+F+F+F-F-F+F-F+F-F-F+F+F+F-F-F+F-F+F-F-F+F-F+F-F-F+F+F+F-F-F+F-F+F-F-F+F+F+F-F-F+F-F+F-F-F+F-F+F-F-F+F+F+F-F-F+F+F+F-F-F+F+F+F-F-F+F-F+F-F-F+F-F+F-F-F+F+F+F-F-F+F+F+F-F-F+F+F+F-F-F+F-F+F-F-F+F-F+F-F-F+F+F+F-F-F+F+F+F-F-F+F+F+F-F-F+F-F+F-F-F+F-F+F-F-F+F+F+F-F-F+F-F+F-F-F+F+F+F-F-F+F-F+F-F-F+F-F+F-F-F+F+F+F-F-F+F-F+F-F-F+F+F+F-F-F+F-F+F-F-F+F-F+F-F-F+F+F+F-F-F+F+F+F-F-F+F+F+F-F-F+F-F+F-F-F+F-F+F-F-F+F+F+F-F-F+F-F+F-F-F+F+F+F-F-F+F-F+F-F-F+F-F+F-F-F+F+F+F-F-F+F+F+F-F-F+F+F+F-F-F+F-F+F-F-F+F-F+F-F-F+F+F+F-F-F+F-F+F-F-F+F+F+F-F-F+F-F+F-F-F+F-F+F-F-F+F+F+F-F-F+F-F+F-F-F+F+F+F-F-F+F-F+F-F-F+F-F+F-F-F+F+F+F-F-F+F+F+F-F-F+F+F+F-F-F+F-F+F-F-F+F-F+F-F-F+F+F+F-F-F+F-F+F-F-F+F+F+F-F-F+F-F+F-F-F+F-F+F-F-F+F+F+F-F-F+F+F+F-F-F+F+F+F-F-F+F-F+F-F-F+F-F+F-F-F+F+F+F-F-F+F-F+F-F-F+F+F+F-F-F+F-F+F-F-F+F-F+F-F-F+F+F+F-F-F+F-F+F-F-F+F+F+F-F-F+F-F+F-F-F+F-F+F-F-F+F+F+F-F-F+F+F+F-F-F+F+F+F-F-F+F-F+F-F-F+F-F+F-F-F+F+F+F-F-F+F+F+F-F-F+F+F+F-F-F+F-F+F-F-F+F-F+F-F-F+F+F+F-F-F+F+F+F-F-F+F+F+F-F-F+F-F+F-F-F+F-F+F-F-F+F+F+F-F-F+F-F+F-F-F+F+F+F-F-F+F-F+F-F-F+F-F+F-F-F+F+F+F-F-F+F-F+F-F-F+F+F+F-F-F+F-F+F-F-F+F-F+F-F-F+F+F+F-F-F+F+F+F-F-F+F+F+F-F-F+F-F+F-F-F+F-F+F-F-F+F+F+F-F-F+F
 </pre></div>
 </div>
 </div>
@@ -619,7 +621,8 @@ document.write(`
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1. iteráció: F+F-F-F+F
 2. iteráció: F+F-F-F+F+F+F-F-F+F-F+F-F-F+F-F+F-F-F+F+F+F-F-F+F
 3. iteráció: F+F-F-F+F+F+F-F-F+F-F+F-F-F+F-F+F-F-F+F+F+F-F-F+F+F+F-F-F+F+F+F-F-F+F-F+F-F-F+F-F+F-F-F+F+F+F-F-F+F-F+F-F-F+F+F+F-F-F+F-F+F-F-F+F-F+F-F-F+F+F+F-F-F+F-F+F-F-F+F+F+F-F-F+F-F+F-F-F+F-F+F-F-F+F+F+F-F-F+F+F+F-F-F+F+F+F-F-F+F-F+F-F-F+F-F+F-F-F+F+F+F-F-F+F
-Kimenet: F+F-F-F+F+F+F-F-F+F-F+F-F-F+F-F+F-F-F+F+F+F-F-F+F+F+F-F-F+F+F+F-F-F+F-F+F-F-F+F-F+F-F-F+F+F+F-F-F+F-F+F-F-F+F+F+F-F-F+F-F+F-F-F+F-F+F-F-F+F+F+F-F-F+F-F+F-F-F+F+F+F-F-F+F-F+F-F-F+F-F+F-F-F+F+F+F-F-F+F+F+F-F-F+F+F+F-F-F+F-F+F-F-F+F-F+F-F-F+F+F+F-F-F+F
+4. iteráció: F+F-F-F+F+F+F-F-F+F-F+F-F-F+F-F+F-F-F+F+F+F-F-F+F+F+F-F-F+F+F+F-F-F+F-F+F-F-F+F-F+F-F-F+F+F+F-F-F+F-F+F-F-F+F+F+F-F-F+F-F+F-F-F+F-F+F-F-F+F+F+F-F-F+F-F+F-F-F+F+F+F-F-F+F-F+F-F-F+F-F+F-F-F+F+F+F-F-F+F+F+F-F-F+F+F+F-F-F+F-F+F-F-F+F-F+F-F-F+F+F+F-F-F+F+F+F-F-F+F+F+F-F-F+F-F+F-F-F+F-F+F-F-F+F+F+F-F-F+F+F+F-F-F+F+F+F-F-F+F-F+F-F-F+F-F+F-F-F+F+F+F-F-F+F-F+F-F-F+F+F+F-F-F+F-F+F-F-F+F-F+F-F-F+F+F+F-F-F+F-F+F-F-F+F+F+F-F-F+F-F+F-F-F+F-F+F-F-F+F+F+F-F-F+F+F+F-F-F+F+F+F-F-F+F-F+F-F-F+F-F+F-F-F+F+F+F-F-F+F-F+F-F-F+F+F+F-F-F+F-F+F-F-F+F-F+F-F-F+F+F+F-F-F+F+F+F-F-F+F+F+F-F-F+F-F+F-F-F+F-F+F-F-F+F+F+F-F-F+F-F+F-F-F+F+F+F-F-F+F-F+F-F-F+F-F+F-F-F+F+F+F-F-F+F-F+F-F-F+F+F+F-F-F+F-F+F-F-F+F-F+F-F-F+F+F+F-F-F+F+F+F-F-F+F+F+F-F-F+F-F+F-F-F+F-F+F-F-F+F+F+F-F-F+F-F+F-F-F+F+F+F-F-F+F-F+F-F-F+F-F+F-F-F+F+F+F-F-F+F+F+F-F-F+F+F+F-F-F+F-F+F-F-F+F-F+F-F-F+F+F+F-F-F+F-F+F-F-F+F+F+F-F-F+F-F+F-F-F+F-F+F-F-F+F+F+F-F-F+F-F+F-F-F+F+F+F-F-F+F-F+F-F-F+F-F+F-F-F+F+F+F-F-F+F+F+F-F-F+F+F+F-F-F+F-F+F-F-F+F-F+F-F-F+F+F+F-F-F+F+F+F-F-F+F+F+F-F-F+F-F+F-F-F+F-F+F-F-F+F+F+F-F-F+F+F+F-F-F+F+F+F-F-F+F-F+F-F-F+F-F+F-F-F+F+F+F-F-F+F-F+F-F-F+F+F+F-F-F+F-F+F-F-F+F-F+F-F-F+F+F+F-F-F+F-F+F-F-F+F+F+F-F-F+F-F+F-F-F+F-F+F-F-F+F+F+F-F-F+F+F+F-F-F+F+F+F-F-F+F-F+F-F-F+F-F+F-F-F+F+F+F-F-F+F
+Kimenet: F+F-F-F+F+F+F-F-F+F-F+F-F-F+F-F+F-F-F+F+F+F-F-F+F+F+F-F-F+F+F+F-F-F+F-F+F-F-F+F-F+F-F-F+F+F+F-F-F+F-F+F-F-F+F+F+F-F-F+F-F+F-F-F+F-F+F-F-F+F+F+F-F-F+F-F+F-F-F+F+F+F-F-F+F-F+F-F-F+F-F+F-F-F+F+F+F-F-F+F+F+F-F-F+F+F+F-F-F+F-F+F-F-F+F-F+F-F-F+F+F+F-F-F+F+F+F-F-F+F+F+F-F-F+F-F+F-F-F+F-F+F-F-F+F+F+F-F-F+F+F+F-F-F+F+F+F-F-F+F-F+F-F-F+F-F+F-F-F+F+F+F-F-F+F-F+F-F-F+F+F+F-F-F+F-F+F-F-F+F-F+F-F-F+F+F+F-F-F+F-F+F-F-F+F+F+F-F-F+F-F+F-F-F+F-F+F-F-F+F+F+F-F-F+F+F+F-F-F+F+F+F-F-F+F-F+F-F-F+F-F+F-F-F+F+F+F-F-F+F-F+F-F-F+F+F+F-F-F+F-F+F-F-F+F-F+F-F-F+F+F+F-F-F+F+F+F-F-F+F+F+F-F-F+F-F+F-F-F+F-F+F-F-F+F+F+F-F-F+F-F+F-F-F+F+F+F-F-F+F-F+F-F-F+F-F+F-F-F+F+F+F-F-F+F-F+F-F-F+F+F+F-F-F+F-F+F-F-F+F-F+F-F-F+F+F+F-F-F+F+F+F-F-F+F+F+F-F-F+F-F+F-F-F+F-F+F-F-F+F+F+F-F-F+F-F+F-F-F+F+F+F-F-F+F-F+F-F-F+F-F+F-F-F+F+F+F-F-F+F+F+F-F-F+F+F+F-F-F+F-F+F-F-F+F-F+F-F-F+F+F+F-F-F+F-F+F-F-F+F+F+F-F-F+F-F+F-F-F+F-F+F-F-F+F+F+F-F-F+F-F+F-F-F+F+F+F-F-F+F-F+F-F-F+F-F+F-F-F+F+F+F-F-F+F+F+F-F-F+F+F+F-F-F+F-F+F-F-F+F-F+F-F-F+F+F+F-F-F+F+F+F-F-F+F+F+F-F-F+F-F+F-F-F+F-F+F-F-F+F+F+F-F-F+F+F+F-F-F+F+F+F-F-F+F-F+F-F-F+F-F+F-F-F+F+F+F-F-F+F-F+F-F-F+F+F+F-F-F+F-F+F-F-F+F-F+F-F-F+F+F+F-F-F+F-F+F-F-F+F+F+F-F-F+F-F+F-F-F+F-F+F-F-F+F+F+F-F-F+F+F+F-F-F+F+F+F-F-F+F-F+F-F-F+F-F+F-F-F+F+F+F-F-F+F
 </pre></div>
 </div>
 </div>
@@ -643,10 +646,11 @@ Kimenet: F+F-F-F+F+F+F-F-F+F-F+F-F-F+F-F+F-F-F+F+F+F-F-F+F+F+F-F-F+F+F+F-F-F+F-F
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">turtle</span>
 
-<span class="k">def</span> <span class="nf">turtleStart</span><span class="p">():</span>
+<span class="k">def</span> <span class="nf">turtleStart</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
     <span class="n">turtle</span><span class="o">.</span><span class="n">screensize</span><span class="p">(</span><span class="n">canvwidth</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">canvheight</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">bg</span> <span class="o">=</span> <span class="s2">&quot;white&quot;</span><span class="p">)</span> 
-    <span class="n">turtle</span><span class="o">.</span><span class="n">hideturtle</span><span class="p">()</span>    
-    <span class="n">turtle</span><span class="o">.</span><span class="n">setposition</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span> 
+    <span class="n">turtle</span><span class="o">.</span><span class="n">hideturtle</span><span class="p">()</span>
+    <span class="n">turtle</span><span class="o">.</span><span class="n">penup</span><span class="p">()</span>    
+    <span class="n">turtle</span><span class="o">.</span><span class="n">setposition</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span> 
     <span class="n">turtle</span><span class="o">.</span><span class="n">pendown</span><span class="p">()</span>
     <span class="n">turtle</span><span class="o">.</span><span class="n">speed</span><span class="p">(</span><span class="s2">&quot;fastest&quot;</span><span class="p">)</span>
     <span class="n">turtle</span><span class="o">.</span><span class="n">tracer</span><span class="p">()</span>
@@ -675,13 +679,14 @@ Kimenet: F+F-F-F+F+F+F-F-F+F-F+F-F-F+F-F+F-F-F+F+F+F-F-F+F+F+F-F-F+F+F+F-F-F+F-F
         <span class="k">elif</span> <span class="p">(</span><span class="n">i</span> <span class="o">==</span> <span class="s1">&#39;-&#39;</span><span class="p">):</span>
             <span class="n">turtle</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
 
-<span class="n">turtleStart</span><span class="p">()</span>
+<span class="n">turtleStart</span><span class="p">(</span><span class="o">-</span><span class="mi">350</span><span class="p">,</span><span class="o">-</span><span class="mi">100</span><span class="p">)</span> 
 <span class="n">drawSentence</span><span class="p">(</span><span class="n">sentence</span><span class="p">)</span>
 <span class="n">turtle</span><span class="o">.</span><span class="n">exitonclick</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 </div>
+<p><img alt="l-system_output_1" src="../_images/l-system_output_1.png" /></p>
 </section>
 <section id="id2">
 <h2><p style="color:green;">3. Feladat </p><a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
@@ -693,7 +698,7 @@ Kimenet: F+F-F-F+F+F+F-F-F+F-F+F-F-F+F-F+F-F-F+F+F+F-F-F+F+F+F-F-F+F+F+F-F-F+F-F
 <li><p>“+” jelentése “fordulj balra 60°-ot”</p></li>
 <li><p>“-” jelentése “fordulj jobbra 60°-ot”</p></li>
 </ul>
-<p><img alt="koch.gif" src="chapters/attachment:koch.gif" /></p>
+<p><img alt="l-system_3" src="../_images/l-system_3.gif" /></p>
 <p>Változtassuk meg a kezdeti állapotot a következők szerint:</p>
 <p>G=({F,+,−};F++F++F;{F→F-F++F-F})</p>
 </section>
@@ -705,7 +710,7 @@ Kimenet: F+F-F-F+F+F+F-F-F+F-F+F-F-F+F-F+F-F-F+F+F+F-F-F+F+F+F-F-F+F+F+F-F-F+F-F
 <p>Két jellegzetes hozzá kapcsolódó parancs a <code>push</code> (<b>Python</b> esetén <code>append</code>) és a <code>pop</code>:</p>
 <p><code>push</code> - verembe helyezi a kijelölt adatot</p>
 <p><code>pop</code> - eltávolítja az utoljára verembe helyezett adatot</p>
-<p><img alt="stack.png" src="chapters/attachment:stack.png" /></p>
+<p><img alt="l-system_4" src="../_images/l-system_4.png" /></p>
 <section id="pelda-egyszeru-pelda-verem-adatszerkezetre">
 <h3>4.1 Példa - egyszerű példa verem adatszerkezetre<a class="headerlink" href="#pelda-egyszeru-pelda-verem-adatszerkezetre" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
@@ -758,7 +763,7 @@ Kimenet: F+F-F-F+F+F+F-F-F+F-F+F-F-F+F-F+F-F-F+F+F+F-F-F+F+F+F-F-F+F+F+F-F-F+F-F
 </section>
 <section id="pelda-egy-ag-kirajzolasa">
 <h3>4.3 Példa - egy ág kirajzolása<a class="headerlink" href="#pelda-egy-ag-kirajzolasa" title="Link to this heading">#</a></h3>
-<div class="cell docutils container">
+<div class="cell tag_skip docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">turtle</span>
 <span class="kn">import</span> <span class="nn">importlib</span>
@@ -781,30 +786,16 @@ Kimenet: F+F-F-F+F+F+F-F-F+F-F+F-F-F+F-F+F-F-F+F+F+F-F-F+F+F+F-F-F+F+F+F-F-F+F-F
 <span class="n">turtle</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="mi">45</span><span class="p">)</span>
 <span class="n">turtle</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
 
-<span class="n">turtle</span><span class="o">.</span><span class="n">done</span><span class="p">()</span>
 <span class="n">turtle</span><span class="o">.</span><span class="n">exitonclick</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">Terminator</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">23</span>
-<span class="g g-Whitespace">     </span><span class="mi">20</span> <span class="n">turtle</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">22</span> <span class="n">turtle</span><span class="o">.</span><span class="n">done</span><span class="p">()</span>
-<span class="ne">---&gt; </span><span class="mi">23</span> <span class="n">turtle</span><span class="o">.</span><span class="n">exitonclick</span><span class="p">()</span>
-
-<span class="nn">File &lt;string&gt;:5,</span> in <span class="ni">exitonclick</span><span class="nt">()</span>
-
-<span class="ne">Terminator</span>: 
-</pre></div>
 </div>
-</div>
-</div>
+<p><img alt="l-system_output_2" src="../_images/l-system_output_2.png" /></p>
 </section>
 <section id="pelda-agak-kirzajzolasa-ciklussal">
 <h3>4.4 Példa - ágak kirzajzolása ciklussal<a class="headerlink" href="#pelda-agak-kirzajzolasa-ciklussal" title="Link to this heading">#</a></h3>
-<div class="cell docutils container">
+<div class="cell tag_skip docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">importlib</span><span class="o">.</span><span class="n">reload</span><span class="p">(</span><span class="n">turtle</span><span class="p">)</span>
 <span class="n">verem</span> <span class="o">=</span> <span class="p">[]</span>
@@ -827,12 +818,12 @@ Kimenet: F+F-F-F+F+F+F-F-F+F-F+F-F-F+F-F+F-F-F+F+F+F-F-F+F+F+F-F-F+F+F+F-F-F+F-F
     <span class="n">turtle</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
     <span class="n">draw_branch</span><span class="p">()</span>
 
-<span class="n">turtle</span><span class="o">.</span><span class="n">done</span><span class="p">()</span>
 <span class="n">turtle</span><span class="o">.</span><span class="n">exitonclick</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 </div>
+<p><img alt="l-system_output_3" src="../_images/l-system_output_3.png" /></p>
 <p>A mi esetünkben az ág kezdeténél lévő pozíciót és szöget fogja eltárolni.</p>
 <ul class="simple">
 <li><p><code>turtle.pos()</code> - teknős aktuális X és Y koordinátája</p></li>
@@ -857,20 +848,20 @@ Ezek után visszatérünk a veremből kiszedett pozícióhoz és folytatjuk a ra
 <li><p>“+” jelentése “fordulj balra 25°-ot”</p></li>
 <li><p>“-” jelentése “fordulj jobbra 25°-ot”</p></li>
 </ul>
-<div class="cell docutils container">
+<div class="cell tag_skip docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">turtle</span>
 <span class="kn">import</span> <span class="nn">importlib</span>
 <span class="n">importlib</span><span class="o">.</span><span class="n">reload</span><span class="p">(</span><span class="n">turtle</span><span class="p">)</span>
 
 <span class="k">def</span> <span class="nf">turtle_start</span><span class="p">():</span>
-    <span class="n">turtle</span><span class="o">.</span><span class="n">screensize</span><span class="p">(</span><span class="n">canvwidth</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">canvheight</span><span class="o">=</span><span class="mi">800</span><span class="p">,</span> <span class="n">bg</span> <span class="o">=</span> <span class="s2">&quot;#C7E2E7&quot;</span><span class="p">)</span> 
+    <span class="n">turtle</span><span class="o">.</span><span class="n">screensize</span><span class="p">(</span><span class="n">canvwidth</span><span class="o">=</span><span class="mi">800</span><span class="p">,</span> <span class="n">canvheight</span><span class="o">=</span><span class="mi">600</span><span class="p">,</span> <span class="n">bg</span> <span class="o">=</span> <span class="s2">&quot;#C7E2E7&quot;</span><span class="p">)</span> 
     <span class="n">turtle</span><span class="o">.</span><span class="n">hideturtle</span><span class="p">()</span> 
     <span class="n">turtle</span><span class="o">.</span><span class="n">penup</span><span class="p">()</span>   
     <span class="n">turtle</span><span class="o">.</span><span class="n">setposition</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">250</span><span class="p">)</span>
     <span class="n">turtle</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span> 
     <span class="n">turtle</span><span class="o">.</span><span class="n">pendown</span><span class="p">()</span>    
-    <span class="n">turtle</span><span class="o">.</span><span class="n">tracer</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="c1">#állítja a rajzolási sebességet 0 - azonnali, 1 - lassú, 2 - gyors</span>
+    <span class="n">turtle</span><span class="o">.</span><span class="n">tracer</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="c1">#állítja a rajzolási sebességet 0 - azonnali, 1 - lassú, 2 - gyors</span>
 
 <span class="k">def</span> <span class="nf">general_noveny</span><span class="p">(</span><span class="n">axiom</span><span class="p">,</span> <span class="n">iteraciok</span><span class="p">):</span>    
     <span class="n">aktualis_kifejezes</span> <span class="o">=</span> <span class="n">axiom</span>
@@ -914,6 +905,7 @@ Ezek után visszatérünk a veremből kiszedett pozícióhoz és folytatjuk a ra
 </div>
 </div>
 </div>
+<p><img alt="l-system_output_4" src="../_images/l-system_output_4.png" /></p>
 </section>
 <section id="tovabbi-novenyek-es-mintak-leirasa">
 <h2>6. További növények és minták leírása<a class="headerlink" href="#tovabbi-novenyek-es-mintak-leirasa" title="Link to this heading">#</a></h2>

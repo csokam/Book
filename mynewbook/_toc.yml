@@ -19,7 +19,7 @@ parts:
     - file: chapters/generative_3_circlerows
     - file: chapters/generative_4_dots
     - file: chapters/generative_5_circle
-    #- file: chapters/generative_6_map
+    - file: generative_6_map
     - file: chapters/generative_7_packing
     - file: chapters/generative_8_tiles
     - file: chapters/generative_9_rasterize
@@ -29,5 +29,6 @@ parts:
   - caption: L-rendszerek    
     chapters:
     - file: chapters/l-system
-  - caption: Egyéb
-    chapters:
+  #- caption: Egyéb
+  # chapters:
+ 

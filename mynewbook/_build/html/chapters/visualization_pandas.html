@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
@@ -42,7 +42,7 @@
   <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
     <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../_static/copybutton.js?v=f281be69"></script>
@@ -194,6 +194,7 @@
 <li class="toctree-l1"><a class="reference internal" href="generative_3_circlerows.html">Sorokat alkotó körök</a></li>
 <li class="toctree-l1"><a class="reference internal" href="generative_4_dots.html">Véletlen számok és Perlin zaj - vonaldiagramon</a></li>
 <li class="toctree-l1"><a class="reference internal" href="generative_5_circle.html">Véletlen számok és Perlin zaj - körvonalon</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../generative_6_map.html">Szigetek</a></li>
 <li class="toctree-l1"><a class="reference internal" href="generative_7_packing.html">Halmozó algoritmus</a></li>
 <li class="toctree-l1"><a class="reference internal" href="generative_8_tiles.html">Csempék</a></li>
 <li class="toctree-l1"><a class="reference internal" href="generative_9_rasterize.html">Raszterizálás</a></li>
@@ -391,18 +392,17 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Defaulting to user installation because normal site-packages is not writeable
-Requirement already satisfied: pandas in c:\users\mark\appdata\roaming\python\python310\site-packages (2.1.1)
-Requirement already satisfied: tzdata&gt;=2022.1 in c:\users\mark\appdata\roaming\python\python310\site-packages (from pandas) (2023.3)
-Requirement already satisfied: pytz&gt;=2020.1 in c:\users\mark\appdata\roaming\python\python310\site-packages (from pandas) (2023.3.post1)
-Requirement already satisfied: numpy&gt;=1.22.4 in c:\users\mark\appdata\roaming\python\python310\site-packages (from pandas) (1.24.2)
-Requirement already satisfied: python-dateutil&gt;=2.8.2 in c:\users\mark\appdata\roaming\python\python310\site-packages (from pandas) (2.8.2)
-Requirement already satisfied: six&gt;=1.5 in c:\users\mark\appdata\roaming\python\python310\site-packages (from python-dateutil&gt;=2.8.2-&gt;pandas) (1.16.0)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pandas in c:\python312\lib\site-packages (2.1.2)
+Requirement already satisfied: numpy&lt;2,&gt;=1.26.0 in c:\python312\lib\site-packages (from pandas) (1.26.1)
+Requirement already satisfied: python-dateutil&gt;=2.8.2 in c:\python312\lib\site-packages (from pandas) (2.8.2)
+Requirement already satisfied: pytz&gt;=2020.1 in c:\python312\lib\site-packages (from pandas) (2023.3.post1)
+Requirement already satisfied: tzdata&gt;=2022.1 in c:\python312\lib\site-packages (from pandas) (2023.3)
+Requirement already satisfied: six&gt;=1.5 in c:\python312\lib\site-packages (from python-dateutil&gt;=2.8.2-&gt;pandas) (1.16.0)
 Note: you may need to restart the kernel to use updated packages.
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[notice] A new release of pip available: 22.2.1 -&gt; 24.0
-[notice] To update, run: C:\Program Files\Python310\python.exe -m pip install --upgrade pip
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[notice] A new release of pip is available: 23.2.1 -&gt; 24.0
+[notice] To update, run: python.exe -m pip install --upgrade pip
 </pre></div>
 </div>
 </div>
@@ -464,7 +464,7 @@ Note: you may need to restart the kernel to use updated packages.
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: &gt;
 </pre></div>
 </div>
-<img alt="../_images/ee2fb0dd1d8dec192d07e770eb7a790a46ec80fbd1364660a90e5eaf60956dee.png" src="../_images/ee2fb0dd1d8dec192d07e770eb7a790a46ec80fbd1364660a90e5eaf60956dee.png" />
+<img alt="../_images/90fe22fc5588fd63ea70e55902fdf08aa276e90ce02e04105632f696b9e7cb84.png" src="../_images/90fe22fc5588fd63ea70e55902fdf08aa276e90ce02e04105632f696b9e7cb84.png" />
 </div>
 </div>
 <p>Adhatunk hozzá címet a <code>title=””</code> paraméter megadásával.</p>
@@ -478,7 +478,7 @@ Note: you may need to restart the kernel to use updated packages.
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: title={&#39;center&#39;: &#39;Időjárás előrejelzés&#39;}&gt;
 </pre></div>
 </div>
-<img alt="../_images/fa9bff92d520312a5945753086bc6cb40de0a8a61841f2894f3d536a8bcb5e01.png" src="../_images/fa9bff92d520312a5945753086bc6cb40de0a8a61841f2894f3d536a8bcb5e01.png" />
+<img alt="../_images/8d2c3d41e6bc9bb9a66cb26ea5c16ef9f202721f7baf1c677ebb1ed8bf45c832.png" src="../_images/8d2c3d41e6bc9bb9a66cb26ea5c16ef9f202721f7baf1c677ebb1ed8bf45c832.png" />
 </div>
 </div>
 </section>
@@ -507,7 +507,7 @@ Note: you may need to restart the kernel to use updated packages.
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: title={&#39;center&#39;: &#39;Időjárás előrejelzés&#39;}, xlabel=&#39;Napok&#39;, ylabel=&#39;Hőmérséklet (°C)&#39;&gt;
 </pre></div>
 </div>
-<img alt="../_images/f500986d1cbe13aafd9cc99a3399d88ec243e1fe92c60304daa20430a650d4da.png" src="../_images/f500986d1cbe13aafd9cc99a3399d88ec243e1fe92c60304daa20430a650d4da.png" />
+<img alt="../_images/360e8beb22778dc3778b37c25e202eb554e3f5d00df85490f0bad96670dd1d77.png" src="../_images/360e8beb22778dc3778b37c25e202eb554e3f5d00df85490f0bad96670dd1d77.png" />
 </div>
 </div>
 </section>
