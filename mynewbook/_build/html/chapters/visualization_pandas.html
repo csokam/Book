@@ -42,7 +42,7 @@
   <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
     <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../_static/copybutton.js?v=f281be69"></script>
@@ -58,7 +58,6 @@
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/visualization_pandas';</script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="PIL bevezetés - variációk egy témára" href="generative_1_intro.html" />
@@ -181,6 +180,7 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="web_scraping_intro.html">Adatbányászat - Web scraping</a></li>
 
+<li class="toctree-l1"><a class="reference internal" href="web_scraping_wikipedia_birds.html">Wikipédia madárcsaládok</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Adatvizualizáció - Data Visualization</span></p>
 <ul class="current nav bd-sidenav">
@@ -391,28 +391,18 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<<<<<<< HEAD
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pandas in c:\python312\lib\site-packages (2.1.2)Note: you may need to restart the kernel to use updated packages.
-
-Requirement already satisfied: numpy&lt;2,&gt;=1.26.0 in c:\python312\lib\site-packages (from pandas) (1.26.1)
-Requirement already satisfied: python-dateutil&gt;=2.8.2 in c:\python312\lib\site-packages (from pandas) (2.8.2)
-Requirement already satisfied: pytz&gt;=2020.1 in c:\python312\lib\site-packages (from pandas) (2023.3.post1)
-Requirement already satisfied: tzdata&gt;=2022.1 in c:\python312\lib\site-packages (from pandas) (2023.3)
-Requirement already satisfied: six&gt;=1.5 in c:\python312\lib\site-packages (from python-dateutil&gt;=2.8.2-&gt;pandas) (1.16.0)
-=======
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Defaulting to user installation because normal site-packages is not writeable
 Requirement already satisfied: pandas in c:\users\mark\appdata\roaming\python\python310\site-packages (2.1.1)
-Requirement already satisfied: pytz&gt;=2020.1 in c:\users\mark\appdata\roaming\python\python310\site-packages (from pandas) (2023.3.post1)
-Requirement already satisfied: python-dateutil&gt;=2.8.2 in c:\users\mark\appdata\roaming\python\python310\site-packages (from pandas) (2.8.2)
 Requirement already satisfied: tzdata&gt;=2022.1 in c:\users\mark\appdata\roaming\python\python310\site-packages (from pandas) (2023.3)
+Requirement already satisfied: pytz&gt;=2020.1 in c:\users\mark\appdata\roaming\python\python310\site-packages (from pandas) (2023.3.post1)
 Requirement already satisfied: numpy&gt;=1.22.4 in c:\users\mark\appdata\roaming\python\python310\site-packages (from pandas) (1.24.2)
+Requirement already satisfied: python-dateutil&gt;=2.8.2 in c:\users\mark\appdata\roaming\python\python310\site-packages (from pandas) (2.8.2)
 Requirement already satisfied: six&gt;=1.5 in c:\users\mark\appdata\roaming\python\python310\site-packages (from python-dateutil&gt;=2.8.2-&gt;pandas) (1.16.0)
 Note: you may need to restart the kernel to use updated packages.
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[notice] A new release of pip available: 22.2.1 -&gt; 24.0
 [notice] To update, run: C:\Program Files\Python310\python.exe -m pip install --upgrade pip
->>>>>>> 7db20cdea49c2513992f5df03739e0fadbcb78da
 </pre></div>
 </div>
 </div>
@@ -474,11 +464,7 @@ Note: you may need to restart the kernel to use updated packages.
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: &gt;
 </pre></div>
 </div>
-<<<<<<< HEAD
-<img alt="../_images/90fe22fc5588fd63ea70e55902fdf08aa276e90ce02e04105632f696b9e7cb84.png" src="../_images/90fe22fc5588fd63ea70e55902fdf08aa276e90ce02e04105632f696b9e7cb84.png" />
-=======
 <img alt="../_images/ee2fb0dd1d8dec192d07e770eb7a790a46ec80fbd1364660a90e5eaf60956dee.png" src="../_images/ee2fb0dd1d8dec192d07e770eb7a790a46ec80fbd1364660a90e5eaf60956dee.png" />
->>>>>>> 7db20cdea49c2513992f5df03739e0fadbcb78da
 </div>
 </div>
 <p>Adhatunk hozzá címet a <code>title=””</code> paraméter megadásával.</p>
@@ -492,11 +478,7 @@ Note: you may need to restart the kernel to use updated packages.
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: title={&#39;center&#39;: &#39;Időjárás előrejelzés&#39;}&gt;
 </pre></div>
 </div>
-<<<<<<< HEAD
-<img alt="../_images/8d2c3d41e6bc9bb9a66cb26ea5c16ef9f202721f7baf1c677ebb1ed8bf45c832.png" src="../_images/8d2c3d41e6bc9bb9a66cb26ea5c16ef9f202721f7baf1c677ebb1ed8bf45c832.png" />
-=======
 <img alt="../_images/fa9bff92d520312a5945753086bc6cb40de0a8a61841f2894f3d536a8bcb5e01.png" src="../_images/fa9bff92d520312a5945753086bc6cb40de0a8a61841f2894f3d536a8bcb5e01.png" />
->>>>>>> 7db20cdea49c2513992f5df03739e0fadbcb78da
 </div>
 </div>
 </section>
@@ -525,11 +507,7 @@ Note: you may need to restart the kernel to use updated packages.
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: title={&#39;center&#39;: &#39;Időjárás előrejelzés&#39;}, xlabel=&#39;Napok&#39;, ylabel=&#39;Hőmérséklet (°C)&#39;&gt;
 </pre></div>
 </div>
-<<<<<<< HEAD
-<img alt="../_images/360e8beb22778dc3778b37c25e202eb554e3f5d00df85490f0bad96670dd1d77.png" src="../_images/360e8beb22778dc3778b37c25e202eb554e3f5d00df85490f0bad96670dd1d77.png" />
-=======
 <img alt="../_images/f500986d1cbe13aafd9cc99a3399d88ec243e1fe92c60304daa20430a650d4da.png" src="../_images/f500986d1cbe13aafd9cc99a3399d88ec243e1fe92c60304daa20430a650d4da.png" />
->>>>>>> 7db20cdea49c2513992f5df03739e0fadbcb78da
 </div>
 </div>
 </section>

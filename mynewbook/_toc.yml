@@ -7,7 +7,7 @@ parts:
   - caption: Webes adatbányászat - Web Scraping    
     chapters:
     - file: chapters/web_scraping_intro
-    - file: chapters/scraping_wikipedia_birds
+    - file: chapters/web_scraping_wikipedia_birds
   - caption: Adatvizualizáció - Data Visualization    
     chapters: 
     - file: chapters/visualization

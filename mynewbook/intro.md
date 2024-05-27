@@ -11,4 +11,5 @@ Dokumentáció elérhető: [the Jupyter Book documentation](https://jupyterbook.
 
 ```
 {tableofcontents}
+:style: unsrt
 ```
