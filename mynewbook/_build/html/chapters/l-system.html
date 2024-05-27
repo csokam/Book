@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
@@ -58,6 +58,7 @@
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/l-system';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="prev" title="Fokozatos kitöltés" href="generative_12_random.html" />
@@ -405,7 +406,7 @@ document.write(`
 <p>Formálisan következőképpen adható meg:</p>
 <p><b>G = (T; s; H)</b>, ahol <b>T</b> egy véges ábécé, <b>s</b> az axióma, <b>H</b> a szabályok halmaza.</p>
 <ul class="simple">
-<li><p>A <b>T</b> véges ábéce szimbólumokat tartalmaz, például X, F, +, [, ].</p></li>
+<li><p>A <b>T</b> véges ábécé szimbólumokat tartalmaz, például X, F, +, [, ].</p></li>
 <li><p>Az <b>s</b> axióma a kezdeti állapotot jelöli.</p></li>
 <li><p>A <b>H</b> szabályok halmaza, amelyek leírják az adott L-rendszerben végbemenő átmeneteket.</p></li>
 </ul>
@@ -466,16 +467,16 @@ document.write(`
 <span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
 <span class="g g-Whitespace">      </span><span class="mi">9</span>     <span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;. iteráció: &quot;</span> <span class="o">+</span> <span class="n">axiom</span><span class="p">)</span>     
 
-<span class="nn">File ~\AppData\Roaming\Python\Python312\site-packages\ipykernel\kernelbase.py:1269,</span> in <span class="ni">Kernel.raw_input</span><span class="nt">(self, prompt)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1267</span> <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_allow_stdin</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1268</span>     <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;raw_input was called, but this frontend does not support input requests.&quot;</span>
-<span class="ne">-&gt; </span><span class="mi">1269</span>     <span class="k">raise</span> <span class="n">StdinNotImplementedError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1270</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_input_request</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1271</span>     <span class="nb">str</span><span class="p">(</span><span class="n">prompt</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">1272</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_parent_ident</span><span class="p">[</span><span class="s2">&quot;shell&quot;</span><span class="p">],</span>
-<span class="g g-Whitespace">   </span><span class="mi">1273</span>     <span class="bp">self</span><span class="o">.</span><span class="n">get_parent</span><span class="p">(</span><span class="s2">&quot;shell&quot;</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">1274</span>     <span class="n">password</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1275</span> <span class="p">)</span>
+<span class="nn">File ~\AppData\Roaming\Python\Python310\site-packages\ipykernel\kernelbase.py:1250,</span> in <span class="ni">Kernel.raw_input</span><span class="nt">(self, prompt)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1248</span> <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_allow_stdin</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1249</span>     <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;raw_input was called, but this frontend does not support input requests.&quot;</span>
+<span class="ne">-&gt; </span><span class="mi">1250</span>     <span class="k">raise</span> <span class="n">StdinNotImplementedError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1251</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_input_request</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1252</span>     <span class="nb">str</span><span class="p">(</span><span class="n">prompt</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1253</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_parent_ident</span><span class="p">[</span><span class="s2">&quot;shell&quot;</span><span class="p">],</span>
+<span class="g g-Whitespace">   </span><span class="mi">1254</span>     <span class="bp">self</span><span class="o">.</span><span class="n">get_parent</span><span class="p">(</span><span class="s2">&quot;shell&quot;</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1255</span>     <span class="n">password</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1256</span> <span class="p">)</span>
 
 <span class="ne">StdinNotImplementedError</span>: raw_input was called, but this frontend does not support input requests.
 </pre></div>
@@ -783,6 +784,20 @@ Kimenet: F+F-F-F+F+F+F-F-F+F-F+F-F-F+F-F+F-F-F+F+F+F-F-F+F+F+F-F-F+F+F+F-F-F+F-F
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">Terminator</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">23</span>
+<span class="g g-Whitespace">     </span><span class="mi">20</span> <span class="n">turtle</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">22</span> <span class="n">turtle</span><span class="o">.</span><span class="n">done</span><span class="p">()</span>
+<span class="ne">---&gt; </span><span class="mi">23</span> <span class="n">turtle</span><span class="o">.</span><span class="n">exitonclick</span><span class="p">()</span>
+
+<span class="nn">File &lt;string&gt;:5,</span> in <span class="ni">exitonclick</span><span class="nt">()</span>
+
+<span class="ne">Terminator</span>: 
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="pelda-agak-kirzajzolasa-ciklussal">
@@ -852,9 +867,8 @@ Ezek után visszatérünk a veremből kiszedett pozícióhoz és folytatjuk a ra
     <span class="n">turtle</span><span class="o">.</span><span class="n">penup</span><span class="p">()</span>   
     <span class="n">turtle</span><span class="o">.</span><span class="n">setposition</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">250</span><span class="p">)</span>
     <span class="n">turtle</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span> 
-    <span class="n">turtle</span><span class="o">.</span><span class="n">pendown</span><span class="p">()</span>
-    <span class="n">turtle</span><span class="o">.</span><span class="n">speed</span><span class="p">(</span><span class="s2">&quot;fastest&quot;</span><span class="p">)</span>
-    <span class="n">turtle</span><span class="o">.</span><span class="n">tracer</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="c1">#állítja a rajzolási sebességet 0 - azonnali, 1 - lassú, 2 - gyors</span>
+    <span class="n">turtle</span><span class="o">.</span><span class="n">pendown</span><span class="p">()</span>    
+    <span class="n">turtle</span><span class="o">.</span><span class="n">tracer</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="c1">#állítja a rajzolási sebességet 0 - azonnali, 1 - lassú, 2 - gyors</span>
 
 <span class="k">def</span> <span class="nf">general_noveny</span><span class="p">(</span><span class="n">axiom</span><span class="p">,</span> <span class="n">iteraciok</span><span class="p">):</span>    
     <span class="n">aktualis_kifejezes</span> <span class="o">=</span> <span class="n">axiom</span>
@@ -892,7 +906,7 @@ Ezek után visszatérünk a veremből kiszedett pozícióhoz és folytatjuk a ra
 
 <span class="n">turtle_start</span><span class="p">()</span>
 <span class="n">final_sentence</span> <span class="o">=</span> <span class="n">general_noveny</span><span class="p">(</span><span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
-<span class="n">rajzol_noveny</span><span class="p">(</span><span class="n">final_sentence</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">rajzol_noveny</span><span class="p">(</span><span class="n">final_sentence</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
 <span class="n">turtle</span><span class="o">.</span><span class="n">exitonclick</span><span class="p">()</span>  
 </pre></div>
 </div>
