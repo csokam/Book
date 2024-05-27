@@ -29,3 +29,5 @@ parts:
   - caption: L-rendszerek    
     chapters:
     - file: chapters/l-system
+  - caption: Egyéb
+    chapters:
