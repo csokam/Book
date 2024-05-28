@@ -3,11 +3,11 @@
 
 title: Témakörök Python oktatásához
 author: Csóka Márk
-logo: logo.png
+logo: _static/logo.png
 
 # HTML favicon settings
 html:
-  favicon: _static\favicon.ico
+  favicon: _static/favicon.ico
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
@@ -34,8 +34,7 @@ sphinx:
 #bibtex_bibfiles:
 #  references.bib
 bibtex_reference_style: author_year
-bibtex_bibfiles: 
-  - mynewbook\references.bib
+bibtex_bibfiles: references.bib
 
 # Information about where the book exists on the web
 repository:

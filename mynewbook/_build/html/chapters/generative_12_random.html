@@ -32,9 +32,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
@@ -42,7 +42,7 @@
   <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
     <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../_static/copybutton.js?v=f281be69"></script>
@@ -52,7 +52,7 @@
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
@@ -150,8 +150,8 @@
       
     
     
-    <img src="../_static/logo.png" class="logo__image only-light" alt="Témakörök Python oktatásához - Home"/>
-    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Témakörök Python oktatásához - Home"/>`);</script>
+    <img src="../_static/logo_1.png" class="logo__image only-light" alt="Témakörök Python oktatásához - Home"/>
+    <script>document.write(`<img src="../_static/logo_1.png" class="logo__image only-dark" alt="Témakörök Python oktatásához - Home"/>`);</script>
   
   
 </a></div>
@@ -194,7 +194,6 @@
 <li class="toctree-l1"><a class="reference internal" href="generative_3_circlerows.html">Sorokat alkotó körök</a></li>
 <li class="toctree-l1"><a class="reference internal" href="generative_4_dots.html">Véletlen számok és Perlin zaj - vonaldiagramon</a></li>
 <li class="toctree-l1"><a class="reference internal" href="generative_5_circle.html">Véletlen számok és Perlin zaj - körvonalon</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../generative_6_map.html">Szigetek</a></li>
 <li class="toctree-l1"><a class="reference internal" href="generative_7_packing.html">Halmozó algoritmus</a></li>
 <li class="toctree-l1"><a class="reference internal" href="generative_8_tiles.html">Csempék</a></li>
 <li class="toctree-l1"><a class="reference internal" href="generative_9_rasterize.html">Raszterizálás</a></li>
@@ -205,6 +204,10 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">L-rendszerek</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="l-system.html">Az L-rendszer</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Források</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="sources.html">Források</a></li>
 </ul>
 
     </div>
@@ -358,7 +361,7 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="fokozatos-kitoltes">
 <h1>Fokozatos kitöltés<a class="headerlink" href="#fokozatos-kitoltes" title="Link to this heading">#</a></h1>
 <p>Véletlen számokat sokféleképp lehet használni. Ebben az esetben <code>random.random()</code> segítségével 0,1 közötti számot fogunk generálni és azt egy változóhoz viszonyítani, aminek az értékét fokozatosan növeljük.</p>
-<p><b>Forrás: </b><span id="id1">[]</span></p>
+<p><b>Forrás: </b><span id="id1">[<a class="reference internal" href="sources.html#id2" title="Casey Reas. Century-xxx-metakelly #777. Jan 2022. URL: https://www.lerandom.art/collection/century-xxx-metakelly-777.">12</a>]</span></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span><span class="p">,</span> <span class="n">ImageDraw</span>
@@ -407,7 +410,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/4a9ad381ee4e8b35170f9f7fa26a15b3b0c2dc8fa4960aaa82ccff24783617d9.png" src="../_images/4a9ad381ee4e8b35170f9f7fa26a15b3b0c2dc8fa4960aaa82ccff24783617d9.png" />
+<img alt="../_images/96375d23f72b4c984cb058f2552edeafc28b8537af8cbeacf9f92bfd0a5fa479.png" src="../_images/96375d23f72b4c984cb058f2552edeafc28b8537af8cbeacf9f92bfd0a5fa479.png" />
 </div>
 </div>
 </section>

@@ -3,17 +3,16 @@
 Ez a dokumentum Python oktatásához hasznos témaköröket dolgoz fel.
 
 
-A weboldal Jupyter Book segítségével lett készítve. 
+A weboldal Jupyter Book segítségével készült. 
 
 Dokumentáció elérhető: [the Jupyter Book documentation](https://jupyterbook.org) 
 
-@vanoost asdf
+{cite:p}`vanoost`
 
-```
-{tableofcontents}
+```{tableofcontents}
 :style: unsrt
 ```
 
-```
-{tableofcontents}
+```{note}
+Megjegyzések
 ```

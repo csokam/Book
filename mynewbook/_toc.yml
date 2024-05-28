@@ -3,6 +3,8 @@
 
 format: jb-book
 root: intro
+defaults:
+  titlesonly: True
 parts:
   - caption: Webes adatbányászat - Web Scraping    
     chapters:
@@ -19,7 +21,7 @@ parts:
     - file: chapters/generative_3_circlerows
     - file: chapters/generative_4_dots
     - file: chapters/generative_5_circle
-    - file: generative_6_map
+    #- file: chapters/generative_6_map
     - file: chapters/generative_7_packing
     - file: chapters/generative_8_tiles
     - file: chapters/generative_9_rasterize
@@ -31,4 +33,8 @@ parts:
     - file: chapters/l-system
   #- caption: Egyéb
   # chapters:
+  # - file: chapters/...
+  - caption: Források
+    chapters:
+    - file: chapters/sources
  
