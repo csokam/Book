@@ -36,5 +36,8 @@ parts:
   # - file: chapters/...
   - caption: Források
     chapters:
-    - file: chapters/sources
+    - file: sources
+  - caption: Jelmagyarázat
+    chapters:
+    - file: glossary
  

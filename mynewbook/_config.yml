@@ -22,17 +22,22 @@ latex:
 # Enable Plotly plots
 sphinx:
   config:
+    suppress_warnings: ["mystnb.unknown_mime_type"]
     html_js_files:
     - https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js
 
 # Supress Plotly warning
+#sphinx:
+#  config:
+#    suppress_warnings: ["mystnb.unknown_mime_type"]
+
+# Bibtex extension
 sphinx:
-  config:
-    suppress_warnings: ["mystnb.unknown_mime_type"]
+  extra_extensions:
+    - sphinxcontrib.bibtex
 
 # Add a bibtex file so that we can create citations
-#bibtex_bibfiles:
-#  references.bib
+bibtex_csl: _static/iso-690.csl
 bibtex_reference_style: author_year
 bibtex_bibfiles: references.bib
 
