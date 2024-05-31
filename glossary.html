@@ -42,7 +42,7 @@
   <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
     <script src="_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="_static/copybutton.js?v=f281be69"></script>
@@ -177,18 +177,19 @@
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Webes adatbányászat - Web Scraping</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="chapters/web_scraping_intro.html">Adatbányászat - Web scraping</a></li>
-
+<li class="toctree-l1"><a class="reference internal" href="chapters/web_scraping_intro.html">Adatbányászat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/web_scraping_wikipeadia_plants.html">Wikipédia növénycsaládok</a></li>
 <li class="toctree-l1"><a class="reference internal" href="chapters/web_scraping_wikipedia_birds.html">Wikipédia madárcsaládok</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/web_scraping_wikipedia_marvel.html">Wikipédia Marvel karakterek</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Adatvizualizáció - Data Visualization</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="chapters/visualization.html">Adatvizualizáció</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/visualization_intro.html">Adatvizualizáció</a></li>
 <li class="toctree-l1"><a class="reference internal" href="chapters/visualization_pandas.html">Vizualizáció Pandas könyvtár segítségével</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Generatív képalkotás - Generative art</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="chapters/generative_1_intro.html">PIL bevezetés - variációk egy témára</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/generative_1_intro.html">Generatív képalkotás - variációk egy témára</a></li>
 <li class="toctree-l1"><a class="reference internal" href="chapters/generative_2_triangles.html">Háromszög csempék</a></li>
 <li class="toctree-l1"><a class="reference internal" href="chapters/generative_3_circlerows.html">Sorokat alkotó körök</a></li>
 <li class="toctree-l1"><a class="reference internal" href="chapters/generative_4_dots.html">Véletlen számok és Perlin zaj - vonaldiagramon</a></li>
@@ -199,10 +200,11 @@
 <li class="toctree-l1"><a class="reference internal" href="chapters/generative_10_lines.html">Véletlen vonalak</a></li>
 <li class="toctree-l1"><a class="reference internal" href="chapters/generative_11_patterns.html">Minták létrehozása</a></li>
 <li class="toctree-l1"><a class="reference internal" href="chapters/generative_12_random.html">Fokozatos kitöltés</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/generative_13_comparison.html">PIL és Cairo könyvtárak összehasonlítása</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">L-rendszerek</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="chapters/l-system.html">Az L-rendszer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/l-system_intro.html">L-rendszerek</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Források</span></p>
 <ul class="nav bd-sidenav">
@@ -265,7 +267,7 @@
       
       
       
-      <li><a href="_sources/glossary.md" target="_blank"
+      <li><a href="_sources/glossary.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -275,7 +277,7 @@
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.md</span>
+<span class="btn__text-container">.ipynb</span>
 </a>
 </li>
       
@@ -336,7 +338,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -352,6 +356,16 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#forraskod-elrejtese">Forráskód elrejtése:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kimenet-elrejtese">Kimenet elrejtése</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#forraskod-es-kimenet-elrejtese">Forráskód és kimenet elrejtése</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -387,6 +401,90 @@ document.write(`
 <p class="admonition-title">Megjegyzés megjelenítése, lenyíló</p>
 <p>Általános megjegyzések kiemelésére használt.</p>
 </div>
+<section id="forraskod-elrejtese">
+<h2>Forráskód elrejtése:<a class="headerlink" href="#forraskod-elrejtese" title="Link to this heading">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;tags&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">&quot;hide-input&quot;</span><span class="p">,</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Itt el van rejtve a forráskód.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Itt el van rejtve a forráskód.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="kimenet-elrejtese">
+<h2>Kimenet elrejtése<a class="headerlink" href="#kimenet-elrejtese" title="Link to this heading">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;tags&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">&quot;hide-output&quot;</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input above-output-prompt docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Itt el van rejtve a kimenet.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<details class="hide below-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell output</span>
+<span class="expanded">Hide code cell output</span>
+</summary>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Itt el van rejtve a kimenet.
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+</section>
+<section id="forraskod-es-kimenet-elrejtese">
+<h2>Forráskód és kimenet elrejtése<a class="headerlink" href="#forraskod-es-kimenet-elrejtese" title="Link to this heading">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;tags&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">&quot;hide-cell&quot;</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="cell tag_hide-cell docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell content</span>
+<span class="expanded">Hide code cell content</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Itt el van rejtve a bemenet és kimenet egyaránt.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Itt el van rejtve a bemenet és kimenet egyaránt.
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -435,7 +533,22 @@ document.write(`
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"></div>
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#forraskod-elrejtese">Forráskód elrejtése:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kimenet-elrejtese">Kimenet elrejtése</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#forraskod-es-kimenet-elrejtese">Forráskód és kimenet elrejtése</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

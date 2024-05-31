@@ -42,7 +42,7 @@
   <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
     <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../_static/copybutton.js?v=f281be69"></script>
@@ -61,7 +61,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Sorokat alkotó körök" href="generative_3_circlerows.html" />
-    <link rel="prev" title="PIL bevezetés - variációk egy témára" href="generative_1_intro.html" />
+    <link rel="prev" title="Generatív képalkotás - variációk egy témára" href="generative_1_intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -178,18 +178,19 @@
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Webes adatbányászat - Web Scraping</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="web_scraping_intro.html">Adatbányászat - Web scraping</a></li>
-
+<li class="toctree-l1"><a class="reference internal" href="web_scraping_intro.html">Adatbányászat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="web_scraping_wikipeadia_plants.html">Wikipédia növénycsaládok</a></li>
 <li class="toctree-l1"><a class="reference internal" href="web_scraping_wikipedia_birds.html">Wikipédia madárcsaládok</a></li>
+<li class="toctree-l1"><a class="reference internal" href="web_scraping_wikipedia_marvel.html">Wikipédia Marvel karakterek</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Adatvizualizáció - Data Visualization</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="visualization.html">Adatvizualizáció</a></li>
+<li class="toctree-l1"><a class="reference internal" href="visualization_intro.html">Adatvizualizáció</a></li>
 <li class="toctree-l1"><a class="reference internal" href="visualization_pandas.html">Vizualizáció Pandas könyvtár segítségével</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Generatív képalkotás - Generative art</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="generative_1_intro.html">PIL bevezetés - variációk egy témára</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generative_1_intro.html">Generatív képalkotás - variációk egy témára</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Háromszög csempék</a></li>
 <li class="toctree-l1"><a class="reference internal" href="generative_3_circlerows.html">Sorokat alkotó körök</a></li>
 <li class="toctree-l1"><a class="reference internal" href="generative_4_dots.html">Véletlen számok és Perlin zaj - vonaldiagramon</a></li>
@@ -200,10 +201,11 @@
 <li class="toctree-l1"><a class="reference internal" href="generative_10_lines.html">Véletlen vonalak</a></li>
 <li class="toctree-l1"><a class="reference internal" href="generative_11_patterns.html">Minták létrehozása</a></li>
 <li class="toctree-l1"><a class="reference internal" href="generative_12_random.html">Fokozatos kitöltés</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generative_13_comparison.html">PIL és Cairo könyvtárak összehasonlítása</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">L-rendszerek</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="l-system.html">Az L-rendszer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="l-system_intro.html">L-rendszerek</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Források</span></p>
 <ul class="nav bd-sidenav">
@@ -407,11 +409,20 @@ document.write(`
 <p><b>Paraméterek megadása:</b></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#paraméterek</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># paraméterek</span>
 <span class="n">image_width</span> <span class="o">=</span> <span class="mi">1000</span>
 <span class="n">image_height</span> <span class="o">=</span> <span class="mi">600</span>
 <span class="n">frame</span> <span class="o">=</span> <span class="mi">50</span>
-<span class="n">colors</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">42</span><span class="p">,</span><span class="mi">123</span><span class="p">,</span><span class="mi">188</span><span class="p">),(</span><span class="mi">71</span><span class="p">,</span><span class="mi">52</span><span class="p">,</span><span class="mi">52</span><span class="p">),(</span><span class="mi">47</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">68</span><span class="p">),(</span><span class="mi">133</span><span class="p">,</span><span class="mi">187</span><span class="p">,</span><span class="mi">185</span><span class="p">),(</span><span class="mi">46</span><span class="p">,</span><span class="mi">95</span><span class="p">,</span><span class="mi">140</span><span class="p">),(</span><span class="mi">218</span><span class="p">,</span><span class="mi">118</span><span class="p">,</span><span class="mi">28</span><span class="p">),(</span><span class="mi">222</span><span class="p">,</span><span class="mi">42</span><span class="p">,</span><span class="mi">25</span><span class="p">),(</span><span class="mi">186</span><span class="p">,</span><span class="mi">198</span><span class="p">,</span><span class="mi">214</span><span class="p">)]</span>
+<span class="n">colors</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">(</span><span class="mi">42</span><span class="p">,</span> <span class="mi">123</span><span class="p">,</span> <span class="mi">188</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">71</span><span class="p">,</span> <span class="mi">52</span><span class="p">,</span> <span class="mi">52</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">47</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">68</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">133</span><span class="p">,</span> <span class="mi">187</span><span class="p">,</span> <span class="mi">185</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">46</span><span class="p">,</span> <span class="mi">95</span><span class="p">,</span> <span class="mi">140</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">218</span><span class="p">,</span> <span class="mi">118</span><span class="p">,</span> <span class="mi">28</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">222</span><span class="p">,</span> <span class="mi">42</span><span class="p">,</span> <span class="mi">25</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">186</span><span class="p">,</span> <span class="mi">198</span><span class="p">,</span> <span class="mi">214</span><span class="p">),</span>
+<span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -424,21 +435,33 @@ document.write(`
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">image</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s2">&quot;RGB&quot;</span><span class="p">,</span> <span class="p">(</span><span class="n">image_width</span><span class="p">,</span> <span class="n">image_height</span><span class="p">),</span> <span class="s2">&quot;black&quot;</span><span class="p">)</span>
 <span class="n">draw</span> <span class="o">=</span> <span class="n">ImageDraw</span><span class="o">.</span><span class="n">Draw</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
 
+
 <span class="k">def</span> <span class="nf">pickColor</span><span class="p">():</span>
     <span class="n">color</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">colors</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">color</span>
 
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">image_width</span><span class="p">,</span><span class="n">frame</span><span class="p">):</span>
-    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">image_height</span><span class="p">,</span><span class="n">frame</span><span class="p">):</span>
-        <span class="n">draw</span><span class="o">.</span><span class="n">polygon</span><span class="p">([</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="o">+</span><span class="n">frame</span><span class="p">,</span><span class="n">i</span><span class="o">+</span><span class="n">frame</span><span class="p">,</span><span class="n">j</span><span class="o">+</span><span class="n">frame</span><span class="p">],</span><span class="n">fill</span><span class="o">=</span><span class="n">pickColor</span><span class="p">(),</span><span class="n">outline</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">,</span><span class="n">width</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-        <span class="n">draw</span><span class="o">.</span><span class="n">polygon</span><span class="p">([</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">i</span><span class="o">+</span><span class="n">frame</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">i</span><span class="o">+</span><span class="n">frame</span><span class="p">,</span><span class="n">j</span><span class="o">+</span><span class="n">frame</span><span class="p">],</span><span class="n">fill</span><span class="o">=</span><span class="n">pickColor</span><span class="p">(),</span><span class="n">outline</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">,</span><span class="n">width</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">image_width</span><span class="p">,</span> <span class="n">frame</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">image_height</span><span class="p">,</span> <span class="n">frame</span><span class="p">):</span>
+        <span class="n">draw</span><span class="o">.</span><span class="n">polygon</span><span class="p">(</span>
+            <span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="o">+</span> <span class="n">frame</span><span class="p">,</span> <span class="n">i</span> <span class="o">+</span> <span class="n">frame</span><span class="p">,</span> <span class="n">j</span> <span class="o">+</span> <span class="n">frame</span><span class="p">],</span>
+            <span class="n">fill</span><span class="o">=</span><span class="n">pickColor</span><span class="p">(),</span>
+            <span class="n">outline</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">,</span>
+            <span class="n">width</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="n">draw</span><span class="o">.</span><span class="n">polygon</span><span class="p">(</span>
+            <span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">i</span> <span class="o">+</span> <span class="n">frame</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">i</span> <span class="o">+</span> <span class="n">frame</span><span class="p">,</span> <span class="n">j</span> <span class="o">+</span> <span class="n">frame</span><span class="p">],</span>
+            <span class="n">fill</span><span class="o">=</span><span class="n">pickColor</span><span class="p">(),</span>
+            <span class="n">outline</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">,</span>
+            <span class="n">width</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+        <span class="p">)</span>
 
 <span class="n">display</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/fc0a0f84c73e45fe064daa375d40f0231c6abf50c475ecf931251f64f91460a6.png" src="../_images/fc0a0f84c73e45fe064daa375d40f0231c6abf50c475ecf931251f64f91460a6.png" />
+<img alt="../_images/d7e05210e3d15991c393a0b88bf37f593b9fb7e7847c99e26c81dfe9ca2f325e.png" src="../_images/d7e05210e3d15991c393a0b88bf37f593b9fb7e7847c99e26c81dfe9ca2f325e.png" />
 </div>
 </div>
 </section>
@@ -447,34 +470,52 @@ document.write(`
 <p>Eredeti képen látható, hogy a háromszögek kialakítása átló szerint felváltva kerül kialakításra. Ezt elérhetjük több módon például az ellentétes átlók váltakoztatásával.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="o">=</span><span class="mi">0</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
 
 <span class="c1"># Create image</span>
 <span class="n">image</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s2">&quot;RGB&quot;</span><span class="p">,</span> <span class="p">(</span><span class="n">image_width</span><span class="p">,</span> <span class="n">image_height</span><span class="p">),</span> <span class="s2">&quot;black&quot;</span><span class="p">)</span>
 <span class="n">draw</span> <span class="o">=</span> <span class="n">ImageDraw</span><span class="o">.</span><span class="n">Draw</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
+
 
 <span class="k">def</span> <span class="nf">pickColor</span><span class="p">():</span>
     <span class="n">color</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">colors</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">color</span>
 
 
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">image_width</span><span class="p">,</span><span class="n">frame</span><span class="p">):</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">image_width</span><span class="p">,</span> <span class="n">frame</span><span class="p">):</span>
     <span class="n">x</span> <span class="o">+=</span> <span class="mi">1</span>
-    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">image_height</span><span class="p">,</span><span class="n">frame</span><span class="p">):</span>        
-        <span class="k">if</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">2</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span>
-            <span class="n">draw</span><span class="o">.</span><span class="n">polygon</span><span class="p">([</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="o">+</span><span class="mi">50</span><span class="p">,</span><span class="n">i</span><span class="o">+</span><span class="mi">50</span><span class="p">,</span><span class="n">j</span><span class="o">+</span><span class="mi">50</span><span class="p">],</span><span class="n">fill</span><span class="o">=</span><span class="n">pickColor</span><span class="p">(),</span><span class="n">outline</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">,</span><span class="n">width</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-            <span class="n">draw</span><span class="o">.</span><span class="n">polygon</span><span class="p">([</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">i</span><span class="o">+</span><span class="mi">50</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">i</span><span class="o">+</span><span class="mi">50</span><span class="p">,</span><span class="n">j</span><span class="o">+</span><span class="mi">50</span><span class="p">],</span><span class="n">fill</span><span class="o">=</span><span class="n">pickColor</span><span class="p">(),</span><span class="n">outline</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">,</span><span class="n">width</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>            
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">image_height</span><span class="p">,</span> <span class="n">frame</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">draw</span><span class="o">.</span><span class="n">polygon</span><span class="p">(</span>
+                <span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="o">+</span> <span class="mi">50</span><span class="p">,</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">50</span><span class="p">,</span> <span class="n">j</span> <span class="o">+</span> <span class="mi">50</span><span class="p">],</span>
+                <span class="n">fill</span><span class="o">=</span><span class="n">pickColor</span><span class="p">(),</span>
+                <span class="n">outline</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">,</span>
+                <span class="n">width</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+            <span class="p">)</span>
+            <span class="n">draw</span><span class="o">.</span><span class="n">polygon</span><span class="p">(</span>
+                <span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">50</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">50</span><span class="p">,</span> <span class="n">j</span> <span class="o">+</span> <span class="mi">50</span><span class="p">],</span>
+                <span class="n">fill</span><span class="o">=</span><span class="n">pickColor</span><span class="p">(),</span>
+                <span class="n">outline</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">,</span>
+                <span class="n">width</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+            <span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="n">draw</span><span class="o">.</span><span class="n">polygon</span><span class="p">([</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="o">+</span><span class="mi">50</span><span class="p">,</span><span class="n">i</span><span class="o">+</span><span class="mi">50</span><span class="p">,</span><span class="n">j</span><span class="p">],</span><span class="n">fill</span><span class="o">=</span><span class="n">pickColor</span><span class="p">(),</span><span class="n">outline</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">,</span><span class="n">width</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-            <span class="n">draw</span><span class="o">.</span><span class="n">polygon</span><span class="p">([</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="o">+</span><span class="mi">50</span><span class="p">,</span><span class="n">i</span><span class="o">+</span><span class="mi">50</span><span class="p">,</span><span class="n">j</span><span class="o">+</span><span class="mi">50</span><span class="p">,</span><span class="n">i</span><span class="o">+</span><span class="mi">50</span><span class="p">,</span><span class="n">j</span><span class="p">],</span><span class="n">fill</span><span class="o">=</span><span class="n">pickColor</span><span class="p">(),</span><span class="n">outline</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">,</span><span class="n">width</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-        <span class="n">x</span><span class="o">+=</span><span class="mi">1</span>            
+            <span class="n">draw</span><span class="o">.</span><span class="n">polygon</span><span class="p">(</span>
+                <span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="o">+</span> <span class="mi">50</span><span class="p">,</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">50</span><span class="p">,</span> <span class="n">j</span><span class="p">],</span> <span class="n">fill</span><span class="o">=</span><span class="n">pickColor</span><span class="p">(),</span> <span class="n">outline</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">1</span>
+            <span class="p">)</span>
+            <span class="n">draw</span><span class="o">.</span><span class="n">polygon</span><span class="p">(</span>
+                <span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="o">+</span> <span class="mi">50</span><span class="p">,</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">50</span><span class="p">,</span> <span class="n">j</span> <span class="o">+</span> <span class="mi">50</span><span class="p">,</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">50</span><span class="p">,</span> <span class="n">j</span><span class="p">],</span>
+                <span class="n">fill</span><span class="o">=</span><span class="n">pickColor</span><span class="p">(),</span>
+                <span class="n">outline</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">,</span>
+                <span class="n">width</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+            <span class="p">)</span>
+        <span class="n">x</span> <span class="o">+=</span> <span class="mi">1</span>
 
 <span class="n">display</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/ff57c46672c0acd6e4a77e281707c455c10d66714721aba14248761c438b1968.png" src="../_images/ff57c46672c0acd6e4a77e281707c455c10d66714721aba14248761c438b1968.png" />
+<img alt="../_images/1a72b326a87bd14d3fedc24efa5cbfda90d279f36d7c7964031a37fbeaea9017.png" src="../_images/1a72b326a87bd14d3fedc24efa5cbfda90d279f36d7c7964031a37fbeaea9017.png" />
 </div>
 </div>
 </section>
@@ -489,32 +530,65 @@ document.write(`
 <span class="c1"># Paraméterek</span>
 <span class="n">width</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="n">outline</span> <span class="o">=</span> <span class="s2">&quot;white&quot;</span>
-<span class="n">i</span><span class="p">,</span><span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span><span class="mi">0</span>
+<span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span>
 <span class="n">square_width</span> <span class="o">=</span> <span class="mi">100</span>
 <span class="n">square_height</span> <span class="o">=</span> <span class="mi">100</span>
 
 <span class="n">image</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s2">&quot;RGB&quot;</span><span class="p">,</span> <span class="p">(</span><span class="n">square_width</span><span class="p">,</span> <span class="n">square_height</span><span class="p">),</span> <span class="s2">&quot;black&quot;</span><span class="p">)</span>
 <span class="n">draw</span> <span class="o">=</span> <span class="n">ImageDraw</span><span class="o">.</span><span class="n">Draw</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
 
+
 <span class="k">def</span> <span class="nf">pickColor</span><span class="p">():</span>
     <span class="n">color</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">colors</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">color</span>
 
-<span class="n">draw</span><span class="o">.</span><span class="n">polygon</span><span class="p">([</span><span class="n">i</span><span class="o">+</span><span class="mi">50</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">i</span><span class="o">+</span><span class="mi">50</span><span class="p">,</span><span class="n">j</span><span class="o">+</span><span class="mi">50</span><span class="p">,</span><span class="n">i</span><span class="o">+</span><span class="mi">100</span><span class="p">,</span><span class="n">j</span><span class="p">],</span><span class="n">fill</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">,</span><span class="n">outline</span><span class="o">=</span><span class="n">outline</span><span class="p">,</span><span class="n">width</span><span class="o">=</span><span class="n">width</span><span class="p">)</span>            <span class="c1">#1. szektor</span>
-<span class="n">draw</span><span class="o">.</span><span class="n">polygon</span><span class="p">([</span><span class="n">i</span><span class="o">+</span><span class="mi">50</span><span class="p">,</span><span class="n">j</span><span class="o">+</span><span class="mi">50</span><span class="p">,</span><span class="n">i</span><span class="o">+</span><span class="mi">100</span><span class="p">,</span><span class="n">j</span><span class="o">+</span><span class="mi">50</span><span class="p">,</span><span class="n">i</span><span class="o">+</span><span class="mi">100</span><span class="p">,</span><span class="n">j</span><span class="p">],</span><span class="n">fill</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span><span class="n">outline</span><span class="o">=</span><span class="n">outline</span><span class="p">,</span><span class="n">width</span><span class="o">=</span><span class="n">width</span><span class="p">)</span>       <span class="c1">#2. szektor</span>
-<span class="n">draw</span><span class="o">.</span><span class="n">polygon</span><span class="p">([</span><span class="n">i</span><span class="o">+</span><span class="mi">50</span><span class="p">,</span><span class="n">j</span><span class="o">+</span><span class="mi">50</span><span class="p">,</span><span class="n">i</span><span class="o">+</span><span class="mi">100</span><span class="p">,</span><span class="n">j</span><span class="o">+</span><span class="mi">50</span><span class="p">,</span><span class="n">i</span><span class="o">+</span><span class="mi">100</span><span class="p">,</span><span class="n">j</span><span class="o">+</span><span class="mi">100</span><span class="p">],</span><span class="n">fill</span><span class="o">=</span><span class="s1">&#39;yellow&#39;</span><span class="p">,</span><span class="n">outline</span><span class="o">=</span><span class="n">outline</span><span class="p">,</span><span class="n">width</span><span class="o">=</span><span class="n">width</span><span class="p">)</span>  <span class="c1">#3. szektor</span>
-<span class="n">draw</span><span class="o">.</span><span class="n">polygon</span><span class="p">([</span><span class="n">i</span><span class="o">+</span><span class="mi">50</span><span class="p">,</span><span class="n">j</span><span class="o">+</span><span class="mi">50</span><span class="p">,</span><span class="n">i</span><span class="o">+</span><span class="mi">50</span><span class="p">,</span><span class="n">j</span><span class="o">+</span><span class="mi">100</span><span class="p">,</span><span class="n">i</span><span class="o">+</span><span class="mi">100</span><span class="p">,</span><span class="n">j</span><span class="o">+</span><span class="mi">100</span><span class="p">],</span><span class="n">fill</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">,</span><span class="n">outline</span><span class="o">=</span><span class="n">outline</span><span class="p">,</span><span class="n">width</span><span class="o">=</span><span class="n">width</span><span class="p">)</span>   <span class="c1">#4. szektor</span>
-<span class="n">draw</span><span class="o">.</span><span class="n">polygon</span><span class="p">([</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="o">+</span><span class="mi">100</span><span class="p">,</span><span class="n">i</span><span class="o">+</span><span class="mi">50</span><span class="p">,</span><span class="n">j</span><span class="o">+</span><span class="mi">100</span><span class="p">,</span><span class="n">i</span><span class="o">+</span><span class="mi">50</span><span class="p">,</span><span class="n">j</span><span class="o">+</span><span class="mi">50</span><span class="p">],</span><span class="n">fill</span><span class="o">=</span><span class="s2">&quot;brown&quot;</span><span class="p">,</span><span class="n">outline</span><span class="o">=</span><span class="n">outline</span><span class="p">,</span><span class="n">width</span><span class="o">=</span><span class="n">width</span><span class="p">)</span>       <span class="c1">#5. szektor  </span>
-<span class="n">draw</span><span class="o">.</span><span class="n">polygon</span><span class="p">([</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="o">+</span><span class="mi">50</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="o">+</span><span class="mi">100</span><span class="p">,</span><span class="n">i</span><span class="o">+</span><span class="mi">50</span><span class="p">,</span><span class="n">j</span><span class="o">+</span><span class="mi">50</span><span class="p">],</span><span class="n">fill</span><span class="o">=</span><span class="s2">&quot;magenta&quot;</span><span class="p">,</span><span class="n">outline</span><span class="o">=</span><span class="n">outline</span><span class="p">,</span><span class="n">width</span><span class="o">=</span><span class="n">width</span><span class="p">)</span>         <span class="c1">#6. szektor</span>
-<span class="n">draw</span><span class="o">.</span><span class="n">polygon</span><span class="p">([</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="o">+</span><span class="mi">50</span><span class="p">,</span><span class="n">i</span><span class="o">+</span><span class="mi">50</span><span class="p">,</span><span class="n">j</span><span class="o">+</span><span class="mi">50</span><span class="p">],</span><span class="n">fill</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span><span class="n">outline</span><span class="o">=</span><span class="n">outline</span><span class="p">,</span><span class="n">width</span><span class="o">=</span><span class="n">width</span><span class="p">)</span>                 <span class="c1">#7. szektor </span>
-<span class="n">draw</span><span class="o">.</span><span class="n">polygon</span><span class="p">([</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">i</span><span class="o">+</span><span class="mi">50</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">i</span><span class="o">+</span><span class="mi">50</span><span class="p">,</span><span class="n">j</span><span class="o">+</span><span class="mi">50</span><span class="p">],</span><span class="n">fill</span><span class="o">=</span><span class="s2">&quot;green&quot;</span><span class="p">,</span><span class="n">outline</span><span class="o">=</span><span class="n">outline</span><span class="p">,</span><span class="n">width</span><span class="o">=</span><span class="n">width</span><span class="p">)</span>               <span class="c1">#8. szektor</span>
-            
+
+<span class="n">draw</span><span class="o">.</span><span class="n">polygon</span><span class="p">(</span>
+    <span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">50</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">50</span><span class="p">,</span> <span class="n">j</span> <span class="o">+</span> <span class="mi">50</span><span class="p">,</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">100</span><span class="p">,</span> <span class="n">j</span><span class="p">],</span> <span class="n">fill</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="n">outline</span><span class="o">=</span><span class="n">outline</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="n">width</span>
+<span class="p">)</span>  <span class="c1"># 1. szektor</span>
+<span class="n">draw</span><span class="o">.</span><span class="n">polygon</span><span class="p">(</span>
+    <span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">50</span><span class="p">,</span> <span class="n">j</span> <span class="o">+</span> <span class="mi">50</span><span class="p">,</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">100</span><span class="p">,</span> <span class="n">j</span> <span class="o">+</span> <span class="mi">50</span><span class="p">,</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">100</span><span class="p">,</span> <span class="n">j</span><span class="p">],</span>
+    <span class="n">fill</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span>
+    <span class="n">outline</span><span class="o">=</span><span class="n">outline</span><span class="p">,</span>
+    <span class="n">width</span><span class="o">=</span><span class="n">width</span><span class="p">,</span>
+<span class="p">)</span>  <span class="c1"># 2. szektor</span>
+<span class="n">draw</span><span class="o">.</span><span class="n">polygon</span><span class="p">(</span>
+    <span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">50</span><span class="p">,</span> <span class="n">j</span> <span class="o">+</span> <span class="mi">50</span><span class="p">,</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">100</span><span class="p">,</span> <span class="n">j</span> <span class="o">+</span> <span class="mi">50</span><span class="p">,</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">100</span><span class="p">,</span> <span class="n">j</span> <span class="o">+</span> <span class="mi">100</span><span class="p">],</span>
+    <span class="n">fill</span><span class="o">=</span><span class="s2">&quot;yellow&quot;</span><span class="p">,</span>
+    <span class="n">outline</span><span class="o">=</span><span class="n">outline</span><span class="p">,</span>
+    <span class="n">width</span><span class="o">=</span><span class="n">width</span><span class="p">,</span>
+<span class="p">)</span>  <span class="c1"># 3. szektor</span>
+<span class="n">draw</span><span class="o">.</span><span class="n">polygon</span><span class="p">(</span>
+    <span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">50</span><span class="p">,</span> <span class="n">j</span> <span class="o">+</span> <span class="mi">50</span><span class="p">,</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">50</span><span class="p">,</span> <span class="n">j</span> <span class="o">+</span> <span class="mi">100</span><span class="p">,</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">100</span><span class="p">,</span> <span class="n">j</span> <span class="o">+</span> <span class="mi">100</span><span class="p">],</span>
+    <span class="n">fill</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">,</span>
+    <span class="n">outline</span><span class="o">=</span><span class="n">outline</span><span class="p">,</span>
+    <span class="n">width</span><span class="o">=</span><span class="n">width</span><span class="p">,</span>
+<span class="p">)</span>  <span class="c1"># 4. szektor</span>
+<span class="n">draw</span><span class="o">.</span><span class="n">polygon</span><span class="p">(</span>
+    <span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="o">+</span> <span class="mi">100</span><span class="p">,</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">50</span><span class="p">,</span> <span class="n">j</span> <span class="o">+</span> <span class="mi">100</span><span class="p">,</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">50</span><span class="p">,</span> <span class="n">j</span> <span class="o">+</span> <span class="mi">50</span><span class="p">],</span>
+    <span class="n">fill</span><span class="o">=</span><span class="s2">&quot;brown&quot;</span><span class="p">,</span>
+    <span class="n">outline</span><span class="o">=</span><span class="n">outline</span><span class="p">,</span>
+    <span class="n">width</span><span class="o">=</span><span class="n">width</span><span class="p">,</span>
+<span class="p">)</span>  <span class="c1"># 5. szektor</span>
+<span class="n">draw</span><span class="o">.</span><span class="n">polygon</span><span class="p">(</span>
+    <span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="o">+</span> <span class="mi">50</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="o">+</span> <span class="mi">100</span><span class="p">,</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">50</span><span class="p">,</span> <span class="n">j</span> <span class="o">+</span> <span class="mi">50</span><span class="p">],</span>
+    <span class="n">fill</span><span class="o">=</span><span class="s2">&quot;magenta&quot;</span><span class="p">,</span>
+    <span class="n">outline</span><span class="o">=</span><span class="n">outline</span><span class="p">,</span>
+    <span class="n">width</span><span class="o">=</span><span class="n">width</span><span class="p">,</span>
+<span class="p">)</span>  <span class="c1"># 6. szektor</span>
+<span class="n">draw</span><span class="o">.</span><span class="n">polygon</span><span class="p">(</span>
+    <span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="o">+</span> <span class="mi">50</span><span class="p">,</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">50</span><span class="p">,</span> <span class="n">j</span> <span class="o">+</span> <span class="mi">50</span><span class="p">],</span> <span class="n">fill</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">outline</span><span class="o">=</span><span class="n">outline</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="n">width</span>
+<span class="p">)</span>  <span class="c1"># 7. szektor</span>
+<span class="n">draw</span><span class="o">.</span><span class="n">polygon</span><span class="p">(</span>
+    <span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">50</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">50</span><span class="p">,</span> <span class="n">j</span> <span class="o">+</span> <span class="mi">50</span><span class="p">],</span> <span class="n">fill</span><span class="o">=</span><span class="s2">&quot;green&quot;</span><span class="p">,</span> <span class="n">outline</span><span class="o">=</span><span class="n">outline</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="n">width</span>
+<span class="p">)</span>  <span class="c1"># 8. szektor</span>
+
 <span class="n">display</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/52ecd009f046f1090ed616cb3098da1a9f41f22cd56b5ba16d04be6a175c51be.png" src="../_images/52ecd009f046f1090ed616cb3098da1a9f41f22cd56b5ba16d04be6a175c51be.png" />
+<img alt="../_images/3192b7c5cdcf4a35ac5cf829aa9522f3457555c32cf8c7149b4803d664f2fa5c.png" src="../_images/3192b7c5cdcf4a35ac5cf829aa9522f3457555c32cf8c7149b4803d664f2fa5c.png" />
 </div>
 </div>
 </section>
@@ -533,55 +607,60 @@ document.write(`
 <span class="n">image</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s2">&quot;RGB&quot;</span><span class="p">,</span> <span class="p">(</span><span class="n">image_width</span><span class="p">,</span> <span class="n">image_height</span><span class="p">),</span> <span class="s2">&quot;black&quot;</span><span class="p">)</span>
 <span class="n">draw</span> <span class="o">=</span> <span class="n">ImageDraw</span><span class="o">.</span><span class="n">Draw</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
 
+
 <span class="k">def</span> <span class="nf">pickColor</span><span class="p">():</span>
     <span class="n">color</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">colors</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">color</span>
 
-<span class="k">def</span> <span class="nf">drawSquare</span><span class="p">(</span><span class="n">pattern</span><span class="p">):</span>
-    <span class="n">polygons</span> <span class="o">=</span> <span class="p">([</span><span class="n">i</span><span class="o">+</span><span class="mi">50</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">i</span><span class="o">+</span><span class="mi">50</span><span class="p">,</span><span class="n">j</span><span class="o">+</span><span class="mi">50</span><span class="p">,</span><span class="n">i</span><span class="o">+</span><span class="mi">100</span><span class="p">,</span><span class="n">j</span><span class="p">],</span>
-            <span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">50</span><span class="p">,</span><span class="n">j</span><span class="o">+</span><span class="mi">50</span><span class="p">,</span><span class="n">i</span><span class="o">+</span><span class="mi">100</span><span class="p">,</span><span class="n">j</span><span class="o">+</span><span class="mi">50</span><span class="p">,</span><span class="n">i</span><span class="o">+</span><span class="mi">100</span><span class="p">,</span><span class="n">j</span><span class="p">],</span>
-            <span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">50</span><span class="p">,</span><span class="n">j</span><span class="o">+</span><span class="mi">50</span><span class="p">,</span><span class="n">i</span><span class="o">+</span><span class="mi">100</span><span class="p">,</span><span class="n">j</span><span class="o">+</span><span class="mi">50</span><span class="p">,</span><span class="n">i</span><span class="o">+</span><span class="mi">100</span><span class="p">,</span><span class="n">j</span><span class="o">+</span><span class="mi">100</span><span class="p">],</span>
-            <span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">50</span><span class="p">,</span><span class="n">j</span><span class="o">+</span><span class="mi">50</span><span class="p">,</span><span class="n">i</span><span class="o">+</span><span class="mi">50</span><span class="p">,</span><span class="n">j</span><span class="o">+</span><span class="mi">100</span><span class="p">,</span><span class="n">i</span><span class="o">+</span><span class="mi">100</span><span class="p">,</span><span class="n">j</span><span class="o">+</span><span class="mi">100</span><span class="p">],</span>
-            <span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="o">+</span><span class="mi">100</span><span class="p">,</span><span class="n">i</span><span class="o">+</span><span class="mi">50</span><span class="p">,</span><span class="n">j</span><span class="o">+</span><span class="mi">100</span><span class="p">,</span><span class="n">i</span><span class="o">+</span><span class="mi">50</span><span class="p">,</span><span class="n">j</span><span class="o">+</span><span class="mi">50</span><span class="p">],</span>
-            <span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="o">+</span><span class="mi">50</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="o">+</span><span class="mi">100</span><span class="p">,</span><span class="n">i</span><span class="o">+</span><span class="mi">50</span><span class="p">,</span><span class="n">j</span><span class="o">+</span><span class="mi">50</span><span class="p">],</span>
-            <span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="o">+</span><span class="mi">50</span><span class="p">,</span><span class="n">i</span><span class="o">+</span><span class="mi">50</span><span class="p">,</span><span class="n">j</span><span class="o">+</span><span class="mi">50</span><span class="p">],</span>
-            <span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">i</span><span class="o">+</span><span class="mi">50</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">i</span><span class="o">+</span><span class="mi">50</span><span class="p">,</span><span class="n">j</span><span class="o">+</span><span class="mi">50</span><span class="p">])</span>
-    
-    <span class="n">color</span> <span class="o">=</span> <span class="n">pickColor</span><span class="p">()</span>
-    <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">pattern</span><span class="p">)):</span>        
-        <span class="k">if</span> <span class="n">pattern</span><span class="p">[</span><span class="n">char</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;1&quot;</span><span class="p">:</span>
-            <span class="n">draw</span><span class="o">.</span><span class="n">polygon</span><span class="p">(</span><span class="n">polygons</span><span class="p">[</span><span class="n">char</span><span class="p">],</span><span class="n">fill</span><span class="o">=</span><span class="n">color</span><span class="p">,</span><span class="n">outline</span><span class="o">=</span><span class="n">outline</span><span class="p">,</span><span class="n">width</span><span class="o">=</span><span class="n">width</span><span class="p">)</span>                        
-        <span class="k">else</span><span class="p">:</span>
-            <span class="n">draw</span><span class="o">.</span><span class="n">polygon</span><span class="p">(</span><span class="n">polygons</span><span class="p">[</span><span class="n">char</span><span class="p">],</span><span class="n">fill</span><span class="o">=</span><span class="n">pickColor</span><span class="p">(),</span><span class="n">outline</span><span class="o">=</span><span class="n">outline</span><span class="p">,</span><span class="n">width</span><span class="o">=</span><span class="n">width</span><span class="p">)</span>        
 
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">image_width</span><span class="p">,</span><span class="n">frame</span><span class="o">*</span><span class="mi">2</span><span class="p">):</span>
-    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">image_height</span><span class="p">,</span><span class="n">frame</span><span class="o">*</span><span class="mi">2</span><span class="p">):</span>        
-        <span class="n">x</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">:</span>
-            <span class="n">drawSquare</span><span class="p">(</span><span class="s2">&quot;01111000&quot;</span><span class="p">)</span>            
-        <span class="k">elif</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">6</span><span class="p">:</span>
-            <span class="n">drawSquare</span><span class="p">(</span><span class="s2">&quot;00011110&quot;</span><span class="p">)</span>            
-        <span class="k">elif</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">9</span><span class="p">:</span>
-            <span class="n">drawSquare</span><span class="p">(</span><span class="s2">&quot;10000111&quot;</span><span class="p">)</span>            
-        <span class="k">elif</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">12</span><span class="p">:</span>
-            <span class="n">drawSquare</span><span class="p">(</span><span class="s2">&quot;11100001&quot;</span><span class="p">)</span>            
-        <span class="k">elif</span> <span class="n">x</span> <span class="o">&lt;=</span> <span class="mi">21</span><span class="p">:</span>
-            <span class="n">drawSquare</span><span class="p">(</span><span class="s2">&quot;10000001&quot;</span><span class="p">)</span>            
-        <span class="k">elif</span> <span class="n">x</span> <span class="o">&lt;=</span> <span class="mi">31</span><span class="p">:</span>
-            <span class="n">drawSquare</span><span class="p">(</span><span class="s2">&quot;01100000&quot;</span><span class="p">)</span>            
-        <span class="k">elif</span> <span class="n">x</span> <span class="o">&lt;=</span> <span class="mi">41</span><span class="p">:</span>
-            <span class="n">drawSquare</span><span class="p">(</span><span class="s2">&quot;00011000&quot;</span><span class="p">)</span>            
-        <span class="k">elif</span> <span class="n">x</span> <span class="o">&lt;=</span> <span class="mi">51</span><span class="p">:</span>
-            <span class="n">drawSquare</span><span class="p">(</span><span class="s2">&quot;00000110&quot;</span><span class="p">)</span>            
+<span class="k">def</span> <span class="nf">drawSquare</span><span class="p">(</span><span class="n">pattern</span><span class="p">):</span>
+    <span class="n">polygons</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">50</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">50</span><span class="p">,</span> <span class="n">j</span> <span class="o">+</span> <span class="mi">50</span><span class="p">,</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">100</span><span class="p">,</span> <span class="n">j</span><span class="p">],</span>
+        <span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">50</span><span class="p">,</span> <span class="n">j</span> <span class="o">+</span> <span class="mi">50</span><span class="p">,</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">100</span><span class="p">,</span> <span class="n">j</span> <span class="o">+</span> <span class="mi">50</span><span class="p">,</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">100</span><span class="p">,</span> <span class="n">j</span><span class="p">],</span>
+        <span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">50</span><span class="p">,</span> <span class="n">j</span> <span class="o">+</span> <span class="mi">50</span><span class="p">,</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">100</span><span class="p">,</span> <span class="n">j</span> <span class="o">+</span> <span class="mi">50</span><span class="p">,</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">100</span><span class="p">,</span> <span class="n">j</span> <span class="o">+</span> <span class="mi">100</span><span class="p">],</span>
+        <span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">50</span><span class="p">,</span> <span class="n">j</span> <span class="o">+</span> <span class="mi">50</span><span class="p">,</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">50</span><span class="p">,</span> <span class="n">j</span> <span class="o">+</span> <span class="mi">100</span><span class="p">,</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">100</span><span class="p">,</span> <span class="n">j</span> <span class="o">+</span> <span class="mi">100</span><span class="p">],</span>
+        <span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="o">+</span> <span class="mi">100</span><span class="p">,</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">50</span><span class="p">,</span> <span class="n">j</span> <span class="o">+</span> <span class="mi">100</span><span class="p">,</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">50</span><span class="p">,</span> <span class="n">j</span> <span class="o">+</span> <span class="mi">50</span><span class="p">],</span>
+        <span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="o">+</span> <span class="mi">50</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="o">+</span> <span class="mi">100</span><span class="p">,</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">50</span><span class="p">,</span> <span class="n">j</span> <span class="o">+</span> <span class="mi">50</span><span class="p">],</span>
+        <span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="o">+</span> <span class="mi">50</span><span class="p">,</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">50</span><span class="p">,</span> <span class="n">j</span> <span class="o">+</span> <span class="mi">50</span><span class="p">],</span>
+        <span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">50</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">50</span><span class="p">,</span> <span class="n">j</span> <span class="o">+</span> <span class="mi">50</span><span class="p">],</span>
+    <span class="p">)</span>
+
+    <span class="n">color</span> <span class="o">=</span> <span class="n">pickColor</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">pattern</span><span class="p">)):</span>
+        <span class="k">if</span> <span class="n">pattern</span><span class="p">[</span><span class="n">char</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;1&quot;</span><span class="p">:</span>
+            <span class="n">draw</span><span class="o">.</span><span class="n">polygon</span><span class="p">(</span><span class="n">polygons</span><span class="p">[</span><span class="n">char</span><span class="p">],</span> <span class="n">fill</span><span class="o">=</span><span class="n">color</span><span class="p">,</span> <span class="n">outline</span><span class="o">=</span><span class="n">outline</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="n">width</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="n">drawSquare</span><span class="p">(</span><span class="s2">&quot;00000000&quot;</span><span class="p">)</span> 
+            <span class="n">draw</span><span class="o">.</span><span class="n">polygon</span><span class="p">(</span><span class="n">polygons</span><span class="p">[</span><span class="n">char</span><span class="p">],</span> <span class="n">fill</span><span class="o">=</span><span class="n">pickColor</span><span class="p">(),</span> <span class="n">outline</span><span class="o">=</span><span class="n">outline</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="n">width</span><span class="p">)</span>
+
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">image_width</span><span class="p">,</span> <span class="n">frame</span> <span class="o">*</span> <span class="mi">2</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">image_height</span><span class="p">,</span> <span class="n">frame</span> <span class="o">*</span> <span class="mi">2</span><span class="p">):</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">:</span>
+            <span class="n">drawSquare</span><span class="p">(</span><span class="s2">&quot;01111000&quot;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">6</span><span class="p">:</span>
+            <span class="n">drawSquare</span><span class="p">(</span><span class="s2">&quot;00011110&quot;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">9</span><span class="p">:</span>
+            <span class="n">drawSquare</span><span class="p">(</span><span class="s2">&quot;10000111&quot;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">12</span><span class="p">:</span>
+            <span class="n">drawSquare</span><span class="p">(</span><span class="s2">&quot;11100001&quot;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">x</span> <span class="o">&lt;=</span> <span class="mi">21</span><span class="p">:</span>
+            <span class="n">drawSquare</span><span class="p">(</span><span class="s2">&quot;10000001&quot;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">x</span> <span class="o">&lt;=</span> <span class="mi">31</span><span class="p">:</span>
+            <span class="n">drawSquare</span><span class="p">(</span><span class="s2">&quot;01100000&quot;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">x</span> <span class="o">&lt;=</span> <span class="mi">41</span><span class="p">:</span>
+            <span class="n">drawSquare</span><span class="p">(</span><span class="s2">&quot;00011000&quot;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">x</span> <span class="o">&lt;=</span> <span class="mi">51</span><span class="p">:</span>
+            <span class="n">drawSquare</span><span class="p">(</span><span class="s2">&quot;00000110&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">drawSquare</span><span class="p">(</span><span class="s2">&quot;00000000&quot;</span><span class="p">)</span>
 
 <span class="n">display</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/24b222ad80deefccd5ab0f0730feb3f36162761ad82b5997f033e325a088b313.png" src="../_images/24b222ad80deefccd5ab0f0730feb3f36162761ad82b5997f033e325a088b313.png" />
+<img alt="../_images/8d24fd3be9a920b534d5302de9f289cb17a1e62502d74d80e7441e9a4ec2305b.png" src="../_images/8d24fd3be9a920b534d5302de9f289cb17a1e62502d74d80e7441e9a4ec2305b.png" />
 </div>
 </div>
 </section>
@@ -623,7 +702,7 @@ document.write(`
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">PIL bevezetés - variációk egy témára</p>
+        <p class="prev-next-title">Generatív képalkotás - variációk egy témára</p>
       </div>
     </a>
     <a class="right-next"

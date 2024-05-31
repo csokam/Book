@@ -42,7 +42,7 @@
   <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
     <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../_static/copybutton.js?v=f281be69"></script>
@@ -178,18 +178,19 @@
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Webes adatbányászat - Web Scraping</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="web_scraping_intro.html">Adatbányászat - Web scraping</a></li>
-
+<li class="toctree-l1"><a class="reference internal" href="web_scraping_intro.html">Adatbányászat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="web_scraping_wikipeadia_plants.html">Wikipédia növénycsaládok</a></li>
 <li class="toctree-l1"><a class="reference internal" href="web_scraping_wikipedia_birds.html">Wikipédia madárcsaládok</a></li>
+<li class="toctree-l1"><a class="reference internal" href="web_scraping_wikipedia_marvel.html">Wikipédia Marvel karakterek</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Adatvizualizáció - Data Visualization</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="visualization.html">Adatvizualizáció</a></li>
+<li class="toctree-l1"><a class="reference internal" href="visualization_intro.html">Adatvizualizáció</a></li>
 <li class="toctree-l1"><a class="reference internal" href="visualization_pandas.html">Vizualizáció Pandas könyvtár segítségével</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Generatív képalkotás - Generative art</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="generative_1_intro.html">PIL bevezetés - variációk egy témára</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generative_1_intro.html">Generatív képalkotás - variációk egy témára</a></li>
 <li class="toctree-l1"><a class="reference internal" href="generative_2_triangles.html">Háromszög csempék</a></li>
 <li class="toctree-l1"><a class="reference internal" href="generative_3_circlerows.html">Sorokat alkotó körök</a></li>
 <li class="toctree-l1"><a class="reference internal" href="generative_4_dots.html">Véletlen számok és Perlin zaj - vonaldiagramon</a></li>
@@ -200,10 +201,11 @@
 <li class="toctree-l1"><a class="reference internal" href="generative_10_lines.html">Véletlen vonalak</a></li>
 <li class="toctree-l1"><a class="reference internal" href="generative_11_patterns.html">Minták létrehozása</a></li>
 <li class="toctree-l1"><a class="reference internal" href="generative_12_random.html">Fokozatos kitöltés</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generative_13_comparison.html">PIL és Cairo könyvtárak összehasonlítása</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">L-rendszerek</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="l-system.html">Az L-rendszer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="l-system_intro.html">L-rendszerek</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Források</span></p>
 <ul class="nav bd-sidenav">
@@ -378,7 +380,7 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">resetImage</span><span class="p">(</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">bg</span><span class="p">):</span>
-    <span class="n">draw</span><span class="o">.</span><span class="n">rectangle</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">width</span><span class="p">,</span><span class="n">height</span><span class="p">],</span><span class="n">fill</span><span class="o">=</span><span class="n">bg</span><span class="p">)</span>
+    <span class="n">draw</span><span class="o">.</span><span class="n">rectangle</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">],</span> <span class="n">fill</span><span class="o">=</span><span class="n">bg</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -386,9 +388,18 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">randomColors</span><span class="p">():</span>
-    <span class="n">colors</span> <span class="o">=</span> <span class="p">((</span><span class="mi">243</span><span class="p">,</span><span class="mi">164</span><span class="p">,</span><span class="mi">107</span><span class="p">),(</span><span class="mi">232</span><span class="p">,</span><span class="mi">116</span><span class="p">,</span><span class="mi">88</span><span class="p">),(</span><span class="mi">235</span><span class="p">,</span><span class="mi">198</span><span class="p">,</span><span class="mi">119</span><span class="p">),(</span><span class="mi">238</span><span class="p">,</span><span class="mi">140</span><span class="p">,</span><span class="mi">97</span><span class="p">),(</span><span class="mi">143</span><span class="p">,</span><span class="mi">181</span><span class="p">,</span><span class="mi">134</span><span class="p">),(</span><span class="mi">46</span><span class="p">,</span><span class="mi">118</span><span class="p">,</span><span class="mi">115</span><span class="p">),(</span><span class="mi">40</span><span class="p">,</span><span class="mi">73</span><span class="p">,</span><span class="mi">82</span><span class="p">),(</span><span class="mi">50</span><span class="p">,</span><span class="mi">166</span><span class="p">,</span><span class="mi">154</span><span class="p">))</span>
-    <span class="n">color1</span><span class="p">,</span> <span class="n">color2</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">colors</span><span class="p">,</span><span class="n">k</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-    
+    <span class="n">colors</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="p">(</span><span class="mi">243</span><span class="p">,</span> <span class="mi">164</span><span class="p">,</span> <span class="mi">107</span><span class="p">),</span>
+        <span class="p">(</span><span class="mi">232</span><span class="p">,</span> <span class="mi">116</span><span class="p">,</span> <span class="mi">88</span><span class="p">),</span>
+        <span class="p">(</span><span class="mi">235</span><span class="p">,</span> <span class="mi">198</span><span class="p">,</span> <span class="mi">119</span><span class="p">),</span>
+        <span class="p">(</span><span class="mi">238</span><span class="p">,</span> <span class="mi">140</span><span class="p">,</span> <span class="mi">97</span><span class="p">),</span>
+        <span class="p">(</span><span class="mi">143</span><span class="p">,</span> <span class="mi">181</span><span class="p">,</span> <span class="mi">134</span><span class="p">),</span>
+        <span class="p">(</span><span class="mi">46</span><span class="p">,</span> <span class="mi">118</span><span class="p">,</span> <span class="mi">115</span><span class="p">),</span>
+        <span class="p">(</span><span class="mi">40</span><span class="p">,</span> <span class="mi">73</span><span class="p">,</span> <span class="mi">82</span><span class="p">),</span>
+        <span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">166</span><span class="p">,</span> <span class="mi">154</span><span class="p">),</span>
+    <span class="p">)</span>
+    <span class="n">color1</span><span class="p">,</span> <span class="n">color2</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">colors</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
     <span class="k">return</span> <span class="n">color1</span><span class="p">,</span> <span class="n">color2</span>
 </pre></div>
 </div>
@@ -409,29 +420,37 @@ document.write(`
 <p><img alt="generative_10" src="../_images/generative_10.png" /></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">resetImage</span><span class="p">(</span><span class="n">image_width</span><span class="p">,</span> <span class="n">image_height</span><span class="p">,</span><span class="s2">&quot;white&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">resetImage</span><span class="p">(</span><span class="n">image_width</span><span class="p">,</span> <span class="n">image_height</span><span class="p">,</span> <span class="s2">&quot;white&quot;</span><span class="p">)</span>
 
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">image_width</span><span class="p">,</span><span class="n">tile</span><span class="p">):</span>
-    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">image_height</span><span class="p">,</span> <span class="n">tile</span><span class="p">):</span>
-        <span class="n">colorE</span><span class="p">,</span><span class="n">colorR</span> <span class="o">=</span><span class="n">randomColors</span><span class="p">()</span>       
-        <span class="n">draw</span><span class="o">.</span><span class="n">rectangle</span><span class="p">([</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">i</span><span class="o">+</span><span class="n">tile</span><span class="p">,</span><span class="n">j</span><span class="o">+</span><span class="n">tile</span><span class="p">],</span><span class="n">fill</span><span class="o">=</span><span class="n">colorR</span><span class="p">)</span>
-        
-        <span class="n">segment</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>         
-        <span class="k">if</span> <span class="n">segment</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span>            
-            <span class="n">draw</span><span class="o">.</span><span class="n">pieslice</span><span class="p">([</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="o">+</span><span class="mi">50</span><span class="p">,</span><span class="n">i</span><span class="o">+</span><span class="n">tile</span><span class="p">,</span><span class="n">j</span><span class="o">+</span><span class="n">tile</span><span class="o">+</span><span class="mi">50</span><span class="p">],</span> <span class="n">start</span> <span class="o">=</span> <span class="mi">180</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="mi">360</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="n">colorE</span><span class="p">)</span>
-        <span class="k">elif</span> <span class="n">segment</span><span class="o">==</span><span class="mi">1</span><span class="p">:</span>
-            <span class="n">draw</span><span class="o">.</span><span class="n">pieslice</span><span class="p">([</span><span class="n">i</span><span class="o">-</span><span class="mi">50</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">i</span><span class="o">+</span><span class="n">tile</span><span class="o">-</span><span class="mi">50</span><span class="p">,</span><span class="n">j</span><span class="o">+</span><span class="n">tile</span><span class="p">],</span> <span class="n">start</span> <span class="o">=</span> <span class="mi">270</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="mi">90</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="n">colorE</span><span class="p">)</span>
-        <span class="k">elif</span> <span class="n">segment</span><span class="o">==</span><span class="mi">2</span><span class="p">:</span>             
-            <span class="n">draw</span><span class="o">.</span><span class="n">pieslice</span><span class="p">([</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="o">-</span><span class="mi">50</span><span class="p">,</span><span class="n">i</span><span class="o">+</span><span class="n">tile</span><span class="p">,</span><span class="n">j</span><span class="o">+</span><span class="n">tile</span><span class="o">-</span><span class="mi">50</span><span class="p">],</span> <span class="n">start</span> <span class="o">=</span> <span class="mi">360</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="mi">180</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="n">colorE</span><span class="p">)</span>
-        <span class="k">elif</span> <span class="n">segment</span><span class="o">==</span><span class="mi">3</span><span class="p">:</span>                      
-            <span class="n">draw</span><span class="o">.</span><span class="n">pieslice</span><span class="p">([</span><span class="n">i</span><span class="o">+</span><span class="mi">50</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">i</span><span class="o">+</span><span class="n">tile</span><span class="o">+</span><span class="mi">50</span><span class="p">,</span><span class="n">j</span><span class="o">+</span><span class="n">tile</span><span class="p">],</span> <span class="n">start</span> <span class="o">=</span> <span class="mi">90</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="mi">270</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="n">colorE</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">image_width</span><span class="p">,</span> <span class="n">tile</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">image_height</span><span class="p">,</span> <span class="n">tile</span><span class="p">):</span>
+        <span class="n">colorE</span><span class="p">,</span> <span class="n">colorR</span> <span class="o">=</span> <span class="n">randomColors</span><span class="p">()</span>
+        <span class="n">draw</span><span class="o">.</span><span class="n">rectangle</span><span class="p">([</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">i</span> <span class="o">+</span> <span class="n">tile</span><span class="p">,</span> <span class="n">j</span> <span class="o">+</span> <span class="n">tile</span><span class="p">],</span> <span class="n">fill</span><span class="o">=</span><span class="n">colorR</span><span class="p">)</span>
+
+        <span class="n">segment</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">segment</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">draw</span><span class="o">.</span><span class="n">pieslice</span><span class="p">(</span>
+                <span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="o">+</span> <span class="mi">50</span><span class="p">,</span> <span class="n">i</span> <span class="o">+</span> <span class="n">tile</span><span class="p">,</span> <span class="n">j</span> <span class="o">+</span> <span class="n">tile</span> <span class="o">+</span> <span class="mi">50</span><span class="p">],</span> <span class="n">start</span><span class="o">=</span><span class="mi">180</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="mi">360</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="n">colorE</span>
+            <span class="p">)</span>
+        <span class="k">elif</span> <span class="n">segment</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">draw</span><span class="o">.</span><span class="n">pieslice</span><span class="p">(</span>
+                <span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">50</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">i</span> <span class="o">+</span> <span class="n">tile</span> <span class="o">-</span> <span class="mi">50</span><span class="p">,</span> <span class="n">j</span> <span class="o">+</span> <span class="n">tile</span><span class="p">],</span> <span class="n">start</span><span class="o">=</span><span class="mi">270</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="mi">90</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="n">colorE</span>
+            <span class="p">)</span>
+        <span class="k">elif</span> <span class="n">segment</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+            <span class="n">draw</span><span class="o">.</span><span class="n">pieslice</span><span class="p">(</span>
+                <span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="o">-</span> <span class="mi">50</span><span class="p">,</span> <span class="n">i</span> <span class="o">+</span> <span class="n">tile</span><span class="p">,</span> <span class="n">j</span> <span class="o">+</span> <span class="n">tile</span> <span class="o">-</span> <span class="mi">50</span><span class="p">],</span> <span class="n">start</span><span class="o">=</span><span class="mi">360</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="mi">180</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="n">colorE</span>
+            <span class="p">)</span>
+        <span class="k">elif</span> <span class="n">segment</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+            <span class="n">draw</span><span class="o">.</span><span class="n">pieslice</span><span class="p">(</span>
+                <span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">50</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">i</span> <span class="o">+</span> <span class="n">tile</span> <span class="o">+</span> <span class="mi">50</span><span class="p">,</span> <span class="n">j</span> <span class="o">+</span> <span class="n">tile</span><span class="p">],</span> <span class="n">start</span><span class="o">=</span><span class="mi">90</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="mi">270</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="n">colorE</span>
+            <span class="p">)</span>
 
 <span class="n">display</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/e7aa1ca067ab4e21db6120881a446515083c77760052aac909a48faab05ac43c.png" src="../_images/e7aa1ca067ab4e21db6120881a446515083c77760052aac909a48faab05ac43c.png" />
+<img alt="../_images/25e041bae882f3312d514a1c4038cda5a9ee4eaea5120de605b24b19b0b21047.png" src="../_images/25e041bae882f3312d514a1c4038cda5a9ee4eaea5120de605b24b19b0b21047.png" />
 </div>
 </div>
 </section>

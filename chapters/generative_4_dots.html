@@ -42,7 +42,7 @@
   <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
     <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../_static/copybutton.js?v=f281be69"></script>
@@ -178,18 +178,19 @@
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Webes adatbányászat - Web Scraping</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="web_scraping_intro.html">Adatbányászat - Web scraping</a></li>
-
+<li class="toctree-l1"><a class="reference internal" href="web_scraping_intro.html">Adatbányászat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="web_scraping_wikipeadia_plants.html">Wikipédia növénycsaládok</a></li>
 <li class="toctree-l1"><a class="reference internal" href="web_scraping_wikipedia_birds.html">Wikipédia madárcsaládok</a></li>
+<li class="toctree-l1"><a class="reference internal" href="web_scraping_wikipedia_marvel.html">Wikipédia Marvel karakterek</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Adatvizualizáció - Data Visualization</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="visualization.html">Adatvizualizáció</a></li>
+<li class="toctree-l1"><a class="reference internal" href="visualization_intro.html">Adatvizualizáció</a></li>
 <li class="toctree-l1"><a class="reference internal" href="visualization_pandas.html">Vizualizáció Pandas könyvtár segítségével</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Generatív képalkotás - Generative art</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="generative_1_intro.html">PIL bevezetés - variációk egy témára</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generative_1_intro.html">Generatív képalkotás - variációk egy témára</a></li>
 <li class="toctree-l1"><a class="reference internal" href="generative_2_triangles.html">Háromszög csempék</a></li>
 <li class="toctree-l1"><a class="reference internal" href="generative_3_circlerows.html">Sorokat alkotó körök</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Véletlen számok és Perlin zaj - vonaldiagramon</a></li>
@@ -200,10 +201,11 @@
 <li class="toctree-l1"><a class="reference internal" href="generative_10_lines.html">Véletlen vonalak</a></li>
 <li class="toctree-l1"><a class="reference internal" href="generative_11_patterns.html">Minták létrehozása</a></li>
 <li class="toctree-l1"><a class="reference internal" href="generative_12_random.html">Fokozatos kitöltés</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generative_13_comparison.html">PIL és Cairo könyvtárak összehasonlítása</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">L-rendszerek</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="l-system.html">Az L-rendszer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="l-system_intro.html">L-rendszerek</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Források</span></p>
 <ul class="nav bd-sidenav">
@@ -391,7 +393,7 @@ document.write(`
 <h2>Szükséges könyvtárak telepítése és importálása<a class="headerlink" href="#szukseges-konyvtarak-telepitese-es-importalasa" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#%pip install noise</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># %pip install noise</span>
 </pre></div>
 </div>
 </div>
@@ -404,18 +406,6 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span><span class="p">,</span> <span class="n">ImageDraw</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">random</span>
-<span class="ne">----&gt; </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">noise</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;noise&#39;
-</pre></div>
-</div>
-</div>
 </div>
 </section>
 <section id="szinvalaszto">
@@ -424,10 +414,10 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">genColor</span><span class="p">():</span>
-    <span class="n">r</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">)</span>
-    <span class="n">g</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">)</span>
-    <span class="n">b</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">)</span>
-    <span class="k">return</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="n">g</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">)</span>
+    <span class="n">g</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">)</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -442,8 +432,8 @@ document.write(`
 <span class="n">num_columns</span> <span class="o">=</span> <span class="mi">40</span>
 <span class="n">cell_size</span> <span class="o">=</span> <span class="mi">25</span>
 <span class="n">frame</span> <span class="o">=</span> <span class="mi">200</span>
-<span class="n">offsetx</span> <span class="o">=</span> <span class="n">frame</span><span class="o">/</span><span class="mi">2</span><span class="o">+</span><span class="mi">2</span>
-<span class="n">offsety</span> <span class="o">=</span> <span class="n">frame</span><span class="o">/</span><span class="mi">2</span><span class="o">-</span><span class="mi">2</span>
+<span class="n">offsetx</span> <span class="o">=</span> <span class="n">frame</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span>
+<span class="n">offsety</span> <span class="o">=</span> <span class="n">frame</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">-</span> <span class="mi">2</span>
 
 <span class="n">image_width</span> <span class="o">=</span> <span class="n">num_columns</span> <span class="o">*</span> <span class="n">cell_size</span> <span class="o">+</span> <span class="n">frame</span>
 <span class="n">image_height</span> <span class="o">=</span> <span class="n">num_rows</span> <span class="o">*</span> <span class="n">cell_size</span> <span class="o">+</span> <span class="n">frame</span>
@@ -457,12 +447,20 @@ document.write(`
 <p>A PIL könyvtár által kínált <code>draw.point</code> nem tartalmaz körvonalat és mérete nem állítható, emiatt célszerű a pontokat <code>draw.ellipse</code> utasítással rajzolni.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">prepareCanvas</span><span class="p">():</span>    
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="n">num_columns</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
-        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="n">num_rows</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>                 
-            <span class="n">draw</span><span class="o">.</span><span class="n">ellipse</span><span class="p">([</span><span class="n">i</span><span class="o">*</span><span class="n">cell_size</span><span class="o">+</span><span class="n">offsety</span><span class="p">,</span><span class="n">j</span><span class="o">*</span><span class="n">cell_size</span><span class="o">+</span><span class="n">offsety</span><span class="p">,</span><span class="n">i</span><span class="o">*</span><span class="n">cell_size</span><span class="o">+</span><span class="n">offsetx</span><span class="p">,</span><span class="n">j</span><span class="o">*</span><span class="n">cell_size</span><span class="o">+</span><span class="n">offsetx</span><span class="p">],</span><span class="n">fill</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">prepareCanvas</span><span class="p">():</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_columns</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_rows</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+            <span class="n">draw</span><span class="o">.</span><span class="n">ellipse</span><span class="p">(</span>
+                <span class="p">[</span>
+                    <span class="n">i</span> <span class="o">*</span> <span class="n">cell_size</span> <span class="o">+</span> <span class="n">offsety</span><span class="p">,</span>
+                    <span class="n">j</span> <span class="o">*</span> <span class="n">cell_size</span> <span class="o">+</span> <span class="n">offsety</span><span class="p">,</span>
+                    <span class="n">i</span> <span class="o">*</span> <span class="n">cell_size</span> <span class="o">+</span> <span class="n">offsetx</span><span class="p">,</span>
+                    <span class="n">j</span> <span class="o">*</span> <span class="n">cell_size</span> <span class="o">+</span> <span class="n">offsetx</span><span class="p">,</span>
+                <span class="p">],</span>
+                <span class="n">fill</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span>
+            <span class="p">)</span>
 
-    <span class="n">draw</span><span class="o">.</span><span class="n">rectangle</span><span class="p">([</span><span class="mi">50</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">1150</span><span class="p">,</span><span class="mi">650</span><span class="p">],</span> <span class="n">outline</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span> 
+    <span class="n">draw</span><span class="o">.</span><span class="n">rectangle</span><span class="p">([</span><span class="mi">50</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">1150</span><span class="p">,</span> <span class="mi">650</span><span class="p">],</span> <span class="n">outline</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -480,24 +478,32 @@ document.write(`
 <span class="n">prepareCanvas</span><span class="p">()</span>
 
 <span class="n">x0</span> <span class="o">=</span> <span class="mi">4</span>
-<span class="n">y0</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">24</span><span class="p">)</span>
+<span class="n">y0</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">24</span><span class="p">)</span>
 
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_columns</span><span class="p">):</span>
-    <span class="n">x1</span> <span class="o">=</span> <span class="n">x0</span><span class="o">+</span><span class="mi">1</span>
-    <span class="n">y1</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">24</span><span class="p">)</span>
+    <span class="n">x1</span> <span class="o">=</span> <span class="n">x0</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="n">y1</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">24</span><span class="p">)</span>
 
-    <span class="n">draw</span><span class="o">.</span><span class="n">line</span><span class="p">([</span><span class="n">x0</span><span class="o">*</span><span class="n">cell_size</span><span class="p">,</span><span class="n">y0</span><span class="o">*</span><span class="n">cell_size</span><span class="p">,</span><span class="n">x1</span><span class="o">*</span><span class="n">cell_size</span><span class="p">,</span><span class="n">y0</span><span class="o">*</span><span class="n">cell_size</span><span class="p">],</span> <span class="n">fill</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
-    <span class="n">draw</span><span class="o">.</span><span class="n">line</span><span class="p">([</span><span class="n">x1</span><span class="o">*</span><span class="n">cell_size</span><span class="p">,</span><span class="n">y0</span><span class="o">*</span><span class="n">cell_size</span><span class="p">,</span><span class="n">x1</span><span class="o">*</span><span class="n">cell_size</span><span class="p">,</span><span class="n">y1</span><span class="o">*</span><span class="n">cell_size</span><span class="p">],</span> <span class="n">fill</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
-    
+    <span class="n">draw</span><span class="o">.</span><span class="n">line</span><span class="p">(</span>
+        <span class="p">[</span><span class="n">x0</span> <span class="o">*</span> <span class="n">cell_size</span><span class="p">,</span> <span class="n">y0</span> <span class="o">*</span> <span class="n">cell_size</span><span class="p">,</span> <span class="n">x1</span> <span class="o">*</span> <span class="n">cell_size</span><span class="p">,</span> <span class="n">y0</span> <span class="o">*</span> <span class="n">cell_size</span><span class="p">],</span>
+        <span class="n">fill</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span>
+        <span class="n">width</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">draw</span><span class="o">.</span><span class="n">line</span><span class="p">(</span>
+        <span class="p">[</span><span class="n">x1</span> <span class="o">*</span> <span class="n">cell_size</span><span class="p">,</span> <span class="n">y0</span> <span class="o">*</span> <span class="n">cell_size</span><span class="p">,</span> <span class="n">x1</span> <span class="o">*</span> <span class="n">cell_size</span><span class="p">,</span> <span class="n">y1</span> <span class="o">*</span> <span class="n">cell_size</span><span class="p">],</span>
+        <span class="n">fill</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span>
+        <span class="n">width</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+    <span class="p">)</span>
+
     <span class="n">y0</span> <span class="o">=</span> <span class="n">y1</span>
     <span class="n">x0</span> <span class="o">=</span> <span class="n">x1</span>
-  
+
 <span class="n">display</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/d41a879c9fa93d415dcd50dc3dd3b54618b459b40db7cf42c5e1e1628cc304ab.png" src="../_images/d41a879c9fa93d415dcd50dc3dd3b54618b459b40db7cf42c5e1e1628cc304ab.png" />
+<img alt="../_images/6e278c281499d5118b2ccdead4297858e6bfd50ea761d8ac8ca5b764bdebc9e6.png" src="../_images/6e278c281499d5118b2ccdead4297858e6bfd50ea761d8ac8ca5b764bdebc9e6.png" />
 </div>
 </div>
 </section>
@@ -513,31 +519,43 @@ document.write(`
 <span class="n">prepareCanvas</span><span class="p">()</span>
 
 <span class="n">x</span> <span class="o">=</span> <span class="mi">4</span>
-<span class="n">y</span> <span class="o">=</span> <span class="mi">4</span> <span class="o">+</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">4</span> <span class="o">+</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">15</span><span class="p">)</span>
 
-<span class="k">while</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">num_columns</span><span class="o">+</span><span class="mi">4</span><span class="p">:</span>          
-    <span class="k">if</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">&gt;=</span> <span class="mf">0.25</span> <span class="ow">and</span> <span class="n">y</span> <span class="o">&gt;</span> <span class="mi">4</span> <span class="ow">and</span> <span class="n">y</span> <span class="o">&lt;</span> <span class="n">num_rows</span><span class="o">+</span><span class="mi">4</span><span class="p">:</span>
-        <span class="n">direction</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>        
+<span class="k">while</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">num_columns</span> <span class="o">+</span> <span class="mi">4</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">&gt;=</span> <span class="mf">0.25</span> <span class="ow">and</span> <span class="n">y</span> <span class="o">&gt;</span> <span class="mi">4</span> <span class="ow">and</span> <span class="n">y</span> <span class="o">&lt;</span> <span class="n">num_rows</span> <span class="o">+</span> <span class="mi">4</span><span class="p">:</span>
+        <span class="n">direction</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">direction</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="n">draw</span><span class="o">.</span><span class="n">line</span><span class="p">([</span><span class="n">x</span><span class="o">*</span><span class="n">cell_size</span><span class="p">,</span><span class="n">y</span><span class="o">*</span><span class="n">cell_size</span><span class="p">,</span><span class="n">x</span><span class="o">*</span><span class="n">cell_size</span><span class="p">,(</span><span class="n">y</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">cell_size</span><span class="p">],</span><span class="n">fill</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>            
-            <span class="n">y</span><span class="o">+=</span><span class="mi">1</span>
+            <span class="n">draw</span><span class="o">.</span><span class="n">line</span><span class="p">(</span>
+                <span class="p">[</span><span class="n">x</span> <span class="o">*</span> <span class="n">cell_size</span><span class="p">,</span> <span class="n">y</span> <span class="o">*</span> <span class="n">cell_size</span><span class="p">,</span> <span class="n">x</span> <span class="o">*</span> <span class="n">cell_size</span><span class="p">,</span> <span class="p">(</span><span class="n">y</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">cell_size</span><span class="p">],</span>
+                <span class="n">fill</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span>
+                <span class="n">width</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+            <span class="p">)</span>
+            <span class="n">y</span> <span class="o">+=</span> <span class="mi">1</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="n">draw</span><span class="o">.</span><span class="n">line</span><span class="p">([</span><span class="n">x</span><span class="o">*</span><span class="n">cell_size</span><span class="p">,</span><span class="n">y</span><span class="o">*</span><span class="n">cell_size</span><span class="p">,</span><span class="n">x</span><span class="o">*</span><span class="n">cell_size</span><span class="p">,(</span><span class="n">y</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">cell_size</span><span class="p">],</span><span class="n">fill</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>            
-            <span class="n">y</span><span class="o">-=</span><span class="mi">1</span>
+            <span class="n">draw</span><span class="o">.</span><span class="n">line</span><span class="p">(</span>
+                <span class="p">[</span><span class="n">x</span> <span class="o">*</span> <span class="n">cell_size</span><span class="p">,</span> <span class="n">y</span> <span class="o">*</span> <span class="n">cell_size</span><span class="p">,</span> <span class="n">x</span> <span class="o">*</span> <span class="n">cell_size</span><span class="p">,</span> <span class="p">(</span><span class="n">y</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">cell_size</span><span class="p">],</span>
+                <span class="n">fill</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span>
+                <span class="n">width</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+            <span class="p">)</span>
+            <span class="n">y</span> <span class="o">-=</span> <span class="mi">1</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="n">draw</span><span class="o">.</span><span class="n">line</span><span class="p">([</span><span class="n">x</span><span class="o">*</span><span class="n">cell_size</span><span class="p">,</span><span class="n">y</span><span class="o">*</span><span class="n">cell_size</span><span class="p">,(</span><span class="n">x</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">cell_size</span><span class="p">,</span><span class="n">y</span><span class="o">*</span><span class="n">cell_size</span><span class="p">],</span><span class="n">fill</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>        
-        <span class="n">x</span><span class="o">+=</span><span class="mi">1</span>
+        <span class="n">draw</span><span class="o">.</span><span class="n">line</span><span class="p">(</span>
+            <span class="p">[</span><span class="n">x</span> <span class="o">*</span> <span class="n">cell_size</span><span class="p">,</span> <span class="n">y</span> <span class="o">*</span> <span class="n">cell_size</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">cell_size</span><span class="p">,</span> <span class="n">y</span> <span class="o">*</span> <span class="n">cell_size</span><span class="p">],</span>
+            <span class="n">fill</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span>
+            <span class="n">width</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="n">x</span> <span class="o">+=</span> <span class="mi">1</span>
     <span class="k">if</span> <span class="n">y</span> <span class="o">&lt;=</span> <span class="mi">4</span><span class="p">:</span>
         <span class="n">y</span> <span class="o">+=</span> <span class="mi">1</span>
     <span class="k">elif</span> <span class="n">y</span> <span class="o">&gt;</span> <span class="mi">24</span><span class="p">:</span>
-        <span class="n">y</span> <span class="o">-=</span> <span class="mi">1</span> 
-  
+        <span class="n">y</span> <span class="o">-=</span> <span class="mi">1</span>
+
 <span class="n">display</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/192924b749861b5db13a358bbf37be9c5e4adf8b3dbb07f7bcee027558a8cd2d.png" src="../_images/192924b749861b5db13a358bbf37be9c5e4adf8b3dbb07f7bcee027558a8cd2d.png" />
+<img alt="../_images/b7d98af269b7405b26fb3d92d3ae37e0b838c1f0a4eb83b735c35bf2ba93e718.png" src="../_images/b7d98af269b7405b26fb3d92d3ae37e0b838c1f0a4eb83b735c35bf2ba93e718.png" />
 </div>
 </div>
 </section>
@@ -545,13 +563,14 @@ document.write(`
 <h2>Megoldás Perlin zajjal<a class="headerlink" href="#megoldas-perlin-zajjal" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#https://jameshfisher.com/2017/10/15/1d-perlin-noise/</span>
-<span class="c1">#https://gpfault.net/posts/perlin-noise.txt.html</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># https://jameshfisher.com/2017/10/15/1d-perlin-noise/</span>
+<span class="c1"># https://gpfault.net/posts/perlin-noise.txt.html</span>
 
 <span class="kn">import</span> <span class="nn">random</span>
 
 <span class="c1"># Generate random slopes</span>
 <span class="n">slope_at</span> <span class="o">=</span> <span class="p">[(</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">20</span><span class="p">)]</span>
+
 
 <span class="k">def</span> <span class="nf">sample_perlin</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="n">lo</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
@@ -564,6 +583,7 @@ document.write(`
     <span class="n">u</span> <span class="o">=</span> <span class="n">dist</span> <span class="o">*</span> <span class="n">dist</span> <span class="o">*</span> <span class="p">(</span><span class="mf">3.0</span> <span class="o">-</span> <span class="mf">2.0</span> <span class="o">*</span> <span class="n">dist</span><span class="p">)</span>  <span class="c1"># cubic curve</span>
     <span class="k">return</span> <span class="p">(</span><span class="n">lo_pos</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">u</span><span class="p">))</span> <span class="o">+</span> <span class="p">(</span><span class="n">hi_pos</span> <span class="o">*</span> <span class="n">u</span><span class="p">)</span>  <span class="c1"># interpolate</span>
 
+
 <span class="c1"># Test the function</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
     <span class="n">x</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span>  <span class="c1"># random x values</span>
@@ -573,16 +593,16 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Sample at x=0.9905252367195191: -0.0019394516983426402
-Sample at x=0.813006127877142: -0.07562908944339636
-Sample at x=0.7633677538013371: -0.10140255189985391
-Sample at x=0.2749437270217785: -0.15624200516572828
-Sample at x=0.8148510555863534: -0.07467244278981075
-Sample at x=0.4514892525551374: -0.19526542606881825
-Sample at x=0.7898816054200857: -0.08766162923464366
-Sample at x=0.3331050162352397: -0.17681909897241702
-Sample at x=0.2937085734883733: -0.1636394855174347
-Sample at x=0.7929304657135734: -0.08607380356598504
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Sample at x=0.38100873298180093: -0.09016501253767656
+Sample at x=0.5393704755159358: -0.0721698369045635
+Sample at x=0.17488794057521484: -0.06555906592358547
+Sample at x=0.922688717806004: 0.004504139982583537
+Sample at x=0.3562883432919094: -0.09031335573365656
+Sample at x=0.7908915784713876: -0.013133653864051673
+Sample at x=0.18932349868942677: -0.06922343922397621
+Sample at x=0.7673847131780719: -0.018302233889636595
+Sample at x=0.6002168502287271: -0.05921151473184839
+Sample at x=0.33090253718283336: -0.08961660144097242
 </pre></div>
 </div>
 </div>
@@ -597,10 +617,12 @@ Sample at x=0.7929304657135734: -0.08607380356598504
     <span class="n">octaves</span> <span class="o">=</span> <span class="mi">6</span>
     <span class="n">persistence</span> <span class="o">=</span> <span class="mf">0.5</span>
     <span class="n">lacunarity</span> <span class="o">=</span> <span class="mi">2</span>
-    <span class="n">base</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10000</span><span class="p">)</span>
-    
-    <span class="n">perlin_noise</span> <span class="o">=</span> <span class="n">noise</span><span class="o">.</span><span class="n">pnoise1</span><span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="n">scale</span><span class="p">,</span> <span class="n">octaves</span><span class="o">=</span><span class="n">octaves</span><span class="p">,</span> <span class="n">persistence</span><span class="o">=</span><span class="n">persistence</span><span class="p">,</span> <span class="n">lacunarity</span><span class="o">=</span><span class="n">lacunarity</span><span class="p">)</span>  
-   
+    <span class="n">base</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10000</span><span class="p">)</span>
+
+    <span class="n">perlin_noise</span> <span class="o">=</span> <span class="n">noise</span><span class="o">.</span><span class="n">pnoise1</span><span class="p">(</span>
+        <span class="n">x</span> <span class="o">*</span> <span class="n">scale</span><span class="p">,</span> <span class="n">octaves</span><span class="o">=</span><span class="n">octaves</span><span class="p">,</span> <span class="n">persistence</span><span class="o">=</span><span class="n">persistence</span><span class="p">,</span> <span class="n">lacunarity</span><span class="o">=</span><span class="n">lacunarity</span>
+    <span class="p">)</span>
+
     <span class="k">return</span> <span class="n">perlin_noise</span>
 </pre></div>
 </div>
@@ -614,15 +636,17 @@ Sample at x=0.7929304657135734: -0.08607380356598504
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">normalizeList</span><span class="p">(</span><span class="nb">list</span><span class="p">):</span>
     <span class="n">min_list</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.32555</span>
-    <span class="n">max_list</span> <span class="o">=</span> <span class="mf">0.52675</span> 
+    <span class="n">max_list</span> <span class="o">=</span> <span class="mf">0.52675</span>
     <span class="n">min_interval</span> <span class="o">=</span> <span class="mi">4</span>
     <span class="n">max_interval</span> <span class="o">=</span> <span class="mi">24</span>
     <span class="n">new_list</span> <span class="o">=</span> <span class="p">[]</span>
 
     <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">:</span>
-        <span class="n">normalized_value</span> <span class="o">=</span> <span class="p">(</span><span class="n">item</span> <span class="o">-</span> <span class="nb">min</span><span class="p">(</span><span class="nb">list</span><span class="p">))</span><span class="o">*</span><span class="p">(</span><span class="n">max_interval</span><span class="o">-</span><span class="n">min_interval</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span><span class="o">-</span><span class="nb">min</span><span class="p">(</span><span class="nb">list</span><span class="p">))</span><span class="o">+</span><span class="n">min_interval</span>
+        <span class="n">normalized_value</span> <span class="o">=</span> <span class="p">(</span><span class="n">item</span> <span class="o">-</span> <span class="nb">min</span><span class="p">(</span><span class="nb">list</span><span class="p">))</span> <span class="o">*</span> <span class="p">(</span><span class="n">max_interval</span> <span class="o">-</span> <span class="n">min_interval</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span>
+            <span class="nb">max</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span> <span class="o">-</span> <span class="nb">min</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
+        <span class="p">)</span> <span class="o">+</span> <span class="n">min_interval</span>
         <span class="n">new_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">normalized_value</span><span class="p">))</span>
-    
+
     <span class="k">return</span> <span class="n">new_list</span>
 </pre></div>
 </div>
@@ -639,13 +663,13 @@ Sample at x=0.7929304657135734: -0.08607380356598504
 <span class="n">y</span> <span class="o">=</span> <span class="mi">2</span>
 <span class="nb">list</span> <span class="o">=</span> <span class="p">[]</span>
 
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="mi">100</span><span class="p">):</span>
-    <span class="n">x</span><span class="o">+=</span><span class="mi">1</span>
-    <span class="n">y</span><span class="o">+=</span><span class="mi">1</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="n">y</span> <span class="o">+=</span> <span class="mi">1</span>
 
     <span class="nb">list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">map_noise</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="nb">list</span><span class="p">),</span> <span class="nb">max</span><span class="p">(</span><span class="nb">list</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
 <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
 <span class="n">fig2</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">normalizeList</span><span class="p">(</span><span class="nb">list</span><span class="p">))</span>
 
@@ -657,7 +681,7 @@ Sample at x=0.7929304657135734: -0.08607380356598504
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-0.32554924488067627 0.5267422795295715
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x24d503ee030&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x23e48dc59a0&gt;]
 </pre></div>
 </div>
 <img alt="../_images/df85003d1108bc7a7d36b9e6db7aec0c0cfbf13e0e648c6c5894cbcbf3b7bdbe.png" src="../_images/df85003d1108bc7a7d36b9e6db7aec0c0cfbf13e0e648c6c5894cbcbf3b7bdbe.png" />
@@ -674,10 +698,12 @@ Sample at x=0.7929304657135734: -0.08607380356598504
     <span class="n">scale</span> <span class="o">=</span> <span class="mf">0.1</span>
     <span class="n">octaves</span> <span class="o">=</span> <span class="mi">6</span>
     <span class="n">persistence</span> <span class="o">=</span> <span class="mf">0.5</span>
-    <span class="n">lacunarity</span> <span class="o">=</span> <span class="mi">2</span>   
-    
-    <span class="n">perlin_noise</span> <span class="o">=</span> <span class="n">noise</span><span class="o">.</span><span class="n">pnoise1</span><span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="n">scale</span><span class="p">,</span> <span class="n">octaves</span><span class="o">=</span><span class="n">octaves</span><span class="p">,</span> <span class="n">persistence</span><span class="o">=</span><span class="n">persistence</span><span class="p">,</span> <span class="n">lacunarity</span><span class="o">=</span><span class="n">lacunarity</span><span class="p">)</span>  
-   
+    <span class="n">lacunarity</span> <span class="o">=</span> <span class="mi">2</span>
+
+    <span class="n">perlin_noise</span> <span class="o">=</span> <span class="n">noise</span><span class="o">.</span><span class="n">pnoise1</span><span class="p">(</span>
+        <span class="n">x</span> <span class="o">*</span> <span class="n">scale</span><span class="p">,</span> <span class="n">octaves</span><span class="o">=</span><span class="n">octaves</span><span class="p">,</span> <span class="n">persistence</span><span class="o">=</span><span class="n">persistence</span><span class="p">,</span> <span class="n">lacunarity</span><span class="o">=</span><span class="n">lacunarity</span>
+    <span class="p">)</span>
+
     <span class="k">return</span> <span class="n">perlin_noise</span>
 </pre></div>
 </div>
@@ -687,12 +713,15 @@ Sample at x=0.7929304657135734: -0.08607380356598504
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">normalize</span><span class="p">(</span><span class="n">item</span><span class="p">):</span>
     <span class="n">min_list</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.32555</span>
-    <span class="n">max_list</span> <span class="o">=</span> <span class="mf">0.52675</span> 
+    <span class="n">max_list</span> <span class="o">=</span> <span class="mf">0.52675</span>
     <span class="n">min_interval</span> <span class="o">=</span> <span class="mi">4</span>
     <span class="n">max_interval</span> <span class="o">=</span> <span class="mi">24</span>
-    
-    <span class="n">normalized_value</span> <span class="o">=</span> <span class="nb">int</span><span class="p">((</span><span class="n">item</span> <span class="o">-</span> <span class="n">min_list</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">max_interval</span><span class="o">-</span><span class="n">min_interval</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">max_list</span><span class="o">-</span><span class="n">min_list</span><span class="p">)</span><span class="o">+</span><span class="n">min_interval</span><span class="p">)</span>
-        
+
+    <span class="n">normalized_value</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span>
+        <span class="p">(</span><span class="n">item</span> <span class="o">-</span> <span class="n">min_list</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">max_interval</span> <span class="o">-</span> <span class="n">min_interval</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">max_list</span> <span class="o">-</span> <span class="n">min_list</span><span class="p">)</span>
+        <span class="o">+</span> <span class="n">min_interval</span>
+    <span class="p">)</span>
+
     <span class="k">return</span> <span class="n">normalized_value</span>
 </pre></div>
 </div>
@@ -710,21 +739,29 @@ Sample at x=0.7929304657135734: -0.08607380356598504
 <span class="n">y0</span> <span class="o">=</span> <span class="n">normalize</span><span class="p">(</span><span class="n">map_noise</span><span class="p">(</span><span class="n">x0</span><span class="p">))</span>
 
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_columns</span><span class="p">):</span>
-    <span class="n">x1</span> <span class="o">=</span> <span class="n">x0</span><span class="o">+</span><span class="mi">1</span>
+    <span class="n">x1</span> <span class="o">=</span> <span class="n">x0</span> <span class="o">+</span> <span class="mi">1</span>
     <span class="n">y1</span> <span class="o">=</span> <span class="n">normalize</span><span class="p">(</span><span class="n">map_noise</span><span class="p">(</span><span class="n">x0</span><span class="p">))</span>
 
-    <span class="n">draw</span><span class="o">.</span><span class="n">line</span><span class="p">([</span><span class="n">x0</span><span class="o">*</span><span class="n">cell_size</span><span class="p">,</span><span class="n">y0</span><span class="o">*</span><span class="n">cell_size</span><span class="p">,</span><span class="n">x1</span><span class="o">*</span><span class="n">cell_size</span><span class="p">,</span><span class="n">y0</span><span class="o">*</span><span class="n">cell_size</span><span class="p">],</span> <span class="n">fill</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
-    <span class="n">draw</span><span class="o">.</span><span class="n">line</span><span class="p">([</span><span class="n">x1</span><span class="o">*</span><span class="n">cell_size</span><span class="p">,</span><span class="n">y0</span><span class="o">*</span><span class="n">cell_size</span><span class="p">,</span><span class="n">x1</span><span class="o">*</span><span class="n">cell_size</span><span class="p">,</span><span class="n">y1</span><span class="o">*</span><span class="n">cell_size</span><span class="p">],</span> <span class="n">fill</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
-    
+    <span class="n">draw</span><span class="o">.</span><span class="n">line</span><span class="p">(</span>
+        <span class="p">[</span><span class="n">x0</span> <span class="o">*</span> <span class="n">cell_size</span><span class="p">,</span> <span class="n">y0</span> <span class="o">*</span> <span class="n">cell_size</span><span class="p">,</span> <span class="n">x1</span> <span class="o">*</span> <span class="n">cell_size</span><span class="p">,</span> <span class="n">y0</span> <span class="o">*</span> <span class="n">cell_size</span><span class="p">],</span>
+        <span class="n">fill</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span>
+        <span class="n">width</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">draw</span><span class="o">.</span><span class="n">line</span><span class="p">(</span>
+        <span class="p">[</span><span class="n">x1</span> <span class="o">*</span> <span class="n">cell_size</span><span class="p">,</span> <span class="n">y0</span> <span class="o">*</span> <span class="n">cell_size</span><span class="p">,</span> <span class="n">x1</span> <span class="o">*</span> <span class="n">cell_size</span><span class="p">,</span> <span class="n">y1</span> <span class="o">*</span> <span class="n">cell_size</span><span class="p">],</span>
+        <span class="n">fill</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span>
+        <span class="n">width</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+    <span class="p">)</span>
+
     <span class="n">y0</span> <span class="o">=</span> <span class="n">y1</span>
     <span class="n">x0</span> <span class="o">=</span> <span class="n">x1</span>
-  
+
 <span class="n">display</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/7cf40d886d42914cb958a8169a5244d616d31188230ca0912dde442b8fa7b6c1.png" src="../_images/7cf40d886d42914cb958a8169a5244d616d31188230ca0912dde442b8fa7b6c1.png" />
+<img alt="../_images/4a1c9982c9c5c2debdffbb93c4d8306e106938bb74b76334907e2659c88d0e5a.png" src="../_images/4a1c9982c9c5c2debdffbb93c4d8306e106938bb74b76334907e2659c88d0e5a.png" />
 </div>
 </div>
 </section>
