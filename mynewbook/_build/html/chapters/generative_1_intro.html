@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>PIL bevezetés - variációk egy témára &#8212; Témakörök Python oktatásához</title>
+    <title>Generatív képalkotás - variációk egy témára &#8212; Témakörök Python oktatásához</title>
   
   
   
@@ -42,7 +42,7 @@
   <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
     <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../_static/copybutton.js?v=f281be69"></script>
@@ -178,18 +178,19 @@
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Webes adatbányászat - Web Scraping</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="web_scraping_intro.html">Adatbányászat - Web scraping</a></li>
-
+<li class="toctree-l1"><a class="reference internal" href="web_scraping_intro.html">Adatbányászat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="web_scraping_wikipeadia_plants.html">Wikipédia növénycsaládok</a></li>
 <li class="toctree-l1"><a class="reference internal" href="web_scraping_wikipedia_birds.html">Wikipédia madárcsaládok</a></li>
+<li class="toctree-l1"><a class="reference internal" href="web_scraping_wikipedia_marvel.html">Wikipédia Marvel karakterek</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Adatvizualizáció - Data Visualization</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="visualization.html">Adatvizualizáció</a></li>
+<li class="toctree-l1"><a class="reference internal" href="visualization_intro.html">Adatvizualizáció</a></li>
 <li class="toctree-l1"><a class="reference internal" href="visualization_pandas.html">Vizualizáció Pandas könyvtár segítségével</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Generatív képalkotás - Generative art</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">PIL bevezetés - variációk egy témára</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Generatív képalkotás - variációk egy témára</a></li>
 <li class="toctree-l1"><a class="reference internal" href="generative_2_triangles.html">Háromszög csempék</a></li>
 <li class="toctree-l1"><a class="reference internal" href="generative_3_circlerows.html">Sorokat alkotó körök</a></li>
 <li class="toctree-l1"><a class="reference internal" href="generative_4_dots.html">Véletlen számok és Perlin zaj - vonaldiagramon</a></li>
@@ -200,10 +201,11 @@
 <li class="toctree-l1"><a class="reference internal" href="generative_10_lines.html">Véletlen vonalak</a></li>
 <li class="toctree-l1"><a class="reference internal" href="generative_11_patterns.html">Minták létrehozása</a></li>
 <li class="toctree-l1"><a class="reference internal" href="generative_12_random.html">Fokozatos kitöltés</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generative_13_comparison.html">PIL és Cairo könyvtárak összehasonlítása</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">L-rendszerek</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="l-system.html">Az L-rendszer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="l-system_intro.html">L-rendszerek</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Források</span></p>
 <ul class="nav bd-sidenav">
@@ -350,7 +352,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>PIL bevezetés - variációk egy témára</h1>
+    <h1>Generatív képalkotás - variációk egy témára</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -379,8 +381,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="pil-bevezetes-variaciok-egy-temara">
-<h1>PIL bevezetés - variációk egy témára<a class="headerlink" href="#pil-bevezetes-variaciok-egy-temara" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="generativ-kepalkotas-variaciok-egy-temara">
+<h1>Generatív képalkotás - variációk egy témára<a class="headerlink" href="#generativ-kepalkotas-variaciok-egy-temara" title="Link to this heading">#</a></h1>
 <p><img alt="generative_1" src="../_images/generative_1.png" /></p>
 <p><b>Forrás: </b> <span id="id1">[<a class="reference internal" href="../sources.html#id10" title="tran_stupid_head. Windows? idk. Apr 2024. URL: https://www.reddit.com/r/generative/comments/1bvbj04/windows_idk/.">1</a>, <a class="reference internal" href="../sources.html#id8" title="Annelies Vanoost. Annelies vanoost. 2024. URL: https://anneliesvanoost.com/.">2</a>, <a class="reference internal" href="../sources.html#id9" title="Kunstmuseum Den Haag. Mondrian. 2024. URL: https://www.kunstmuseum.nl/en/collections/mondrian.">3</a>]</span></p>
 <p><a class="reference external" href="https://www.lerandom.art/our-collection">https://www.lerandom.art/our-collection</a></p>
@@ -411,11 +413,11 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">randomColor</span><span class="p">(</span><span class="n">factor</span><span class="p">):</span>
     <span class="n">color</span> <span class="o">=</span> <span class="p">()</span>
-    <span class="n">r</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">)</span>
-    <span class="n">g</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">)</span>
-    <span class="n">b</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">)</span>
-    
-    <span class="n">color</span> <span class="o">=</span> <span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">r</span><span class="o">*</span><span class="n">factor</span><span class="p">),</span><span class="nb">int</span><span class="p">(</span><span class="n">g</span><span class="o">*</span><span class="n">factor</span><span class="p">),</span><span class="nb">int</span><span class="p">(</span><span class="n">b</span><span class="o">*</span><span class="n">factor</span><span class="p">))</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">)</span>
+    <span class="n">g</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">)</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">)</span>
+
+    <span class="n">color</span> <span class="o">=</span> <span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">r</span> <span class="o">*</span> <span class="n">factor</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="n">g</span> <span class="o">*</span> <span class="n">factor</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="n">b</span> <span class="o">*</span> <span class="n">factor</span><span class="p">))</span>
 
     <span class="k">return</span> <span class="n">color</span>
 </pre></div>
@@ -435,15 +437,15 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">drawRectangle</span><span class="p">(</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">):</span>
     <span class="n">factor</span> <span class="o">=</span> <span class="mi">3</span>
-    <span class="n">x0</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">int</span><span class="p">(</span><span class="n">width</span><span class="o">/</span><span class="n">factor</span><span class="p">))</span>
-    <span class="n">y0</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">int</span><span class="p">(</span><span class="n">height</span><span class="o">/</span><span class="n">factor</span><span class="p">))</span>
-    <span class="n">x1</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">width</span><span class="o">/</span><span class="n">factor</span><span class="p">),</span><span class="n">width</span><span class="p">)</span>
-    <span class="n">y1</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">height</span><span class="o">/</span><span class="n">factor</span><span class="p">),</span><span class="n">height</span><span class="p">)</span>
+    <span class="n">x0</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">width</span> <span class="o">/</span> <span class="n">factor</span><span class="p">))</span>
+    <span class="n">y0</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">height</span> <span class="o">/</span> <span class="n">factor</span><span class="p">))</span>
+    <span class="n">x1</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">width</span> <span class="o">/</span> <span class="n">factor</span><span class="p">),</span> <span class="n">width</span><span class="p">)</span>
+    <span class="n">y1</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">height</span> <span class="o">/</span> <span class="n">factor</span><span class="p">),</span> <span class="n">height</span><span class="p">)</span>
 
     <span class="n">rectangle_color</span> <span class="o">=</span> <span class="n">randomColor</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
-    <span class="n">rectangle</span> <span class="o">=</span> <span class="p">[</span><span class="n">x0</span><span class="p">,</span><span class="n">y0</span><span class="p">,</span><span class="n">x1</span><span class="p">,</span><span class="n">y1</span><span class="p">]</span>
+    <span class="n">rectangle</span> <span class="o">=</span> <span class="p">[</span><span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">]</span>
 
-    <span class="n">draw</span><span class="o">.</span><span class="n">rectangle</span><span class="p">(</span><span class="n">rectangle</span><span class="p">,</span><span class="n">fill</span><span class="o">=</span><span class="n">rectangle_color</span><span class="p">)</span>
+    <span class="n">draw</span><span class="o">.</span><span class="n">rectangle</span><span class="p">(</span><span class="n">rectangle</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="n">rectangle_color</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -454,19 +456,19 @@ document.write(`
 <p>Kör a téglalaphoz hasonlóan kell rajzolni, tehát a bal felső és jobb alsó koordinátapár megadásával. Esetünkben a kör középpontja lehet a vászon peremén, ezért célszerűbb véletlenszerű középpontot választani a váaszon területén, majd azt átszámolni a x0,y0,x1,y0 koordinátákra.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">drawEllipse</span><span class="p">(</span><span class="n">width</span><span class="p">,</span><span class="n">height</span><span class="p">):</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">width</span><span class="p">)</span>
-    <span class="n">y</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">height</span><span class="p">)</span>
-    <span class="n">r</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">width</span><span class="o">/</span><span class="mi">4</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="n">width</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span>        
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">drawEllipse</span><span class="p">(</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">width</span><span class="p">)</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">height</span><span class="p">)</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">width</span> <span class="o">/</span> <span class="mi">4</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="n">width</span> <span class="o">/</span> <span class="mi">2</span><span class="p">))</span>
     <span class="n">x0</span> <span class="o">=</span> <span class="n">x</span> <span class="o">-</span> <span class="n">r</span>
     <span class="n">y0</span> <span class="o">=</span> <span class="n">y</span> <span class="o">-</span> <span class="n">r</span>
     <span class="n">x1</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">r</span>
     <span class="n">y1</span> <span class="o">=</span> <span class="n">y</span> <span class="o">+</span> <span class="n">r</span>
 
-    <span class="n">ellipse_color</span> <span class="o">=</span> <span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">150</span><span class="p">,</span><span class="mi">255</span><span class="p">),</span><span class="mi">75</span><span class="p">,</span><span class="mi">25</span><span class="p">)</span>
-    <span class="n">ellipse</span> <span class="o">=</span> <span class="p">[</span><span class="n">x0</span><span class="p">,</span><span class="n">y0</span><span class="p">,</span><span class="n">x1</span><span class="p">,</span><span class="n">y1</span><span class="p">]</span>
+    <span class="n">ellipse_color</span> <span class="o">=</span> <span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">150</span><span class="p">,</span> <span class="mi">255</span><span class="p">),</span> <span class="mi">75</span><span class="p">,</span> <span class="mi">25</span><span class="p">)</span>
+    <span class="n">ellipse</span> <span class="o">=</span> <span class="p">[</span><span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">]</span>
 
-    <span class="n">draw</span><span class="o">.</span><span class="n">ellipse</span><span class="p">(</span><span class="n">ellipse</span><span class="p">,</span><span class="n">fill</span><span class="o">=</span><span class="n">ellipse_color</span><span class="p">)</span>
+    <span class="n">draw</span><span class="o">.</span><span class="n">ellipse</span><span class="p">(</span><span class="n">ellipse</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="n">ellipse_color</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -477,7 +479,7 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">resetImage</span><span class="p">(</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">bg</span><span class="p">):</span>
-    <span class="n">draw</span><span class="o">.</span><span class="n">rectangle</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">width</span><span class="p">,</span><span class="n">height</span><span class="p">],</span><span class="n">fill</span><span class="o">=</span><span class="n">bg</span><span class="p">)</span>
+    <span class="n">draw</span><span class="o">.</span><span class="n">rectangle</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">],</span> <span class="n">fill</span><span class="o">=</span><span class="n">bg</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -507,9 +509,9 @@ document.write(`
 A <code>resetImage()</code> ebben az esetben két feladatot tölt be. Egyrészt véletlenszerű háttérszínt határoz meg, másrészt többszöri futtatás esetén a vászon törléséért is felel.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">resetImage</span><span class="p">(</span><span class="n">image_width</span><span class="p">,</span><span class="n">image_height</span><span class="p">,</span><span class="n">randomColor</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">resetImage</span><span class="p">(</span><span class="n">image_width</span><span class="p">,</span> <span class="n">image_height</span><span class="p">,</span> <span class="n">randomColor</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
 
-<span class="n">drawRectangle</span><span class="p">(</span><span class="n">image_width</span><span class="p">,</span><span class="n">image_height</span><span class="p">)</span>
+<span class="n">drawRectangle</span><span class="p">(</span><span class="n">image_width</span><span class="p">,</span> <span class="n">image_height</span><span class="p">)</span>
 <span class="n">drawEllipse</span><span class="p">(</span><span class="n">image_width</span><span class="p">,</span> <span class="n">image_height</span><span class="p">)</span>
 
 <span class="n">display</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
@@ -517,7 +519,7 @@ A <code>resetImage()</code> ebben az esetben két feladatot tölt be. Egyrészt 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/af085397c15e13b46ccc2101a449ff0269ad73c154005c431e18f10aba8f9259.png" src="../_images/af085397c15e13b46ccc2101a449ff0269ad73c154005c431e18f10aba8f9259.png" />
+<img alt="../_images/bae719b07f90088086b8568c6c3bb55a0046ca9a479710b22e8d5c8cafd8d45e.png" src="../_images/bae719b07f90088086b8568c6c3bb55a0046ca9a479710b22e8d5c8cafd8d45e.png" />
 </div>
 </div>
 </section>
@@ -529,11 +531,11 @@ A <code>resetImage()</code> ebben az esetben két feladatot tölt be. Egyrészt 
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">randomColorA</span><span class="p">(</span><span class="n">alpha</span><span class="p">):</span>
     <span class="n">color</span> <span class="o">=</span> <span class="p">()</span>
-    <span class="n">r</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">)</span>
-    <span class="n">g</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">)</span>
-    <span class="n">b</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">)</span>
-    
-    <span class="n">color</span> <span class="o">=</span> <span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="n">g</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">alpha</span><span class="p">)</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">)</span>
+    <span class="n">g</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">)</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">)</span>
+
+    <span class="n">color</span> <span class="o">=</span> <span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">alpha</span><span class="p">)</span>
 
     <span class="k">return</span> <span class="n">color</span>
 </pre></div>
@@ -546,50 +548,55 @@ A <code>resetImage()</code> ebben az esetben két feladatot tölt be. Egyrészt 
 <span class="n">draw</span> <span class="o">=</span> <span class="n">ImageDraw</span><span class="o">.</span><span class="n">Draw</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
 
 <span class="n">bgcolor</span> <span class="o">=</span> <span class="n">randomColorA</span><span class="p">(</span><span class="mi">25</span><span class="p">)</span>
-<span class="n">draw</span><span class="o">.</span><span class="n">rectangle</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">image_width</span><span class="p">,</span><span class="n">image_height</span><span class="p">],</span><span class="n">fill</span><span class="o">=</span><span class="n">bgcolor</span><span class="p">)</span>
+<span class="n">draw</span><span class="o">.</span><span class="n">rectangle</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">image_width</span><span class="p">,</span> <span class="n">image_height</span><span class="p">],</span> <span class="n">fill</span><span class="o">=</span><span class="n">bgcolor</span><span class="p">)</span>
 
 <span class="n">factor</span> <span class="o">=</span> <span class="mi">3</span>
-<span class="n">x0</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">int</span><span class="p">(</span><span class="n">image_width</span><span class="o">/</span><span class="n">factor</span><span class="p">))</span>
-<span class="n">y0</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">int</span><span class="p">(</span><span class="n">image_height</span><span class="o">/</span><span class="n">factor</span><span class="p">))</span>
-<span class="n">x1</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">image_width</span><span class="o">/</span><span class="n">factor</span><span class="p">),</span><span class="n">image_width</span><span class="p">)</span>
-<span class="n">y1</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">image_height</span><span class="o">/</span><span class="n">factor</span><span class="p">),</span><span class="n">image_height</span><span class="p">)</span>
+<span class="n">x0</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">image_width</span> <span class="o">/</span> <span class="n">factor</span><span class="p">))</span>
+<span class="n">y0</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">image_height</span> <span class="o">/</span> <span class="n">factor</span><span class="p">))</span>
+<span class="n">x1</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">image_width</span> <span class="o">/</span> <span class="n">factor</span><span class="p">),</span> <span class="n">image_width</span><span class="p">)</span>
+<span class="n">y1</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">image_height</span> <span class="o">/</span> <span class="n">factor</span><span class="p">),</span> <span class="n">image_height</span><span class="p">)</span>
 
 <span class="n">rectangle_color</span> <span class="o">=</span> <span class="n">randomColorA</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>
-<span class="n">rectangle</span> <span class="o">=</span> <span class="p">[</span><span class="n">x0</span><span class="p">,</span><span class="n">y0</span><span class="p">,</span><span class="n">x1</span><span class="p">,</span><span class="n">y1</span><span class="p">]</span>
+<span class="n">rectangle</span> <span class="o">=</span> <span class="p">[</span><span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">]</span>
 
-<span class="n">draw</span><span class="o">.</span><span class="n">rectangle</span><span class="p">(</span><span class="n">rectangle</span><span class="p">,</span><span class="n">fill</span><span class="o">=</span><span class="n">rectangle_color</span><span class="p">)</span>
+<span class="n">draw</span><span class="o">.</span><span class="n">rectangle</span><span class="p">(</span><span class="n">rectangle</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="n">rectangle_color</span><span class="p">)</span>
 
-<span class="n">drawEllipse</span><span class="p">(</span><span class="n">image_width</span><span class="p">,</span><span class="n">image_height</span><span class="p">)</span>
+<span class="n">drawEllipse</span><span class="p">(</span><span class="n">image_width</span><span class="p">,</span> <span class="n">image_height</span><span class="p">)</span>
 
 <span class="n">display</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/dc2660fa4e7e24c9a6541a3becd0575ca25dc63b1fb12079784a7df37ebbafed.png" src="../_images/dc2660fa4e7e24c9a6541a3becd0575ca25dc63b1fb12079784a7df37ebbafed.png" />
+<img alt="../_images/1a6572625f2ecc6c37f9a321bc7096e87ac96df598fab7e4cae0bee15409b3c9.png" src="../_images/1a6572625f2ecc6c37f9a321bc7096e87ac96df598fab7e4cae0bee15409b3c9.png" />
 </div>
 </div>
 </section>
 <section id="kep-pontos-parametereinek-megjelenitese">
 <h2>Kép pontos paramétereinek megjelenítése<a class="headerlink" href="#kep-pontos-parametereinek-megjelenitese" title="Link to this heading">#</a></h2>
 <p>Milyen fő paraméterek határozzák meg a kép kinézetét? Adjuk hozzá a képhez az adatokat.</p>
-<p>A Kör méretét és színét módosítottjuk, illetve a függvények visszatérítik a kiíratásra szánt értékeket.</p>
+<p>A Kör méretét és színét módosítottuk, illetve a függvények visszatérítik a kiíratásra szánt értékeket.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">drawEllipseA</span><span class="p">(</span><span class="n">width</span><span class="p">,</span><span class="n">height</span><span class="p">,</span><span class="n">alpha</span><span class="p">):</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">width</span><span class="p">)</span>
-    <span class="n">y</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">height</span><span class="p">)</span>
-    <span class="n">r</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">width</span><span class="o">/</span><span class="mi">4</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="n">width</span><span class="o">/</span><span class="mi">3</span><span class="p">))</span>        
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">drawEllipseA</span><span class="p">(</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">alpha</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">width</span><span class="p">)</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">height</span><span class="p">)</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">width</span> <span class="o">/</span> <span class="mi">4</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="n">width</span> <span class="o">/</span> <span class="mi">3</span><span class="p">))</span>
     <span class="n">x0</span> <span class="o">=</span> <span class="n">x</span> <span class="o">-</span> <span class="n">r</span>
     <span class="n">y0</span> <span class="o">=</span> <span class="n">y</span> <span class="o">-</span> <span class="n">r</span>
     <span class="n">x1</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">r</span>
     <span class="n">y1</span> <span class="o">=</span> <span class="n">y</span> <span class="o">+</span> <span class="n">r</span>
 
-    <span class="n">ellipse_color</span> <span class="o">=</span> <span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">180</span><span class="p">,</span><span class="mi">255</span><span class="p">),</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">80</span><span class="p">,</span><span class="mi">150</span><span class="p">),</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">50</span><span class="p">),</span><span class="n">alpha</span><span class="p">)</span>
-    <span class="n">ellipse</span> <span class="o">=</span> <span class="p">[</span><span class="n">x0</span><span class="p">,</span><span class="n">y0</span><span class="p">,</span><span class="n">x1</span><span class="p">,</span><span class="n">y1</span><span class="p">]</span>
+    <span class="n">ellipse_color</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">180</span><span class="p">,</span> <span class="mi">255</span><span class="p">),</span>
+        <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">80</span><span class="p">,</span> <span class="mi">150</span><span class="p">),</span>
+        <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">50</span><span class="p">),</span>
+        <span class="n">alpha</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">ellipse</span> <span class="o">=</span> <span class="p">[</span><span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">]</span>
 
-    <span class="n">draw</span><span class="o">.</span><span class="n">ellipse</span><span class="p">(</span><span class="n">ellipse</span><span class="p">,</span><span class="n">fill</span><span class="o">=</span><span class="n">ellipse_color</span><span class="p">)</span>    
-    
+    <span class="n">draw</span><span class="o">.</span><span class="n">ellipse</span><span class="p">(</span><span class="n">ellipse</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="n">ellipse_color</span><span class="p">)</span>
+
     <span class="k">return</span> <span class="n">ellipse</span><span class="p">,</span> <span class="n">ellipse_color</span>
 </pre></div>
 </div>
@@ -597,19 +604,19 @@ A <code>resetImage()</code> ebben az esetben két feladatot tölt be. Egyrészt 
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">drawRectangleA</span><span class="p">(</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span><span class="n">alpha</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">drawRectangleA</span><span class="p">(</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">alpha</span><span class="p">):</span>
     <span class="n">factor</span> <span class="o">=</span> <span class="mi">4</span>
-    <span class="n">x0</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">int</span><span class="p">(</span><span class="n">width</span><span class="o">/</span><span class="n">factor</span><span class="p">))</span>
-    <span class="n">y0</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">int</span><span class="p">(</span><span class="n">height</span><span class="o">/</span><span class="n">factor</span><span class="p">))</span>
-    <span class="n">x1</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="n">width</span><span class="o">-</span><span class="nb">int</span><span class="p">(</span><span class="n">width</span><span class="o">/</span><span class="n">factor</span><span class="p">),</span><span class="n">width</span><span class="p">)</span>
-    <span class="n">y1</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="n">width</span><span class="o">-</span><span class="nb">int</span><span class="p">(</span><span class="n">height</span><span class="o">/</span><span class="n">factor</span><span class="p">),</span><span class="n">height</span><span class="p">)</span>
+    <span class="n">x0</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">width</span> <span class="o">/</span> <span class="n">factor</span><span class="p">))</span>
+    <span class="n">y0</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">height</span> <span class="o">/</span> <span class="n">factor</span><span class="p">))</span>
+    <span class="n">x1</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="n">width</span> <span class="o">-</span> <span class="nb">int</span><span class="p">(</span><span class="n">width</span> <span class="o">/</span> <span class="n">factor</span><span class="p">),</span> <span class="n">width</span><span class="p">)</span>
+    <span class="n">y1</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="n">width</span> <span class="o">-</span> <span class="nb">int</span><span class="p">(</span><span class="n">height</span> <span class="o">/</span> <span class="n">factor</span><span class="p">),</span> <span class="n">height</span><span class="p">)</span>
 
     <span class="n">rectangle_color</span> <span class="o">=</span> <span class="n">randomColorA</span><span class="p">(</span><span class="n">alpha</span><span class="p">)</span>
-    <span class="n">rectangle</span> <span class="o">=</span> <span class="p">[</span><span class="n">x0</span><span class="p">,</span><span class="n">y0</span><span class="p">,</span><span class="n">x1</span><span class="p">,</span><span class="n">y1</span><span class="p">]</span>
+    <span class="n">rectangle</span> <span class="o">=</span> <span class="p">[</span><span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">]</span>
 
-    <span class="n">draw</span><span class="o">.</span><span class="n">rectangle</span><span class="p">(</span><span class="n">rectangle</span><span class="p">,</span><span class="n">fill</span><span class="o">=</span><span class="n">rectangle_color</span><span class="p">)</span>
+    <span class="n">draw</span><span class="o">.</span><span class="n">rectangle</span><span class="p">(</span><span class="n">rectangle</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="n">rectangle_color</span><span class="p">)</span>
 
-    <span class="k">return</span> <span class="n">rectangle</span><span class="p">,</span> <span class="n">rectangle_color</span>    
+    <span class="k">return</span> <span class="n">rectangle</span><span class="p">,</span> <span class="n">rectangle_color</span>
 </pre></div>
 </div>
 </div>
@@ -618,9 +625,9 @@ A <code>resetImage()</code> ebben az esetben két feladatot tölt be. Egyrészt 
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">drawBackgroundA</span><span class="p">(</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">alpha</span><span class="p">):</span>
     <span class="n">bgcolor</span> <span class="o">=</span> <span class="n">randomColorA</span><span class="p">(</span><span class="n">alpha</span><span class="p">)</span>
-    <span class="n">background</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">width</span><span class="p">,</span><span class="n">height</span><span class="p">]</span>
+    <span class="n">background</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">]</span>
 
-    <span class="n">draw</span><span class="o">.</span><span class="n">rectangle</span><span class="p">(</span><span class="n">background</span><span class="p">,</span><span class="n">fill</span><span class="o">=</span><span class="n">bgcolor</span><span class="p">)</span>
+    <span class="n">draw</span><span class="o">.</span><span class="n">rectangle</span><span class="p">(</span><span class="n">background</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="n">bgcolor</span><span class="p">)</span>
 
     <span class="k">return</span> <span class="n">background</span><span class="p">,</span> <span class="n">bgcolor</span>
 </pre></div>
@@ -632,20 +639,20 @@ A <code>resetImage()</code> ebben az esetben két feladatot tölt be. Egyrészt 
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">image</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s2">&quot;RGBA&quot;</span><span class="p">,</span> <span class="p">(</span><span class="n">image_width</span><span class="p">,</span> <span class="n">image_height</span><span class="p">))</span>
 <span class="n">draw</span> <span class="o">=</span> <span class="n">ImageDraw</span><span class="o">.</span><span class="n">Draw</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
 
-<span class="n">bg</span> <span class="o">=</span><span class="n">drawBackgroundA</span><span class="p">(</span><span class="n">image_width</span><span class="p">,</span><span class="n">image_height</span><span class="p">,</span><span class="mi">25</span><span class="p">)</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">drawRectangleA</span><span class="p">(</span><span class="n">image_width</span><span class="p">,</span><span class="n">image_height</span><span class="p">,</span><span class="mi">200</span><span class="p">)</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">drawEllipseA</span><span class="p">(</span><span class="n">image_width</span><span class="p">,</span><span class="n">image_height</span><span class="p">,</span><span class="mi">250</span><span class="p">)</span>
+<span class="n">bg</span> <span class="o">=</span> <span class="n">drawBackgroundA</span><span class="p">(</span><span class="n">image_width</span><span class="p">,</span> <span class="n">image_height</span><span class="p">,</span> <span class="mi">25</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">drawRectangleA</span><span class="p">(</span><span class="n">image_width</span><span class="p">,</span> <span class="n">image_height</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">drawEllipseA</span><span class="p">(</span><span class="n">image_width</span><span class="p">,</span> <span class="n">image_height</span><span class="p">,</span> <span class="mi">250</span><span class="p">)</span>
 
-<span class="n">draw</span><span class="o">.</span><span class="n">text</span><span class="p">([</span><span class="mi">10</span><span class="p">,</span><span class="mi">525</span><span class="p">],</span><span class="s2">&quot;Background: &quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">bg</span><span class="p">),</span><span class="n">fill</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">)</span>
-<span class="n">draw</span><span class="o">.</span><span class="n">text</span><span class="p">([</span><span class="mi">10</span><span class="p">,</span><span class="mi">550</span><span class="p">],</span><span class="s2">&quot;Ellipse: &quot;</span> <span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">y</span><span class="p">),</span> <span class="n">fill</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">)</span>
-<span class="n">draw</span><span class="o">.</span><span class="n">text</span><span class="p">([</span><span class="mi">10</span><span class="p">,</span><span class="mi">575</span><span class="p">],</span><span class="s2">&quot;Rectangle: &quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="n">fill</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">)</span>
+<span class="n">draw</span><span class="o">.</span><span class="n">text</span><span class="p">([</span><span class="mi">10</span><span class="p">,</span> <span class="mi">525</span><span class="p">],</span> <span class="s2">&quot;Background: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">bg</span><span class="p">),</span> <span class="n">fill</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">)</span>
+<span class="n">draw</span><span class="o">.</span><span class="n">text</span><span class="p">([</span><span class="mi">10</span><span class="p">,</span> <span class="mi">550</span><span class="p">],</span> <span class="s2">&quot;Ellipse: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">y</span><span class="p">),</span> <span class="n">fill</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">)</span>
+<span class="n">draw</span><span class="o">.</span><span class="n">text</span><span class="p">([</span><span class="mi">10</span><span class="p">,</span> <span class="mi">575</span><span class="p">],</span> <span class="s2">&quot;Rectangle: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">fill</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">)</span>
 
 <span class="n">display</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/10205f39c9359dd5a2f5aea60c3a72b6a597b4eaf831e26ba32c6650868e9222.png" src="../_images/10205f39c9359dd5a2f5aea60c3a72b6a597b4eaf831e26ba32c6650868e9222.png" />
+<img alt="../_images/dfa03a1093d8a88d11843fb751d2e9d420ea542d8f55d4914d560e76d78b64d2.png" src="../_images/dfa03a1093d8a88d11843fb751d2e9d420ea542d8f55d4914d560e76d78b64d2.png" />
 </div>
 </div>
 </section>

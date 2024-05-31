@@ -42,7 +42,7 @@
   <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
     <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../_static/copybutton.js?v=f281be69"></script>
@@ -178,18 +178,19 @@
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Webes adatbányászat - Web Scraping</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="web_scraping_intro.html">Adatbányászat - Web scraping</a></li>
-
+<li class="toctree-l1"><a class="reference internal" href="web_scraping_intro.html">Adatbányászat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="web_scraping_wikipeadia_plants.html">Wikipédia növénycsaládok</a></li>
 <li class="toctree-l1"><a class="reference internal" href="web_scraping_wikipedia_birds.html">Wikipédia madárcsaládok</a></li>
+<li class="toctree-l1"><a class="reference internal" href="web_scraping_wikipedia_marvel.html">Wikipédia Marvel karakterek</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Adatvizualizáció - Data Visualization</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="visualization.html">Adatvizualizáció</a></li>
+<li class="toctree-l1"><a class="reference internal" href="visualization_intro.html">Adatvizualizáció</a></li>
 <li class="toctree-l1"><a class="reference internal" href="visualization_pandas.html">Vizualizáció Pandas könyvtár segítségével</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Generatív képalkotás - Generative art</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="generative_1_intro.html">PIL bevezetés - variációk egy témára</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generative_1_intro.html">Generatív képalkotás - variációk egy témára</a></li>
 <li class="toctree-l1"><a class="reference internal" href="generative_2_triangles.html">Háromszög csempék</a></li>
 <li class="toctree-l1"><a class="reference internal" href="generative_3_circlerows.html">Sorokat alkotó körök</a></li>
 <li class="toctree-l1"><a class="reference internal" href="generative_4_dots.html">Véletlen számok és Perlin zaj - vonaldiagramon</a></li>
@@ -200,10 +201,11 @@
 <li class="toctree-l1"><a class="reference internal" href="generative_10_lines.html">Véletlen vonalak</a></li>
 <li class="toctree-l1"><a class="reference internal" href="generative_11_patterns.html">Minták létrehozása</a></li>
 <li class="toctree-l1"><a class="reference internal" href="generative_12_random.html">Fokozatos kitöltés</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generative_13_comparison.html">PIL és Cairo könyvtárak összehasonlítása</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">L-rendszerek</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="l-system.html">Az L-rendszer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="l-system_intro.html">L-rendszerek</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Források</span></p>
 <ul class="nav bd-sidenav">
@@ -380,13 +382,13 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/85635e0eceb84ca2a72151997e381bd8c2896116c34e7d3c2fe72061bc2cec30.png" src="../_images/85635e0eceb84ca2a72151997e381bd8c2896116c34e7d3c2fe72061bc2cec30.png" />
+<img alt="../_images/1ad9d60c4734fa7c950f45dd62c83a982f83e0e5c92ac1dba153dc2ee1949c7b.png" src="../_images/1ad9d60c4734fa7c950f45dd62c83a982f83e0e5c92ac1dba153dc2ee1949c7b.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">raster_img</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s2">&quot;RGB&quot;</span><span class="p">,</span> <span class="p">(</span><span class="n">img_width</span><span class="p">,</span> <span class="n">img_height</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">)</span>
-<span class="n">raster_draw</span> <span class="o">=</span> <span class="n">ImageDraw</span><span class="o">.</span><span class="n">Draw</span><span class="p">(</span><span class="n">raster_img</span><span class="p">)</span> 
+<span class="n">raster_draw</span> <span class="o">=</span> <span class="n">ImageDraw</span><span class="o">.</span><span class="n">Draw</span><span class="p">(</span><span class="n">raster_img</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -411,17 +413,16 @@ document.write(`
     <span class="n">avg_g</span> <span class="o">=</span> <span class="n">g_total</span> <span class="o">//</span> <span class="n">num_pixels</span>
     <span class="n">avg_b</span> <span class="o">=</span> <span class="n">b_total</span> <span class="o">//</span> <span class="n">num_pixels</span>
 
-    <span class="n">grey</span> <span class="o">=</span> <span class="nb">int</span><span class="p">((</span><span class="n">avg_r</span><span class="o">+</span><span class="n">avg_g</span><span class="o">+</span><span class="n">avg_b</span><span class="p">)</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span>
-    
-    <span class="k">return</span> <span class="p">(</span><span class="n">grey</span><span class="p">,</span><span class="n">grey</span><span class="p">,</span><span class="n">grey</span><span class="p">)</span> 
-    
+    <span class="n">grey</span> <span class="o">=</span> <span class="nb">int</span><span class="p">((</span><span class="n">avg_r</span> <span class="o">+</span> <span class="n">avg_g</span> <span class="o">+</span> <span class="n">avg_b</span><span class="p">)</span> <span class="o">/</span> <span class="mi">3</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="p">(</span><span class="n">grey</span><span class="p">,</span> <span class="n">grey</span><span class="p">,</span> <span class="n">grey</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">avg_grey</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">200</span><span class="p">,</span><span class="mi">200</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">avg_grey</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -433,28 +434,27 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">img_width</span><span class="o">/</span><span class="n">tile_size</span><span class="p">)):</span>
-    <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">img_height</span><span class="o">/</span><span class="n">tile_size</span><span class="p">)):</span>
-        <span class="n">x0</span> <span class="o">=</span> <span class="n">x</span><span class="o">*</span><span class="n">tile_size</span>
-        <span class="n">y0</span> <span class="o">=</span> <span class="n">y</span><span class="o">*</span><span class="n">tile_size</span>
-        <span class="n">x1</span> <span class="o">=</span> <span class="n">x</span><span class="o">*</span><span class="n">tile_size</span><span class="o">+</span><span class="n">tile_size</span>
-        <span class="n">y1</span> <span class="o">=</span> <span class="n">y</span><span class="o">*</span><span class="n">tile_size</span><span class="o">+</span><span class="n">tile_size</span> 
-        <span class="n">color</span> <span class="o">=</span> <span class="n">avg_grey</span><span class="p">(</span><span class="n">img</span><span class="p">,(</span><span class="n">x0</span><span class="p">,</span><span class="n">y0</span><span class="p">,</span><span class="n">x1</span><span class="p">,</span><span class="n">y1</span><span class="p">))</span>
-        <span class="n">raster_draw</span><span class="o">.</span><span class="n">rectangle</span><span class="p">(</span><span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span><span class="n">y0</span><span class="p">,</span><span class="n">x1</span><span class="p">,</span><span class="n">y1</span><span class="p">),</span> <span class="n">fill</span> <span class="o">=</span> <span class="n">color</span><span class="p">)</span>       
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">img_width</span> <span class="o">/</span> <span class="n">tile_size</span><span class="p">)):</span>
+    <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">img_height</span> <span class="o">/</span> <span class="n">tile_size</span><span class="p">)):</span>
+        <span class="n">x0</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="n">tile_size</span>
+        <span class="n">y0</span> <span class="o">=</span> <span class="n">y</span> <span class="o">*</span> <span class="n">tile_size</span>
+        <span class="n">x1</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="n">tile_size</span> <span class="o">+</span> <span class="n">tile_size</span>
+        <span class="n">y1</span> <span class="o">=</span> <span class="n">y</span> <span class="o">*</span> <span class="n">tile_size</span> <span class="o">+</span> <span class="n">tile_size</span>
+        <span class="n">color</span> <span class="o">=</span> <span class="n">avg_grey</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">))</span>
+        <span class="n">raster_draw</span><span class="o">.</span><span class="n">rectangle</span><span class="p">(</span><span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">),</span> <span class="n">fill</span><span class="o">=</span><span class="n">color</span><span class="p">)</span>
 
 <span class="n">display</span><span class="p">(</span><span class="n">raster_img</span><span class="p">)</span>
-        
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/2a3b2a2014fca58c4c5ed6514eaf6ae92d1749d09632b38bda6f53b70604cef0.png" src="../_images/2a3b2a2014fca58c4c5ed6514eaf6ae92d1749d09632b38bda6f53b70604cef0.png" />
+<img alt="../_images/58d7c43490f6fad4b602bcec6664b07bebe4b900e76b35bd772d119aa48525d9.png" src="../_images/58d7c43490f6fad4b602bcec6664b07bebe4b900e76b35bd772d119aa48525d9.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">resetImage</span><span class="p">(</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">bg</span><span class="p">):</span>
-    <span class="n">raster_draw</span><span class="o">.</span><span class="n">rectangle</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">width</span><span class="p">,</span><span class="n">height</span><span class="p">],</span><span class="n">fill</span><span class="o">=</span><span class="n">bg</span><span class="p">)</span>
+    <span class="n">raster_draw</span><span class="o">.</span><span class="n">rectangle</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">],</span> <span class="n">fill</span><span class="o">=</span><span class="n">bg</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -463,77 +463,81 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">resetImage</span><span class="p">(</span><span class="n">img_width</span><span class="p">,</span> <span class="n">img_height</span><span class="p">,</span> <span class="s2">&quot;white&quot;</span><span class="p">)</span>
 
-<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">img_width</span><span class="p">,</span> <span class="n">tile_size</span><span class="p">):</span>
-    <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">img_height</span><span class="p">,</span> <span class="n">tile_size</span><span class="p">):</span>        
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">img_width</span><span class="p">,</span> <span class="n">tile_size</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">img_height</span><span class="p">,</span> <span class="n">tile_size</span><span class="p">):</span>
         <span class="n">x0</span> <span class="o">=</span> <span class="n">x</span>
         <span class="n">y0</span> <span class="o">=</span> <span class="n">y</span>
-        <span class="n">x1</span> <span class="o">=</span> <span class="n">x</span><span class="o">+</span><span class="n">tile_size</span>
-        <span class="n">y1</span> <span class="o">=</span> <span class="n">y</span><span class="o">+</span><span class="n">tile_size</span> 
-        <span class="n">color</span> <span class="o">=</span> <span class="n">avg_grey</span><span class="p">(</span><span class="n">img</span><span class="p">,(</span><span class="n">x0</span><span class="p">,</span><span class="n">y0</span><span class="p">,</span><span class="n">x1</span><span class="p">,</span><span class="n">y1</span><span class="p">))</span>
-        <span class="n">z</span> <span class="o">=</span> <span class="n">color</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>        
-        <span class="n">factor</span> <span class="o">=</span> <span class="mi">1</span><span class="o">-</span><span class="n">z</span><span class="o">/</span><span class="mi">255</span>  
-        <span class="n">x2</span> <span class="o">=</span> <span class="n">x</span><span class="o">+</span><span class="p">(</span><span class="n">tile_size</span><span class="o">*</span><span class="n">factor</span><span class="p">)</span>
-        <span class="n">y2</span> <span class="o">=</span> <span class="n">y</span><span class="o">+</span><span class="p">(</span><span class="n">tile_size</span><span class="o">*</span><span class="n">factor</span><span class="p">)</span>
-        <span class="n">raster_draw</span><span class="o">.</span><span class="n">rectangle</span><span class="p">(</span><span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span><span class="n">y0</span><span class="p">,</span><span class="n">x2</span><span class="p">,</span><span class="n">y2</span><span class="p">),</span> <span class="n">outline</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">,</span> <span class="n">fill</span> <span class="o">=</span> <span class="s2">&quot;black&quot;</span><span class="p">)</span>      
+        <span class="n">x1</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">tile_size</span>
+        <span class="n">y1</span> <span class="o">=</span> <span class="n">y</span> <span class="o">+</span> <span class="n">tile_size</span>
+        <span class="n">color</span> <span class="o">=</span> <span class="n">avg_grey</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">))</span>
+        <span class="n">z</span> <span class="o">=</span> <span class="n">color</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">factor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">z</span> <span class="o">/</span> <span class="mi">255</span>
+        <span class="n">x2</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="p">(</span><span class="n">tile_size</span> <span class="o">*</span> <span class="n">factor</span><span class="p">)</span>
+        <span class="n">y2</span> <span class="o">=</span> <span class="n">y</span> <span class="o">+</span> <span class="p">(</span><span class="n">tile_size</span> <span class="o">*</span> <span class="n">factor</span><span class="p">)</span>
+        <span class="n">raster_draw</span><span class="o">.</span><span class="n">rectangle</span><span class="p">(</span><span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">y2</span><span class="p">),</span> <span class="n">outline</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">)</span>
 
 <span class="n">display</span><span class="p">(</span><span class="n">raster_img</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/18e5e13b0a95994b4c5fd1f887c4b25f807c4644e6db08399c02a07ebb8286bc.png" src="../_images/18e5e13b0a95994b4c5fd1f887c4b25f807c4644e6db08399c02a07ebb8286bc.png" />
+<img alt="../_images/52146866887e91d65a51bc80779cc2c04cd78c732dd708c6569b3f9840bb5532.png" src="../_images/52146866887e91d65a51bc80779cc2c04cd78c732dd708c6569b3f9840bb5532.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">resetImage</span><span class="p">(</span><span class="n">img_width</span><span class="p">,</span> <span class="n">img_height</span><span class="p">,</span> <span class="s2">&quot;white&quot;</span><span class="p">)</span>
 
-<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">img_width</span><span class="p">,</span> <span class="n">tile_size</span><span class="p">):</span>
-    <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">img_height</span><span class="p">,</span> <span class="n">tile_size</span><span class="p">):</span>        
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">img_width</span><span class="p">,</span> <span class="n">tile_size</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">img_height</span><span class="p">,</span> <span class="n">tile_size</span><span class="p">):</span>
         <span class="n">x0</span> <span class="o">=</span> <span class="n">x</span>
         <span class="n">y0</span> <span class="o">=</span> <span class="n">y</span>
-        <span class="n">x1</span> <span class="o">=</span> <span class="n">x</span><span class="o">+</span><span class="n">tile_size</span>
-        <span class="n">y1</span> <span class="o">=</span> <span class="n">y</span><span class="o">+</span><span class="n">tile_size</span> 
-        <span class="n">color</span> <span class="o">=</span> <span class="n">avg_grey</span><span class="p">(</span><span class="n">img</span><span class="p">,(</span><span class="n">x0</span><span class="p">,</span><span class="n">y0</span><span class="p">,</span><span class="n">x1</span><span class="p">,</span><span class="n">y1</span><span class="p">))</span>
-        <span class="n">z</span> <span class="o">=</span> <span class="n">color</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>        
-        <span class="n">factor</span> <span class="o">=</span> <span class="mi">1</span><span class="o">-</span><span class="n">z</span><span class="o">/</span><span class="mi">255</span>  
-        <span class="n">x2</span> <span class="o">=</span> <span class="n">x</span><span class="o">+</span><span class="p">(</span><span class="n">tile_size</span><span class="o">*</span><span class="n">factor</span><span class="p">)</span>
-        <span class="n">y2</span> <span class="o">=</span> <span class="n">y</span><span class="o">+</span><span class="p">(</span><span class="n">tile_size</span><span class="o">*</span><span class="n">factor</span><span class="p">)</span>
-        <span class="n">raster_draw</span><span class="o">.</span><span class="n">ellipse</span><span class="p">(</span><span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span><span class="n">y0</span><span class="p">,</span><span class="n">x2</span><span class="p">,</span><span class="n">y2</span><span class="p">),</span> <span class="n">outline</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">,</span> <span class="n">fill</span> <span class="o">=</span> <span class="s2">&quot;black&quot;</span><span class="p">)</span>      
+        <span class="n">x1</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">tile_size</span>
+        <span class="n">y1</span> <span class="o">=</span> <span class="n">y</span> <span class="o">+</span> <span class="n">tile_size</span>
+        <span class="n">color</span> <span class="o">=</span> <span class="n">avg_grey</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">))</span>
+        <span class="n">z</span> <span class="o">=</span> <span class="n">color</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">factor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">z</span> <span class="o">/</span> <span class="mi">255</span>
+        <span class="n">x2</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="p">(</span><span class="n">tile_size</span> <span class="o">*</span> <span class="n">factor</span><span class="p">)</span>
+        <span class="n">y2</span> <span class="o">=</span> <span class="n">y</span> <span class="o">+</span> <span class="p">(</span><span class="n">tile_size</span> <span class="o">*</span> <span class="n">factor</span><span class="p">)</span>
+        <span class="n">raster_draw</span><span class="o">.</span><span class="n">ellipse</span><span class="p">(</span><span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">y2</span><span class="p">),</span> <span class="n">outline</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">)</span>
 
 <span class="n">display</span><span class="p">(</span><span class="n">raster_img</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/4448f0ec0bf13b2633a86997c64b40a49f4e9915bf4ceb05acbb648b45e12d22.png" src="../_images/4448f0ec0bf13b2633a86997c64b40a49f4e9915bf4ceb05acbb648b45e12d22.png" />
+<img alt="../_images/af64fedfbb7e360f54898e8f1d85a02cbc3b9dd99384796096caa889a8a5d407.png" src="../_images/af64fedfbb7e360f54898e8f1d85a02cbc3b9dd99384796096caa889a8a5d407.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">resetImage</span><span class="p">(</span><span class="n">img_width</span><span class="p">,</span> <span class="n">img_height</span><span class="p">,</span> <span class="s2">&quot;white&quot;</span><span class="p">)</span>
 
-<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">img_width</span><span class="p">,</span> <span class="n">tile_size</span><span class="p">):</span>
-    <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">img_height</span><span class="p">,</span> <span class="n">tile_size</span><span class="p">):</span>        
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">img_width</span><span class="p">,</span> <span class="n">tile_size</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">img_height</span><span class="p">,</span> <span class="n">tile_size</span><span class="p">):</span>
         <span class="n">x0</span> <span class="o">=</span> <span class="n">x</span>
         <span class="n">y0</span> <span class="o">=</span> <span class="n">y</span>
-        <span class="n">x1</span> <span class="o">=</span> <span class="n">x</span><span class="o">+</span><span class="n">tile_size</span>
-        <span class="n">y1</span> <span class="o">=</span> <span class="n">y</span><span class="o">+</span><span class="n">tile_size</span> 
-        <span class="n">color</span> <span class="o">=</span> <span class="n">avg_grey</span><span class="p">(</span><span class="n">img</span><span class="p">,(</span><span class="n">x0</span><span class="p">,</span><span class="n">y0</span><span class="p">,</span><span class="n">x1</span><span class="p">,</span><span class="n">y1</span><span class="p">))</span>
-        <span class="n">z</span> <span class="o">=</span> <span class="n">color</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>        
-        <span class="n">factor</span> <span class="o">=</span> <span class="mi">1</span><span class="o">-</span><span class="n">z</span><span class="o">/</span><span class="mi">255</span>  
-        <span class="n">x2</span> <span class="o">=</span> <span class="n">x</span><span class="o">+</span><span class="p">(</span><span class="n">tile_size</span><span class="o">*</span><span class="n">factor</span><span class="p">)</span>
-        <span class="n">y2</span> <span class="o">=</span> <span class="n">y</span><span class="o">+</span><span class="p">(</span><span class="n">tile_size</span><span class="o">*</span><span class="n">factor</span><span class="p">)</span>
-        <span class="n">offsetx</span> <span class="o">=</span> <span class="nb">int</span><span class="p">((</span><span class="n">x1</span><span class="o">-</span><span class="n">x2</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
-        <span class="n">offsety</span> <span class="o">=</span> <span class="nb">int</span><span class="p">((</span><span class="n">y1</span><span class="o">-</span><span class="n">y2</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
-        <span class="n">raster_draw</span><span class="o">.</span><span class="n">rectangle</span><span class="p">(</span><span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="n">x0</span><span class="o">+</span><span class="n">offsetx</span><span class="p">,</span><span class="n">y0</span><span class="o">+</span><span class="n">offsety</span><span class="p">,</span><span class="n">x2</span><span class="o">+</span><span class="n">offsetx</span><span class="p">,</span><span class="n">y2</span><span class="o">+</span><span class="n">offsety</span><span class="p">),</span> <span class="n">outline</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">,</span> <span class="n">fill</span> <span class="o">=</span> <span class="s2">&quot;black&quot;</span><span class="p">)</span>      
+        <span class="n">x1</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">tile_size</span>
+        <span class="n">y1</span> <span class="o">=</span> <span class="n">y</span> <span class="o">+</span> <span class="n">tile_size</span>
+        <span class="n">color</span> <span class="o">=</span> <span class="n">avg_grey</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">))</span>
+        <span class="n">z</span> <span class="o">=</span> <span class="n">color</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">factor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">z</span> <span class="o">/</span> <span class="mi">255</span>
+        <span class="n">x2</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="p">(</span><span class="n">tile_size</span> <span class="o">*</span> <span class="n">factor</span><span class="p">)</span>
+        <span class="n">y2</span> <span class="o">=</span> <span class="n">y</span> <span class="o">+</span> <span class="p">(</span><span class="n">tile_size</span> <span class="o">*</span> <span class="n">factor</span><span class="p">)</span>
+        <span class="n">offsetx</span> <span class="o">=</span> <span class="nb">int</span><span class="p">((</span><span class="n">x1</span> <span class="o">-</span> <span class="n">x2</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="n">offsety</span> <span class="o">=</span> <span class="nb">int</span><span class="p">((</span><span class="n">y1</span> <span class="o">-</span> <span class="n">y2</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="n">raster_draw</span><span class="o">.</span><span class="n">rectangle</span><span class="p">(</span>
+            <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="n">x0</span> <span class="o">+</span> <span class="n">offsetx</span><span class="p">,</span> <span class="n">y0</span> <span class="o">+</span> <span class="n">offsety</span><span class="p">,</span> <span class="n">x2</span> <span class="o">+</span> <span class="n">offsetx</span><span class="p">,</span> <span class="n">y2</span> <span class="o">+</span> <span class="n">offsety</span><span class="p">),</span>
+            <span class="n">outline</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">,</span>
+            <span class="n">fill</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span>
+        <span class="p">)</span>
 
 <span class="n">display</span><span class="p">(</span><span class="n">raster_img</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/7354fab1f4d29441ccfb99787c76ca52881af99596aaef04e2b66aef55e21da7.png" src="../_images/7354fab1f4d29441ccfb99787c76ca52881af99596aaef04e2b66aef55e21da7.png" />
+<img alt="../_images/39a5a30e0c435f96e7bba1e03cf58d3733c58d22f39017a52486507952a31611.png" src="../_images/39a5a30e0c435f96e7bba1e03cf58d3733c58d22f39017a52486507952a31611.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -556,10 +560,9 @@ document.write(`
     <span class="n">avg_g</span> <span class="o">=</span> <span class="n">g_total</span> <span class="o">//</span> <span class="n">num_pixels</span>
     <span class="n">avg_b</span> <span class="o">=</span> <span class="n">b_total</span> <span class="o">//</span> <span class="n">num_pixels</span>
 
-    <span class="n">color</span> <span class="o">=</span> <span class="p">(</span><span class="n">avg_r</span><span class="p">,</span><span class="n">avg_g</span><span class="p">,</span><span class="n">avg_b</span><span class="p">)</span>
-    
-    <span class="k">return</span> <span class="p">(</span><span class="n">color</span><span class="p">)</span> 
-    
+    <span class="n">color</span> <span class="o">=</span> <span class="p">(</span><span class="n">avg_r</span><span class="p">,</span> <span class="n">avg_g</span><span class="p">,</span> <span class="n">avg_b</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">color</span>
 </pre></div>
 </div>
 </div>
@@ -568,27 +571,32 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">resetImage</span><span class="p">(</span><span class="n">img_width</span><span class="p">,</span> <span class="n">img_height</span><span class="p">,</span> <span class="s2">&quot;white&quot;</span><span class="p">)</span>
 
-<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">img_width</span><span class="p">,</span> <span class="n">tile_size</span><span class="p">):</span>
-    <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">img_height</span><span class="p">,</span> <span class="n">tile_size</span><span class="p">):</span>        
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">img_width</span><span class="p">,</span> <span class="n">tile_size</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">img_height</span><span class="p">,</span> <span class="n">tile_size</span><span class="p">):</span>
         <span class="n">x0</span> <span class="o">=</span> <span class="n">x</span>
         <span class="n">y0</span> <span class="o">=</span> <span class="n">y</span>
-        <span class="n">x1</span> <span class="o">=</span> <span class="n">x</span><span class="o">+</span><span class="n">tile_size</span>
-        <span class="n">y1</span> <span class="o">=</span> <span class="n">y</span><span class="o">+</span><span class="n">tile_size</span> 
-        <span class="n">color</span> <span class="o">=</span> <span class="n">avg_color</span><span class="p">(</span><span class="n">img</span><span class="p">,(</span><span class="n">x0</span><span class="p">,</span><span class="n">y0</span><span class="p">,</span><span class="n">x1</span><span class="p">,</span><span class="n">y1</span><span class="p">))</span>
-        <span class="n">z</span> <span class="o">=</span> <span class="n">color</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>        
-        <span class="n">factor</span> <span class="o">=</span> <span class="mi">1</span><span class="o">-</span><span class="n">z</span><span class="o">/</span><span class="mi">255</span>  
-        <span class="n">x2</span> <span class="o">=</span> <span class="n">x</span><span class="o">+</span><span class="p">(</span><span class="n">tile_size</span><span class="o">*</span><span class="n">factor</span><span class="p">)</span>
-        <span class="n">y2</span> <span class="o">=</span> <span class="n">y</span><span class="o">+</span><span class="p">(</span><span class="n">tile_size</span><span class="o">*</span><span class="n">factor</span><span class="p">)</span>
-        <span class="n">offsetx</span> <span class="o">=</span> <span class="nb">int</span><span class="p">((</span><span class="n">x1</span><span class="o">-</span><span class="n">x2</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
-        <span class="n">offsety</span> <span class="o">=</span> <span class="nb">int</span><span class="p">((</span><span class="n">y1</span><span class="o">-</span><span class="n">y2</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
-        <span class="n">raster_draw</span><span class="o">.</span><span class="n">rectangle</span><span class="p">(</span><span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="n">x0</span><span class="o">+</span><span class="n">offsetx</span><span class="p">,</span><span class="n">y0</span><span class="o">+</span><span class="n">offsety</span><span class="p">,</span><span class="n">x2</span><span class="o">+</span><span class="n">offsetx</span><span class="p">,</span><span class="n">y2</span><span class="o">+</span><span class="n">offsety</span><span class="p">),</span><span class="n">outline</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">fill</span> <span class="o">=</span> <span class="n">color</span><span class="p">)</span>      
+        <span class="n">x1</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">tile_size</span>
+        <span class="n">y1</span> <span class="o">=</span> <span class="n">y</span> <span class="o">+</span> <span class="n">tile_size</span>
+        <span class="n">color</span> <span class="o">=</span> <span class="n">avg_color</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">))</span>
+        <span class="n">z</span> <span class="o">=</span> <span class="n">color</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">factor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">z</span> <span class="o">/</span> <span class="mi">255</span>
+        <span class="n">x2</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="p">(</span><span class="n">tile_size</span> <span class="o">*</span> <span class="n">factor</span><span class="p">)</span>
+        <span class="n">y2</span> <span class="o">=</span> <span class="n">y</span> <span class="o">+</span> <span class="p">(</span><span class="n">tile_size</span> <span class="o">*</span> <span class="n">factor</span><span class="p">)</span>
+        <span class="n">offsetx</span> <span class="o">=</span> <span class="nb">int</span><span class="p">((</span><span class="n">x1</span> <span class="o">-</span> <span class="n">x2</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="n">offsety</span> <span class="o">=</span> <span class="nb">int</span><span class="p">((</span><span class="n">y1</span> <span class="o">-</span> <span class="n">y2</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="n">raster_draw</span><span class="o">.</span><span class="n">rectangle</span><span class="p">(</span>
+            <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="n">x0</span> <span class="o">+</span> <span class="n">offsetx</span><span class="p">,</span> <span class="n">y0</span> <span class="o">+</span> <span class="n">offsety</span><span class="p">,</span> <span class="n">x2</span> <span class="o">+</span> <span class="n">offsetx</span><span class="p">,</span> <span class="n">y2</span> <span class="o">+</span> <span class="n">offsety</span><span class="p">),</span>
+            <span class="n">outline</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">,</span>
+            <span class="n">width</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+            <span class="n">fill</span><span class="o">=</span><span class="n">color</span><span class="p">,</span>
+        <span class="p">)</span>
 
 <span class="n">display</span><span class="p">(</span><span class="n">raster_img</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/249ea3caa41cb2b95853e0add14fecab614a5d83f83a3dd1ec90ad4328fd6dd0.png" src="../_images/249ea3caa41cb2b95853e0add14fecab614a5d83f83a3dd1ec90ad4328fd6dd0.png" />
+<img alt="../_images/ac36d9ab95de1a103bd2be06c8ecdff64c0f77e32ac187a9a009f6712f2a46a4.png" src="../_images/ac36d9ab95de1a103bd2be06c8ecdff64c0f77e32ac187a9a009f6712f2a46a4.png" />
 </div>
 </div>
 </section>

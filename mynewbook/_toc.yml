@@ -9,10 +9,12 @@ parts:
   - caption: Webes adatbányászat - Web Scraping    
     chapters:
     - file: chapters/web_scraping_intro
+    - file: chapters/web_scraping_wikipeadia_plants
     - file: chapters/web_scraping_wikipedia_birds
+    - file: chapters/web_scraping_wikipedia_marvel
   - caption: Adatvizualizáció - Data Visualization    
     chapters: 
-    - file: chapters/visualization
+    - file: chapters/visualization_intro
     - file: chapters/visualization_pandas
   - caption: Generatív képalkotás - Generative art    
     chapters:
@@ -28,9 +30,10 @@ parts:
     - file: chapters/generative_10_lines
     - file: chapters/generative_11_patterns
     - file: chapters/generative_12_random
+    - file: chapters/generative_13_comparison
   - caption: L-rendszerek    
     chapters:
-    - file: chapters/l-system
+    - file: chapters/l-system_intro
   #- caption: Egyéb
   # chapters:
   # - file: chapters/...
@@ -39,5 +42,4 @@ parts:
     - file: sources
   - caption: Jelmagyarázat
     chapters:
-    - file: glossary
- 
+    - file: glossary 

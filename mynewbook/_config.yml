@@ -13,6 +13,7 @@ html:
 # See https://jupyterbook.org/content/execute.html
 execute:
   execute_notebooks: auto
+  timeout: 600
 
 # Define the name of the latex output file for PDF builds
 latex:
@@ -21,15 +22,15 @@ latex:
 
 # Enable Plotly plots
 sphinx:
-  config:
-    suppress_warnings: ["mystnb.unknown_mime_type"]
+  recursive_update: true
+  config:    
     html_js_files:
     - https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js
 
 # Supress Plotly warning
-#sphinx:
-#  config:
-#    suppress_warnings: ["mystnb.unknown_mime_type"]
+sphinx:
+  config:
+    suppress_warnings: ["mystnb.unknown_mime_type"]
 
 # Bibtex extension
 sphinx:

@@ -42,7 +42,7 @@
   <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
     <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../_static/copybutton.js?v=f281be69"></script>
@@ -178,18 +178,19 @@
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Webes adatbányászat - Web Scraping</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="web_scraping_intro.html">Adatbányászat - Web scraping</a></li>
-
+<li class="toctree-l1"><a class="reference internal" href="web_scraping_intro.html">Adatbányászat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="web_scraping_wikipeadia_plants.html">Wikipédia növénycsaládok</a></li>
 <li class="toctree-l1"><a class="reference internal" href="web_scraping_wikipedia_birds.html">Wikipédia madárcsaládok</a></li>
+<li class="toctree-l1"><a class="reference internal" href="web_scraping_wikipedia_marvel.html">Wikipédia Marvel karakterek</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Adatvizualizáció - Data Visualization</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="visualization.html">Adatvizualizáció</a></li>
+<li class="toctree-l1"><a class="reference internal" href="visualization_intro.html">Adatvizualizáció</a></li>
 <li class="toctree-l1"><a class="reference internal" href="visualization_pandas.html">Vizualizáció Pandas könyvtár segítségével</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Generatív képalkotás - Generative art</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="generative_1_intro.html">PIL bevezetés - variációk egy témára</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generative_1_intro.html">Generatív képalkotás - variációk egy témára</a></li>
 <li class="toctree-l1"><a class="reference internal" href="generative_2_triangles.html">Háromszög csempék</a></li>
 <li class="toctree-l1"><a class="reference internal" href="generative_3_circlerows.html">Sorokat alkotó körök</a></li>
 <li class="toctree-l1"><a class="reference internal" href="generative_4_dots.html">Véletlen számok és Perlin zaj - vonaldiagramon</a></li>
@@ -200,10 +201,11 @@
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Véletlen vonalak</a></li>
 <li class="toctree-l1"><a class="reference internal" href="generative_11_patterns.html">Minták létrehozása</a></li>
 <li class="toctree-l1"><a class="reference internal" href="generative_12_random.html">Fokozatos kitöltés</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generative_13_comparison.html">PIL és Cairo könyvtárak összehasonlítása</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">L-rendszerek</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="l-system.html">Az L-rendszer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="l-system_intro.html">L-rendszerek</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Források</span></p>
 <ul class="nav bd-sidenav">
@@ -371,114 +373,119 @@ document.write(`
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span><span class="p">,</span> <span class="n">ImageDraw</span>
 <span class="kn">import</span> <span class="nn">random</span>
 
-<span class="c1">#paraméterek</span>
+<span class="c1"># paraméterek</span>
 <span class="n">image_width</span> <span class="o">=</span> <span class="mi">2000</span>
 <span class="n">image_height</span> <span class="o">=</span> <span class="mi">2000</span>
 <span class="n">frame</span> <span class="o">=</span> <span class="mi">50</span>
 
-<span class="c1">#kép létrehozása</span>
+<span class="c1"># kép létrehozása</span>
 <span class="n">image</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s2">&quot;RGB&quot;</span><span class="p">,</span> <span class="p">(</span><span class="n">image_width</span><span class="p">,</span> <span class="n">image_height</span><span class="p">),</span> <span class="s2">&quot;black&quot;</span><span class="p">)</span>
 <span class="n">draw</span> <span class="o">=</span> <span class="n">ImageDraw</span><span class="o">.</span><span class="n">Draw</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
 
+
 <span class="k">def</span> <span class="nf">drawFrame</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">image</span><span class="p">):</span>
-    <span class="n">draw</span> <span class="o">=</span><span class="n">ImageDraw</span><span class="o">.</span><span class="n">Draw</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
-    <span class="n">draw</span><span class="o">.</span><span class="n">rectangle</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">image</span><span class="o">.</span><span class="n">width</span><span class="p">,</span><span class="n">image</span><span class="o">.</span><span class="n">height</span><span class="p">],</span> <span class="n">outline</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="n">f</span><span class="p">)</span>    
+    <span class="n">draw</span> <span class="o">=</span> <span class="n">ImageDraw</span><span class="o">.</span><span class="n">Draw</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
+    <span class="n">draw</span><span class="o">.</span><span class="n">rectangle</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">image</span><span class="o">.</span><span class="n">width</span><span class="p">,</span> <span class="n">image</span><span class="o">.</span><span class="n">height</span><span class="p">],</span> <span class="n">outline</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="n">f</span><span class="p">)</span>
+
 
 <span class="k">def</span> <span class="nf">lineCoords</span><span class="p">(</span><span class="n">side_1</span><span class="p">,</span> <span class="n">side_2</span><span class="p">):</span>
-    <span class="n">line</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">([</span><span class="n">side_1</span><span class="p">,</span><span class="n">side_2</span><span class="p">])</span>
-    <span class="k">if</span> <span class="n">line</span> <span class="o">==</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]:</span>
+    <span class="n">line</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">([</span><span class="n">side_1</span><span class="p">,</span> <span class="n">side_2</span><span class="p">])</span>
+    <span class="k">if</span> <span class="n">line</span> <span class="o">==</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]:</span>
         <span class="n">x1</span> <span class="o">=</span> <span class="mi">0</span>
-        <span class="n">y1</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">image_height</span><span class="p">)</span>
-        <span class="n">x2</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">image_width</span><span class="p">)</span>
-        <span class="n">y2</span> <span class="o">=</span> <span class="n">image_height</span>        
-    <span class="k">elif</span> <span class="n">line</span> <span class="o">==</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">]:</span>
+        <span class="n">y1</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">image_height</span><span class="p">)</span>
+        <span class="n">x2</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">image_width</span><span class="p">)</span>
+        <span class="n">y2</span> <span class="o">=</span> <span class="n">image_height</span>
+    <span class="k">elif</span> <span class="n">line</span> <span class="o">==</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">]:</span>
         <span class="n">x1</span> <span class="o">=</span> <span class="mi">0</span>
-        <span class="n">y1</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">image_height</span><span class="p">)</span>
+        <span class="n">y1</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">image_height</span><span class="p">)</span>
         <span class="n">x2</span> <span class="o">=</span> <span class="n">image_width</span>
-        <span class="n">y2</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">image_height</span><span class="p">)</span>
-    <span class="k">elif</span> <span class="n">line</span> <span class="o">==</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">]:</span>
+        <span class="n">y2</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">image_height</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">line</span> <span class="o">==</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">]:</span>
         <span class="n">x1</span> <span class="o">=</span> <span class="mi">0</span>
-        <span class="n">y1</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">image_height</span><span class="p">)</span>
-        <span class="n">x2</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">image_width</span><span class="p">)</span>
+        <span class="n">y1</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">image_height</span><span class="p">)</span>
+        <span class="n">x2</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">image_width</span><span class="p">)</span>
         <span class="n">y2</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="k">elif</span> <span class="n">line</span> <span class="o">==</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]:</span>
-        <span class="n">x1</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">image_width</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">line</span> <span class="o">==</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]:</span>
+        <span class="n">x1</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">image_width</span><span class="p">)</span>
         <span class="n">y1</span> <span class="o">=</span> <span class="n">image_height</span>
         <span class="n">x2</span> <span class="o">=</span> <span class="n">image_width</span>
-        <span class="n">y2</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">image_height</span><span class="p">)</span>
-    <span class="k">elif</span> <span class="n">line</span> <span class="o">==</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">]:</span>
-        <span class="n">x1</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">image_width</span><span class="p">)</span>
+        <span class="n">y2</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">image_height</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">line</span> <span class="o">==</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">]:</span>
+        <span class="n">x1</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">image_width</span><span class="p">)</span>
         <span class="n">y1</span> <span class="o">=</span> <span class="n">image_height</span>
-        <span class="n">x2</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">image_width</span><span class="p">)</span>
+        <span class="n">x2</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">image_width</span><span class="p">)</span>
         <span class="n">y2</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="k">elif</span> <span class="n">line</span> <span class="o">==</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]:</span>
+    <span class="k">elif</span> <span class="n">line</span> <span class="o">==</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]:</span>
         <span class="n">x1</span> <span class="o">=</span> <span class="n">image_width</span>
-        <span class="n">y1</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">image_height</span><span class="p">)</span>
-        <span class="n">x2</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">image_width</span><span class="p">)</span>
+        <span class="n">y1</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">image_height</span><span class="p">)</span>
+        <span class="n">x2</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">image_width</span><span class="p">)</span>
         <span class="n">y2</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="k">return</span> <span class="n">x1</span><span class="p">,</span><span class="n">y1</span><span class="p">,</span><span class="n">x2</span><span class="p">,</span><span class="n">y2</span>
+    <span class="k">return</span> <span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">y2</span>
 
-<span class="k">def</span> <span class="nf">lineWidthAlpha</span><span class="p">(</span><span class="n">w1</span><span class="p">,</span><span class="n">a1</span><span class="p">,</span><span class="n">w2</span><span class="p">,</span><span class="n">a2</span><span class="p">):</span>
+
+<span class="k">def</span> <span class="nf">lineWidthAlpha</span><span class="p">(</span><span class="n">w1</span><span class="p">,</span> <span class="n">a1</span><span class="p">,</span> <span class="n">w2</span><span class="p">,</span> <span class="n">a2</span><span class="p">):</span>
     <span class="n">x</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span>
     <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mf">0.95</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">w1</span><span class="p">,</span><span class="n">a1</span>    
+        <span class="k">return</span> <span class="n">w1</span><span class="p">,</span> <span class="n">a1</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">w2</span><span class="p">,</span><span class="n">a2</span> 
+        <span class="k">return</span> <span class="n">w2</span><span class="p">,</span> <span class="n">a2</span>
+
 
 <span class="k">def</span> <span class="nf">lineReflect_vertical</span><span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="n">side_1</span><span class="p">,</span> <span class="n">side_2</span><span class="p">):</span>
-    <span class="n">x1</span><span class="p">,</span><span class="n">y1</span><span class="p">,</span><span class="n">x2</span><span class="p">,</span><span class="n">y2</span> <span class="o">=</span> <span class="n">line</span>
-    <span class="k">if</span> <span class="nb">sorted</span><span class="p">([</span><span class="n">side_1</span><span class="p">,</span><span class="n">side_2</span><span class="p">])</span> <span class="o">==</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]:</span>
+    <span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">y2</span> <span class="o">=</span> <span class="n">line</span>
+    <span class="k">if</span> <span class="nb">sorted</span><span class="p">([</span><span class="n">side_1</span><span class="p">,</span> <span class="n">side_2</span><span class="p">])</span> <span class="o">==</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]:</span>
         <span class="n">new_x1</span> <span class="o">=</span> <span class="n">image_width</span>
         <span class="n">new_y1</span> <span class="o">=</span> <span class="n">y1</span>
-        <span class="n">new_x2</span> <span class="o">=</span> <span class="n">image_width</span><span class="o">-</span><span class="n">x2</span>
+        <span class="n">new_x2</span> <span class="o">=</span> <span class="n">image_width</span> <span class="o">-</span> <span class="n">x2</span>
         <span class="n">new_y2</span> <span class="o">=</span> <span class="n">image_height</span>
-    <span class="k">elif</span> <span class="nb">sorted</span><span class="p">([</span><span class="n">side_1</span><span class="p">,</span><span class="n">side_2</span><span class="p">])</span> <span class="o">==</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">]:</span>
+    <span class="k">elif</span> <span class="nb">sorted</span><span class="p">([</span><span class="n">side_1</span><span class="p">,</span> <span class="n">side_2</span><span class="p">])</span> <span class="o">==</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">]:</span>
         <span class="n">new_x1</span> <span class="o">=</span> <span class="n">image_width</span>
         <span class="n">new_y1</span> <span class="o">=</span> <span class="n">y1</span>
         <span class="n">new_x2</span> <span class="o">=</span> <span class="mi">0</span>
         <span class="n">new_y2</span> <span class="o">=</span> <span class="n">y2</span>
-    <span class="k">elif</span> <span class="nb">sorted</span><span class="p">([</span><span class="n">side_1</span><span class="p">,</span><span class="n">side_2</span><span class="p">])</span> <span class="o">==</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">]:</span>
+    <span class="k">elif</span> <span class="nb">sorted</span><span class="p">([</span><span class="n">side_1</span><span class="p">,</span> <span class="n">side_2</span><span class="p">])</span> <span class="o">==</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">]:</span>
         <span class="n">new_x1</span> <span class="o">=</span> <span class="n">image_width</span>
         <span class="n">new_y1</span> <span class="o">=</span> <span class="n">y1</span>
-        <span class="n">new_x2</span> <span class="o">=</span> <span class="n">image_width</span><span class="o">-</span><span class="n">x2</span>
-        <span class="n">new_y2</span> <span class="o">=</span> <span class="mi">0</span>      
-    <span class="k">elif</span> <span class="nb">sorted</span><span class="p">([</span><span class="n">side_1</span><span class="p">,</span><span class="n">side_2</span><span class="p">])</span> <span class="o">==</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]:</span>
-        <span class="n">new_x1</span> <span class="o">=</span> <span class="n">image_width</span><span class="o">-</span><span class="n">x1</span>
-        <span class="n">new_y1</span> <span class="o">=</span> <span class="n">image_height</span>
-        <span class="n">new_x2</span> <span class="o">=</span> <span class="mi">0</span>
-        <span class="n">new_y2</span> <span class="o">=</span> <span class="n">y2</span>
-    <span class="k">elif</span> <span class="nb">sorted</span><span class="p">([</span><span class="n">side_1</span><span class="p">,</span><span class="n">side_2</span><span class="p">])</span> <span class="o">==</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">]:</span>
-        <span class="n">new_x1</span> <span class="o">=</span> <span class="n">image_width</span><span class="o">-</span><span class="n">x1</span>
-        <span class="n">new_y1</span> <span class="o">=</span> <span class="n">image_height</span>
-        <span class="n">new_x2</span> <span class="o">=</span> <span class="n">image_width</span><span class="o">-</span><span class="n">x2</span>
+        <span class="n">new_x2</span> <span class="o">=</span> <span class="n">image_width</span> <span class="o">-</span> <span class="n">x2</span>
         <span class="n">new_y2</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="k">elif</span> <span class="nb">sorted</span><span class="p">([</span><span class="n">side_1</span><span class="p">,</span><span class="n">side_2</span><span class="p">])</span> <span class="o">==</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]:</span>
+    <span class="k">elif</span> <span class="nb">sorted</span><span class="p">([</span><span class="n">side_1</span><span class="p">,</span> <span class="n">side_2</span><span class="p">])</span> <span class="o">==</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]:</span>
+        <span class="n">new_x1</span> <span class="o">=</span> <span class="n">image_width</span> <span class="o">-</span> <span class="n">x1</span>
+        <span class="n">new_y1</span> <span class="o">=</span> <span class="n">image_height</span>
+        <span class="n">new_x2</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">new_y2</span> <span class="o">=</span> <span class="n">y2</span>
+    <span class="k">elif</span> <span class="nb">sorted</span><span class="p">([</span><span class="n">side_1</span><span class="p">,</span> <span class="n">side_2</span><span class="p">])</span> <span class="o">==</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">]:</span>
+        <span class="n">new_x1</span> <span class="o">=</span> <span class="n">image_width</span> <span class="o">-</span> <span class="n">x1</span>
+        <span class="n">new_y1</span> <span class="o">=</span> <span class="n">image_height</span>
+        <span class="n">new_x2</span> <span class="o">=</span> <span class="n">image_width</span> <span class="o">-</span> <span class="n">x2</span>
+        <span class="n">new_y2</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">elif</span> <span class="nb">sorted</span><span class="p">([</span><span class="n">side_1</span><span class="p">,</span> <span class="n">side_2</span><span class="p">])</span> <span class="o">==</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]:</span>
         <span class="n">new_x1</span> <span class="o">=</span> <span class="mi">0</span>
         <span class="n">new_y1</span> <span class="o">=</span> <span class="n">y1</span>
-        <span class="n">new_x2</span> <span class="o">=</span> <span class="n">image_width</span><span class="o">-</span><span class="n">x2</span>
+        <span class="n">new_x2</span> <span class="o">=</span> <span class="n">image_width</span> <span class="o">-</span> <span class="n">x2</span>
         <span class="n">new_y2</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="k">return</span> <span class="n">new_x1</span><span class="p">,</span> <span class="n">new_y1</span><span class="p">,</span> <span class="n">new_x2</span><span class="p">,</span> <span class="n">new_y2</span>
 
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">800</span><span class="p">):</span>    
-    <span class="n">side_from</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>   
-    <span class="n">side_to</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">800</span><span class="p">):</span>
+    <span class="n">side_from</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+    <span class="n">side_to</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 
     <span class="k">while</span> <span class="n">side_from</span> <span class="o">==</span> <span class="n">side_to</span><span class="p">:</span>
-        <span class="n">side_from</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>   
-        <span class="n">side_to</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
-          
-    <span class="n">overlay</span> <span class="o">=</span> <span class="n">ImageDraw</span><span class="o">.</span><span class="n">Draw</span><span class="p">(</span><span class="n">image</span><span class="p">,</span><span class="s1">&#39;RGBA&#39;</span><span class="p">)</span>
-    <span class="n">original_line</span> <span class="o">=</span> <span class="n">lineCoords</span><span class="p">(</span><span class="n">side_from</span><span class="p">,</span> <span class="n">side_to</span><span class="p">)</span>    
-    
-    <span class="n">width</span><span class="p">,</span><span class="n">alpha</span> <span class="o">=</span> <span class="n">lineWidthAlpha</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">150</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">50</span><span class="p">)</span>
-    <span class="n">overlay</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">original_line</span><span class="p">,</span><span class="n">fill</span><span class="o">=</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="n">alpha</span><span class="p">),</span><span class="n">width</span><span class="o">=</span><span class="n">width</span><span class="p">)</span>
-    <span class="n">reflection</span> <span class="o">=</span> <span class="n">lineReflect_vertical</span><span class="p">(</span><span class="n">original_line</span><span class="p">,</span> <span class="n">side_from</span><span class="p">,</span> <span class="n">side_to</span><span class="p">)</span>    
-    <span class="n">overlay</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">reflection</span><span class="p">,</span><span class="n">fill</span><span class="o">=</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="n">alpha</span><span class="p">),</span><span class="n">width</span><span class="o">=</span><span class="n">width</span><span class="p">)</span>
+        <span class="n">side_from</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+        <span class="n">side_to</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 
-<span class="n">rotated_image</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">rotate</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span><span class="n">Image</span><span class="o">.</span><span class="n">BICUBIC</span><span class="p">,</span><span class="n">expand</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">overlay</span> <span class="o">=</span> <span class="n">ImageDraw</span><span class="o">.</span><span class="n">Draw</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="s2">&quot;RGBA&quot;</span><span class="p">)</span>
+    <span class="n">original_line</span> <span class="o">=</span> <span class="n">lineCoords</span><span class="p">(</span><span class="n">side_from</span><span class="p">,</span> <span class="n">side_to</span><span class="p">)</span>
 
-<span class="n">cropped_image</span> <span class="o">=</span> <span class="n">rotated_image</span><span class="o">.</span><span class="n">crop</span><span class="p">((</span><span class="mi">800</span><span class="p">,</span><span class="mi">600</span><span class="p">,</span><span class="mi">1800</span><span class="p">,</span><span class="mi">1200</span><span class="p">))</span>
-<span class="n">drawFrame</span><span class="p">(</span><span class="n">frame</span><span class="p">,</span><span class="n">cropped_image</span><span class="p">)</span>
+    <span class="n">width</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="n">lineWidthAlpha</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+    <span class="n">overlay</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">original_line</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="n">alpha</span><span class="p">),</span> <span class="n">width</span><span class="o">=</span><span class="n">width</span><span class="p">)</span>
+    <span class="n">reflection</span> <span class="o">=</span> <span class="n">lineReflect_vertical</span><span class="p">(</span><span class="n">original_line</span><span class="p">,</span> <span class="n">side_from</span><span class="p">,</span> <span class="n">side_to</span><span class="p">)</span>
+    <span class="n">overlay</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">reflection</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="n">alpha</span><span class="p">),</span> <span class="n">width</span><span class="o">=</span><span class="n">width</span><span class="p">)</span>
+
+<span class="n">rotated_image</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">rotate</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="n">Image</span><span class="o">.</span><span class="n">BICUBIC</span><span class="p">,</span> <span class="n">expand</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">cropped_image</span> <span class="o">=</span> <span class="n">rotated_image</span><span class="o">.</span><span class="n">crop</span><span class="p">((</span><span class="mi">800</span><span class="p">,</span> <span class="mi">600</span><span class="p">,</span> <span class="mi">1800</span><span class="p">,</span> <span class="mi">1200</span><span class="p">))</span>
+<span class="n">drawFrame</span><span class="p">(</span><span class="n">frame</span><span class="p">,</span> <span class="n">cropped_image</span><span class="p">)</span>
 
 <span class="n">display</span><span class="p">(</span><span class="n">cropped_image</span><span class="p">)</span>
 </pre></div>

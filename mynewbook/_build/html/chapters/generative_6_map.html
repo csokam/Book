@@ -42,7 +42,7 @@
   <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
     <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../_static/copybutton.js?v=f281be69"></script>
@@ -178,18 +178,19 @@
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Webes adatbányászat - Web Scraping</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="web_scraping_intro.html">Adatbányászat - Web scraping</a></li>
-
+<li class="toctree-l1"><a class="reference internal" href="web_scraping_intro.html">Adatbányászat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="web_scraping_wikipeadia_plants.html">Wikipédia növénycsaládok</a></li>
 <li class="toctree-l1"><a class="reference internal" href="web_scraping_wikipedia_birds.html">Wikipédia madárcsaládok</a></li>
+<li class="toctree-l1"><a class="reference internal" href="web_scraping_wikipedia_marvel.html">Wikipédia Marvel karakterek</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Adatvizualizáció - Data Visualization</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="visualization.html">Adatvizualizáció</a></li>
+<li class="toctree-l1"><a class="reference internal" href="visualization_intro.html">Adatvizualizáció</a></li>
 <li class="toctree-l1"><a class="reference internal" href="visualization_pandas.html">Vizualizáció Pandas könyvtár segítségével</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Generatív képalkotás - Generative art</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="generative_1_intro.html">PIL bevezetés - variációk egy témára</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generative_1_intro.html">Generatív képalkotás - variációk egy témára</a></li>
 <li class="toctree-l1"><a class="reference internal" href="generative_2_triangles.html">Háromszög csempék</a></li>
 <li class="toctree-l1"><a class="reference internal" href="generative_3_circlerows.html">Sorokat alkotó körök</a></li>
 <li class="toctree-l1"><a class="reference internal" href="generative_4_dots.html">Véletlen számok és Perlin zaj - vonaldiagramon</a></li>
@@ -200,10 +201,11 @@
 <li class="toctree-l1"><a class="reference internal" href="generative_10_lines.html">Véletlen vonalak</a></li>
 <li class="toctree-l1"><a class="reference internal" href="generative_11_patterns.html">Minták létrehozása</a></li>
 <li class="toctree-l1"><a class="reference internal" href="generative_12_random.html">Fokozatos kitöltés</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generative_13_comparison.html">PIL és Cairo könyvtárak összehasonlítása</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">L-rendszerek</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="l-system.html">Az L-rendszer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="l-system_intro.html">L-rendszerek</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Források</span></p>
 <ul class="nav bd-sidenav">
@@ -395,21 +397,23 @@ document.write(`
 <span class="n">octaves</span> <span class="o">=</span> <span class="mi">5</span>
 <span class="n">persistence</span> <span class="o">=</span> <span class="mf">0.5</span>
 <span class="n">lacunarity</span> <span class="o">=</span> <span class="mf">2.0</span>
-<span class="n">base</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">base</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
 
 <span class="n">world</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">))</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">width</span><span class="p">):</span>
     <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">height</span><span class="p">):</span>
-        <span class="n">world</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">noise</span><span class="o">.</span><span class="n">pnoise2</span><span class="p">(</span><span class="n">i</span><span class="o">/</span><span class="n">scale</span><span class="p">,</span> 
-                                    <span class="n">j</span><span class="o">/</span><span class="n">scale</span><span class="p">,</span> 
-                                    <span class="n">octaves</span><span class="o">=</span><span class="n">octaves</span><span class="p">,</span> 
-                                    <span class="n">persistence</span><span class="o">=</span><span class="n">persistence</span><span class="p">,</span> 
-                                    <span class="n">lacunarity</span><span class="o">=</span><span class="n">lacunarity</span><span class="p">,</span> 
-                                    <span class="n">repeatx</span><span class="o">=</span><span class="mi">1024</span><span class="p">,</span> 
-                                    <span class="n">repeaty</span><span class="o">=</span><span class="mi">1024</span><span class="p">,</span> 
-                                    <span class="n">base</span><span class="o">=</span><span class="n">base</span><span class="p">)</span>
-        
-<span class="n">imagePerlin</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">fromarray</span><span class="p">((</span><span class="n">world</span><span class="o">*</span><span class="mi">255</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">),</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;L&quot;</span><span class="p">)</span>
+        <span class="n">world</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">noise</span><span class="o">.</span><span class="n">pnoise2</span><span class="p">(</span>
+            <span class="n">i</span> <span class="o">/</span> <span class="n">scale</span><span class="p">,</span>
+            <span class="n">j</span> <span class="o">/</span> <span class="n">scale</span><span class="p">,</span>
+            <span class="n">octaves</span><span class="o">=</span><span class="n">octaves</span><span class="p">,</span>
+            <span class="n">persistence</span><span class="o">=</span><span class="n">persistence</span><span class="p">,</span>
+            <span class="n">lacunarity</span><span class="o">=</span><span class="n">lacunarity</span><span class="p">,</span>
+            <span class="n">repeatx</span><span class="o">=</span><span class="mi">1024</span><span class="p">,</span>
+            <span class="n">repeaty</span><span class="o">=</span><span class="mi">1024</span><span class="p">,</span>
+            <span class="n">base</span><span class="o">=</span><span class="n">base</span><span class="p">,</span>
+        <span class="p">)</span>
+
+<span class="n">imagePerlin</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">fromarray</span><span class="p">((</span><span class="n">world</span> <span class="o">*</span> <span class="mi">255</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">),</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;L&quot;</span><span class="p">)</span>
 <span class="n">display</span><span class="p">(</span><span class="n">imagePerlin</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -423,12 +427,13 @@ document.write(`
 <h2>Az elkészült térkép színezése<a class="headerlink" href="#az-elkeszult-terkep-szinezese" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">blue</span> <span class="o">=</span> <span class="p">[</span><span class="mi">65</span><span class="p">,</span><span class="mi">105</span><span class="p">,</span><span class="mi">225</span><span class="p">]</span>
-<span class="n">green</span> <span class="o">=</span> <span class="p">[</span><span class="mi">34</span><span class="p">,</span><span class="mi">139</span><span class="p">,</span><span class="mi">34</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">blue</span> <span class="o">=</span> <span class="p">[</span><span class="mi">65</span><span class="p">,</span> <span class="mi">105</span><span class="p">,</span> <span class="mi">225</span><span class="p">]</span>
+<span class="n">green</span> <span class="o">=</span> <span class="p">[</span><span class="mi">34</span><span class="p">,</span> <span class="mi">139</span><span class="p">,</span> <span class="mi">34</span><span class="p">]</span>
 <span class="n">beach</span> <span class="o">=</span> <span class="p">[</span><span class="mi">238</span><span class="p">,</span> <span class="mi">214</span><span class="p">,</span> <span class="mi">175</span><span class="p">]</span>
 
+
 <span class="k">def</span> <span class="nf">add_color</span><span class="p">(</span><span class="n">world</span><span class="p">):</span>
-    <span class="n">color_world</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">world</span><span class="o">.</span><span class="n">shape</span><span class="o">+</span><span class="p">(</span><span class="mi">3</span><span class="p">,))</span>
+    <span class="n">color_world</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">world</span><span class="o">.</span><span class="n">shape</span> <span class="o">+</span> <span class="p">(</span><span class="mi">3</span><span class="p">,))</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">width</span><span class="p">):</span>
         <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">height</span><span class="p">):</span>
             <span class="k">if</span> <span class="n">world</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">&lt;</span> <span class="o">-</span><span class="mf">0.05</span><span class="p">:</span>
@@ -437,8 +442,9 @@ document.write(`
                 <span class="n">color_world</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">beach</span>
             <span class="k">elif</span> <span class="n">world</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mf">1.0</span><span class="p">:</span>
                 <span class="n">color_world</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">green</span>
-            
+
     <span class="k">return</span> <span class="n">color_world</span>
+
 
 <span class="n">color_world</span> <span class="o">=</span> <span class="n">add_color</span><span class="p">(</span><span class="n">world</span><span class="p">)</span>
 <span class="n">imagePerlin</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">fromarray</span><span class="p">((</span><span class="n">color_world</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">))</span>
@@ -455,14 +461,15 @@ document.write(`
 <h2>Kiegészítés hegyekkel és havas csúcsokkal<a class="headerlink" href="#kiegeszites-hegyekkel-es-havas-csucsokkal" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">blue</span> <span class="o">=</span> <span class="p">[</span><span class="mi">65</span><span class="p">,</span><span class="mi">105</span><span class="p">,</span><span class="mi">225</span><span class="p">]</span>
-<span class="n">green</span> <span class="o">=</span> <span class="p">[</span><span class="mi">34</span><span class="p">,</span><span class="mi">139</span><span class="p">,</span><span class="mi">34</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">blue</span> <span class="o">=</span> <span class="p">[</span><span class="mi">65</span><span class="p">,</span> <span class="mi">105</span><span class="p">,</span> <span class="mi">225</span><span class="p">]</span>
+<span class="n">green</span> <span class="o">=</span> <span class="p">[</span><span class="mi">34</span><span class="p">,</span> <span class="mi">139</span><span class="p">,</span> <span class="mi">34</span><span class="p">]</span>
 <span class="n">beach</span> <span class="o">=</span> <span class="p">[</span><span class="mi">238</span><span class="p">,</span> <span class="mi">214</span><span class="p">,</span> <span class="mi">175</span><span class="p">]</span>
 <span class="n">snow</span> <span class="o">=</span> <span class="p">[</span><span class="mi">255</span><span class="p">,</span> <span class="mi">250</span><span class="p">,</span> <span class="mi">250</span><span class="p">]</span>
 <span class="n">mountain</span> <span class="o">=</span> <span class="p">[</span><span class="mi">139</span><span class="p">,</span> <span class="mi">137</span><span class="p">,</span> <span class="mi">137</span><span class="p">]</span>
 
+
 <span class="k">def</span> <span class="nf">add_color_2</span><span class="p">(</span><span class="n">world</span><span class="p">):</span>
-    <span class="n">color_world</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">world</span><span class="o">.</span><span class="n">shape</span><span class="o">+</span><span class="p">(</span><span class="mi">3</span><span class="p">,))</span>
+    <span class="n">color_world</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">world</span><span class="o">.</span><span class="n">shape</span> <span class="o">+</span> <span class="p">(</span><span class="mi">3</span><span class="p">,))</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">width</span><span class="p">):</span>
         <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">height</span><span class="p">):</span>
             <span class="k">if</span> <span class="n">world</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">&lt;</span> <span class="o">-</span><span class="mf">0.05</span><span class="p">:</span>
@@ -478,6 +485,7 @@ document.write(`
 
     <span class="k">return</span> <span class="n">color_world</span>
 
+
 <span class="n">color_world</span> <span class="o">=</span> <span class="n">add_color_2</span><span class="p">(</span><span class="n">world</span><span class="p">)</span>
 <span class="n">imagePerlin</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">fromarray</span><span class="p">((</span><span class="n">color_world</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">))</span>
 <span class="n">display</span><span class="p">(</span><span class="n">imagePerlin</span><span class="p">)</span>
@@ -490,13 +498,13 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">,</span><span class="n">b</span> <span class="o">=</span> <span class="n">width</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">height</span><span class="o">/</span><span class="mi">2</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">width</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="n">height</span> <span class="o">/</span> <span class="mi">2</span>
 <span class="n">n</span> <span class="o">=</span> <span class="mi">1024</span>
 <span class="n">r</span> <span class="o">=</span> <span class="mi">125</span>
-<span class="n">y</span><span class="p">,</span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ogrid</span><span class="p">[</span><span class="o">-</span><span class="n">a</span><span class="p">:</span><span class="n">n</span><span class="o">-</span><span class="n">a</span><span class="p">,</span> <span class="o">-</span><span class="n">b</span><span class="p">:</span><span class="n">n</span><span class="o">-</span><span class="n">b</span><span class="p">]</span>
+<span class="n">y</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ogrid</span><span class="p">[</span><span class="o">-</span><span class="n">a</span> <span class="p">:</span> <span class="n">n</span> <span class="o">-</span> <span class="n">a</span><span class="p">,</span> <span class="o">-</span><span class="n">b</span> <span class="p">:</span> <span class="n">n</span> <span class="o">-</span> <span class="n">b</span><span class="p">]</span>
 <span class="c1"># creates a mask with True False values</span>
 <span class="c1"># at indices</span>
-<span class="n">mask</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="n">y</span><span class="o">**</span><span class="mi">2</span> <span class="o">&lt;=</span> <span class="n">r</span><span class="o">**</span><span class="mi">2</span>
+<span class="n">mask</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">y</span><span class="o">**</span><span class="mi">2</span> <span class="o">&lt;=</span> <span class="n">r</span><span class="o">**</span><span class="mi">2</span>
 
 <span class="n">black</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
 <span class="n">island</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">color_world</span><span class="p">)</span>
@@ -504,11 +512,11 @@ document.write(`
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">width</span><span class="p">):</span>
     <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">height</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">mask</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]:</span>
-            <span class="n">island</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">color_world</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span>            
+            <span class="n">island</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">color_world</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">island</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">black</span>
 
-<span class="c1">#print(island)    </span>
+<span class="c1"># print(island)</span>
 <span class="n">masked_island</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">fromarray</span><span class="p">((</span><span class="n">island</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">))</span>
 <span class="n">display</span><span class="p">(</span><span class="n">masked_island</span><span class="p">)</span>
 </pre></div>
@@ -536,10 +544,10 @@ document.write(`
 
 <span class="c1"># Normalize the distance to [0, 1]</span>
 <span class="n">gradient</span> <span class="o">=</span> <span class="p">(</span><span class="n">distance</span> <span class="o">-</span> <span class="n">distance</span><span class="o">.</span><span class="n">min</span><span class="p">())</span> <span class="o">/</span> <span class="p">(</span><span class="n">distance</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="o">-</span> <span class="n">distance</span><span class="o">.</span><span class="n">min</span><span class="p">())</span>
-<span class="n">circle_gradient</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">power</span><span class="p">(</span><span class="n">gradient</span><span class="p">,</span><span class="n">gamma</span><span class="p">)</span>
+<span class="n">circle_gradient</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">power</span><span class="p">(</span><span class="n">gradient</span><span class="p">,</span> <span class="n">gamma</span><span class="p">)</span>
 <span class="c1"># Create a circular gradient</span>
 
-<span class="n">grad</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">fromarray</span><span class="p">((</span><span class="n">circle_gradient</span><span class="o">*</span><span class="mi">255</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">),</span> <span class="n">mode</span> <span class="o">=</span> <span class="s2">&quot;L&quot;</span><span class="p">)</span>
+<span class="n">grad</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">fromarray</span><span class="p">((</span><span class="n">circle_gradient</span> <span class="o">*</span> <span class="mi">255</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">),</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;L&quot;</span><span class="p">)</span>
 <span class="n">display</span><span class="p">(</span><span class="n">grad</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -556,8 +564,8 @@ document.write(`
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">world_noise</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">world</span><span class="p">)</span>
 
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">width</span><span class="p">):</span>
-    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">height</span><span class="p">):</span>        
-        <span class="n">world_noise</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">world</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">*</span> <span class="n">circle_gradient</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">])</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">height</span><span class="p">):</span>
+        <span class="n">world_noise</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">world</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">*</span> <span class="n">circle_gradient</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span>
         <span class="k">if</span> <span class="n">world_noise</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
             <span class="n">world_noise</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">*=</span> <span class="mi">20</span>
 
@@ -565,7 +573,7 @@ document.write(`
 <span class="n">max_grad</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">world_noise</span><span class="p">)</span>
 <span class="n">world_noise</span> <span class="o">=</span> <span class="n">world_noise</span> <span class="o">/</span> <span class="n">max_grad</span>
 
-<span class="nb">filter</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">fromarray</span><span class="p">((</span><span class="n">world_noise</span><span class="o">*</span><span class="mi">255</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">),</span> <span class="n">mode</span> <span class="o">=</span> <span class="s2">&quot;L&quot;</span><span class="p">)</span>
+<span class="nb">filter</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">fromarray</span><span class="p">((</span><span class="n">world_noise</span> <span class="o">*</span> <span class="mi">255</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">),</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;L&quot;</span><span class="p">)</span>
 <span class="n">display</span><span class="p">(</span><span class="nb">filter</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -579,19 +587,20 @@ document.write(`
 <h2>Színezett gradiens és szigetek<a class="headerlink" href="#szinezett-gradiens-es-szigetek" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lightblue</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">191</span><span class="p">,</span><span class="mi">255</span><span class="p">]</span>
-<span class="n">blue</span> <span class="o">=</span> <span class="p">[</span><span class="mi">65</span><span class="p">,</span><span class="mi">105</span><span class="p">,</span><span class="mi">225</span><span class="p">]</span>
-<span class="n">green</span> <span class="o">=</span> <span class="p">[</span><span class="mi">34</span><span class="p">,</span><span class="mi">139</span><span class="p">,</span><span class="mi">34</span><span class="p">]</span>
-<span class="n">darkgreen</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
-<span class="n">sandy</span> <span class="o">=</span> <span class="p">[</span><span class="mi">210</span><span class="p">,</span><span class="mi">180</span><span class="p">,</span><span class="mi">140</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lightblue</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">191</span><span class="p">,</span> <span class="mi">255</span><span class="p">]</span>
+<span class="n">blue</span> <span class="o">=</span> <span class="p">[</span><span class="mi">65</span><span class="p">,</span> <span class="mi">105</span><span class="p">,</span> <span class="mi">225</span><span class="p">]</span>
+<span class="n">green</span> <span class="o">=</span> <span class="p">[</span><span class="mi">34</span><span class="p">,</span> <span class="mi">139</span><span class="p">,</span> <span class="mi">34</span><span class="p">]</span>
+<span class="n">darkgreen</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+<span class="n">sandy</span> <span class="o">=</span> <span class="p">[</span><span class="mi">210</span><span class="p">,</span> <span class="mi">180</span><span class="p">,</span> <span class="mi">140</span><span class="p">]</span>
 <span class="n">beach</span> <span class="o">=</span> <span class="p">[</span><span class="mi">238</span><span class="p">,</span> <span class="mi">214</span><span class="p">,</span> <span class="mi">175</span><span class="p">]</span>
 <span class="n">snow</span> <span class="o">=</span> <span class="p">[</span><span class="mi">255</span><span class="p">,</span> <span class="mi">250</span><span class="p">,</span> <span class="mi">250</span><span class="p">]</span>
 <span class="n">mountain</span> <span class="o">=</span> <span class="p">[</span><span class="mi">139</span><span class="p">,</span> <span class="mi">137</span><span class="p">,</span> <span class="mi">137</span><span class="p">]</span>
 
 <span class="n">threshold</span> <span class="o">=</span> <span class="mi">0</span>
 
+
 <span class="k">def</span> <span class="nf">add_color3</span><span class="p">(</span><span class="n">world</span><span class="p">):</span>
-    <span class="n">color_world</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">world</span><span class="o">.</span><span class="n">shape</span><span class="o">+</span><span class="p">(</span><span class="mi">3</span><span class="p">,))</span>
+    <span class="n">color_world</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">world</span><span class="o">.</span><span class="n">shape</span> <span class="o">+</span> <span class="p">(</span><span class="mi">3</span><span class="p">,))</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">width</span><span class="p">):</span>
         <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">height</span><span class="p">):</span>
             <span class="k">if</span> <span class="n">world</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">threshold</span> <span class="o">+</span> <span class="mf">0.05</span><span class="p">:</span>
@@ -610,6 +619,7 @@ document.write(`
                 <span class="n">color_world</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">snow</span>
 
     <span class="k">return</span> <span class="n">color_world</span>
+
 
 <span class="n">island_world_grad</span> <span class="o">=</span> <span class="n">add_color3</span><span class="p">(</span><span class="n">world_noise</span><span class="p">)</span>
 
