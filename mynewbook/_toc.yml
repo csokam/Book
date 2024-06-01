@@ -12,10 +12,15 @@ parts:
     - file: chapters/web_scraping_wikipeadia_plants
     - file: chapters/web_scraping_wikipedia_birds
     - file: chapters/web_scraping_wikipedia_marvel
+    - file: chapters/web_scraping_index
+    - file: chapters/web_scraping_telex
+    - file: chapters/web_scraping_google_news
+    - file: chapters/web_scraping_alza
   - caption: Adatvizualizáció - Data Visualization    
     chapters: 
     - file: chapters/visualization_intro
     - file: chapters/visualization_pandas
+    - file: chapters/visualization_alza
   - caption: Generatív képalkotás - Generative art    
     chapters:
     - file: chapters/generative_1_intro
