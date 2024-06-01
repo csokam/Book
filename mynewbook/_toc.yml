@@ -21,6 +21,7 @@ parts:
     - file: chapters/visualization_intro
     - file: chapters/visualization_pandas
     - file: chapters/visualization_alza
+    - file: chapters/visualization_crypto
   - caption: Generatív képalkotás - Generative art    
     chapters:
     - file: chapters/generative_1_intro
