@@ -1,0 +1,54 @@
+Traceback (most recent call last):
+  File "c:\Python312\Lib\site-packages\jupyter_cache\executors\utils.py", line 58, in single_nb_execution
+    executenb(
+  File "c:\Python312\Lib\site-packages\nbclient\client.py", line 1314, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\csoka\AppData\Roaming\Python\Python312\site-packages\jupyter_core\utils\__init__.py", line 173, in wrapped
+    return loop.run_until_complete(inner)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Python312\Lib\asyncio\base_events.py", line 664, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "c:\Python312\Lib\site-packages\nbclient\client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "c:\Python312\Lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "c:\Python312\Lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+import os
+import pandas as pd
+
+output_file = "data/output_2.xlsx"
+
+csv_files = [file for file in os.listdir(folder_path) if file.endswith(".csv")]
+
+all_data = pd.DataFrame()
+
+for csv_file in csv_files:
+    df = pd.read_csv(os.path.join(folder_path, csv_file))
+
+    ticker = csv_file.split("-")
+    df["Ticker"] = ticker[0]
+
+    all_data = pd.concat([all_data, df], ignore_index=True)
+
+all_data.to_excel(output_file, index=False)
+
+print("Adatok mentve: ", output_file)
+------------------
+
+
+[1;31m---------------------------------------------------------------------------[0m
+[1;31mNameError[0m                                 Traceback (most recent call last)
+Cell [1;32mIn[7], line 6[0m
+[0;32m      2[0m [38;5;28;01mimport[39;00m [38;5;21;01mpandas[39;00m [38;5;28;01mas[39;00m [38;5;21;01mpd[39;00m
+[0;32m      4[0m output_file [38;5;241m=[39m [38;5;124m"[39m[38;5;124mdata/output_2.xlsx[39m[38;5;124m"[39m
+[1;32m----> 6[0m csv_files [38;5;241m=[39m [file [38;5;28;01mfor[39;00m file [38;5;129;01min[39;00m os[38;5;241m.[39mlistdir([43mfolder_path[49m) [38;5;28;01mif[39;00m file[38;5;241m.[39mendswith([38;5;124m"[39m[38;5;124m.csv[39m[38;5;124m"[39m)]
+[0;32m      8[0m all_data [38;5;241m=[39m pd[38;5;241m.[39mDataFrame()
+[0;32m     10[0m [38;5;28;01mfor[39;00m csv_file [38;5;129;01min[39;00m csv_files:
+
+[1;31mNameError[0m: name 'folder_path' is not defined
+
