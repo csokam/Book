@@ -42,7 +42,7 @@
   <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
     <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../_static/copybutton.js?v=f281be69"></script>
@@ -60,7 +60,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/visualization_alza';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Szükséges könyvtárak telepítés, importálása" href="visualization_crypto.html" />
+    <link rel="next" title="Kriptovaluták értékének ábrázolása" href="visualization_crypto.html" />
     <link rel="prev" title="Vizualizáció Pandas könyvtár segítségével" href="visualization_pandas.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -192,14 +192,7 @@
 <li class="toctree-l1"><a class="reference internal" href="visualization_intro.html">Adatvizualizáció</a></li>
 <li class="toctree-l1"><a class="reference internal" href="visualization_pandas.html">Vizualizáció Pandas könyvtár segítségével</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Webshop termékeinek vizualizálása</a></li>
-<li class="toctree-l1"><a class="reference internal" href="visualization_crypto.html">Szükséges könyvtárak telepítés, importálása</a></li>
-
-
-
-
-
-
-
+<li class="toctree-l1"><a class="reference internal" href="visualization_crypto.html">Kriptovaluták értékének ábrázolása</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Generatív képalkotás - Generative art</span></p>
 <ul class="nav bd-sidenav">
@@ -403,6 +396,7 @@ document.write(`
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># %pip install pandas</span>
 <span class="c1"># %pip install matplotlib</span>
 <span class="c1"># %pip install plotly</span>
+<span class="c1"># %pip install kaleido==0.1.0post1</span>
 </pre></div>
 </div>
 </div>
@@ -428,71 +422,202 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;output_alza.csv&quot;</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s2">&quot;,&quot;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="nn">File c:\Python312\Lib\site-packages\pandas\io\parsers\readers.py:948,</span> in <span class="ni">read_csv</span><span class="nt">(filepath_or_buffer, sep, delimiter, header, names, index_col, usecols, dtype, engine, converters, true_values, false_values, skipinitialspace, skiprows, skipfooter, nrows, na_values, keep_default_na, na_filter, verbose, skip_blank_lines, parse_dates, infer_datetime_format, keep_date_col, date_parser, date_format, dayfirst, cache_dates, iterator, chunksize, compression, thousands, decimal, lineterminator, quotechar, quoting, doublequote, escapechar, comment, encoding, encoding_errors, dialect, on_bad_lines, delim_whitespace, low_memory, memory_map, float_precision, storage_options, dtype_backend)</span>
-<span class="g g-Whitespace">    </span><span class="mi">935</span> <span class="n">kwds_defaults</span> <span class="o">=</span> <span class="n">_refine_defaults_read</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">936</span>     <span class="n">dialect</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">937</span>     <span class="n">delimiter</span><span class="p">,</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">944</span>     <span class="n">dtype_backend</span><span class="o">=</span><span class="n">dtype_backend</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">945</span> <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">946</span> <span class="n">kwds</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">kwds_defaults</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">948</span> <span class="k">return</span> <span class="n">_read</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="n">kwds</span><span class="p">)</span>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
 
-<span class="nn">File c:\Python312\Lib\site-packages\pandas\io\parsers\readers.py:611,</span> in <span class="ni">_read</span><span class="nt">(filepath_or_buffer, kwds)</span>
-<span class="g g-Whitespace">    </span><span class="mi">608</span> <span class="n">_validate_names</span><span class="p">(</span><span class="n">kwds</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;names&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">))</span>
-<span class="g g-Whitespace">    </span><span class="mi">610</span> <span class="c1"># Create the parser.</span>
-<span class="ne">--&gt; </span><span class="mi">611</span> <span class="n">parser</span> <span class="o">=</span> <span class="n">TextFileReader</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">613</span> <span class="k">if</span> <span class="n">chunksize</span> <span class="ow">or</span> <span class="n">iterator</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">614</span>     <span class="k">return</span> <span class="n">parser</span>
-
-<span class="nn">File c:\Python312\Lib\site-packages\pandas\io\parsers\readers.py:1448,</span> in <span class="ni">TextFileReader.__init__</span><span class="nt">(self, f, engine, **kwds)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1445</span>     <span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="p">[</span><span class="s2">&quot;has_index_names&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">kwds</span><span class="p">[</span><span class="s2">&quot;has_index_names&quot;</span><span class="p">]</span>
-<span class="g g-Whitespace">   </span><span class="mi">1447</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span><span class="p">:</span> <span class="n">IOHandles</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
-<span class="ne">-&gt; </span><span class="mi">1448</span> <span class="bp">self</span><span class="o">.</span><span class="n">_engine</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_make_engine</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">engine</span><span class="p">)</span>
-
-<span class="nn">File c:\Python312\Lib\site-packages\pandas\io\parsers\readers.py:1705,</span> in <span class="ni">TextFileReader._make_engine</span><span class="nt">(self, f, engine)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1703</span>     <span class="k">if</span> <span class="s2">&quot;b&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">mode</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1704</span>         <span class="n">mode</span> <span class="o">+=</span> <span class="s2">&quot;b&quot;</span>
-<span class="ne">-&gt; </span><span class="mi">1705</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span> <span class="o">=</span> <span class="n">get_handle</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1706</span>     <span class="n">f</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1707</span>     <span class="n">mode</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1708</span>     <span class="n">encoding</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;encoding&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">1709</span>     <span class="n">compression</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;compression&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">1710</span>     <span class="n">memory_map</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;memory_map&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">1711</span>     <span class="n">is_text</span><span class="o">=</span><span class="n">is_text</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1712</span>     <span class="n">errors</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;encoding_errors&quot;</span><span class="p">,</span> <span class="s2">&quot;strict&quot;</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">1713</span>     <span class="n">storage_options</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;storage_options&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">1714</span> <span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1715</span> <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
-<span class="g g-Whitespace">   </span><span class="mi">1716</span> <span class="n">f</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span><span class="o">.</span><span class="n">handle</span>
-
-<span class="nn">File c:\Python312\Lib\site-packages\pandas\io\common.py:863,</span> in <span class="ni">get_handle</span><span class="nt">(path_or_buf, mode, encoding, compression, memory_map, is_text, errors, storage_options)</span>
-<span class="g g-Whitespace">    </span><span class="mi">858</span> <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">handle</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">859</span>     <span class="c1"># Check whether the filename is to be opened in binary mode.</span>
-<span class="g g-Whitespace">    </span><span class="mi">860</span>     <span class="c1"># Binary mode does not support &#39;encoding&#39; and &#39;newline&#39;.</span>
-<span class="g g-Whitespace">    </span><span class="mi">861</span>     <span class="k">if</span> <span class="n">ioargs</span><span class="o">.</span><span class="n">encoding</span> <span class="ow">and</span> <span class="s2">&quot;b&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">ioargs</span><span class="o">.</span><span class="n">mode</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">862</span>         <span class="c1"># Encoding</span>
-<span class="ne">--&gt; </span><span class="mi">863</span>         <span class="n">handle</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">864</span>             <span class="n">handle</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">865</span>             <span class="n">ioargs</span><span class="o">.</span><span class="n">mode</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">866</span>             <span class="n">encoding</span><span class="o">=</span><span class="n">ioargs</span><span class="o">.</span><span class="n">encoding</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">867</span>             <span class="n">errors</span><span class="o">=</span><span class="n">errors</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">868</span>             <span class="n">newline</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">869</span>         <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">870</span>     <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">871</span>         <span class="c1"># Binary mode</span>
-<span class="g g-Whitespace">    </span><span class="mi">872</span>         <span class="n">handle</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">handle</span><span class="p">,</span> <span class="n">ioargs</span><span class="o">.</span><span class="n">mode</span><span class="p">)</span>
-
-<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;output_alza.csv&#39;
-</pre></div>
-</div>
-</div>
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>item</th>
+      <th>url</th>
+      <th>description</th>
+      <th>price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>23,8" Rapture VIDE IFF24144</td>
+      <td>https://www.alza.sk/23-8-rapture-vide-iff24144...</td>
+      <td>LCD monitor - uhlopriečka 23,8“ (60,45 cm), Fu...</td>
+      <td>143,89 €</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>34" AOC CU34G2X/BK Gaming</td>
+      <td>https://www.alza.sk/34-aoc-cu34g2x-bk-gaming-d...</td>
+      <td>LCD monitor prehnutý, Ultra Wide QHD 3440 × 14...</td>
+      <td>351,16 €</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>34" Philips 346P1CRH</td>
+      <td>https://www.alza.sk/34-philips-346p1crh-d61333...</td>
+      <td>LCD monitor prehnutý, Ultra Wide QHD 3440 × 14...</td>
+      <td>597,40 €</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>49" Philips 499P9H</td>
+      <td>https://www.alza.sk/49-philips-499p9h-d5547590...</td>
+      <td>LCD monitor prehnutý, Dual QHD 5120 × 1440, VA...</td>
+      <td>915,62 €</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>24" Philips 243V7QJABF</td>
+      <td>https://www.alza.sk/24-philips-243v7qdjabf-d51...</td>
+      <td>LCD monitor Full HD 1920×1080, IPS, 16:9 širok...</td>
+      <td>86,90 €</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>27" AOC C27G2ZE/BK Gaming</td>
+      <td>https://www.alza.sk/27-aoc-c27g2zebk-gaming-d6...</td>
+      <td>LCD monitor prehnutý, Full HD 1920×1080, VA, 1...</td>
+      <td>196,90 €</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>24" BenQ GW2480</td>
+      <td>https://www.alza.sk/24-benq-gw2480-d5100547.htm</td>
+      <td>LCD monitor Full HD 1920×1080, IPS, 5 ms, 60Hz...</td>
+      <td>109,76 €</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>28" Samsung U28R550</td>
+      <td>https://www.alza.sk/28-samsung-u28r550-d573077...</td>
+      <td>LCD monitor 4K 3840 × 2160, IPS, 16:9 širokouh...</td>
+      <td>239,90 €</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>27" GIGABYTE M27Q</td>
+      <td>https://www.alza.sk/27-gigabyte-m27q-d6237997.htm</td>
+      <td>LCD monitor Quad HD 2560×1440, IPS, 16:9 širok...</td>
+      <td>309 €</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>27" Dell S2721HN Style</td>
+      <td>https://www.alza.sk/27-dell-s2721hn-d6153043.htm</td>
+      <td>LCD monitor Full HD 1920×1080, IPS, 16:9 širok...</td>
+      <td>119,90 €</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>ASUS ProArt PA329C</td>
+      <td>https://www.alza.sk/asus-proart-pa329c-d568409...</td>
+      <td>LCD monitor 4K 3840 × 2160, IPS, 16:9 širokouh...</td>
+      <td>769 €</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>27" Dell S2721H Style</td>
+      <td>https://www.alza.sk/27-dell-s2721h-d6158324.htm</td>
+      <td>LCD monitor Full HD 1920×1080, IPS, 16:9 širok...</td>
+      <td>155,90 €</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>23,8" Dell S2421H Style</td>
+      <td>https://www.alza.sk/23-8-dell-s2421h-d6158322.htm</td>
+      <td>LCD monitor Full HD 1920×1080, IPS, 16:9 širok...</td>
+      <td>122,90 €</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>24" AOC C24G2AE/BK Gaming</td>
+      <td>https://www.alza.sk/24-aoc-c24g2aebk-gaming-d6...</td>
+      <td>LCD monitor prehnutý, Full HD 1920×1080, VA, 1...</td>
+      <td>147,85 €</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>32" AOC C32G2ZE/BK Gaming</td>
+      <td>https://www.alza.sk/32-aoc-c32g2zebk-gaming-d6...</td>
+      <td>LCD monitor prehnutý, Full HD 1920×1080, VA, 1...</td>
+      <td>233 €</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>27" ASUS VG279QM Gaming HDR</td>
+      <td>https://www.alza.sk/27-asus-vg279qm-gaming-hdr...</td>
+      <td>LCD monitor Full HD 1920×1080, IPS, 16:9 širok...</td>
+      <td>276,90 €</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>32" AOC U32E2N</td>
+      <td>https://www.alza.sk/32-aoc-u32e2n-d6217876.htm</td>
+      <td>LCD monitor 4K 3840 × 2160, VA, 16:9 širokouhl...</td>
+      <td>326,63 €</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>27" Philips 273V7QDSB</td>
+      <td>https://www.alza.sk/27-philips-273v7qdsb-d5077...</td>
+      <td>LCD monitor Full HD 1920×1080, IPS, 16:9 širok...</td>
+      <td>104,90 €</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>34" Philips 345B1C</td>
+      <td>https://www.alza.sk/34-philips-345b1c-d5800564...</td>
+      <td>LCD monitor prehnutý, Ultra Wide QHD 3440 × 14...</td>
+      <td>352,78 €</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>32" Samsung U32R590</td>
+      <td>https://www.alza.sk/32-samsung-u32r590cw-d5597...</td>
+      <td>LCD monitor prehnutý, 4K 3840 × 2160, VA, 16:9...</td>
+      <td>369,96 €</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>27" BenQ GW2780</td>
+      <td>https://www.alza.sk/27-benq-gw2780-d5100553.htm</td>
+      <td>LCD monitor Full HD 1920×1080, IPS, 5 ms, 60Hz...</td>
+      <td>149,90 €</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>27" ASUS ProArt PA278QV</td>
+      <td>https://www.alza.sk/27-asus-proart-pa278qv-d58...</td>
+      <td>LCD monitor Quad HD 2560×1440, IPS, 16:9 širok...</td>
+      <td>296,26 €</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>27" ASUS TUF Gaming VG27AQL1A</td>
+      <td>https://www.alza.sk/27-asus-tuf-gaming-vg27aql...</td>
+      <td>LCD monitor Quad HD 2560×1440, IPS, 16:9 širok...</td>
+      <td>329,96 €</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>ASUS TUF Gaming VG27AQ</td>
+      <td>https://www.alza.sk/asus-tuf-gaming-vg27aq-d56...</td>
+      <td>LCD monitor Quad HD 2560×1440, IPS, 16:9 širok...</td>
+      <td>269 €</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 </section>
 <section id="gyarto-meghatarozasa-kulon-oszlopba">
@@ -799,7 +924,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/798cf70ad990f10f39a2914713b73e86140b6014d9717f54ca960fce41af442b.png" src="../_images/798cf70ad990f10f39a2914713b73e86140b6014d9717f54ca960fce41af442b.png" />
+<img alt="../_images/4cf710e026cf1561a07ed36e1fe9f62e1ea92c3285814ed2f01dde66ca48423d.png" src="../_images/4cf710e026cf1561a07ed36e1fe9f62e1ea92c3285814ed2f01dde66ca48423d.png" />
 </div>
 </div>
 </section>
@@ -813,13 +938,14 @@ document.write(`
 
 <span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span><span class="n">xaxis_title</span><span class="o">=</span><span class="s1">&#39;Képátló (&quot; - inch)&#39;</span><span class="p">,</span> <span class="n">yaxis_title</span><span class="o">=</span><span class="s2">&quot;Termék ára (€ - euro)&quot;</span><span class="p">)</span>
 
+<span class="c1">#fig</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">write_image</span><span class="p">(</span><span class="s2">&quot;scatter_plot.png&quot;</span><span class="p">)</span>
 <span class="n">Image</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s2">&quot;scatter_plot.png&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/aea6b2323200dff1fcc15f48002e2d2a3ca9bdb906b7c5f59c16e7ec9c9d10e0.png" src="../_images/aea6b2323200dff1fcc15f48002e2d2a3ca9bdb906b7c5f59c16e7ec9c9d10e0.png" />
+<img alt="../_images/aee4b2397b881611243e75444a11a3dd16d6f3ecd62f95ba58c19543343a88e8.png" src="../_images/aee4b2397b881611243e75444a11a3dd16d6f3ecd62f95ba58c19543343a88e8.png" />
 </div>
 </div>
 </section>
@@ -869,7 +995,7 @@ document.write(`
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Szükséges könyvtárak telepítés, importálása</p>
+        <p class="prev-next-title">Kriptovaluták értékének ábrázolása</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

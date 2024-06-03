@@ -42,7 +42,7 @@
   <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
     <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../_static/copybutton.js?v=f281be69"></script>
@@ -182,11 +182,17 @@
 <li class="toctree-l1"><a class="reference internal" href="web_scraping_wikipeadia_plants.html">Wikipédia növénycsaládok</a></li>
 <li class="toctree-l1"><a class="reference internal" href="web_scraping_wikipedia_birds.html">Wikipédia madárcsaládok</a></li>
 <li class="toctree-l1"><a class="reference internal" href="web_scraping_wikipedia_marvel.html">Wikipédia Marvel karakterek</a></li>
+<li class="toctree-l1"><a class="reference internal" href="web_scraping_index.html">Index híreinek kigyűjtése</a></li>
+<li class="toctree-l1"><a class="reference internal" href="web_scraping_telex.html">Telex főoldalán található hírek kigyűjtése</a></li>
+<li class="toctree-l1"><a class="reference internal" href="web_scraping_google_news.html">Google News híreinek kigyűjtése</a></li>
+<li class="toctree-l1"><a class="reference internal" href="web_scraping_alza.html">Webshop termékadatainak gyűjtése</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Adatvizualizáció - Data Visualization</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="visualization_intro.html">Adatvizualizáció</a></li>
 <li class="toctree-l1"><a class="reference internal" href="visualization_pandas.html">Vizualizáció Pandas könyvtár segítségével</a></li>
+<li class="toctree-l1"><a class="reference internal" href="visualization_alza.html">Webshop termékeinek vizualizálása</a></li>
+<li class="toctree-l1"><a class="reference internal" href="visualization_crypto.html">Kriptovaluták értékének ábrázolása</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Generatív képalkotás - Generative art</span></p>
 <ul class="current nav bd-sidenav">
@@ -406,6 +412,18 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span><span class="p">,</span> <span class="n">ImageDraw</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">random</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">noise</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;noise&#39;
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="szinvalaszto">
@@ -503,7 +521,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/6e278c281499d5118b2ccdead4297858e6bfd50ea761d8ac8ca5b764bdebc9e6.png" src="../_images/6e278c281499d5118b2ccdead4297858e6bfd50ea761d8ac8ca5b764bdebc9e6.png" />
+<img alt="../_images/d41a879c9fa93d415dcd50dc3dd3b54618b459b40db7cf42c5e1e1628cc304ab.png" src="../_images/d41a879c9fa93d415dcd50dc3dd3b54618b459b40db7cf42c5e1e1628cc304ab.png" />
 </div>
 </div>
 </section>
@@ -555,7 +573,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/b7d98af269b7405b26fb3d92d3ae37e0b838c1f0a4eb83b735c35bf2ba93e718.png" src="../_images/b7d98af269b7405b26fb3d92d3ae37e0b838c1f0a4eb83b735c35bf2ba93e718.png" />
+<img alt="../_images/192924b749861b5db13a358bbf37be9c5e4adf8b3dbb07f7bcee027558a8cd2d.png" src="../_images/192924b749861b5db13a358bbf37be9c5e4adf8b3dbb07f7bcee027558a8cd2d.png" />
 </div>
 </div>
 </section>
@@ -593,16 +611,16 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Sample at x=0.38100873298180093: -0.09016501253767656
-Sample at x=0.5393704755159358: -0.0721698369045635
-Sample at x=0.17488794057521484: -0.06555906592358547
-Sample at x=0.922688717806004: 0.004504139982583537
-Sample at x=0.3562883432919094: -0.09031335573365656
-Sample at x=0.7908915784713876: -0.013133653864051673
-Sample at x=0.18932349868942677: -0.06922343922397621
-Sample at x=0.7673847131780719: -0.018302233889636595
-Sample at x=0.6002168502287271: -0.05921151473184839
-Sample at x=0.33090253718283336: -0.08961660144097242
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Sample at x=0.9905252367195191: -0.0019394516983426402
+Sample at x=0.813006127877142: -0.07562908944339636
+Sample at x=0.7633677538013371: -0.10140255189985391
+Sample at x=0.2749437270217785: -0.15624200516572828
+Sample at x=0.8148510555863534: -0.07467244278981075
+Sample at x=0.4514892525551374: -0.19526542606881825
+Sample at x=0.7898816054200857: -0.08766162923464366
+Sample at x=0.3331050162352397: -0.17681909897241702
+Sample at x=0.2937085734883733: -0.1636394855174347
+Sample at x=0.7929304657135734: -0.08607380356598504
 </pre></div>
 </div>
 </div>
@@ -681,7 +699,7 @@ Sample at x=0.33090253718283336: -0.08961660144097242
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-0.32554924488067627 0.5267422795295715
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x23e48dc59a0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x24d503ee030&gt;]
 </pre></div>
 </div>
 <img alt="../_images/df85003d1108bc7a7d36b9e6db7aec0c0cfbf13e0e648c6c5894cbcbf3b7bdbe.png" src="../_images/df85003d1108bc7a7d36b9e6db7aec0c0cfbf13e0e648c6c5894cbcbf3b7bdbe.png" />
@@ -761,7 +779,7 @@ Sample at x=0.33090253718283336: -0.08961660144097242
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/4a1c9982c9c5c2debdffbb93c4d8306e106938bb74b76334907e2659c88d0e5a.png" src="../_images/4a1c9982c9c5c2debdffbb93c4d8306e106938bb74b76334907e2659c88d0e5a.png" />
+<img alt="../_images/7cf40d886d42914cb958a8169a5244d616d31188230ca0912dde442b8fa7b6c1.png" src="../_images/7cf40d886d42914cb958a8169a5244d616d31188230ca0912dde442b8fa7b6c1.png" />
 </div>
 </div>
 </section>

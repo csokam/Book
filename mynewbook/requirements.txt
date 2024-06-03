@@ -12,3 +12,4 @@ PIL
 pillow
 math
 pandas
+kaleido
