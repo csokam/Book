@@ -42,7 +42,7 @@
   <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
     <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../_static/copybutton.js?v=f281be69"></script>
@@ -182,11 +182,17 @@
 <li class="toctree-l1"><a class="reference internal" href="web_scraping_wikipeadia_plants.html">Wikipédia növénycsaládok</a></li>
 <li class="toctree-l1"><a class="reference internal" href="web_scraping_wikipedia_birds.html">Wikipédia madárcsaládok</a></li>
 <li class="toctree-l1"><a class="reference internal" href="web_scraping_wikipedia_marvel.html">Wikipédia Marvel karakterek</a></li>
+<li class="toctree-l1"><a class="reference internal" href="web_scraping_index.html">Index híreinek kigyűjtése</a></li>
+<li class="toctree-l1"><a class="reference internal" href="web_scraping_telex.html">Telex főoldalán található hírek kigyűjtése</a></li>
+<li class="toctree-l1"><a class="reference internal" href="web_scraping_google_news.html">Google News híreinek kigyűjtése</a></li>
+<li class="toctree-l1"><a class="reference internal" href="web_scraping_alza.html">Webshop termékadatainak gyűjtése</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Adatvizualizáció - Data Visualization</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="visualization_intro.html">Adatvizualizáció</a></li>
 <li class="toctree-l1"><a class="reference internal" href="visualization_pandas.html">Vizualizáció Pandas könyvtár segítségével</a></li>
+<li class="toctree-l1"><a class="reference internal" href="visualization_alza.html">Webshop termékeinek vizualizálása</a></li>
+<li class="toctree-l1"><a class="reference internal" href="visualization_crypto.html">Kriptovaluták értékének ábrázolása</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Generatív képalkotás - Generative art</span></p>
 <ul class="nav bd-sidenav">
@@ -867,9 +873,7 @@ Ezek után visszatérünk a veremből kiszedett pozícióhoz és folytatjuk a ra
     <span class="n">turtle</span><span class="o">.</span><span class="n">setposition</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">250</span><span class="p">)</span>
     <span class="n">turtle</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
     <span class="n">turtle</span><span class="o">.</span><span class="n">pendown</span><span class="p">()</span>
-    <span class="n">turtle</span><span class="o">.</span><span class="n">tracer</span><span class="p">(</span>
-        <span class="mi">2</span>
-    <span class="p">)</span>  <span class="c1"># állítja a rajzolási sebességet 0 - azonnali, 1 - lassú, 2 - gyors</span>
+    <span class="n">turtle</span><span class="o">.</span><span class="n">tracer</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>  <span class="c1"># rajzolási sebesség 0 - azonnali, 1 - lassú, 2 - gyors</span>
 
 
 <span class="k">def</span> <span class="nf">general_noveny</span><span class="p">(</span><span class="n">axiom</span><span class="p">,</span> <span class="n">iteraciok</span><span class="p">):</span>

@@ -1,0 +1,1079 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Webshop termékeinek vizualizálása &#8212; Témakörök Python oktatásához</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/visualization_alza';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Kriptovaluták értékének ábrázolása" href="visualization_crypto.html" />
+    <link rel="prev" title="Vizualizáció Pandas könyvtár segítségével" href="visualization_pandas.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Témakörök Python oktatásához - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Témakörök Python oktatásához - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Témakörök Python oktatásához
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Webes adatbányászat - Web Scraping</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="web_scraping_intro.html">Adatbányászat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="web_scraping_wikipeadia_plants.html">Wikipédia növénycsaládok</a></li>
+<li class="toctree-l1"><a class="reference internal" href="web_scraping_wikipedia_birds.html">Wikipédia madárcsaládok</a></li>
+<li class="toctree-l1"><a class="reference internal" href="web_scraping_wikipedia_marvel.html">Wikipédia Marvel karakterek</a></li>
+<li class="toctree-l1"><a class="reference internal" href="web_scraping_index.html">Index híreinek kigyűjtése</a></li>
+<li class="toctree-l1"><a class="reference internal" href="web_scraping_telex.html">Telex főoldalán található hírek kigyűjtése</a></li>
+<li class="toctree-l1"><a class="reference internal" href="web_scraping_google_news.html">Google News híreinek kigyűjtése</a></li>
+<li class="toctree-l1"><a class="reference internal" href="web_scraping_alza.html">Webshop termékadatainak gyűjtése</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Adatvizualizáció - Data Visualization</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="visualization_intro.html">Adatvizualizáció</a></li>
+<li class="toctree-l1"><a class="reference internal" href="visualization_pandas.html">Vizualizáció Pandas könyvtár segítségével</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Webshop termékeinek vizualizálása</a></li>
+<li class="toctree-l1"><a class="reference internal" href="visualization_crypto.html">Kriptovaluták értékének ábrázolása</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Generatív képalkotás - Generative art</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="generative_1_intro.html">Generatív képalkotás - variációk egy témára</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generative_2_triangles.html">Háromszög csempék</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generative_3_circlerows.html">Sorokat alkotó körök</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generative_4_dots.html">Véletlen számok és Perlin zaj - vonaldiagramon</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generative_5_circle.html">Véletlen számok és Perlin zaj - körvonalon</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generative_7_packing.html">Halmozó algoritmus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generative_8_tiles.html">Csempék</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generative_9_rasterize.html">Raszterizálás</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generative_10_lines.html">Véletlen vonalak</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generative_11_patterns.html">Minták létrehozása</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generative_12_random.html">Fokozatos kitöltés</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generative_13_comparison.html">PIL és Cairo könyvtárak összehasonlítása</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">L-rendszerek</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="l-system_intro.html">L-rendszerek</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Források</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../sources.html">Források</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Jelmagyarázat</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">Jelmagyarázat</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/chapters/visualization_alza.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Webshop termékeinek vizualizálása</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#szukseges-konyvtarak-letoltese-importalasa">Szükséges könyvtárak letöltése, importálása</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adatok-betoltese">Adatok betöltése</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gyarto-meghatarozasa-kulon-oszlopba">Gyártó meghatározása külön oszlopba</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arak-szamertekke-konvertalasa">Árak számértékké konvertálása</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kepatlo-meghatarozasa-kulon-oszlopba">Képátló meghatározása külön oszlopba</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kordiagram-keszitese">Kördiagram készítése</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pont-xy-diagram-keszitese">Pont XY diagram készítése</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="webshop-termekeinek-vizualizalasa">
+<h1>Webshop termékeinek vizualizálása<a class="headerlink" href="#webshop-termekeinek-vizualizalasa" title="Link to this heading">#</a></h1>
+<p>Ebbe a fejezetben a választott webshopból korábban begyűjtött adatokat fogjuk elemezni.</p>
+<section id="szukseges-konyvtarak-letoltese-importalasa">
+<h2>Szükséges könyvtárak letöltése, importálása<a class="headerlink" href="#szukseges-konyvtarak-letoltese-importalasa" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># %pip install pandas</span>
+<span class="c1"># %pip install matplotlib</span>
+<span class="c1"># %pip install plotly</span>
+<span class="c1"># %pip install kaleido==0.1.0post1</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">plotly.express</span> <span class="k">as</span> <span class="nn">px</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Image</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="adatok-betoltese">
+<h2>Adatok betöltése<a class="headerlink" href="#adatok-betoltese" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;output_alza.csv&quot;</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s2">&quot;,&quot;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>item</th>
+      <th>url</th>
+      <th>description</th>
+      <th>price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>23,8" Rapture VIDE IFF24144</td>
+      <td>https://www.alza.sk/23-8-rapture-vide-iff24144...</td>
+      <td>LCD monitor - uhlopriečka 23,8“ (60,45 cm), Fu...</td>
+      <td>143,89 €</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>34" AOC CU34G2X/BK Gaming</td>
+      <td>https://www.alza.sk/34-aoc-cu34g2x-bk-gaming-d...</td>
+      <td>LCD monitor prehnutý, Ultra Wide QHD 3440 × 14...</td>
+      <td>351,16 €</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>34" Philips 346P1CRH</td>
+      <td>https://www.alza.sk/34-philips-346p1crh-d61333...</td>
+      <td>LCD monitor prehnutý, Ultra Wide QHD 3440 × 14...</td>
+      <td>597,40 €</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>49" Philips 499P9H</td>
+      <td>https://www.alza.sk/49-philips-499p9h-d5547590...</td>
+      <td>LCD monitor prehnutý, Dual QHD 5120 × 1440, VA...</td>
+      <td>915,62 €</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>24" Philips 243V7QJABF</td>
+      <td>https://www.alza.sk/24-philips-243v7qdjabf-d51...</td>
+      <td>LCD monitor Full HD 1920×1080, IPS, 16:9 širok...</td>
+      <td>86,90 €</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>27" AOC C27G2ZE/BK Gaming</td>
+      <td>https://www.alza.sk/27-aoc-c27g2zebk-gaming-d6...</td>
+      <td>LCD monitor prehnutý, Full HD 1920×1080, VA, 1...</td>
+      <td>196,90 €</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>24" BenQ GW2480</td>
+      <td>https://www.alza.sk/24-benq-gw2480-d5100547.htm</td>
+      <td>LCD monitor Full HD 1920×1080, IPS, 5 ms, 60Hz...</td>
+      <td>109,76 €</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>28" Samsung U28R550</td>
+      <td>https://www.alza.sk/28-samsung-u28r550-d573077...</td>
+      <td>LCD monitor 4K 3840 × 2160, IPS, 16:9 širokouh...</td>
+      <td>239,90 €</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>27" GIGABYTE M27Q</td>
+      <td>https://www.alza.sk/27-gigabyte-m27q-d6237997.htm</td>
+      <td>LCD monitor Quad HD 2560×1440, IPS, 16:9 širok...</td>
+      <td>309 €</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>27" Dell S2721HN Style</td>
+      <td>https://www.alza.sk/27-dell-s2721hn-d6153043.htm</td>
+      <td>LCD monitor Full HD 1920×1080, IPS, 16:9 širok...</td>
+      <td>119,90 €</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>ASUS ProArt PA329C</td>
+      <td>https://www.alza.sk/asus-proart-pa329c-d568409...</td>
+      <td>LCD monitor 4K 3840 × 2160, IPS, 16:9 širokouh...</td>
+      <td>769 €</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>27" Dell S2721H Style</td>
+      <td>https://www.alza.sk/27-dell-s2721h-d6158324.htm</td>
+      <td>LCD monitor Full HD 1920×1080, IPS, 16:9 širok...</td>
+      <td>155,90 €</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>23,8" Dell S2421H Style</td>
+      <td>https://www.alza.sk/23-8-dell-s2421h-d6158322.htm</td>
+      <td>LCD monitor Full HD 1920×1080, IPS, 16:9 širok...</td>
+      <td>122,90 €</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>24" AOC C24G2AE/BK Gaming</td>
+      <td>https://www.alza.sk/24-aoc-c24g2aebk-gaming-d6...</td>
+      <td>LCD monitor prehnutý, Full HD 1920×1080, VA, 1...</td>
+      <td>147,85 €</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>32" AOC C32G2ZE/BK Gaming</td>
+      <td>https://www.alza.sk/32-aoc-c32g2zebk-gaming-d6...</td>
+      <td>LCD monitor prehnutý, Full HD 1920×1080, VA, 1...</td>
+      <td>233 €</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>27" ASUS VG279QM Gaming HDR</td>
+      <td>https://www.alza.sk/27-asus-vg279qm-gaming-hdr...</td>
+      <td>LCD monitor Full HD 1920×1080, IPS, 16:9 širok...</td>
+      <td>276,90 €</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>32" AOC U32E2N</td>
+      <td>https://www.alza.sk/32-aoc-u32e2n-d6217876.htm</td>
+      <td>LCD monitor 4K 3840 × 2160, VA, 16:9 širokouhl...</td>
+      <td>326,63 €</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>27" Philips 273V7QDSB</td>
+      <td>https://www.alza.sk/27-philips-273v7qdsb-d5077...</td>
+      <td>LCD monitor Full HD 1920×1080, IPS, 16:9 širok...</td>
+      <td>104,90 €</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>34" Philips 345B1C</td>
+      <td>https://www.alza.sk/34-philips-345b1c-d5800564...</td>
+      <td>LCD monitor prehnutý, Ultra Wide QHD 3440 × 14...</td>
+      <td>352,78 €</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>32" Samsung U32R590</td>
+      <td>https://www.alza.sk/32-samsung-u32r590cw-d5597...</td>
+      <td>LCD monitor prehnutý, 4K 3840 × 2160, VA, 16:9...</td>
+      <td>369,96 €</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>27" BenQ GW2780</td>
+      <td>https://www.alza.sk/27-benq-gw2780-d5100553.htm</td>
+      <td>LCD monitor Full HD 1920×1080, IPS, 5 ms, 60Hz...</td>
+      <td>149,90 €</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>27" ASUS ProArt PA278QV</td>
+      <td>https://www.alza.sk/27-asus-proart-pa278qv-d58...</td>
+      <td>LCD monitor Quad HD 2560×1440, IPS, 16:9 širok...</td>
+      <td>296,26 €</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>27" ASUS TUF Gaming VG27AQL1A</td>
+      <td>https://www.alza.sk/27-asus-tuf-gaming-vg27aql...</td>
+      <td>LCD monitor Quad HD 2560×1440, IPS, 16:9 širok...</td>
+      <td>329,96 €</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>ASUS TUF Gaming VG27AQ</td>
+      <td>https://www.alza.sk/asus-tuf-gaming-vg27aq-d56...</td>
+      <td>LCD monitor Quad HD 2560×1440, IPS, 16:9 širok...</td>
+      <td>269 €</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="gyarto-meghatarozasa-kulon-oszlopba">
+<h2>Gyártó meghatározása külön oszlopba<a class="headerlink" href="#gyarto-meghatarozasa-kulon-oszlopba" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">brands</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;Rapture&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;AOC&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Philips&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Dell&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;HP&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;ASUS&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Samsung&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;BenQ&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;GIGABYTE&quot;</span><span class="p">,</span>
+<span class="p">]</span>
+
+
+<span class="k">def</span> <span class="nf">find_brand</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">brand</span> <span class="ow">in</span> <span class="n">brands</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">brand</span> <span class="ow">in</span> <span class="n">text</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">brand</span>
+    <span class="k">return</span> <span class="s2">&quot;&quot;</span>
+
+
+<span class="n">df</span><span class="p">[</span><span class="s2">&quot;brand&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;item&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">find_brand</span><span class="p">)</span>
+
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>item</th>
+      <th>url</th>
+      <th>description</th>
+      <th>price</th>
+      <th>brand</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>23,8" Rapture VIDE IFF24144</td>
+      <td>https://www.alza.sk/23-8-rapture-vide-iff24144...</td>
+      <td>LCD monitor - uhlopriečka 23,8“ (60,45 cm), Fu...</td>
+      <td>143,89 €</td>
+      <td>Rapture</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>34" AOC CU34G2X/BK Gaming</td>
+      <td>https://www.alza.sk/34-aoc-cu34g2x-bk-gaming-d...</td>
+      <td>LCD monitor prehnutý, Ultra Wide QHD 3440 × 14...</td>
+      <td>351,16 €</td>
+      <td>AOC</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>34" Philips 346P1CRH</td>
+      <td>https://www.alza.sk/34-philips-346p1crh-d61333...</td>
+      <td>LCD monitor prehnutý, Ultra Wide QHD 3440 × 14...</td>
+      <td>597,40 €</td>
+      <td>Philips</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>49" Philips 499P9H</td>
+      <td>https://www.alza.sk/49-philips-499p9h-d5547590...</td>
+      <td>LCD monitor prehnutý, Dual QHD 5120 × 1440, VA...</td>
+      <td>915,62 €</td>
+      <td>Philips</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>24" Philips 243V7QJABF</td>
+      <td>https://www.alza.sk/24-philips-243v7qdjabf-d51...</td>
+      <td>LCD monitor Full HD 1920×1080, IPS, 16:9 širok...</td>
+      <td>86,90 €</td>
+      <td>Philips</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="arak-szamertekke-konvertalasa">
+<h2>Árak számértékké konvertálása<a class="headerlink" href="#arak-szamertekke-konvertalasa" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">convert_price</span><span class="p">(</span><span class="n">price</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">price</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">float</span><span class="p">:</span>
+        <span class="n">price</span> <span class="o">=</span> <span class="n">price</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot; €&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+        <span class="n">price</span> <span class="o">=</span> <span class="n">price</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">,</span> <span class="s2">&quot;.&quot;</span><span class="p">)</span>
+        <span class="n">price</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">price</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">price</span>
+
+
+<span class="n">df</span><span class="p">[</span><span class="s2">&quot;price&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;price&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">convert_price</span><span class="p">)</span>
+
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>item</th>
+      <th>url</th>
+      <th>description</th>
+      <th>price</th>
+      <th>brand</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>23,8" Rapture VIDE IFF24144</td>
+      <td>https://www.alza.sk/23-8-rapture-vide-iff24144...</td>
+      <td>LCD monitor - uhlopriečka 23,8“ (60,45 cm), Fu...</td>
+      <td>143.89</td>
+      <td>Rapture</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>34" AOC CU34G2X/BK Gaming</td>
+      <td>https://www.alza.sk/34-aoc-cu34g2x-bk-gaming-d...</td>
+      <td>LCD monitor prehnutý, Ultra Wide QHD 3440 × 14...</td>
+      <td>351.16</td>
+      <td>AOC</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>34" Philips 346P1CRH</td>
+      <td>https://www.alza.sk/34-philips-346p1crh-d61333...</td>
+      <td>LCD monitor prehnutý, Ultra Wide QHD 3440 × 14...</td>
+      <td>597.40</td>
+      <td>Philips</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>49" Philips 499P9H</td>
+      <td>https://www.alza.sk/49-philips-499p9h-d5547590...</td>
+      <td>LCD monitor prehnutý, Dual QHD 5120 × 1440, VA...</td>
+      <td>915.62</td>
+      <td>Philips</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>24" Philips 243V7QJABF</td>
+      <td>https://www.alza.sk/24-philips-243v7qdjabf-d51...</td>
+      <td>LCD monitor Full HD 1920×1080, IPS, 16:9 širok...</td>
+      <td>86.90</td>
+      <td>Philips</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="kepatlo-meghatarozasa-kulon-oszlopba">
+<h2>Képátló meghatározása külön oszlopba<a class="headerlink" href="#kepatlo-meghatarozasa-kulon-oszlopba" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">find_screensize</span><span class="p">(</span><span class="n">item</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">item</span><span class="o">.</span><span class="n">split</span><span class="p">():</span>
+        <span class="k">if</span> <span class="s1">&#39;&quot;&#39;</span> <span class="ow">in</span> <span class="n">word</span><span class="p">:</span>
+            <span class="n">size</span> <span class="o">=</span> <span class="n">word</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;&quot;&#39;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">,</span> <span class="s2">&quot;.&quot;</span><span class="p">)</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">size</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+                <span class="k">return</span> <span class="s2">&quot;&quot;</span>
+
+
+<span class="n">df</span><span class="p">[</span><span class="s2">&quot;size&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;item&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">find_screensize</span><span class="p">)</span>
+
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>item</th>
+      <th>url</th>
+      <th>description</th>
+      <th>price</th>
+      <th>brand</th>
+      <th>size</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>23,8" Rapture VIDE IFF24144</td>
+      <td>https://www.alza.sk/23-8-rapture-vide-iff24144...</td>
+      <td>LCD monitor - uhlopriečka 23,8“ (60,45 cm), Fu...</td>
+      <td>143.89</td>
+      <td>Rapture</td>
+      <td>23.8</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>34" AOC CU34G2X/BK Gaming</td>
+      <td>https://www.alza.sk/34-aoc-cu34g2x-bk-gaming-d...</td>
+      <td>LCD monitor prehnutý, Ultra Wide QHD 3440 × 14...</td>
+      <td>351.16</td>
+      <td>AOC</td>
+      <td>34.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>34" Philips 346P1CRH</td>
+      <td>https://www.alza.sk/34-philips-346p1crh-d61333...</td>
+      <td>LCD monitor prehnutý, Ultra Wide QHD 3440 × 14...</td>
+      <td>597.40</td>
+      <td>Philips</td>
+      <td>34.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>49" Philips 499P9H</td>
+      <td>https://www.alza.sk/49-philips-499p9h-d5547590...</td>
+      <td>LCD monitor prehnutý, Dual QHD 5120 × 1440, VA...</td>
+      <td>915.62</td>
+      <td>Philips</td>
+      <td>49.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>24" Philips 243V7QJABF</td>
+      <td>https://www.alza.sk/24-philips-243v7qdjabf-d51...</td>
+      <td>LCD monitor Full HD 1920×1080, IPS, 16:9 širok...</td>
+      <td>86.90</td>
+      <td>Philips</td>
+      <td>24.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="kordiagram-keszitese">
+<h2>Kördiagram készítése<a class="headerlink" href="#kordiagram-keszitese" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">brand_counts</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;brand&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">pie</span><span class="p">(</span><span class="n">brand_counts</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="n">brand_counts</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">autopct</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">%1.1f%%</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">startangle</span><span class="o">=</span><span class="mi">140</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Termékek darabszáma gyártónként&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/4cf710e026cf1561a07ed36e1fe9f62e1ea92c3285814ed2f01dde66ca48423d.png" src="../_images/4cf710e026cf1561a07ed36e1fe9f62e1ea92c3285814ed2f01dde66ca48423d.png" />
+</div>
+</div>
+</section>
+<section id="pont-xy-diagram-keszitese">
+<h2>Pont XY diagram készítése<a class="headerlink" href="#pont-xy-diagram-keszitese" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span>
+    <span class="n">df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;size&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;price&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;brand&quot;</span><span class="p">,</span> <span class="n">symbol</span><span class="o">=</span><span class="s2">&quot;brand&quot;</span><span class="p">,</span> <span class="n">hover_data</span><span class="o">=</span><span class="s2">&quot;item&quot;</span>
+<span class="p">)</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span><span class="n">xaxis_title</span><span class="o">=</span><span class="s1">&#39;Képátló (&quot; - inch)&#39;</span><span class="p">,</span> <span class="n">yaxis_title</span><span class="o">=</span><span class="s2">&quot;Termék ára (€ - euro)&quot;</span><span class="p">)</span>
+
+<span class="c1">#fig</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">write_image</span><span class="p">(</span><span class="s2">&quot;scatter_plot.png&quot;</span><span class="p">)</span>
+<span class="n">Image</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s2">&quot;scatter_plot.png&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/aee4b2397b881611243e75444a11a3dd16d6f3ecd62f95ba58c19543343a88e8.png" src="../_images/aee4b2397b881611243e75444a11a3dd16d6f3ecd62f95ba58c19543343a88e8.png" />
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./chapters"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="visualization_pandas.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Vizualizáció Pandas könyvtár segítségével</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="visualization_crypto.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Kriptovaluták értékének ábrázolása</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#szukseges-konyvtarak-letoltese-importalasa">Szükséges könyvtárak letöltése, importálása</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adatok-betoltese">Adatok betöltése</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gyarto-meghatarozasa-kulon-oszlopba">Gyártó meghatározása külön oszlopba</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arak-szamertekke-konvertalasa">Árak számértékké konvertálása</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kepatlo-meghatarozasa-kulon-oszlopba">Képátló meghatározása külön oszlopba</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kordiagram-keszitese">Kördiagram készítése</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pont-xy-diagram-keszitese">Pont XY diagram készítése</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Csóka Márk
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -42,7 +42,7 @@
   <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
     <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../_static/copybutton.js?v=f281be69"></script>
@@ -60,7 +60,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/visualization_pandas';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Generatív képalkotás - variációk egy témára" href="generative_1_intro.html" />
+    <link rel="next" title="Webshop termékeinek vizualizálása" href="visualization_alza.html" />
     <link rel="prev" title="Adatvizualizáció" href="visualization_intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -182,11 +182,17 @@
 <li class="toctree-l1"><a class="reference internal" href="web_scraping_wikipeadia_plants.html">Wikipédia növénycsaládok</a></li>
 <li class="toctree-l1"><a class="reference internal" href="web_scraping_wikipedia_birds.html">Wikipédia madárcsaládok</a></li>
 <li class="toctree-l1"><a class="reference internal" href="web_scraping_wikipedia_marvel.html">Wikipédia Marvel karakterek</a></li>
+<li class="toctree-l1"><a class="reference internal" href="web_scraping_index.html">Index híreinek kigyűjtése</a></li>
+<li class="toctree-l1"><a class="reference internal" href="web_scraping_telex.html">Telex főoldalán található hírek kigyűjtése</a></li>
+<li class="toctree-l1"><a class="reference internal" href="web_scraping_google_news.html">Google News híreinek kigyűjtése</a></li>
+<li class="toctree-l1"><a class="reference internal" href="web_scraping_alza.html">Webshop termékadatainak gyűjtése</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Adatvizualizáció - Data Visualization</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="visualization_intro.html">Adatvizualizáció</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Vizualizáció Pandas könyvtár segítségével</a></li>
+<li class="toctree-l1"><a class="reference internal" href="visualization_alza.html">Webshop termékeinek vizualizálása</a></li>
+<li class="toctree-l1"><a class="reference internal" href="visualization_crypto.html">Kriptovaluták értékének ábrázolása</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Generatív képalkotás - Generative art</span></p>
 <ul class="nav bd-sidenav">
@@ -460,7 +466,7 @@ document.write(`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: &gt;
 </pre></div>
 </div>
-<img alt="../_images/90fe22fc5588fd63ea70e55902fdf08aa276e90ce02e04105632f696b9e7cb84.png" src="../_images/90fe22fc5588fd63ea70e55902fdf08aa276e90ce02e04105632f696b9e7cb84.png" />
+<img alt="../_images/ee2fb0dd1d8dec192d07e770eb7a790a46ec80fbd1364660a90e5eaf60956dee.png" src="../_images/ee2fb0dd1d8dec192d07e770eb7a790a46ec80fbd1364660a90e5eaf60956dee.png" />
 </div>
 </div>
 <p>Adhatunk hozzá címet a <code>title=””</code> paraméter megadásával.</p>
@@ -474,7 +480,7 @@ document.write(`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: title={&#39;center&#39;: &#39;Időjárás előrejelzés&#39;}&gt;
 </pre></div>
 </div>
-<img alt="../_images/8d2c3d41e6bc9bb9a66cb26ea5c16ef9f202721f7baf1c677ebb1ed8bf45c832.png" src="../_images/8d2c3d41e6bc9bb9a66cb26ea5c16ef9f202721f7baf1c677ebb1ed8bf45c832.png" />
+<img alt="../_images/fa9bff92d520312a5945753086bc6cb40de0a8a61841f2894f3d536a8bcb5e01.png" src="../_images/fa9bff92d520312a5945753086bc6cb40de0a8a61841f2894f3d536a8bcb5e01.png" />
 </div>
 </div>
 </section>
@@ -510,7 +516,7 @@ document.write(`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: title={&#39;center&#39;: &#39;Időjárás előrejelzés&#39;}, xlabel=&#39;Napok&#39;, ylabel=&#39;Hőmérséklet (°C)&#39;&gt;
 </pre></div>
 </div>
-<img alt="../_images/360e8beb22778dc3778b37c25e202eb554e3f5d00df85490f0bad96670dd1d77.png" src="../_images/360e8beb22778dc3778b37c25e202eb554e3f5d00df85490f0bad96670dd1d77.png" />
+<img alt="../_images/f500986d1cbe13aafd9cc99a3399d88ec243e1fe92c60304daa20430a650d4da.png" src="../_images/f500986d1cbe13aafd9cc99a3399d88ec243e1fe92c60304daa20430a650d4da.png" />
 </div>
 </div>
 </section>
@@ -556,11 +562,11 @@ document.write(`
       </div>
     </a>
     <a class="right-next"
-       href="generative_1_intro.html"
+       href="visualization_alza.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Generatív képalkotás - variációk egy témára</p>
+        <p class="prev-next-title">Webshop termékeinek vizualizálása</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
