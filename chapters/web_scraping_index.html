@@ -200,8 +200,8 @@
 <li class="toctree-l1"><a class="reference internal" href="generative_1_intro.html">Generatív képalkotás - variációk egy témára</a></li>
 <li class="toctree-l1"><a class="reference internal" href="generative_2_triangles.html">Háromszög csempék</a></li>
 <li class="toctree-l1"><a class="reference internal" href="generative_3_circlerows.html">Sorokat alkotó körök</a></li>
-<li class="toctree-l1"><a class="reference internal" href="generative_4_dots.html">Véletlen számok és Perlin zaj - vonaldiagramon</a></li>
-<li class="toctree-l1"><a class="reference internal" href="generative_5_circle.html">Véletlen számok és Perlin zaj - körvonalon</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generative_4_dots.html">Perlin zaj - vonal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generative_5_circle.html">Perlin zaj - körvonal</a></li>
 <li class="toctree-l1"><a class="reference internal" href="generative_7_packing.html">Halmozó algoritmus</a></li>
 <li class="toctree-l1"><a class="reference internal" href="generative_8_tiles.html">Csempék</a></li>
 <li class="toctree-l1"><a class="reference internal" href="generative_9_rasterize.html">Raszterizálás</a></li>
@@ -1069,19 +1069,19 @@ window._fbq.push([&#39;track&#39;, &#39;PixelInitialized&#39;, {}]);
 &lt;span class=&quot;currency-item goood&quot;&gt;
 &lt;span class=&quot;ticker&quot;&gt;EUR&lt;/span&gt;
 &lt;span class=&quot;price&quot;&gt;
-                    390,27                    &lt;span class=&quot;forint&quot;&gt;Ft&lt;/span&gt;
+                    390,65                    &lt;span class=&quot;forint&quot;&gt;Ft&lt;/span&gt;
 &lt;/span&gt;
 &lt;/span&gt;
 &lt;span class=&quot;currency-item goood&quot;&gt;
 &lt;span class=&quot;ticker&quot;&gt;USD&lt;/span&gt;
 &lt;span class=&quot;price&quot;&gt;
-                    357,93                    &lt;span class=&quot;forint&quot;&gt;Ft&lt;/span&gt;
+                    358,09                    &lt;span class=&quot;forint&quot;&gt;Ft&lt;/span&gt;
 &lt;/span&gt;
 &lt;/span&gt;
-&lt;span class=&quot;currency-item baaad&quot;&gt;
+&lt;span class=&quot;currency-item goood&quot;&gt;
 &lt;span class=&quot;ticker&quot;&gt;GBP&lt;/span&gt;
 &lt;span class=&quot;price&quot;&gt;
-                    458,28                    &lt;span class=&quot;forint&quot;&gt;Ft&lt;/span&gt;
+                    458,77                    &lt;span class=&quot;forint&quot;&gt;Ft&lt;/span&gt;
 &lt;/span&gt;
 &lt;/span&gt;
 &lt;span class=&quot;exchange-item goood&quot;&gt;
@@ -1104,7 +1104,7 @@ window._fbq.push([&#39;track&#39;, &#39;PixelInitialized&#39;, {}]);
 &lt;/span&gt;
 &lt;/a&gt;
 &lt;/section&gt;
-&lt;a class=&quot;weather&quot; data-ga-category=&quot;Időjárás&quot; data-temprature=&quot;15.3&quot; href=&quot;https://dex.hu/x.php?id=inxcl_idojaras&amp;amp;url=https://index.hu/idojaras&quot; title=&quot;most: 15,3 °C&quot;&gt;
+&lt;a class=&quot;weather&quot; data-ga-category=&quot;Időjárás&quot; data-temprature=&quot;15.6&quot; href=&quot;https://dex.hu/x.php?id=inxcl_idojaras&amp;amp;url=https://index.hu/idojaras&quot; title=&quot;most: 15,6 °C&quot;&gt;
 &lt;div class=&quot;temperature&quot;&gt;
 &lt;div class=&quot;night&quot;&gt;13 °C&lt;/div&gt;
 &lt;div class=&quot;day&quot;&gt;23 °C&lt;/div&gt;
@@ -2019,7 +2019,7 @@ Marton Máté            &lt;/div&gt;
 &lt;header class=&quot;rovat-cikk-head&quot;&gt;
 &lt;h3&gt;
 &lt;span class=&quot;separator-box&quot;&gt;&lt;/span&gt;
-&lt;span class=&quot;cikk-date-label&quot; data-date=&quot;2024-06-04&quot; data-datestamp=&quot;1717452122&quot;&gt;2 perce&lt;/span&gt;
+&lt;span class=&quot;cikk-date-label&quot; data-date=&quot;2024-06-04&quot; data-datestamp=&quot;1717452122&quot;&gt;44 perce&lt;/span&gt;
 &lt;span class=&quot;separator&quot;&gt;&lt;/span&gt;
 &lt;/h3&gt;
 &lt;div class=&quot;clearfix&quot;&gt;&lt;/div&gt;
@@ -2035,7 +2035,7 @@ Marton Máté            &lt;/div&gt;
 &lt;header class=&quot;rovat-cikk-head&quot;&gt;
 &lt;h3&gt;
 &lt;span class=&quot;separator-box&quot;&gt;&lt;/span&gt;
-&lt;span class=&quot;cikk-date-label&quot; data-date=&quot;2024-06-04&quot; data-datestamp=&quot;1717452060&quot;&gt;3 perce&lt;/span&gt;
+&lt;span class=&quot;cikk-date-label&quot; data-date=&quot;2024-06-04&quot; data-datestamp=&quot;1717452060&quot;&gt;45 perce&lt;/span&gt;
 &lt;span class=&quot;separator&quot;&gt;&lt;/span&gt;
 &lt;/h3&gt;
 &lt;div class=&quot;clearfix&quot;&gt;&lt;/div&gt;
@@ -2370,6 +2370,25 @@ Marton Máté            &lt;/div&gt;
 &lt;div class=&quot;ajanlo&quot;&gt;
             A Geek Girl meglepően komoly néznivaló lett.        &lt;/div&gt;
 &lt;/article&gt;
+&lt;article class=&quot;rovatajanlo normal left keppel&quot;&gt;
+&lt;header class=&quot;rovat-cikk-head&quot;&gt;
+&lt;h3&gt;
+&lt;span class=&quot;separator-box&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;cikk-date-label&quot; data-date=&quot;2024-06-03&quot; data-datestamp=&quot;1717437900&quot;&gt;tegnap, 20:05&lt;/span&gt;
+&lt;span class=&quot;separator&quot;&gt;&lt;/span&gt;
+&lt;/h3&gt;
+&lt;div class=&quot;clearfix&quot;&gt;&lt;/div&gt;
+&lt;/header&gt;
+&lt;h2&gt;
+&lt;a href=&quot;https://index.hu/gazdasag/2024/06/03/atletikai-vb-budapest-bevetel-budapest-2023-zrt/&quot; title=&quot;Majdnem hárommilliárd forint bevételt hozott az atlétikai világbajnokság&quot;&gt;
+&lt;img alt=&quot;Majdnem hárommilliárd forint bevételt hozott az atlétikai világbajnokság&quot; loading=&quot;lazy&quot; src=&quot;https://kep.index.hu/1/0/5663/56634/566342/56634227_4187565_4964abc262878b500d319a4dab952681_wm.jpg&quot;/&gt;
+&lt;/a&gt;
+&lt;a class=&quot;cim&quot; href=&quot;https://index.hu/gazdasag/2024/06/03/atletikai-vb-budapest-bevetel-budapest-2023-zrt/&quot; title=&quot;Majdnem hárommilliárd forint bevételt hozott az atlétikai világbajnokság&quot;&gt;
+                Majdnem hárommilliárd forint bevételt hozott az atlétikai világbajnokság            &lt;/a&gt;
+&lt;/h2&gt;
+&lt;div class=&quot;ajanlo&quot;&gt;
+            Az összeg több mint 80 százaléka a jegyeladásokból folyt be.        &lt;/div&gt;
+&lt;/article&gt;
 &lt;article class=&quot;rovatajanlo vezeto keppel&quot;&gt;
 &lt;div class=&quot;article-container&quot;&gt;
 &lt;a href=&quot;https://index.hu/fomo/2024/06/03/estonia-kompkatasztrofa-rtl-sorozat/&quot; title=&quot;Mai napig rejtély övezi Európa egyik legnagyobb katasztrófáját&quot;&gt;
@@ -2405,25 +2424,6 @@ Marton Máté            &lt;/div&gt;
 &lt;div class=&quot;ajanlo&quot;&gt;
             Idén lesz 30 éve, hogy Tallin és Stockholm között elsüllyedt az Estonia komphajó.        &lt;/div&gt;
 &lt;/article&gt;
-&lt;article class=&quot;rovatajanlo normal right keppel&quot;&gt;
-&lt;header class=&quot;rovat-cikk-head&quot;&gt;
-&lt;h3&gt;
-&lt;span class=&quot;separator-box&quot;&gt;&lt;/span&gt;
-&lt;span class=&quot;cikk-date-label&quot; data-date=&quot;2024-06-03&quot; data-datestamp=&quot;1717437900&quot;&gt;tegnap, 20:05&lt;/span&gt;
-&lt;span class=&quot;separator&quot;&gt;&lt;/span&gt;
-&lt;/h3&gt;
-&lt;div class=&quot;clearfix&quot;&gt;&lt;/div&gt;
-&lt;/header&gt;
-&lt;h2&gt;
-&lt;a href=&quot;https://index.hu/gazdasag/2024/06/03/atletikai-vb-budapest-bevetel-budapest-2023-zrt/&quot; title=&quot;Majdnem hárommilliárd forint bevételt hozott az atlétikai világbajnokság&quot;&gt;
-&lt;img alt=&quot;Majdnem hárommilliárd forint bevételt hozott az atlétikai világbajnokság&quot; loading=&quot;lazy&quot; src=&quot;https://kep.index.hu/1/0/5663/56634/566342/56634227_4187565_4964abc262878b500d319a4dab952681_wm.jpg&quot;&gt;
-&lt;/img&gt;&lt;/a&gt;
-&lt;a class=&quot;cim&quot; href=&quot;https://index.hu/gazdasag/2024/06/03/atletikai-vb-budapest-bevetel-budapest-2023-zrt/&quot; title=&quot;Majdnem hárommilliárd forint bevételt hozott az atlétikai világbajnokság&quot;&gt;
-                Majdnem hárommilliárd forint bevételt hozott az atlétikai világbajnokság            &lt;/a&gt;
-&lt;/h2&gt;
-&lt;div class=&quot;ajanlo&quot;&gt;
-            Az összeg több mint 80 százaléka a jegyeladásokból folyt be.        &lt;/div&gt;
-&lt;/article&gt;
 &lt;article class=&quot;rovatajanlo normal left keppel&quot;&gt;
 &lt;header class=&quot;rovat-cikk-head&quot;&gt;
 &lt;h3&gt;
@@ -2435,8 +2435,8 @@ Marton Máté            &lt;/div&gt;
 &lt;/header&gt;
 &lt;h2&gt;
 &lt;a href=&quot;https://index.hu/sport/futball/2024/06/03/kylian-mbappe-psg-real-madrid-atigazolas-hivatalos/&quot; title=&quot;Véget ért a többéves szappanopera: Kylian Mbappé a Real Madrid játékosa lett&quot;&gt;
-&lt;img alt=&quot;Véget ért a többéves szappanopera: Kylian Mbappé a Real Madrid játékosa lett&quot; loading=&quot;lazy&quot; src=&quot;https://kep.index.hu/1/0/5663/56635/566350/56635041_4187617_2ba75099402637ec70209c8fcb01ae13_wm.jpg&quot;/&gt;
-&lt;/a&gt;
+&lt;img alt=&quot;Véget ért a többéves szappanopera: Kylian Mbappé a Real Madrid játékosa lett&quot; loading=&quot;lazy&quot; src=&quot;https://kep.index.hu/1/0/5663/56635/566350/56635041_4187617_2ba75099402637ec70209c8fcb01ae13_wm.jpg&quot;&gt;
+&lt;/img&gt;&lt;/a&gt;
 &lt;a class=&quot;cim&quot; href=&quot;https://index.hu/sport/futball/2024/06/03/kylian-mbappe-psg-real-madrid-atigazolas-hivatalos/&quot; title=&quot;Véget ért a többéves szappanopera: Kylian Mbappé a Real Madrid játékosa lett&quot;&gt;
                 Véget ért a többéves szappanopera: Kylian Mbappé a Real Madrid játékosa lett            &lt;/a&gt;
 &lt;/h2&gt;
@@ -4190,7 +4190,7 @@ window._fbq.push([&#39;track&#39;, &#39;PixelInitialized&#39;, {}]);
          EUR
         &lt;/span&gt;
 &lt;span class=&quot;price&quot;&gt;
-         390,27
+         390,65
          &lt;span class=&quot;forint&quot;&gt;
           Ft
          &lt;/span&gt;
@@ -4201,18 +4201,18 @@ window._fbq.push([&#39;track&#39;, &#39;PixelInitialized&#39;, {}]);
          USD
         &lt;/span&gt;
 &lt;span class=&quot;price&quot;&gt;
-         357,93
+         358,09
          &lt;span class=&quot;forint&quot;&gt;
           Ft
          &lt;/span&gt;
 &lt;/span&gt;
 &lt;/span&gt;
-&lt;span class=&quot;currency-item baaad&quot;&gt;
+&lt;span class=&quot;currency-item goood&quot;&gt;
 &lt;span class=&quot;ticker&quot;&gt;
          GBP
         &lt;/span&gt;
 &lt;span class=&quot;price&quot;&gt;
-         458,28
+         458,77
          &lt;span class=&quot;forint&quot;&gt;
           Ft
          &lt;/span&gt;
@@ -4253,7 +4253,7 @@ window._fbq.push([&#39;track&#39;, &#39;PixelInitialized&#39;, {}]);
 &lt;/span&gt;
 &lt;/a&gt;
 &lt;/section&gt;
-&lt;a class=&quot;weather&quot; data-ga-category=&quot;Időjárás&quot; data-temprature=&quot;15.3&quot; href=&quot;https://dex.hu/x.php?id=inxcl_idojaras&amp;amp;url=https://index.hu/idojaras&quot; title=&quot;most: 15,3 °C&quot;&gt;
+&lt;a class=&quot;weather&quot; data-ga-category=&quot;Időjárás&quot; data-temprature=&quot;15.6&quot; href=&quot;https://dex.hu/x.php?id=inxcl_idojaras&amp;amp;url=https://index.hu/idojaras&quot; title=&quot;most: 15,6 °C&quot;&gt;
 &lt;div class=&quot;temperature&quot;&gt;
 &lt;div class=&quot;night&quot;&gt;
         13 °C
@@ -6492,7 +6492,7 @@ window._fbq.push([&#39;track&#39;, &#39;PixelInitialized&#39;, {}]);
 &lt;span class=&quot;separator-box&quot;&gt;
 &lt;/span&gt;
 &lt;span class=&quot;cikk-date-label&quot; data-date=&quot;2024-06-04&quot; data-datestamp=&quot;1717452122&quot;&gt;
-        2 perce
+        44 perce
        &lt;/span&gt;
 &lt;span class=&quot;separator&quot;&gt;
 &lt;/span&gt;
@@ -6514,7 +6514,7 @@ window._fbq.push([&#39;track&#39;, &#39;PixelInitialized&#39;, {}]);
 &lt;span class=&quot;separator-box&quot;&gt;
 &lt;/span&gt;
 &lt;span class=&quot;cikk-date-label&quot; data-date=&quot;2024-06-04&quot; data-datestamp=&quot;1717452060&quot;&gt;
-        3 perce
+        45 perce
        &lt;/span&gt;
 &lt;span class=&quot;separator&quot;&gt;
 &lt;/span&gt;
@@ -6964,6 +6964,32 @@ window._fbq.push([&#39;track&#39;, &#39;PixelInitialized&#39;, {}]);
       A Geek Girl meglepően komoly néznivaló lett.
      &lt;/div&gt;
 &lt;/article&gt;
+&lt;article class=&quot;rovatajanlo normal left keppel&quot;&gt;
+&lt;header class=&quot;rovat-cikk-head&quot;&gt;
+&lt;h3&gt;
+&lt;span class=&quot;separator-box&quot;&gt;
+&lt;/span&gt;
+&lt;span class=&quot;cikk-date-label&quot; data-date=&quot;2024-06-03&quot; data-datestamp=&quot;1717437900&quot;&gt;
+        tegnap, 20:05
+       &lt;/span&gt;
+&lt;span class=&quot;separator&quot;&gt;
+&lt;/span&gt;
+&lt;/h3&gt;
+&lt;div class=&quot;clearfix&quot;&gt;
+&lt;/div&gt;
+&lt;/header&gt;
+&lt;h2&gt;
+&lt;a href=&quot;https://index.hu/gazdasag/2024/06/03/atletikai-vb-budapest-bevetel-budapest-2023-zrt/&quot; title=&quot;Majdnem hárommilliárd forint bevételt hozott az atlétikai világbajnokság&quot;&gt;
+&lt;img alt=&quot;Majdnem hárommilliárd forint bevételt hozott az atlétikai világbajnokság&quot; loading=&quot;lazy&quot; src=&quot;https://kep.index.hu/1/0/5663/56634/566342/56634227_4187565_4964abc262878b500d319a4dab952681_wm.jpg&quot;/&gt;
+&lt;/a&gt;
+&lt;a class=&quot;cim&quot; href=&quot;https://index.hu/gazdasag/2024/06/03/atletikai-vb-budapest-bevetel-budapest-2023-zrt/&quot; title=&quot;Majdnem hárommilliárd forint bevételt hozott az atlétikai világbajnokság&quot;&gt;
+       Majdnem hárommilliárd forint bevételt hozott az atlétikai világbajnokság
+      &lt;/a&gt;
+&lt;/h2&gt;
+&lt;div class=&quot;ajanlo&quot;&gt;
+      Az összeg több mint 80 százaléka a jegyeladásokból folyt be.
+     &lt;/div&gt;
+&lt;/article&gt;
 &lt;article class=&quot;rovatajanlo vezeto keppel&quot;&gt;
 &lt;div class=&quot;article-container&quot;&gt;
 &lt;a href=&quot;https://index.hu/fomo/2024/06/03/estonia-kompkatasztrofa-rtl-sorozat/&quot; title=&quot;Mai napig rejtély övezi Európa egyik legnagyobb katasztrófáját&quot;&gt;
@@ -7005,32 +7031,6 @@ window._fbq.push([&#39;track&#39;, &#39;PixelInitialized&#39;, {}]);
 &lt;/div&gt;
 &lt;div class=&quot;ajanlo&quot;&gt;
       Idén lesz 30 éve, hogy Tallin és Stockholm között elsüllyedt az Estonia komphajó.
-     &lt;/div&gt;
-&lt;/article&gt;
-&lt;article class=&quot;rovatajanlo normal right keppel&quot;&gt;
-&lt;header class=&quot;rovat-cikk-head&quot;&gt;
-&lt;h3&gt;
-&lt;span class=&quot;separator-box&quot;&gt;
-&lt;/span&gt;
-&lt;span class=&quot;cikk-date-label&quot; data-date=&quot;2024-06-03&quot; data-datestamp=&quot;1717437900&quot;&gt;
-        tegnap, 20:05
-       &lt;/span&gt;
-&lt;span class=&quot;separator&quot;&gt;
-&lt;/span&gt;
-&lt;/h3&gt;
-&lt;div class=&quot;clearfix&quot;&gt;
-&lt;/div&gt;
-&lt;/header&gt;
-&lt;h2&gt;
-&lt;a href=&quot;https://index.hu/gazdasag/2024/06/03/atletikai-vb-budapest-bevetel-budapest-2023-zrt/&quot; title=&quot;Majdnem hárommilliárd forint bevételt hozott az atlétikai világbajnokság&quot;&gt;
-&lt;img alt=&quot;Majdnem hárommilliárd forint bevételt hozott az atlétikai világbajnokság&quot; loading=&quot;lazy&quot; src=&quot;https://kep.index.hu/1/0/5663/56634/566342/56634227_4187565_4964abc262878b500d319a4dab952681_wm.jpg&quot;/&gt;
-&lt;/a&gt;
-&lt;a class=&quot;cim&quot; href=&quot;https://index.hu/gazdasag/2024/06/03/atletikai-vb-budapest-bevetel-budapest-2023-zrt/&quot; title=&quot;Majdnem hárommilliárd forint bevételt hozott az atlétikai világbajnokság&quot;&gt;
-       Majdnem hárommilliárd forint bevételt hozott az atlétikai világbajnokság
-      &lt;/a&gt;
-&lt;/h2&gt;
-&lt;div class=&quot;ajanlo&quot;&gt;
-      Az összeg több mint 80 százaléka a jegyeladásokból folyt be.
      &lt;/div&gt;
 &lt;/article&gt;
 &lt;article class=&quot;rovatajanlo normal left keppel&quot;&gt;
@@ -8400,7 +8400,7 @@ window._fbq.push([&#39;track&#39;, &#39;PixelInitialized&#39;, {}]);
 &lt;span class=&quot;separator-box&quot;&gt;
 &lt;/span&gt;
 &lt;span class=&quot;cikk-date-label&quot; data-date=&quot;2024-06-04&quot; data-datestamp=&quot;1717452122&quot;&gt;
-        2 perce
+        44 perce
        &lt;/span&gt;
 &lt;span class=&quot;separator&quot;&gt;
 &lt;/span&gt;
@@ -8421,7 +8421,7 @@ window._fbq.push([&#39;track&#39;, &#39;PixelInitialized&#39;, {}]);
 &lt;span class=&quot;separator-box&quot;&gt;
 &lt;/span&gt;
 &lt;span class=&quot;cikk-date-label&quot; data-date=&quot;2024-06-04&quot; data-datestamp=&quot;1717452060&quot;&gt;
-        3 perce
+        45 perce
        &lt;/span&gt;
 &lt;span class=&quot;separator&quot;&gt;
 &lt;/span&gt;
@@ -8849,6 +8849,31 @@ window._fbq.push([&#39;track&#39;, &#39;PixelInitialized&#39;, {}]);
 &lt;div class=&quot;ajanlo&quot;&gt;
       A Geek Girl meglepően komoly néznivaló lett.
      &lt;/div&gt;
+&lt;/article&gt;, &lt;article class=&quot;rovatajanlo normal left keppel&quot;&gt;
+&lt;header class=&quot;rovat-cikk-head&quot;&gt;
+&lt;h3&gt;
+&lt;span class=&quot;separator-box&quot;&gt;
+&lt;/span&gt;
+&lt;span class=&quot;cikk-date-label&quot; data-date=&quot;2024-06-03&quot; data-datestamp=&quot;1717437900&quot;&gt;
+        tegnap, 20:05
+       &lt;/span&gt;
+&lt;span class=&quot;separator&quot;&gt;
+&lt;/span&gt;
+&lt;/h3&gt;
+&lt;div class=&quot;clearfix&quot;&gt;
+&lt;/div&gt;
+&lt;/header&gt;
+&lt;h2&gt;
+&lt;a href=&quot;https://index.hu/gazdasag/2024/06/03/atletikai-vb-budapest-bevetel-budapest-2023-zrt/&quot; title=&quot;Majdnem hárommilliárd forint bevételt hozott az atlétikai világbajnokság&quot;&gt;
+&lt;img alt=&quot;Majdnem hárommilliárd forint bevételt hozott az atlétikai világbajnokság&quot; loading=&quot;lazy&quot; src=&quot;https://kep.index.hu/1/0/5663/56634/566342/56634227_4187565_4964abc262878b500d319a4dab952681_wm.jpg&quot;/&gt;
+&lt;/a&gt;
+&lt;a class=&quot;cim&quot; href=&quot;https://index.hu/gazdasag/2024/06/03/atletikai-vb-budapest-bevetel-budapest-2023-zrt/&quot; title=&quot;Majdnem hárommilliárd forint bevételt hozott az atlétikai világbajnokság&quot;&gt;
+       Majdnem hárommilliárd forint bevételt hozott az atlétikai világbajnokság
+      &lt;/a&gt;
+&lt;/h2&gt;
+&lt;div class=&quot;ajanlo&quot;&gt;
+      Az összeg több mint 80 százaléka a jegyeladásokból folyt be.
+     &lt;/div&gt;
 &lt;/article&gt;, &lt;article class=&quot;rovatajanlo vezeto keppel&quot;&gt;
 &lt;div class=&quot;article-container&quot;&gt;
 &lt;a href=&quot;https://index.hu/fomo/2024/06/03/estonia-kompkatasztrofa-rtl-sorozat/&quot; title=&quot;Mai napig rejtély övezi Európa egyik legnagyobb katasztrófáját&quot;&gt;
@@ -8890,31 +8915,6 @@ window._fbq.push([&#39;track&#39;, &#39;PixelInitialized&#39;, {}]);
 &lt;/div&gt;
 &lt;div class=&quot;ajanlo&quot;&gt;
       Idén lesz 30 éve, hogy Tallin és Stockholm között elsüllyedt az Estonia komphajó.
-     &lt;/div&gt;
-&lt;/article&gt;, &lt;article class=&quot;rovatajanlo normal right keppel&quot;&gt;
-&lt;header class=&quot;rovat-cikk-head&quot;&gt;
-&lt;h3&gt;
-&lt;span class=&quot;separator-box&quot;&gt;
-&lt;/span&gt;
-&lt;span class=&quot;cikk-date-label&quot; data-date=&quot;2024-06-03&quot; data-datestamp=&quot;1717437900&quot;&gt;
-        tegnap, 20:05
-       &lt;/span&gt;
-&lt;span class=&quot;separator&quot;&gt;
-&lt;/span&gt;
-&lt;/h3&gt;
-&lt;div class=&quot;clearfix&quot;&gt;
-&lt;/div&gt;
-&lt;/header&gt;
-&lt;h2&gt;
-&lt;a href=&quot;https://index.hu/gazdasag/2024/06/03/atletikai-vb-budapest-bevetel-budapest-2023-zrt/&quot; title=&quot;Majdnem hárommilliárd forint bevételt hozott az atlétikai világbajnokság&quot;&gt;
-&lt;img alt=&quot;Majdnem hárommilliárd forint bevételt hozott az atlétikai világbajnokság&quot; loading=&quot;lazy&quot; src=&quot;https://kep.index.hu/1/0/5663/56634/566342/56634227_4187565_4964abc262878b500d319a4dab952681_wm.jpg&quot;/&gt;
-&lt;/a&gt;
-&lt;a class=&quot;cim&quot; href=&quot;https://index.hu/gazdasag/2024/06/03/atletikai-vb-budapest-bevetel-budapest-2023-zrt/&quot; title=&quot;Majdnem hárommilliárd forint bevételt hozott az atlétikai világbajnokság&quot;&gt;
-       Majdnem hárommilliárd forint bevételt hozott az atlétikai világbajnokság
-      &lt;/a&gt;
-&lt;/h2&gt;
-&lt;div class=&quot;ajanlo&quot;&gt;
-      Az összeg több mint 80 százaléka a jegyeladásokból folyt be.
      &lt;/div&gt;
 &lt;/article&gt;, &lt;article class=&quot;rovatajanlo normal left keppel&quot;&gt;
 &lt;header class=&quot;rovat-cikk-head&quot;&gt;
@@ -10153,8 +10153,8 @@ url: https://index.hu/kulfold/2024/06/03/afrika-szudan-polgarhaboru-nepirtas-egy
 (&#39;&#39;, &#39;&#39;, &#39;Nincs több titok, ilyen évet produkáltak tavaly Kasza Tibor cégei&#39;, &#39;De Majka és Sebestyén Balázs cégei is jól működnek.&#39;, &#39;https://index.hu/gazdasag/2024/06/03/celeb-cegek-nyereseg-kasza-tibor-majka-sebestyen-balazs/&#39;)
 (&#39;&#39;, &#39;&#39;, &#39;J. Robert Oppenheimer unokája Hirosimában találkozott az atomtámadás túlélőjével&#39;, &#39;Ogura Keikó nyolcéves kislányként élte túl az atomtámadást.&#39;, &#39;https://index.hu/kulfold/2024/06/03/robert-oppenheimer-hirosima-atomtamadas-tulelo/&#39;)
 (&#39;&#39;, &#39;&#39;, &#39;Bátran döntögeti a tabukat a Netflix új sorozata&#39;, &#39;A Geek Girl meglepően komoly néznivaló lett.&#39;, &#39;https://index.hu/kultur/cinematrix/2024/06/03/geek-girl-netflix-teve-sorozat-pilot-evadkezdes-streaming-young-adult-regeny-adaptacio-kritika/&#39;)
-(&#39;Harnisch Kitti&#39;, &#39;2024.06.03. 20:05&#39;, &#39;Mai napig rejtély övezi Európa egyik legnagyobb katasztrófáját&#39;, &#39;Idén lesz 30 éve, hogy Tallin és Stockholm között elsüllyedt az Estonia komphajó.&#39;, &#39;https://index.hu/fomo/2024/06/03/estonia-kompkatasztrofa-rtl-sorozat/&#39;)
 (&#39;&#39;, &#39;&#39;, &#39;Majdnem hárommilliárd forint bevételt hozott az atlétikai világbajnokság&#39;, &#39;Az összeg több mint 80 százaléka a jegyeladásokból folyt be.&#39;, &#39;https://index.hu/gazdasag/2024/06/03/atletikai-vb-budapest-bevetel-budapest-2023-zrt/&#39;)
+(&#39;Harnisch Kitti&#39;, &#39;2024.06.03. 20:05&#39;, &#39;Mai napig rejtély övezi Európa egyik legnagyobb katasztrófáját&#39;, &#39;Idén lesz 30 éve, hogy Tallin és Stockholm között elsüllyedt az Estonia komphajó.&#39;, &#39;https://index.hu/fomo/2024/06/03/estonia-kompkatasztrofa-rtl-sorozat/&#39;)
 (&#39;&#39;, &#39;&#39;, &#39;Véget ért a többéves szappanopera: Kylian Mbappé a Real Madrid játékosa lett&#39;, &#39;A friss BL-győztes hivatalosan is bejelentette a világbajnok francia támadó érkezését.&#39;, &#39;https://index.hu/sport/futball/2024/06/03/kylian-mbappe-psg-real-madrid-atigazolas-hivatalos/&#39;)
 (&#39;&#39;, &#39;&#39;, &#39;Nyilvános gyertyagyújtással emlékeznek Tompos Kátyára&#39;, &#39;A hírt a színésznő jóbarátja közölte.&#39;, &#39;https://index.hu/kultur/2024/06/03/tompos-katya-gyertyagyujtas/&#39;)
 (&#39;&#39;, &#39;&#39;, &#39;Van, aki partival készül a nyárra, míg egyesek arcokat tépnek&#39;, &#39;A júniusi PickUp még minket is meglepett.&#39;, &#39;https://index.hu/kultur/zene/2024/06/03/pickup-stenk-divent-foreland-nagy-dani/&#39;)
