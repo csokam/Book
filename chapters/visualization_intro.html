@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
@@ -58,6 +58,7 @@
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/visualization_intro';</script>
+    <link rel="icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Vizualizáció Pandas könyvtár segítségével" href="visualization_pandas.html" />
@@ -760,69 +761,7 @@ Jupyter jegyzetben megjelenítésre több lehetőség van:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">13</span><span class="p">],</span> <span class="n">line</span> <span class="mi">5</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">pie</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="s2">&quot;population&quot;</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="s2">&quot;countryName&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1">#fig</span>
-<span class="ne">----&gt; </span><span class="mi">5</span> <span class="n">fig</span><span class="o">.</span><span class="n">write_image</span><span class="p">(</span><span class="s2">&quot;pie_1.png&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">Image</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s2">&quot;pie_1.png&quot;</span><span class="p">)</span>
-
-<span class="nn">File ~\AppData\Roaming\Python\Python310\site-packages\plotly\basedatatypes.py:3841,</span> in <span class="ni">BaseFigure.write_image</span><span class="nt">(self, *args, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">3781</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">3782</span><span class="sd"> Convert a figure to a static image and write it to a file or writeable</span>
-<span class="g g-Whitespace">   </span><span class="mi">3783</span><span class="sd"> object</span>
-<span class="sd">   (...)</span>
-<span class="g g-Whitespace">   </span><span class="mi">3837</span><span class="sd"> None</span>
-<span class="g g-Whitespace">   </span><span class="mi">3838</span><span class="sd"> &quot;&quot;&quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">3839</span> <span class="kn">import</span> <span class="nn">plotly.io</span> <span class="k">as</span> <span class="nn">pio</span>
-<span class="ne">-&gt; </span><span class="mi">3841</span> <span class="k">return</span> <span class="n">pio</span><span class="o">.</span><span class="n">write_image</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-
-<span class="nn">File ~\AppData\Roaming\Python\Python310\site-packages\plotly\io\_kaleido.py:266,</span> in <span class="ni">write_image</span><span class="nt">(fig, file, format, scale, width, height, validate, engine)</span>
-<span class="g g-Whitespace">    </span><span class="mi">250</span>             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">251</span><span class="w">                 </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">252</span><span class="sd"> Cannot infer image type from output path &#39;{file}&#39;.</span>
-<span class="sd">   (...)</span>
-<span class="g g-Whitespace">    </span><span class="mi">260</span><span class="sd">                 )</span>
-<span class="g g-Whitespace">    </span><span class="mi">261</span><span class="sd">             )</span>
-<span class="g g-Whitespace">    </span><span class="mi">263</span><span class="sd">     # Request image</span>
-<span class="g g-Whitespace">    </span><span class="mi">264</span><span class="sd">     # -------------</span>
-<span class="g g-Whitespace">    </span><span class="mi">265</span><span class="sd">     # Do this first so we don&#39;t create a file if image conversion fails</span>
-<span class="ne">--&gt; </span><span class="mi">266</span><span class="sd">     img_data = to_image(</span>
-<span class="g g-Whitespace">    </span><span class="mi">267</span><span class="sd">         fig,</span>
-<span class="g g-Whitespace">    </span><span class="mi">268</span><span class="sd">         format=format,</span>
-<span class="g g-Whitespace">    </span><span class="mi">269</span><span class="sd">         scale=scale,</span>
-<span class="g g-Whitespace">    </span><span class="mi">270</span><span class="sd">         width=width,</span>
-<span class="g g-Whitespace">    </span><span class="mi">271</span><span class="sd">         height=height,</span>
-<span class="g g-Whitespace">    </span><span class="mi">272</span><span class="sd">         validate=validate,</span>
-<span class="g g-Whitespace">    </span><span class="mi">273</span><span class="sd">         engine=engine,</span>
-<span class="g g-Whitespace">    </span><span class="mi">274</span><span class="sd">     )</span>
-<span class="g g-Whitespace">    </span><span class="mi">276</span><span class="sd">     # Open file</span>
-<span class="g g-Whitespace">    </span><span class="mi">277</span><span class="sd">     # ---------</span>
-<span class="g g-Whitespace">    </span><span class="mi">278</span><span class="sd">     if path is None:</span>
-<span class="g g-Whitespace">    </span><span class="mi">279</span><span class="sd">         # We previously failed to make sense of `file` as a pathlib object.</span>
-<span class="g g-Whitespace">    </span><span class="mi">280</span><span class="sd">         # Attempt to write to `file` as an open file descriptor.</span>
-
-<span class="nn">File ~\AppData\Roaming\Python\Python310\site-packages\plotly\io\_kaleido.py:132,</span> in <span class="ni">to_image</span><span class="nt">(fig, format, width, height, scale, validate, engine)</span>
-<span class="g g-Whitespace">    </span><span class="mi">130</span><span class="sd">     # Raise informative error message if Kaleido is not installed</span>
-<span class="g g-Whitespace">    </span><span class="mi">131</span><span class="sd">     if scope is None:</span>
-<span class="ne">--&gt; </span><span class="mi">132</span><span class="sd">         raise ValueError(</span>
-<span class="g g-Whitespace">    </span><span class="mi">133</span><span class="sd">             &quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">134</span> <span class="n">Image</span> <span class="n">export</span> <span class="n">using</span> <span class="n">the</span> <span class="s2">&quot;kaleido&quot;</span> <span class="n">engine</span> <span class="n">requires</span> <span class="n">the</span> <span class="n">kaleido</span> <span class="n">package</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">135</span> <span class="n">which</span> <span class="n">can</span> <span class="n">be</span> <span class="n">installed</span> <span class="n">using</span> <span class="n">pip</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">136</span>     <span class="err">$</span> <span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">U</span> <span class="n">kaleido</span>
-<span class="g g-Whitespace">    </span><span class="mi">137</span> <span class="s2">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">138</span><span class="s2">         )</span>
-<span class="g g-Whitespace">    </span><span class="mi">140</span><span class="s2">     # Validate figure</span>
-<span class="g g-Whitespace">    </span><span class="mi">141</span><span class="s2">     # ---------------</span>
-<span class="g g-Whitespace">    </span><span class="mi">142</span><span class="s2">     fig_dict = validate_coerce_fig_to_dict(fig, validate)</span>
-
-<span class="ne">ValueError</span>: 
-<span class="s2">Image export using the &quot;kaleido&quot; engine requires the kaleido package,</span>
-<span class="s2">which can be installed using pip:</span>
-<span class="s2">    $ pip install -U kaleido</span>
-</pre></div>
-</div>
+<img alt="../_images/942036e12296fa0824be5c37b0ddcee7de2cfbb75e71b7077768774f90f19640.png" src="../_images/942036e12296fa0824be5c37b0ddcee7de2cfbb75e71b7077768774f90f19640.png" />
 </div>
 </div>
 <p>A diagram ebben a formában még nem tökéletes. Próbáljunk meg adatokat szűrni.</p>
@@ -841,7 +780,7 @@ Jupyter jegyzetben megjelenítésre több lehetőség van:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/51fd204b35af17b1bd332cfe6d7b69b7dceafd6fffcd32853d63f0e96f2317cb.png" src="../_images/51fd204b35af17b1bd332cfe6d7b69b7dceafd6fffcd32853d63f0e96f2317cb.png" />
+<img alt="../_images/25c3314b6be7559c2761e3d6f98ce7322c5765d9d3536bcebb70a5ec16cd18d0.png" src="../_images/25c3314b6be7559c2761e3d6f98ce7322c5765d9d3536bcebb70a5ec16cd18d0.png" />
 </div>
 </div>
 <p>A diagram Plotly esetén is magas szinten testreszabható. Pl.: a szöveg mérete beállítható <code>fig.update_traces(textfont_size = érték)</code> vonalvastagság <code>fig.update_traces(marker = dict(line = dict(color = “szín”, width = érték)))</code> paranccsal.</p>
@@ -857,7 +796,7 @@ Jupyter jegyzetben megjelenítésre több lehetőség van:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/4245d67c8140bac8a6046b97f0e1371b84045cc2c54d1e434b343efec70c3a68.png" src="../_images/4245d67c8140bac8a6046b97f0e1371b84045cc2c54d1e434b343efec70c3a68.png" />
+<img alt="../_images/6d41584669f1d2067a44c7f0cf7c68c0d4471f181354d991c631ee59b26ecc33.png" src="../_images/6d41584669f1d2067a44c7f0cf7c68c0d4471f181354d991c631ee59b26ecc33.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -875,7 +814,7 @@ Jupyter jegyzetben megjelenítésre több lehetőség van:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/0dcafa306cb6ab3c86f6453fd29dd5399bd5e1447a709fdb1ca0b4a4883d6968.png" src="../_images/0dcafa306cb6ab3c86f6453fd29dd5399bd5e1447a709fdb1ca0b4a4883d6968.png" />
+<img alt="../_images/8da605b1ca3400e263962db1044e1291f88a4f0b7cf16c9e42eddedd0aa848ab.png" src="../_images/8da605b1ca3400e263962db1044e1291f88a4f0b7cf16c9e42eddedd0aa848ab.png" />
 </div>
 </div>
 </section>
@@ -925,7 +864,7 @@ Jupyter jegyzetben megjelenítésre több lehetőség van:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/5177122fe6c81a01c812e88cb2974492828887039dd73d1062973e5a6b9a8aac.png" src="../_images/5177122fe6c81a01c812e88cb2974492828887039dd73d1062973e5a6b9a8aac.png" />
+<img alt="../_images/4463716ccb661cff296dfbe659e9f1edce272ccb62bbe26e381d672580459ba2.png" src="../_images/4463716ccb661cff296dfbe659e9f1edce272ccb62bbe26e381d672580459ba2.png" />
 </div>
 </div>
 </section>
@@ -952,7 +891,7 @@ Jupyter jegyzetben megjelenítésre több lehetőség van:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/a211834617b22253d28e9801fdb8c67a0779cf96c5eba403c83f6c03cf53e6bb.png" src="../_images/a211834617b22253d28e9801fdb8c67a0779cf96c5eba403c83f6c03cf53e6bb.png" />
+<img alt="../_images/eff8a2a0644c1c5f567ede36b37e8cc10d551ca7c4efeee413c2b08377696faf.png" src="../_images/eff8a2a0644c1c5f567ede36b37e8cc10d551ca7c4efeee413c2b08377696faf.png" />
 </div>
 </div>
 </section>
