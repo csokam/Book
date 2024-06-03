@@ -1,5 +1,0 @@
-# Források
-
-```{bibliography}
-:style: unsrt
-```

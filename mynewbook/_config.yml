@@ -5,9 +5,6 @@ title: Témakörök Python oktatásához
 author: Csóka Márk
 logo: _static/logo.png
 
-# HTML favicon settings
-html:
-  favicon: _static/favicon.ico
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
@@ -22,15 +19,13 @@ latex:
 
 # Enable Plotly plots
 sphinx:
-  recursive_update: true
-  config:    
+  config:
     html_js_files:
-      - https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js
+    - https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js
+    suppress_warnings: ["mystnb.unknown_mime_type"]
 
 # Supress Plotly warning
-sphinx:
-  config:
-    suppress_warnings: ["mystnb.unknown_mime_type"]
+    
 
 # Bibtex extension
 sphinx:
@@ -53,3 +48,4 @@ repository:
 html:
   use_issues_button: false
   use_repository_button: false
+  favicon: _static/favicon.ico
