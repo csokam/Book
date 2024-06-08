@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
@@ -42,7 +42,7 @@
   <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
     <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../_static/copybutton.js?v=f281be69"></script>
@@ -58,6 +58,7 @@
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/generative_4_dots';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -213,6 +214,11 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">L-rendszerek</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="l-system_intro.html">L-rendszerek</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Egyéb</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="visualization_map.html">Vizualizáció térképen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="language_processing.html">Szöveg elemzése</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Források</span></p>
 <ul class="nav bd-sidenav">
@@ -413,18 +419,6 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span><span class="p">,</span> <span class="n">ImageDraw</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">random</span>
-<span class="ne">----&gt; </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">noise</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;noise&#39;
-</pre></div>
-</div>
-</div>
 </div>
 </section>
 <section id="szinvalaszto">
@@ -522,7 +516,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/d41a879c9fa93d415dcd50dc3dd3b54618b459b40db7cf42c5e1e1628cc304ab.png" src="../_images/d41a879c9fa93d415dcd50dc3dd3b54618b459b40db7cf42c5e1e1628cc304ab.png" />
+<img alt="../_images/a4015f7aed18c46272a6d95f24e0abe397331e01144900d86457d9295e62e20e.png" src="../_images/a4015f7aed18c46272a6d95f24e0abe397331e01144900d86457d9295e62e20e.png" />
 </div>
 </div>
 </section>
@@ -574,7 +568,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/192924b749861b5db13a358bbf37be9c5e4adf8b3dbb07f7bcee027558a8cd2d.png" src="../_images/192924b749861b5db13a358bbf37be9c5e4adf8b3dbb07f7bcee027558a8cd2d.png" />
+<img alt="../_images/014cab0df3068450dc7a34492a7d9302553abe7ddd6f6850af9ad3037bc1eada.png" src="../_images/014cab0df3068450dc7a34492a7d9302553abe7ddd6f6850af9ad3037bc1eada.png" />
 </div>
 </div>
 </section>
@@ -612,16 +606,16 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Sample at x=0.9905252367195191: -0.0019394516983426402
-Sample at x=0.813006127877142: -0.07562908944339636
-Sample at x=0.7633677538013371: -0.10140255189985391
-Sample at x=0.2749437270217785: -0.15624200516572828
-Sample at x=0.8148510555863534: -0.07467244278981075
-Sample at x=0.4514892525551374: -0.19526542606881825
-Sample at x=0.7898816054200857: -0.08766162923464366
-Sample at x=0.3331050162352397: -0.17681909897241702
-Sample at x=0.2937085734883733: -0.1636394855174347
-Sample at x=0.7929304657135734: -0.08607380356598504
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Sample at x=0.5387178081683375: 0.18529969019717055
+Sample at x=0.5167707352205618: 0.18222886405232427
+Sample at x=0.17132166677703997: 0.04217034327508958
+Sample at x=0.39602997622348124: 0.1476727283408127
+Sample at x=0.35324169341660017: 0.12966190295355282
+Sample at x=0.3283081203543746: 0.11821684562319915
+Sample at x=0.33641563267520436: 0.12200172422671816
+Sample at x=0.3215370855930533: 0.11501469412922197
+Sample at x=0.8847227758051849: 0.08305898710789365
+Sample at x=0.8347151162822669: 0.11391543978310453
 </pre></div>
 </div>
 </div>
@@ -700,7 +694,7 @@ Sample at x=0.7929304657135734: -0.08607380356598504
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-0.32554924488067627 0.5267422795295715
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x24d503ee030&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x241d4da5bb0&gt;]
 </pre></div>
 </div>
 <img alt="../_images/df85003d1108bc7a7d36b9e6db7aec0c0cfbf13e0e648c6c5894cbcbf3b7bdbe.png" src="../_images/df85003d1108bc7a7d36b9e6db7aec0c0cfbf13e0e648c6c5894cbcbf3b7bdbe.png" />
@@ -780,7 +774,7 @@ Sample at x=0.7929304657135734: -0.08607380356598504
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/7cf40d886d42914cb958a8169a5244d616d31188230ca0912dde442b8fa7b6c1.png" src="../_images/7cf40d886d42914cb958a8169a5244d616d31188230ca0912dde442b8fa7b6c1.png" />
+<img alt="../_images/1e76f4d258dd06c6884c42bd89fbd9ad82f1e4b2aea41bd7a5c019af32ea773a.png" src="../_images/1e76f4d258dd06c6884c42bd89fbd9ad82f1e4b2aea41bd7a5c019af32ea773a.png" />
 </div>
 </div>
 </section>

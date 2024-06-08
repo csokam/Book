@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
@@ -42,7 +42,7 @@
   <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
     <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../_static/copybutton.js?v=f281be69"></script>
@@ -58,6 +58,7 @@
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/web_scraping_wikipeadia_plants';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -213,6 +214,11 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">L-rendszerek</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="l-system_intro.html">L-rendszerek</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Egyéb</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="visualization_map.html">Vizualizáció térképen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="language_processing.html">Szöveg elemzése</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Források</span></p>
 <ul class="nav bd-sidenav">
@@ -456,15 +462,15 @@ Siker!
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;!DOCTYPE html&gt;
 
-&lt;html class=&quot;client-nojs vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-sticky-header-disabled vector-feature-page-tools-pinned-disabled vector-feature-toc-pinned-clientpref-1 vector-feature-main-menu-pinned-disabled vector-feature-limited-width-clientpref-1 vector-feature-limited-width-content-disabled vector-feature-custom-font-size-clientpref-0 vector-feature-appearance-disabled vector-feature-appearance-pinned-clientpref-0 vector-feature-night-mode-disabled skin-theme-clientpref--excluded vector-toc-not-available&quot; dir=&quot;ltr&quot; lang=&quot;hu&quot;&gt;
+&lt;html class=&quot;client-nojs vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-sticky-header-disabled vector-feature-page-tools-pinned-disabled vector-feature-toc-pinned-clientpref-1 vector-feature-main-menu-pinned-disabled vector-feature-limited-width-clientpref-1 vector-feature-limited-width-content-disabled vector-feature-custom-font-size-clientpref--excluded vector-feature-appearance-disabled vector-feature-appearance-pinned-clientpref-0 vector-feature-night-mode-disabled skin-theme-clientpref-day vector-toc-not-available&quot; dir=&quot;ltr&quot; lang=&quot;hu&quot;&gt;
 &lt;head&gt;
 &lt;meta charset=&quot;utf-8&quot;/&gt;
 &lt;title&gt;Kategória:Növénycsaládok – Wikipédia&lt;/title&gt;
-&lt;script&gt;(function(){var className=&quot;client-js vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-sticky-header-disabled vector-feature-page-tools-pinned-disabled vector-feature-toc-pinned-clientpref-1 vector-feature-main-menu-pinned-disabled vector-feature-limited-width-clientpref-1 vector-feature-limited-width-content-disabled vector-feature-custom-font-size-clientpref-0 vector-feature-appearance-disabled vector-feature-appearance-pinned-clientpref-0 vector-feature-night-mode-disabled skin-theme-clientpref--excluded vector-toc-not-available&quot;;var cookie=document.cookie.match(/(?:^|; )huwikimwclientpreferences=([^;]+)/);if(cookie){cookie[1].split(&#39;%2C&#39;).forEach(function(pref){className=className.replace(new RegExp(&#39;(^| )&#39;+pref.replace(/-clientpref-\w+$|[^\w-]+/g,&#39;&#39;)+&#39;-clientpref-\\w+( |$)&#39;),&#39;$1&#39;+pref+&#39;$2&#39;);});}document.documentElement.className=className;}());RLCONF={&quot;wgBreakFrames&quot;:false,&quot;wgSeparatorTransformTable&quot;:[&quot;,\t.&quot;,&quot; \t,&quot;],
-&quot;wgDigitTransformTable&quot;:[&quot;&quot;,&quot;&quot;],&quot;wgDefaultDateFormat&quot;:&quot;ymd&quot;,&quot;wgMonthNames&quot;:[&quot;&quot;,&quot;január&quot;,&quot;február&quot;,&quot;március&quot;,&quot;április&quot;,&quot;május&quot;,&quot;június&quot;,&quot;július&quot;,&quot;augusztus&quot;,&quot;szeptember&quot;,&quot;október&quot;,&quot;november&quot;,&quot;december&quot;],&quot;wgRequestId&quot;:&quot;b33a21c7-f553-4713-bcfc-efc059443908&quot;,&quot;wgCanonicalNamespace&quot;:&quot;Category&quot;,&quot;wgCanonicalSpecialPageName&quot;:false,&quot;wgNamespaceNumber&quot;:14,&quot;wgPageName&quot;:&quot;Kategória:Növénycsaládok&quot;,&quot;wgTitle&quot;:&quot;Növénycsaládok&quot;,&quot;wgCurRevisionId&quot;:14580898,&quot;wgRevisionId&quot;:14580898,&quot;wgArticleId&quot;:31483,&quot;wgIsArticle&quot;:true,&quot;wgIsRedirect&quot;:false,&quot;wgAction&quot;:&quot;view&quot;,&quot;wgUserName&quot;:null,&quot;wgUserGroups&quot;:[&quot;*&quot;],&quot;wgCategories&quot;:[&quot;Növényrendszertan&quot;],&quot;wgPageViewLanguage&quot;:&quot;hu&quot;,&quot;wgPageContentLanguage&quot;:&quot;hu&quot;,&quot;wgPageContentModel&quot;:&quot;wikitext&quot;,&quot;wgRelevantPageName&quot;:&quot;Kategória:Növénycsaládok&quot;,&quot;wgRelevantArticleId&quot;:31483,&quot;wgIsProbablyEditable&quot;:true,&quot;wgRelevantPageIsProbablyEditable&quot;:true,&quot;wgRestrictionEdit&quot;:[],&quot;wgRestrictionMove&quot;:[],&quot;wgNoticeProject&quot;:&quot;wikipedia&quot;,&quot;wgCiteReferencePreviewsActive&quot;:true,
+&lt;script&gt;(function(){var className=&quot;client-js vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-sticky-header-disabled vector-feature-page-tools-pinned-disabled vector-feature-toc-pinned-clientpref-1 vector-feature-main-menu-pinned-disabled vector-feature-limited-width-clientpref-1 vector-feature-limited-width-content-disabled vector-feature-custom-font-size-clientpref--excluded vector-feature-appearance-disabled vector-feature-appearance-pinned-clientpref-0 vector-feature-night-mode-disabled skin-theme-clientpref-day vector-toc-not-available&quot;;var cookie=document.cookie.match(/(?:^|; )huwikimwclientpreferences=([^;]+)/);if(cookie){cookie[1].split(&#39;%2C&#39;).forEach(function(pref){className=className.replace(new RegExp(&#39;(^| )&#39;+pref.replace(/-clientpref-\w+$|[^\w-]+/g,&#39;&#39;)+&#39;-clientpref-\\w+( |$)&#39;),&#39;$1&#39;+pref+&#39;$2&#39;);});}document.documentElement.className=className;}());RLCONF={&quot;wgBreakFrames&quot;:false,&quot;wgSeparatorTransformTable&quot;:[&quot;,\t.&quot;,&quot; \t,&quot;],
+&quot;wgDigitTransformTable&quot;:[&quot;&quot;,&quot;&quot;],&quot;wgDefaultDateFormat&quot;:&quot;ymd&quot;,&quot;wgMonthNames&quot;:[&quot;&quot;,&quot;január&quot;,&quot;február&quot;,&quot;március&quot;,&quot;április&quot;,&quot;május&quot;,&quot;június&quot;,&quot;július&quot;,&quot;augusztus&quot;,&quot;szeptember&quot;,&quot;október&quot;,&quot;november&quot;,&quot;december&quot;],&quot;wgRequestId&quot;:&quot;3926bcc5-8467-4d81-80b4-afd7de90ca16&quot;,&quot;wgCanonicalNamespace&quot;:&quot;Category&quot;,&quot;wgCanonicalSpecialPageName&quot;:false,&quot;wgNamespaceNumber&quot;:14,&quot;wgPageName&quot;:&quot;Kategória:Növénycsaládok&quot;,&quot;wgTitle&quot;:&quot;Növénycsaládok&quot;,&quot;wgCurRevisionId&quot;:14580898,&quot;wgRevisionId&quot;:14580898,&quot;wgArticleId&quot;:31483,&quot;wgIsArticle&quot;:true,&quot;wgIsRedirect&quot;:false,&quot;wgAction&quot;:&quot;view&quot;,&quot;wgUserName&quot;:null,&quot;wgUserGroups&quot;:[&quot;*&quot;],&quot;wgCategories&quot;:[&quot;Növényrendszertan&quot;],&quot;wgPageViewLanguage&quot;:&quot;hu&quot;,&quot;wgPageContentLanguage&quot;:&quot;hu&quot;,&quot;wgPageContentModel&quot;:&quot;wikitext&quot;,&quot;wgRelevantPageName&quot;:&quot;Kategória:Növénycsaládok&quot;,&quot;wgRelevantArticleId&quot;:31483,&quot;wgIsProbablyEditable&quot;:true,&quot;wgRelevantPageIsProbablyEditable&quot;:true,&quot;wgRestrictionEdit&quot;:[],&quot;wgRestrictionMove&quot;:[],&quot;wgNoticeProject&quot;:&quot;wikipedia&quot;,&quot;wgCiteReferencePreviewsActive&quot;:true,
 &quot;wgFlaggedRevsParams&quot;:{&quot;tags&quot;:{&quot;accuracy&quot;:{&quot;levels&quot;:2}}},&quot;wgStableRevisionId&quot;:14580898,&quot;wgMediaViewerOnClick&quot;:true,&quot;wgMediaViewerEnabledByDefault&quot;:true,&quot;wgPopupsFlags&quot;:4,&quot;wgVisualEditor&quot;:{&quot;pageLanguageCode&quot;:&quot;hu&quot;,&quot;pageLanguageDir&quot;:&quot;ltr&quot;,&quot;pageVariantFallbacks&quot;:&quot;hu&quot;},&quot;wgMFDisplayWikibaseDescriptions&quot;:{&quot;search&quot;:true,&quot;watchlist&quot;:true,&quot;tagline&quot;:true,&quot;nearby&quot;:true},&quot;wgWMESchemaEditAttemptStepOversample&quot;:false,&quot;wgWMEPageLength&quot;:100,&quot;wgULSCurrentAutonym&quot;:&quot;magyar&quot;,&quot;wgCentralAuthMobileDomain&quot;:false,&quot;wgEditSubmitButtonLabelPublish&quot;:true,&quot;wgULSPosition&quot;:&quot;interlanguage&quot;,&quot;wgULSisCompactLinksEnabled&quot;:false,&quot;wgVector2022LanguageInHeader&quot;:true,&quot;wgULSisLanguageSelectorEmpty&quot;:false,&quot;wgWikibaseItemId&quot;:&quot;Q9079785&quot;,&quot;wgCheckUserClientHintsHeadersJsApi&quot;:[&quot;architecture&quot;,&quot;bitness&quot;,&quot;brands&quot;,&quot;fullVersionList&quot;,&quot;mobile&quot;,&quot;model&quot;,&quot;platform&quot;,&quot;platformVersion&quot;],&quot;GEHomepageSuggestedEditsEnableTopics&quot;:true,&quot;wgGETopicsMatchModeEnabled&quot;:false,&quot;wgGEStructuredTaskRejectionReasonTextInputEnabled&quot;:false,
-&quot;wgGELevelingUpEnabledForUser&quot;:false};RLSTATE={&quot;skins.vector.user.styles&quot;:&quot;ready&quot;,&quot;ext.gadget.infobox&quot;:&quot;ready&quot;,&quot;ext.gadget.wikiMenuStyles&quot;:&quot;ready&quot;,&quot;ext.globalCssJs.user.styles&quot;:&quot;ready&quot;,&quot;site.styles&quot;:&quot;ready&quot;,&quot;user.styles&quot;:&quot;ready&quot;,&quot;skins.vector.user&quot;:&quot;ready&quot;,&quot;ext.globalCssJs.user&quot;:&quot;ready&quot;,&quot;user&quot;:&quot;ready&quot;,&quot;user.options&quot;:&quot;loading&quot;,&quot;ext.flaggedRevs.icons&quot;:&quot;ready&quot;,&quot;mediawiki.action.styles&quot;:&quot;ready&quot;,&quot;ext.categoryTree.styles&quot;:&quot;ready&quot;,&quot;mediawiki.helplink&quot;:&quot;ready&quot;,&quot;skins.vector.search.codex.styles&quot;:&quot;ready&quot;,&quot;skins.vector.styles&quot;:&quot;ready&quot;,&quot;skins.vector.icons&quot;:&quot;ready&quot;,&quot;ext.flaggedRevs.basic&quot;:&quot;ready&quot;,&quot;ext.tmh.player.styles&quot;:&quot;ready&quot;,&quot;ext.wikimediamessages.styles&quot;:&quot;ready&quot;,&quot;ext.visualEditor.desktopArticleTarget.noscript&quot;:&quot;ready&quot;,&quot;ext.uls.interlanguage&quot;:&quot;ready&quot;,&quot;wikibase.client.init&quot;:&quot;ready&quot;,&quot;ext.wikimediaBadges&quot;:&quot;ready&quot;};RLPAGEMODULES=[&quot;ext.categoryTree&quot;,&quot;site&quot;,&quot;mediawiki.page.ready&quot;,&quot;skins.vector.js&quot;,&quot;ext.centralNotice.geoIP&quot;,&quot;ext.centralNotice.startUp&quot;,&quot;ext.flaggedRevs.advanced&quot;,&quot;ext.gadget.wdsearch&quot;,
-&quot;ext.gadget.irclogin&quot;,&quot;ext.gadget.edittop&quot;,&quot;ext.gadget.ImageAnnotator.loader&quot;,&quot;ext.gadget.collapsible&quot;,&quot;ext.gadget.kepdia&quot;,&quot;ext.gadget.kinai&quot;,&quot;ext.gadget.poziciosTerkep&quot;,&quot;ext.gadget.wikiMenu&quot;,&quot;ext.gadget.wiwosm&quot;,&quot;ext.tmh.player&quot;,&quot;ext.urlShortener.toolbar&quot;,&quot;ext.centralauth.centralautologin&quot;,&quot;mmv.head&quot;,&quot;mmv.bootstrap.autostart&quot;,&quot;ext.popups&quot;,&quot;ext.visualEditor.desktopArticleTarget.init&quot;,&quot;ext.visualEditor.targetLoader&quot;,&quot;ext.echo.centralauth&quot;,&quot;ext.eventLogging&quot;,&quot;ext.wikimediaEvents&quot;,&quot;ext.navigationTiming&quot;,&quot;ext.uls.interface&quot;,&quot;ext.cx.eventlogging.campaigns&quot;,&quot;wikibase.client.vector-2022&quot;,&quot;ext.checkUser.clientHints&quot;,&quot;oojs-ui.styles.icons-media&quot;,&quot;oojs-ui-core.icons&quot;];&lt;/script&gt;
+&quot;wgGELevelingUpEnabledForUser&quot;:false};RLSTATE={&quot;ext.gadget.infobox&quot;:&quot;ready&quot;,&quot;ext.gadget.wikiMenuStyles&quot;:&quot;ready&quot;,&quot;ext.globalCssJs.user.styles&quot;:&quot;ready&quot;,&quot;site.styles&quot;:&quot;ready&quot;,&quot;user.styles&quot;:&quot;ready&quot;,&quot;ext.globalCssJs.user&quot;:&quot;ready&quot;,&quot;user&quot;:&quot;ready&quot;,&quot;user.options&quot;:&quot;loading&quot;,&quot;ext.flaggedRevs.icons&quot;:&quot;ready&quot;,&quot;mediawiki.action.styles&quot;:&quot;ready&quot;,&quot;ext.categoryTree.styles&quot;:&quot;ready&quot;,&quot;mediawiki.helplink&quot;:&quot;ready&quot;,&quot;skins.vector.search.codex.styles&quot;:&quot;ready&quot;,&quot;skins.vector.styles&quot;:&quot;ready&quot;,&quot;skins.vector.icons&quot;:&quot;ready&quot;,&quot;ext.flaggedRevs.basic&quot;:&quot;ready&quot;,&quot;ext.tmh.player.styles&quot;:&quot;ready&quot;,&quot;ext.wikimediamessages.styles&quot;:&quot;ready&quot;,&quot;ext.visualEditor.desktopArticleTarget.noscript&quot;:&quot;ready&quot;,&quot;ext.uls.interlanguage&quot;:&quot;ready&quot;,&quot;wikibase.client.init&quot;:&quot;ready&quot;,&quot;ext.wikimediaBadges&quot;:&quot;ready&quot;};RLPAGEMODULES=[&quot;ext.categoryTree&quot;,&quot;site&quot;,&quot;mediawiki.page.ready&quot;,&quot;skins.vector.js&quot;,&quot;ext.centralNotice.geoIP&quot;,&quot;ext.centralNotice.startUp&quot;,&quot;ext.flaggedRevs.advanced&quot;,&quot;ext.gadget.wdsearch&quot;,&quot;ext.gadget.irclogin&quot;,&quot;ext.gadget.edittop&quot;,
+&quot;ext.gadget.ImageAnnotator.loader&quot;,&quot;ext.gadget.collapsible&quot;,&quot;ext.gadget.kepdia&quot;,&quot;ext.gadget.kinai&quot;,&quot;ext.gadget.poziciosTerkep&quot;,&quot;ext.gadget.wikiMenu&quot;,&quot;ext.gadget.wiwosm&quot;,&quot;ext.tmh.player&quot;,&quot;ext.urlShortener.toolbar&quot;,&quot;ext.centralauth.centralautologin&quot;,&quot;mmv.head&quot;,&quot;mmv.bootstrap.autostart&quot;,&quot;ext.popups&quot;,&quot;ext.visualEditor.desktopArticleTarget.init&quot;,&quot;ext.visualEditor.targetLoader&quot;,&quot;ext.echo.centralauth&quot;,&quot;ext.eventLogging&quot;,&quot;ext.wikimediaEvents&quot;,&quot;ext.navigationTiming&quot;,&quot;ext.uls.interface&quot;,&quot;ext.cx.eventlogging.campaigns&quot;,&quot;wikibase.client.vector-2022&quot;,&quot;ext.checkUser.clientHints&quot;,&quot;oojs-ui.styles.icons-media&quot;,&quot;oojs-ui-core.icons&quot;];&lt;/script&gt;
 &lt;script&gt;(RLQ=window.RLQ||[]).push(function(){mw.loader.impl(function(){return[&quot;user.options@12s5i&quot;,function($,jQuery,require,module){mw.user.tokens.set({&quot;patrolToken&quot;:&quot;+\\&quot;,&quot;watchToken&quot;:&quot;+\\&quot;,&quot;csrfToken&quot;:&quot;+\\&quot;});
 }];});});&lt;/script&gt;
 &lt;link href=&quot;/w/load.php?lang=hu&amp;amp;modules=ext.categoryTree.styles%7Cext.flaggedRevs.basic%2Cicons%7Cext.tmh.player.styles%7Cext.uls.interlanguage%7Cext.visualEditor.desktopArticleTarget.noscript%7Cext.wikimediaBadges%7Cext.wikimediamessages.styles%7Cmediawiki.action.styles%7Cmediawiki.helplink%7Cskins.vector.icons%2Cstyles%7Cskins.vector.search.codex.styles%7Cwikibase.client.init&amp;amp;only=styles&amp;amp;skin=vector-2022&quot; rel=&quot;stylesheet&quot;/&gt;
@@ -472,7 +478,7 @@ Siker!
 &lt;meta content=&quot;&quot; name=&quot;ResourceLoaderDynamicStyles&quot;/&gt;
 &lt;link href=&quot;/w/load.php?lang=hu&amp;amp;modules=ext.gadget.infobox%2CwikiMenuStyles&amp;amp;only=styles&amp;amp;skin=vector-2022&quot; rel=&quot;stylesheet&quot;/&gt;
 &lt;link href=&quot;/w/load.php?lang=hu&amp;amp;modules=site.styles&amp;amp;only=styles&amp;amp;skin=vector-2022&quot; rel=&quot;stylesheet&quot;/&gt;
-&lt;meta content=&quot;MediaWiki 1.43.0-wmf.7&quot; name=&quot;generator&quot;/&gt;
+&lt;meta content=&quot;MediaWiki 1.43.0-wmf.8&quot; name=&quot;generator&quot;/&gt;
 &lt;meta content=&quot;origin&quot; name=&quot;referrer&quot;/&gt;
 &lt;meta content=&quot;origin-when-cross-origin&quot; name=&quot;referrer&quot;/&gt;
 &lt;meta content=&quot;max-image-preview:standard&quot; name=&quot;robots&quot;/&gt;
@@ -497,7 +503,7 @@ Siker!
 &lt;div class=&quot;vector-header-container&quot;&gt;
 &lt;header class=&quot;vector-header mw-header&quot;&gt;
 &lt;div class=&quot;vector-header-start&quot;&gt;
-&lt;nav aria-label=&quot;Wiki&quot; class=&quot;vector-main-menu-landmark&quot; role=&quot;navigation&quot;&gt;
+&lt;nav aria-label=&quot;Wiki&quot; class=&quot;vector-main-menu-landmark&quot;&gt;
 &lt;div class=&quot;vector-dropdown vector-main-menu-dropdown vector-button-flush-left vector-button-flush-right&quot; id=&quot;vector-main-menu-dropdown&quot;&gt;
 &lt;input aria-haspopup=&quot;true&quot; aria-label=&quot;Főmenü&quot; class=&quot;vector-dropdown-checkbox&quot; data-event-name=&quot;ui.dropdown-vector-main-menu-dropdown&quot; id=&quot;vector-main-menu-dropdown-checkbox&quot; role=&quot;button&quot; type=&quot;checkbox&quot;/&gt;
 &lt;label aria-hidden=&quot;true&quot; class=&quot;vector-dropdown-label cdx-button cdx-button--fake-button cdx-button--fake-button--enabled cdx-button--weight-quiet cdx-button--icon-only&quot; for=&quot;vector-main-menu-dropdown-checkbox&quot; id=&quot;vector-main-menu-dropdown-label&quot;&gt;&lt;span class=&quot;vector-icon mw-ui-icon-menu mw-ui-icon-wikimedia-menu&quot;&gt;&lt;/span&gt;
@@ -546,7 +552,7 @@ Siker!
 &lt;/div&gt;
 &lt;div class=&quot;vector-header-end&quot;&gt;
 &lt;div class=&quot;vector-search-box-vue vector-search-box-collapses vector-search-box-show-thumbnail vector-search-box-auto-expand-width vector-search-box&quot; id=&quot;p-search&quot; role=&quot;search&quot;&gt;
-&lt;a accesskey=&quot;f&quot; class=&quot;cdx-button cdx-button--fake-button cdx-button--fake-button--enabled cdx-button--weight-quiet cdx-button--icon-only search-toggle&quot; href=&quot;/wiki/Speci%C3%A1lis:Keres%C3%A9s&quot; id=&quot;&quot; title=&quot;Keresés a Wikipédián [f]&quot;&gt;&lt;span class=&quot;vector-icon mw-ui-icon-search mw-ui-icon-wikimedia-search&quot;&gt;&lt;/span&gt;
+&lt;a accesskey=&quot;f&quot; class=&quot;cdx-button cdx-button--fake-button cdx-button--fake-button--enabled cdx-button--weight-quiet cdx-button--icon-only search-toggle&quot; href=&quot;/wiki/Speci%C3%A1lis:Keres%C3%A9s&quot; title=&quot;Keresés a Wikipédián [f]&quot;&gt;&lt;span class=&quot;vector-icon mw-ui-icon-search mw-ui-icon-wikimedia-search&quot;&gt;&lt;/span&gt;
 &lt;span&gt;Keresés&lt;/span&gt;
 &lt;/a&gt;
 &lt;div class=&quot;vector-typeahead-search-container&quot;&gt;
@@ -564,7 +570,7 @@ Siker!
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;nav aria-label=&quot;Személyes eszközök&quot; class=&quot;vector-user-links vector-user-links-wide&quot; role=&quot;navigation&quot;&gt;
+&lt;nav aria-label=&quot;Személyes eszközök&quot; class=&quot;vector-user-links vector-user-links-wide&quot;&gt;
 &lt;div class=&quot;vector-user-links-main&quot;&gt;
 &lt;div class=&quot;vector-menu mw-portlet emptyPortlet&quot; id=&quot;p-vector-user-menu-preferences&quot;&gt;
 &lt;div class=&quot;vector-menu-content&quot;&gt;
@@ -634,7 +640,7 @@ Siker!
 &lt;div class=&quot;vector-column-start&quot;&gt;
 &lt;div class=&quot;vector-main-menu-container&quot;&gt;
 &lt;div id=&quot;mw-navigation&quot;&gt;
-&lt;nav aria-label=&quot;Wiki&quot; class=&quot;vector-main-menu-landmark&quot; id=&quot;mw-panel&quot; role=&quot;navigation&quot;&gt;
+&lt;nav aria-label=&quot;Wiki&quot; class=&quot;vector-main-menu-landmark&quot; id=&quot;mw-panel&quot;&gt;
 &lt;div class=&quot;vector-pinned-container&quot; id=&quot;vector-main-menu-pinned-container&quot;&gt;
 &lt;/div&gt;
 &lt;/nav&gt;
@@ -642,7 +648,7 @@ Siker!
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&quot;mw-content-container&quot;&gt;
-&lt;main class=&quot;mw-body&quot; id=&quot;content&quot; role=&quot;main&quot;&gt;
+&lt;main class=&quot;mw-body&quot; id=&quot;content&quot;&gt;
 &lt;header class=&quot;mw-body-header vector-page-titlebar&quot;&gt;
 &lt;h1 class=&quot;firstHeading mw-first-heading&quot; id=&quot;firstHeading&quot;&gt;&lt;span class=&quot;mw-page-title-namespace&quot;&gt;Kategória&lt;/span&gt;&lt;span class=&quot;mw-page-title-separator&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mw-page-title-main&quot;&gt;Növénycsaládok&lt;/span&gt;&lt;/h1&gt;
 &lt;div class=&quot;vector-dropdown mw-portlet mw-portlet-lang&quot; id=&quot;p-lang-btn&quot;&gt;
@@ -671,9 +677,9 @@ Siker!
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&quot;vector-dropdown emptyPortlet&quot; id=&quot;p-variants&quot;&gt;
-&lt;input aria-haspopup=&quot;true&quot; aria-label=&quot;Nyelvvariáns váltása&quot; class=&quot;vector-dropdown-checkbox&quot; data-event-name=&quot;ui.dropdown-p-variants&quot; id=&quot;p-variants-checkbox&quot; role=&quot;button&quot; type=&quot;checkbox&quot;/&gt;
-&lt;label aria-hidden=&quot;true&quot; class=&quot;vector-dropdown-label cdx-button cdx-button--fake-button cdx-button--fake-button--enabled cdx-button--weight-quiet&quot; for=&quot;p-variants-checkbox&quot; id=&quot;p-variants-label&quot;&gt;&lt;span class=&quot;vector-dropdown-label-text&quot;&gt;magyar&lt;/span&gt;
+&lt;div class=&quot;vector-dropdown emptyPortlet&quot; id=&quot;vector-variants-dropdown&quot;&gt;
+&lt;input aria-haspopup=&quot;true&quot; aria-label=&quot;Nyelvvariáns váltása&quot; class=&quot;vector-dropdown-checkbox&quot; data-event-name=&quot;ui.dropdown-vector-variants-dropdown&quot; id=&quot;vector-variants-dropdown-checkbox&quot; role=&quot;button&quot; type=&quot;checkbox&quot;/&gt;
+&lt;label aria-hidden=&quot;true&quot; class=&quot;vector-dropdown-label cdx-button cdx-button--fake-button cdx-button--fake-button--enabled cdx-button--weight-quiet&quot; for=&quot;vector-variants-dropdown-checkbox&quot; id=&quot;vector-variants-dropdown-label&quot;&gt;&lt;span class=&quot;vector-dropdown-label-text&quot;&gt;magyar&lt;/span&gt;
 &lt;/label&gt;
 &lt;div class=&quot;vector-dropdown-content&quot;&gt;
 &lt;div class=&quot;vector-menu mw-portlet mw-portlet-variants emptyPortlet&quot; id=&quot;p-variants&quot;&gt;
@@ -987,7 +993,7 @@ Siker!
 &lt;/main&gt;
 &lt;/div&gt;
 &lt;div class=&quot;mw-footer-container&quot;&gt;
-&lt;footer class=&quot;mw-footer&quot; id=&quot;footer&quot; role=&quot;contentinfo&quot;&gt;
+&lt;footer class=&quot;mw-footer&quot; id=&quot;footer&quot;&gt;
 &lt;ul id=&quot;footer-info&quot;&gt;
 &lt;li id=&quot;footer-info-lastmod&quot;&gt; A lap utolsó módosítása: 2014. április 17., 17:13&lt;/li&gt;
 &lt;li id=&quot;footer-info-copyright&quot;&gt;A lap szövege &lt;a href=&quot;http://creativecommons.org/licenses/by-sa/4.0/deed.hu&quot;&gt;Creative Commons Nevezd meg! – Így add tovább! 4.0&lt;/a&gt; licenc alatt van; egyes esetekben más módon is felhasználható. Részletekért lásd a &lt;a href=&quot;//hu.wikipedia.org/wiki/Wikip%C3%A9dia:Felhaszn%C3%A1l%C3%A1si_felt%C3%A9telek&quot;&gt;felhasználási feltételeket&lt;/a&gt;.&lt;/li&gt;
@@ -1013,13 +1019,13 @@ Siker!
 &lt;div class=&quot;vector-settings&quot; id=&quot;p-dock-bottom&quot;&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;button class=&quot;cdx-button cdx-button--icon-only vector-limited-width-toggle&quot; id=&quot;&quot;&gt;&lt;span class=&quot;vector-icon mw-ui-icon-fullScreen mw-ui-icon-wikimedia-fullScreen&quot;&gt;&lt;/span&gt;
+&lt;button class=&quot;cdx-button cdx-button--icon-only vector-limited-width-toggle&quot;&gt;&lt;span class=&quot;vector-icon mw-ui-icon-fullScreen mw-ui-icon-wikimedia-fullScreen&quot;&gt;&lt;/span&gt;
 &lt;span&gt;Korlátozott tartalomszélesség ki/be&lt;/span&gt;
 &lt;/button&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
-&lt;script&gt;(RLQ=window.RLQ||[]).push(function(){mw.config.set({&quot;wgHostname&quot;:&quot;mw-web.eqiad.main-84654688c9-qskmk&quot;,&quot;wgBackendResponseTime&quot;:174,&quot;wgPageParseReport&quot;:{&quot;limitreport&quot;:{&quot;cputime&quot;:&quot;0.015&quot;,&quot;walltime&quot;:&quot;0.026&quot;,&quot;ppvisitednodes&quot;:{&quot;value&quot;:95,&quot;limit&quot;:1000000},&quot;postexpandincludesize&quot;:{&quot;value&quot;:3501,&quot;limit&quot;:2097152},&quot;templateargumentsize&quot;:{&quot;value&quot;:1312,&quot;limit&quot;:2097152},&quot;expansiondepth&quot;:{&quot;value&quot;:6,&quot;limit&quot;:100},&quot;expensivefunctioncount&quot;:{&quot;value&quot;:0,&quot;limit&quot;:500},&quot;unstrip-depth&quot;:{&quot;value&quot;:0,&quot;limit&quot;:20},&quot;unstrip-size&quot;:{&quot;value&quot;:473,&quot;limit&quot;:5000000},&quot;entityaccesscount&quot;:{&quot;value&quot;:0,&quot;limit&quot;:400},&quot;timingprofile&quot;:[&quot;100.00%   15.367      1 -total&quot;,&quot; 67.05%   10.304      1 Sablon:Commonskat&quot;,&quot; 55.40%    8.513      1 Sablon:Társprojekt_alap&quot;,&quot; 32.54%    5.001      1 Sablon:Rendszertani_egység_szerinti_kategória&quot;,&quot; 16.17%    2.484      1 Sablon:Ambox&quot;]},&quot;cachereport&quot;:{&quot;origin&quot;:&quot;mw-web.codfw.main-79fcbcbf4-56kbw&quot;,&quot;timestamp&quot;:&quot;20240508042527&quot;,&quot;ttl&quot;:2592000,&quot;transientcontent&quot;:false}}});});&lt;/script&gt;
+&lt;script&gt;(RLQ=window.RLQ||[]).push(function(){mw.config.set({&quot;wgHostname&quot;:&quot;mw-web.eqiad.main-bd6bfc586-bxgfs&quot;,&quot;wgBackendResponseTime&quot;:196,&quot;wgPageParseReport&quot;:{&quot;limitreport&quot;:{&quot;cputime&quot;:&quot;0.019&quot;,&quot;walltime&quot;:&quot;0.029&quot;,&quot;ppvisitednodes&quot;:{&quot;value&quot;:95,&quot;limit&quot;:1000000},&quot;postexpandincludesize&quot;:{&quot;value&quot;:3501,&quot;limit&quot;:2097152},&quot;templateargumentsize&quot;:{&quot;value&quot;:1312,&quot;limit&quot;:2097152},&quot;expansiondepth&quot;:{&quot;value&quot;:6,&quot;limit&quot;:100},&quot;expensivefunctioncount&quot;:{&quot;value&quot;:0,&quot;limit&quot;:500},&quot;unstrip-depth&quot;:{&quot;value&quot;:0,&quot;limit&quot;:20},&quot;unstrip-size&quot;:{&quot;value&quot;:473,&quot;limit&quot;:5000000},&quot;entityaccesscount&quot;:{&quot;value&quot;:0,&quot;limit&quot;:400},&quot;timingprofile&quot;:[&quot;100.00%   17.813      1 -total&quot;,&quot; 69.08%   12.305      1 Sablon:Commonskat&quot;,&quot; 57.31%   10.209      1 Sablon:Társprojekt_alap&quot;,&quot; 30.44%    5.422      1 Sablon:Rendszertani_egység_szerinti_kategória&quot;,&quot; 15.51%    2.763      1 Sablon:Ambox&quot;]},&quot;cachereport&quot;:{&quot;origin&quot;:&quot;mw-web.eqiad.main-7768bf78c7-lp22v&quot;,&quot;timestamp&quot;:&quot;20240607090509&quot;,&quot;ttl&quot;:2592000,&quot;transientcontent&quot;:false}}});});&lt;/script&gt;
 &lt;/body&gt;
 &lt;/html&gt;
 </pre></div>
@@ -1035,18 +1041,18 @@ Siker!
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;!DOCTYPE html&gt;
-&lt;html class=&quot;client-nojs vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-sticky-header-disabled vector-feature-page-tools-pinned-disabled vector-feature-toc-pinned-clientpref-1 vector-feature-main-menu-pinned-disabled vector-feature-limited-width-clientpref-1 vector-feature-limited-width-content-disabled vector-feature-custom-font-size-clientpref-0 vector-feature-appearance-disabled vector-feature-appearance-pinned-clientpref-0 vector-feature-night-mode-disabled skin-theme-clientpref--excluded vector-toc-not-available&quot; dir=&quot;ltr&quot; lang=&quot;hu&quot;&gt;
+&lt;html class=&quot;client-nojs vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-sticky-header-disabled vector-feature-page-tools-pinned-disabled vector-feature-toc-pinned-clientpref-1 vector-feature-main-menu-pinned-disabled vector-feature-limited-width-clientpref-1 vector-feature-limited-width-content-disabled vector-feature-custom-font-size-clientpref--excluded vector-feature-appearance-disabled vector-feature-appearance-pinned-clientpref-0 vector-feature-night-mode-disabled skin-theme-clientpref-day vector-toc-not-available&quot; dir=&quot;ltr&quot; lang=&quot;hu&quot;&gt;
  &lt;head&gt;
   &lt;meta charset=&quot;utf-8&quot;/&gt;
   &lt;title&gt;
    Kategória:Növénycsaládok – Wikipédia
   &lt;/title&gt;
   &lt;script&gt;
-   (function(){var className=&quot;client-js vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-sticky-header-disabled vector-feature-page-tools-pinned-disabled vector-feature-toc-pinned-clientpref-1 vector-feature-main-menu-pinned-disabled vector-feature-limited-width-clientpref-1 vector-feature-limited-width-content-disabled vector-feature-custom-font-size-clientpref-0 vector-feature-appearance-disabled vector-feature-appearance-pinned-clientpref-0 vector-feature-night-mode-disabled skin-theme-clientpref--excluded vector-toc-not-available&quot;;var cookie=document.cookie.match(/(?:^|; )huwikimwclientpreferences=([^;]+)/);if(cookie){cookie[1].split(&#39;%2C&#39;).forEach(function(pref){className=className.replace(new RegExp(&#39;(^| )&#39;+pref.replace(/-clientpref-\w+$|[^\w-]+/g,&#39;&#39;)+&#39;-clientpref-\\w+( |$)&#39;),&#39;$1&#39;+pref+&#39;$2&#39;);});}document.documentElement.className=className;}());RLCONF={&quot;wgBreakFrames&quot;:false,&quot;wgSeparatorTransformTable&quot;:[&quot;,\t.&quot;,&quot; \t,&quot;],
-&quot;wgDigitTransformTable&quot;:[&quot;&quot;,&quot;&quot;],&quot;wgDefaultDateFormat&quot;:&quot;ymd&quot;,&quot;wgMonthNames&quot;:[&quot;&quot;,&quot;január&quot;,&quot;február&quot;,&quot;március&quot;,&quot;április&quot;,&quot;május&quot;,&quot;június&quot;,&quot;július&quot;,&quot;augusztus&quot;,&quot;szeptember&quot;,&quot;október&quot;,&quot;november&quot;,&quot;december&quot;],&quot;wgRequestId&quot;:&quot;b33a21c7-f553-4713-bcfc-efc059443908&quot;,&quot;wgCanonicalNamespace&quot;:&quot;Category&quot;,&quot;wgCanonicalSpecialPageName&quot;:false,&quot;wgNamespaceNumber&quot;:14,&quot;wgPageName&quot;:&quot;Kategória:Növénycsaládok&quot;,&quot;wgTitle&quot;:&quot;Növénycsaládok&quot;,&quot;wgCurRevisionId&quot;:14580898,&quot;wgRevisionId&quot;:14580898,&quot;wgArticleId&quot;:31483,&quot;wgIsArticle&quot;:true,&quot;wgIsRedirect&quot;:false,&quot;wgAction&quot;:&quot;view&quot;,&quot;wgUserName&quot;:null,&quot;wgUserGroups&quot;:[&quot;*&quot;],&quot;wgCategories&quot;:[&quot;Növényrendszertan&quot;],&quot;wgPageViewLanguage&quot;:&quot;hu&quot;,&quot;wgPageContentLanguage&quot;:&quot;hu&quot;,&quot;wgPageContentModel&quot;:&quot;wikitext&quot;,&quot;wgRelevantPageName&quot;:&quot;Kategória:Növénycsaládok&quot;,&quot;wgRelevantArticleId&quot;:31483,&quot;wgIsProbablyEditable&quot;:true,&quot;wgRelevantPageIsProbablyEditable&quot;:true,&quot;wgRestrictionEdit&quot;:[],&quot;wgRestrictionMove&quot;:[],&quot;wgNoticeProject&quot;:&quot;wikipedia&quot;,&quot;wgCiteReferencePreviewsActive&quot;:true,
+   (function(){var className=&quot;client-js vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-sticky-header-disabled vector-feature-page-tools-pinned-disabled vector-feature-toc-pinned-clientpref-1 vector-feature-main-menu-pinned-disabled vector-feature-limited-width-clientpref-1 vector-feature-limited-width-content-disabled vector-feature-custom-font-size-clientpref--excluded vector-feature-appearance-disabled vector-feature-appearance-pinned-clientpref-0 vector-feature-night-mode-disabled skin-theme-clientpref-day vector-toc-not-available&quot;;var cookie=document.cookie.match(/(?:^|; )huwikimwclientpreferences=([^;]+)/);if(cookie){cookie[1].split(&#39;%2C&#39;).forEach(function(pref){className=className.replace(new RegExp(&#39;(^| )&#39;+pref.replace(/-clientpref-\w+$|[^\w-]+/g,&#39;&#39;)+&#39;-clientpref-\\w+( |$)&#39;),&#39;$1&#39;+pref+&#39;$2&#39;);});}document.documentElement.className=className;}());RLCONF={&quot;wgBreakFrames&quot;:false,&quot;wgSeparatorTransformTable&quot;:[&quot;,\t.&quot;,&quot; \t,&quot;],
+&quot;wgDigitTransformTable&quot;:[&quot;&quot;,&quot;&quot;],&quot;wgDefaultDateFormat&quot;:&quot;ymd&quot;,&quot;wgMonthNames&quot;:[&quot;&quot;,&quot;január&quot;,&quot;február&quot;,&quot;március&quot;,&quot;április&quot;,&quot;május&quot;,&quot;június&quot;,&quot;július&quot;,&quot;augusztus&quot;,&quot;szeptember&quot;,&quot;október&quot;,&quot;november&quot;,&quot;december&quot;],&quot;wgRequestId&quot;:&quot;3926bcc5-8467-4d81-80b4-afd7de90ca16&quot;,&quot;wgCanonicalNamespace&quot;:&quot;Category&quot;,&quot;wgCanonicalSpecialPageName&quot;:false,&quot;wgNamespaceNumber&quot;:14,&quot;wgPageName&quot;:&quot;Kategória:Növénycsaládok&quot;,&quot;wgTitle&quot;:&quot;Növénycsaládok&quot;,&quot;wgCurRevisionId&quot;:14580898,&quot;wgRevisionId&quot;:14580898,&quot;wgArticleId&quot;:31483,&quot;wgIsArticle&quot;:true,&quot;wgIsRedirect&quot;:false,&quot;wgAction&quot;:&quot;view&quot;,&quot;wgUserName&quot;:null,&quot;wgUserGroups&quot;:[&quot;*&quot;],&quot;wgCategories&quot;:[&quot;Növényrendszertan&quot;],&quot;wgPageViewLanguage&quot;:&quot;hu&quot;,&quot;wgPageContentLanguage&quot;:&quot;hu&quot;,&quot;wgPageContentModel&quot;:&quot;wikitext&quot;,&quot;wgRelevantPageName&quot;:&quot;Kategória:Növénycsaládok&quot;,&quot;wgRelevantArticleId&quot;:31483,&quot;wgIsProbablyEditable&quot;:true,&quot;wgRelevantPageIsProbablyEditable&quot;:true,&quot;wgRestrictionEdit&quot;:[],&quot;wgRestrictionMove&quot;:[],&quot;wgNoticeProject&quot;:&quot;wikipedia&quot;,&quot;wgCiteReferencePreviewsActive&quot;:true,
 &quot;wgFlaggedRevsParams&quot;:{&quot;tags&quot;:{&quot;accuracy&quot;:{&quot;levels&quot;:2}}},&quot;wgStableRevisionId&quot;:14580898,&quot;wgMediaViewerOnClick&quot;:true,&quot;wgMediaViewerEnabledByDefault&quot;:true,&quot;wgPopupsFlags&quot;:4,&quot;wgVisualEditor&quot;:{&quot;pageLanguageCode&quot;:&quot;hu&quot;,&quot;pageLanguageDir&quot;:&quot;ltr&quot;,&quot;pageVariantFallbacks&quot;:&quot;hu&quot;},&quot;wgMFDisplayWikibaseDescriptions&quot;:{&quot;search&quot;:true,&quot;watchlist&quot;:true,&quot;tagline&quot;:true,&quot;nearby&quot;:true},&quot;wgWMESchemaEditAttemptStepOversample&quot;:false,&quot;wgWMEPageLength&quot;:100,&quot;wgULSCurrentAutonym&quot;:&quot;magyar&quot;,&quot;wgCentralAuthMobileDomain&quot;:false,&quot;wgEditSubmitButtonLabelPublish&quot;:true,&quot;wgULSPosition&quot;:&quot;interlanguage&quot;,&quot;wgULSisCompactLinksEnabled&quot;:false,&quot;wgVector2022LanguageInHeader&quot;:true,&quot;wgULSisLanguageSelectorEmpty&quot;:false,&quot;wgWikibaseItemId&quot;:&quot;Q9079785&quot;,&quot;wgCheckUserClientHintsHeadersJsApi&quot;:[&quot;architecture&quot;,&quot;bitness&quot;,&quot;brands&quot;,&quot;fullVersionList&quot;,&quot;mobile&quot;,&quot;model&quot;,&quot;platform&quot;,&quot;platformVersion&quot;],&quot;GEHomepageSuggestedEditsEnableTopics&quot;:true,&quot;wgGETopicsMatchModeEnabled&quot;:false,&quot;wgGEStructuredTaskRejectionReasonTextInputEnabled&quot;:false,
-&quot;wgGELevelingUpEnabledForUser&quot;:false};RLSTATE={&quot;skins.vector.user.styles&quot;:&quot;ready&quot;,&quot;ext.gadget.infobox&quot;:&quot;ready&quot;,&quot;ext.gadget.wikiMenuStyles&quot;:&quot;ready&quot;,&quot;ext.globalCssJs.user.styles&quot;:&quot;ready&quot;,&quot;site.styles&quot;:&quot;ready&quot;,&quot;user.styles&quot;:&quot;ready&quot;,&quot;skins.vector.user&quot;:&quot;ready&quot;,&quot;ext.globalCssJs.user&quot;:&quot;ready&quot;,&quot;user&quot;:&quot;ready&quot;,&quot;user.options&quot;:&quot;loading&quot;,&quot;ext.flaggedRevs.icons&quot;:&quot;ready&quot;,&quot;mediawiki.action.styles&quot;:&quot;ready&quot;,&quot;ext.categoryTree.styles&quot;:&quot;ready&quot;,&quot;mediawiki.helplink&quot;:&quot;ready&quot;,&quot;skins.vector.search.codex.styles&quot;:&quot;ready&quot;,&quot;skins.vector.styles&quot;:&quot;ready&quot;,&quot;skins.vector.icons&quot;:&quot;ready&quot;,&quot;ext.flaggedRevs.basic&quot;:&quot;ready&quot;,&quot;ext.tmh.player.styles&quot;:&quot;ready&quot;,&quot;ext.wikimediamessages.styles&quot;:&quot;ready&quot;,&quot;ext.visualEditor.desktopArticleTarget.noscript&quot;:&quot;ready&quot;,&quot;ext.uls.interlanguage&quot;:&quot;ready&quot;,&quot;wikibase.client.init&quot;:&quot;ready&quot;,&quot;ext.wikimediaBadges&quot;:&quot;ready&quot;};RLPAGEMODULES=[&quot;ext.categoryTree&quot;,&quot;site&quot;,&quot;mediawiki.page.ready&quot;,&quot;skins.vector.js&quot;,&quot;ext.centralNotice.geoIP&quot;,&quot;ext.centralNotice.startUp&quot;,&quot;ext.flaggedRevs.advanced&quot;,&quot;ext.gadget.wdsearch&quot;,
-&quot;ext.gadget.irclogin&quot;,&quot;ext.gadget.edittop&quot;,&quot;ext.gadget.ImageAnnotator.loader&quot;,&quot;ext.gadget.collapsible&quot;,&quot;ext.gadget.kepdia&quot;,&quot;ext.gadget.kinai&quot;,&quot;ext.gadget.poziciosTerkep&quot;,&quot;ext.gadget.wikiMenu&quot;,&quot;ext.gadget.wiwosm&quot;,&quot;ext.tmh.player&quot;,&quot;ext.urlShortener.toolbar&quot;,&quot;ext.centralauth.centralautologin&quot;,&quot;mmv.head&quot;,&quot;mmv.bootstrap.autostart&quot;,&quot;ext.popups&quot;,&quot;ext.visualEditor.desktopArticleTarget.init&quot;,&quot;ext.visualEditor.targetLoader&quot;,&quot;ext.echo.centralauth&quot;,&quot;ext.eventLogging&quot;,&quot;ext.wikimediaEvents&quot;,&quot;ext.navigationTiming&quot;,&quot;ext.uls.interface&quot;,&quot;ext.cx.eventlogging.campaigns&quot;,&quot;wikibase.client.vector-2022&quot;,&quot;ext.checkUser.clientHints&quot;,&quot;oojs-ui.styles.icons-media&quot;,&quot;oojs-ui-core.icons&quot;];
+&quot;wgGELevelingUpEnabledForUser&quot;:false};RLSTATE={&quot;ext.gadget.infobox&quot;:&quot;ready&quot;,&quot;ext.gadget.wikiMenuStyles&quot;:&quot;ready&quot;,&quot;ext.globalCssJs.user.styles&quot;:&quot;ready&quot;,&quot;site.styles&quot;:&quot;ready&quot;,&quot;user.styles&quot;:&quot;ready&quot;,&quot;ext.globalCssJs.user&quot;:&quot;ready&quot;,&quot;user&quot;:&quot;ready&quot;,&quot;user.options&quot;:&quot;loading&quot;,&quot;ext.flaggedRevs.icons&quot;:&quot;ready&quot;,&quot;mediawiki.action.styles&quot;:&quot;ready&quot;,&quot;ext.categoryTree.styles&quot;:&quot;ready&quot;,&quot;mediawiki.helplink&quot;:&quot;ready&quot;,&quot;skins.vector.search.codex.styles&quot;:&quot;ready&quot;,&quot;skins.vector.styles&quot;:&quot;ready&quot;,&quot;skins.vector.icons&quot;:&quot;ready&quot;,&quot;ext.flaggedRevs.basic&quot;:&quot;ready&quot;,&quot;ext.tmh.player.styles&quot;:&quot;ready&quot;,&quot;ext.wikimediamessages.styles&quot;:&quot;ready&quot;,&quot;ext.visualEditor.desktopArticleTarget.noscript&quot;:&quot;ready&quot;,&quot;ext.uls.interlanguage&quot;:&quot;ready&quot;,&quot;wikibase.client.init&quot;:&quot;ready&quot;,&quot;ext.wikimediaBadges&quot;:&quot;ready&quot;};RLPAGEMODULES=[&quot;ext.categoryTree&quot;,&quot;site&quot;,&quot;mediawiki.page.ready&quot;,&quot;skins.vector.js&quot;,&quot;ext.centralNotice.geoIP&quot;,&quot;ext.centralNotice.startUp&quot;,&quot;ext.flaggedRevs.advanced&quot;,&quot;ext.gadget.wdsearch&quot;,&quot;ext.gadget.irclogin&quot;,&quot;ext.gadget.edittop&quot;,
+&quot;ext.gadget.ImageAnnotator.loader&quot;,&quot;ext.gadget.collapsible&quot;,&quot;ext.gadget.kepdia&quot;,&quot;ext.gadget.kinai&quot;,&quot;ext.gadget.poziciosTerkep&quot;,&quot;ext.gadget.wikiMenu&quot;,&quot;ext.gadget.wiwosm&quot;,&quot;ext.tmh.player&quot;,&quot;ext.urlShortener.toolbar&quot;,&quot;ext.centralauth.centralautologin&quot;,&quot;mmv.head&quot;,&quot;mmv.bootstrap.autostart&quot;,&quot;ext.popups&quot;,&quot;ext.visualEditor.desktopArticleTarget.init&quot;,&quot;ext.visualEditor.targetLoader&quot;,&quot;ext.echo.centralauth&quot;,&quot;ext.eventLogging&quot;,&quot;ext.wikimediaEvents&quot;,&quot;ext.navigationTiming&quot;,&quot;ext.uls.interface&quot;,&quot;ext.cx.eventlogging.campaigns&quot;,&quot;wikibase.client.vector-2022&quot;,&quot;ext.checkUser.clientHints&quot;,&quot;oojs-ui.styles.icons-media&quot;,&quot;oojs-ui-core.icons&quot;];
   &lt;/script&gt;
   &lt;script&gt;
    (RLQ=window.RLQ||[]).push(function(){mw.loader.impl(function(){return[&quot;user.options@12s5i&quot;,function($,jQuery,require,module){mw.user.tokens.set({&quot;patrolToken&quot;:&quot;+\\&quot;,&quot;watchToken&quot;:&quot;+\\&quot;,&quot;csrfToken&quot;:&quot;+\\&quot;});
@@ -1058,7 +1064,7 @@ Siker!
   &lt;meta content=&quot;&quot; name=&quot;ResourceLoaderDynamicStyles&quot;/&gt;
   &lt;link href=&quot;/w/load.php?lang=hu&amp;amp;modules=ext.gadget.infobox%2CwikiMenuStyles&amp;amp;only=styles&amp;amp;skin=vector-2022&quot; rel=&quot;stylesheet&quot;/&gt;
   &lt;link href=&quot;/w/load.php?lang=hu&amp;amp;modules=site.styles&amp;amp;only=styles&amp;amp;skin=vector-2022&quot; rel=&quot;stylesheet&quot;/&gt;
-  &lt;meta content=&quot;MediaWiki 1.43.0-wmf.7&quot; name=&quot;generator&quot;/&gt;
+  &lt;meta content=&quot;MediaWiki 1.43.0-wmf.8&quot; name=&quot;generator&quot;/&gt;
   &lt;meta content=&quot;origin&quot; name=&quot;referrer&quot;/&gt;
   &lt;meta content=&quot;origin-when-cross-origin&quot; name=&quot;referrer&quot;/&gt;
   &lt;meta content=&quot;max-image-preview:standard&quot; name=&quot;robots&quot;/&gt;
@@ -1087,7 +1093,7 @@ Siker!
   &lt;div class=&quot;vector-header-container&quot;&gt;
    &lt;header class=&quot;vector-header mw-header&quot;&gt;
     &lt;div class=&quot;vector-header-start&quot;&gt;
-     &lt;nav aria-label=&quot;Wiki&quot; class=&quot;vector-main-menu-landmark&quot; role=&quot;navigation&quot;&gt;
+     &lt;nav aria-label=&quot;Wiki&quot; class=&quot;vector-main-menu-landmark&quot;&gt;
       &lt;div class=&quot;vector-dropdown vector-main-menu-dropdown vector-button-flush-left vector-button-flush-right&quot; id=&quot;vector-main-menu-dropdown&quot;&gt;
        &lt;input aria-haspopup=&quot;true&quot; aria-label=&quot;Főmenü&quot; class=&quot;vector-dropdown-checkbox&quot; data-event-name=&quot;ui.dropdown-vector-main-menu-dropdown&quot; id=&quot;vector-main-menu-dropdown-checkbox&quot; role=&quot;button&quot; type=&quot;checkbox&quot;/&gt;
        &lt;label aria-hidden=&quot;true&quot; class=&quot;vector-dropdown-label cdx-button cdx-button--fake-button cdx-button--fake-button--enabled cdx-button--weight-quiet cdx-button--icon-only&quot; for=&quot;vector-main-menu-dropdown-checkbox&quot; id=&quot;vector-main-menu-dropdown-label&quot;&gt;
@@ -1221,7 +1227,7 @@ Siker!
     &lt;/div&gt;
     &lt;div class=&quot;vector-header-end&quot;&gt;
      &lt;div class=&quot;vector-search-box-vue vector-search-box-collapses vector-search-box-show-thumbnail vector-search-box-auto-expand-width vector-search-box&quot; id=&quot;p-search&quot; role=&quot;search&quot;&gt;
-      &lt;a accesskey=&quot;f&quot; class=&quot;cdx-button cdx-button--fake-button cdx-button--fake-button--enabled cdx-button--weight-quiet cdx-button--icon-only search-toggle&quot; href=&quot;/wiki/Speci%C3%A1lis:Keres%C3%A9s&quot; id=&quot;&quot; title=&quot;Keresés a Wikipédián [f]&quot;&gt;
+      &lt;a accesskey=&quot;f&quot; class=&quot;cdx-button cdx-button--fake-button cdx-button--fake-button--enabled cdx-button--weight-quiet cdx-button--icon-only search-toggle&quot; href=&quot;/wiki/Speci%C3%A1lis:Keres%C3%A9s&quot; title=&quot;Keresés a Wikipédián [f]&quot;&gt;
        &lt;span class=&quot;vector-icon mw-ui-icon-search mw-ui-icon-wikimedia-search&quot;&gt;
        &lt;/span&gt;
        &lt;span&gt;
@@ -1246,7 +1252,7 @@ Siker!
        &lt;/div&gt;
       &lt;/div&gt;
      &lt;/div&gt;
-     &lt;nav aria-label=&quot;Személyes eszközök&quot; class=&quot;vector-user-links vector-user-links-wide&quot; role=&quot;navigation&quot;&gt;
+     &lt;nav aria-label=&quot;Személyes eszközök&quot; class=&quot;vector-user-links vector-user-links-wide&quot;&gt;
       &lt;div class=&quot;vector-user-links-main&quot;&gt;
        &lt;div class=&quot;vector-menu mw-portlet emptyPortlet&quot; id=&quot;p-vector-user-menu-preferences&quot;&gt;
         &lt;div class=&quot;vector-menu-content&quot;&gt;
@@ -1367,7 +1373,7 @@ Siker!
     &lt;div class=&quot;vector-column-start&quot;&gt;
      &lt;div class=&quot;vector-main-menu-container&quot;&gt;
       &lt;div id=&quot;mw-navigation&quot;&gt;
-       &lt;nav aria-label=&quot;Wiki&quot; class=&quot;vector-main-menu-landmark&quot; id=&quot;mw-panel&quot; role=&quot;navigation&quot;&gt;
+       &lt;nav aria-label=&quot;Wiki&quot; class=&quot;vector-main-menu-landmark&quot; id=&quot;mw-panel&quot;&gt;
         &lt;div class=&quot;vector-pinned-container&quot; id=&quot;vector-main-menu-pinned-container&quot;&gt;
         &lt;/div&gt;
        &lt;/nav&gt;
@@ -1375,7 +1381,7 @@ Siker!
      &lt;/div&gt;
     &lt;/div&gt;
     &lt;div class=&quot;mw-content-container&quot;&gt;
-     &lt;main class=&quot;mw-body&quot; id=&quot;content&quot; role=&quot;main&quot;&gt;
+     &lt;main class=&quot;mw-body&quot; id=&quot;content&quot;&gt;
       &lt;header class=&quot;mw-body-header vector-page-titlebar&quot;&gt;
        &lt;h1 class=&quot;firstHeading mw-first-heading&quot; id=&quot;firstHeading&quot;&gt;
         &lt;span class=&quot;mw-page-title-namespace&quot;&gt;
@@ -1814,9 +1820,9 @@ Siker!
             &lt;/ul&gt;
            &lt;/div&gt;
           &lt;/div&gt;
-          &lt;div class=&quot;vector-dropdown emptyPortlet&quot; id=&quot;p-variants&quot;&gt;
-           &lt;input aria-haspopup=&quot;true&quot; aria-label=&quot;Nyelvvariáns váltása&quot; class=&quot;vector-dropdown-checkbox&quot; data-event-name=&quot;ui.dropdown-p-variants&quot; id=&quot;p-variants-checkbox&quot; role=&quot;button&quot; type=&quot;checkbox&quot;/&gt;
-           &lt;label aria-hidden=&quot;true&quot; class=&quot;vector-dropdown-label cdx-button cdx-button--fake-button cdx-button--fake-button--enabled cdx-button--weight-quiet&quot; for=&quot;p-variants-checkbox&quot; id=&quot;p-variants-label&quot;&gt;
+          &lt;div class=&quot;vector-dropdown emptyPortlet&quot; id=&quot;vector-variants-dropdown&quot;&gt;
+           &lt;input aria-haspopup=&quot;true&quot; aria-label=&quot;Nyelvvariáns váltása&quot; class=&quot;vector-dropdown-checkbox&quot; data-event-name=&quot;ui.dropdown-vector-variants-dropdown&quot; id=&quot;vector-variants-dropdown-checkbox&quot; role=&quot;button&quot; type=&quot;checkbox&quot;/&gt;
+           &lt;label aria-hidden=&quot;true&quot; class=&quot;vector-dropdown-label cdx-button cdx-button--fake-button cdx-button--fake-button--enabled cdx-button--weight-quiet&quot; for=&quot;vector-variants-dropdown-checkbox&quot; id=&quot;vector-variants-dropdown-label&quot;&gt;
             &lt;span class=&quot;vector-dropdown-label-text&quot;&gt;
              magyar
             &lt;/span&gt;
@@ -3352,7 +3358,7 @@ Siker!
      &lt;/main&gt;
     &lt;/div&gt;
     &lt;div class=&quot;mw-footer-container&quot;&gt;
-     &lt;footer class=&quot;mw-footer&quot; id=&quot;footer&quot; role=&quot;contentinfo&quot;&gt;
+     &lt;footer class=&quot;mw-footer&quot; id=&quot;footer&quot;&gt;
       &lt;ul id=&quot;footer-info&quot;&gt;
        &lt;li id=&quot;footer-info-lastmod&quot;&gt;
         A lap utolsó módosítása: 2014. április 17., 17:13
@@ -3430,7 +3436,7 @@ Siker!
   &lt;div class=&quot;vector-settings&quot; id=&quot;p-dock-bottom&quot;&gt;
    &lt;ul&gt;
     &lt;li&gt;
-     &lt;button class=&quot;cdx-button cdx-button--icon-only vector-limited-width-toggle&quot; id=&quot;&quot;&gt;
+     &lt;button class=&quot;cdx-button cdx-button--icon-only vector-limited-width-toggle&quot;&gt;
       &lt;span class=&quot;vector-icon mw-ui-icon-fullScreen mw-ui-icon-wikimedia-fullScreen&quot;&gt;
       &lt;/span&gt;
       &lt;span&gt;
@@ -3441,7 +3447,7 @@ Siker!
    &lt;/ul&gt;
   &lt;/div&gt;
   &lt;script&gt;
-   (RLQ=window.RLQ||[]).push(function(){mw.config.set({&quot;wgHostname&quot;:&quot;mw-web.eqiad.main-84654688c9-qskmk&quot;,&quot;wgBackendResponseTime&quot;:174,&quot;wgPageParseReport&quot;:{&quot;limitreport&quot;:{&quot;cputime&quot;:&quot;0.015&quot;,&quot;walltime&quot;:&quot;0.026&quot;,&quot;ppvisitednodes&quot;:{&quot;value&quot;:95,&quot;limit&quot;:1000000},&quot;postexpandincludesize&quot;:{&quot;value&quot;:3501,&quot;limit&quot;:2097152},&quot;templateargumentsize&quot;:{&quot;value&quot;:1312,&quot;limit&quot;:2097152},&quot;expansiondepth&quot;:{&quot;value&quot;:6,&quot;limit&quot;:100},&quot;expensivefunctioncount&quot;:{&quot;value&quot;:0,&quot;limit&quot;:500},&quot;unstrip-depth&quot;:{&quot;value&quot;:0,&quot;limit&quot;:20},&quot;unstrip-size&quot;:{&quot;value&quot;:473,&quot;limit&quot;:5000000},&quot;entityaccesscount&quot;:{&quot;value&quot;:0,&quot;limit&quot;:400},&quot;timingprofile&quot;:[&quot;100.00%   15.367      1 -total&quot;,&quot; 67.05%   10.304      1 Sablon:Commonskat&quot;,&quot; 55.40%    8.513      1 Sablon:Társprojekt_alap&quot;,&quot; 32.54%    5.001      1 Sablon:Rendszertani_egység_szerinti_kategória&quot;,&quot; 16.17%    2.484      1 Sablon:Ambox&quot;]},&quot;cachereport&quot;:{&quot;origin&quot;:&quot;mw-web.codfw.main-79fcbcbf4-56kbw&quot;,&quot;timestamp&quot;:&quot;20240508042527&quot;,&quot;ttl&quot;:2592000,&quot;transientcontent&quot;:false}}});});
+   (RLQ=window.RLQ||[]).push(function(){mw.config.set({&quot;wgHostname&quot;:&quot;mw-web.eqiad.main-bd6bfc586-bxgfs&quot;,&quot;wgBackendResponseTime&quot;:196,&quot;wgPageParseReport&quot;:{&quot;limitreport&quot;:{&quot;cputime&quot;:&quot;0.019&quot;,&quot;walltime&quot;:&quot;0.029&quot;,&quot;ppvisitednodes&quot;:{&quot;value&quot;:95,&quot;limit&quot;:1000000},&quot;postexpandincludesize&quot;:{&quot;value&quot;:3501,&quot;limit&quot;:2097152},&quot;templateargumentsize&quot;:{&quot;value&quot;:1312,&quot;limit&quot;:2097152},&quot;expansiondepth&quot;:{&quot;value&quot;:6,&quot;limit&quot;:100},&quot;expensivefunctioncount&quot;:{&quot;value&quot;:0,&quot;limit&quot;:500},&quot;unstrip-depth&quot;:{&quot;value&quot;:0,&quot;limit&quot;:20},&quot;unstrip-size&quot;:{&quot;value&quot;:473,&quot;limit&quot;:5000000},&quot;entityaccesscount&quot;:{&quot;value&quot;:0,&quot;limit&quot;:400},&quot;timingprofile&quot;:[&quot;100.00%   17.813      1 -total&quot;,&quot; 69.08%   12.305      1 Sablon:Commonskat&quot;,&quot; 57.31%   10.209      1 Sablon:Társprojekt_alap&quot;,&quot; 30.44%    5.422      1 Sablon:Rendszertani_egység_szerinti_kategória&quot;,&quot; 15.51%    2.763      1 Sablon:Ambox&quot;]},&quot;cachereport&quot;:{&quot;origin&quot;:&quot;mw-web.eqiad.main-7768bf78c7-lp22v&quot;,&quot;timestamp&quot;:&quot;20240607090509&quot;,&quot;ttl&quot;:2592000,&quot;transientcontent&quot;:false}}});});
   &lt;/script&gt;
  &lt;/body&gt;
 &lt;/html&gt;
@@ -3464,7 +3470,7 @@ Siker!
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;div class=&quot;vector-header-container&quot;&gt;
 &lt;header class=&quot;vector-header mw-header&quot;&gt;
 &lt;div class=&quot;vector-header-start&quot;&gt;
-&lt;nav aria-label=&quot;Wiki&quot; class=&quot;vector-main-menu-landmark&quot; role=&quot;navigation&quot;&gt;
+&lt;nav aria-label=&quot;Wiki&quot; class=&quot;vector-main-menu-landmark&quot;&gt;
 &lt;div class=&quot;vector-dropdown vector-main-menu-dropdown vector-button-flush-left vector-button-flush-right&quot; id=&quot;vector-main-menu-dropdown&quot;&gt;
 &lt;input aria-haspopup=&quot;true&quot; aria-label=&quot;Főmenü&quot; class=&quot;vector-dropdown-checkbox&quot; data-event-name=&quot;ui.dropdown-vector-main-menu-dropdown&quot; id=&quot;vector-main-menu-dropdown-checkbox&quot; role=&quot;button&quot; type=&quot;checkbox&quot;/&gt;
 &lt;label aria-hidden=&quot;true&quot; class=&quot;vector-dropdown-label cdx-button cdx-button--fake-button cdx-button--fake-button--enabled cdx-button--weight-quiet cdx-button--icon-only&quot; for=&quot;vector-main-menu-dropdown-checkbox&quot; id=&quot;vector-main-menu-dropdown-label&quot;&gt;&lt;span class=&quot;vector-icon mw-ui-icon-menu mw-ui-icon-wikimedia-menu&quot;&gt;&lt;/span&gt;
@@ -3513,7 +3519,7 @@ Siker!
 &lt;/div&gt;
 &lt;div class=&quot;vector-header-end&quot;&gt;
 &lt;div class=&quot;vector-search-box-vue vector-search-box-collapses vector-search-box-show-thumbnail vector-search-box-auto-expand-width vector-search-box&quot; id=&quot;p-search&quot; role=&quot;search&quot;&gt;
-&lt;a accesskey=&quot;f&quot; class=&quot;cdx-button cdx-button--fake-button cdx-button--fake-button--enabled cdx-button--weight-quiet cdx-button--icon-only search-toggle&quot; href=&quot;/wiki/Speci%C3%A1lis:Keres%C3%A9s&quot; id=&quot;&quot; title=&quot;Keresés a Wikipédián [f]&quot;&gt;&lt;span class=&quot;vector-icon mw-ui-icon-search mw-ui-icon-wikimedia-search&quot;&gt;&lt;/span&gt;
+&lt;a accesskey=&quot;f&quot; class=&quot;cdx-button cdx-button--fake-button cdx-button--fake-button--enabled cdx-button--weight-quiet cdx-button--icon-only search-toggle&quot; href=&quot;/wiki/Speci%C3%A1lis:Keres%C3%A9s&quot; title=&quot;Keresés a Wikipédián [f]&quot;&gt;&lt;span class=&quot;vector-icon mw-ui-icon-search mw-ui-icon-wikimedia-search&quot;&gt;&lt;/span&gt;
 &lt;span&gt;Keresés&lt;/span&gt;
 &lt;/a&gt;
 &lt;div class=&quot;vector-typeahead-search-container&quot;&gt;
@@ -3531,7 +3537,7 @@ Siker!
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;nav aria-label=&quot;Személyes eszközök&quot; class=&quot;vector-user-links vector-user-links-wide&quot; role=&quot;navigation&quot;&gt;
+&lt;nav aria-label=&quot;Személyes eszközök&quot; class=&quot;vector-user-links vector-user-links-wide&quot;&gt;
 &lt;div class=&quot;vector-user-links-main&quot;&gt;
 &lt;div class=&quot;vector-menu mw-portlet emptyPortlet&quot; id=&quot;p-vector-user-menu-preferences&quot;&gt;
 &lt;div class=&quot;vector-menu-content&quot;&gt;
