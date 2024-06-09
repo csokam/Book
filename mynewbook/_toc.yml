@@ -40,9 +40,10 @@ parts:
   - caption: L-rendszerek    
     chapters:
     - file: chapters/l-system_intro
-  #- caption: Egyéb
-  # chapters:
-  # - file: chapters/...
+  - caption: Egyéb
+    chapters:
+    - file: chapters/visualization_map
+    - file: chapters/language_processing
   - caption: Források
     chapters:
     - file: sources
