@@ -42,7 +42,7 @@
   <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
     <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../_static/copybutton.js?v=f281be69"></script>
@@ -383,6 +383,9 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bevezetes">1. Bevezetés</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#abra-letrehozasa">Ábra létrehozása</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ertekek-hozzaadasa-az-abrahoz">Értékek hozzáadása az ábrához</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#abrak-mentese-es-megnyitasa">Ábrák mentése és megnyitása</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reszletek-hozzaadasa">Részletek hozzáadása</a></li>
 </ul>
 </li>
@@ -452,7 +455,6 @@ document.write(`
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sbs</span>
 <span class="kn">import</span> <span class="nn">plotly.express</span> <span class="k">as</span> <span class="nn">px</span>
-<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Image</span>
 </pre></div>
 </div>
 </div>
@@ -481,7 +483,7 @@ A <code>np.linspace</code> parancs megadott intervallumon egymástól egyenlő t
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/de9ae71e4db8687c1ddb920f3ac8679364abc7ece96cd02fa3f38170ccbb25fa.png" src="../_images/de9ae71e4db8687c1ddb920f3ac8679364abc7ece96cd02fa3f38170ccbb25fa.png" />
+<img alt="../_images/aeac237892ef1dfaa033a631eb05185635373fd22431899b2b275d89c648871a.png" src="../_images/aeac237892ef1dfaa033a631eb05185635373fd22431899b2b275d89c648871a.png" />
 </div>
 </div>
 </section>
@@ -501,10 +503,38 @@ A <code>np.linspace</code> parancs megadott intervallumon egymástól egyenlő t
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/8e6455870c57017ed83f078ad872490ad0879488b2cf25736afb03ac6515d790.png" src="../_images/8e6455870c57017ed83f078ad872490ad0879488b2cf25736afb03ac6515d790.png" />
+<img alt="../_images/60fbacdbf98991104b2e1b5156cd44e8ce77ba7d1292089e65508b5a73fb6306.png" src="../_images/60fbacdbf98991104b2e1b5156cd44e8ce77ba7d1292089e65508b5a73fb6306.png" />
 </div>
 </div>
 </section>
+</section>
+<section id="abrak-mentese-es-megnyitasa">
+<h2>Ábrák mentése és megnyitása<a class="headerlink" href="#abrak-mentese-es-megnyitasa" title="Link to this heading">#</a></h2>
+<p>Az ábrák elmenthetők a <code>fig.write_image(“fájl_neve.kiterjesztés”)</code> parancssal.</p>
+<p>A jegyzetekbe ábrák html és markdown szintaxis segítségével a statikus képek beilleszthetők, de akár kód cella is képes megjeleníteni azokat. Utóbbi esetben szükséges a Ipython könyvtár Image csomagjának importálása: <code>from IPython.display import Image</code>
+Ha ez megtörtént, akkor a <code>Image(filename=”fájl_neve.kiterjesztés”)</code> parancs futtatásával megjeleníthető a kép.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Image</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">write_image</span><span class="p">(</span><span class="s2">&quot;minta.png&quot;</span><span class="p">)</span>
+<span class="n">Image</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s2">&quot;minta.png&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Image</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">fig</span><span class="o">.</span><span class="n">write_image</span><span class="p">(</span><span class="s2">&quot;minta.png&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">Image</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s2">&quot;minta.png&quot;</span><span class="p">)</span>
+
+<span class="ne">AttributeError</span>: &#39;Figure&#39; object has no attribute &#39;write_image&#39;
+</pre></div>
+</div>
+</div>
+</div>
 <section id="reszletek-hozzaadasa">
 <h3>Részletek hozzáadása<a class="headerlink" href="#reszletek-hozzaadasa" title="Link to this heading">#</a></h3>
 <p>Tengelyek elnevezése és cím megadása</p>
@@ -519,7 +549,7 @@ A <code>np.linspace</code> parancs megadott intervallumon egymástól egyenlő t
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/30e242f730308aaa37749aebaf5be0f78ee53ad41596b5b8f15d0306dfe27e09.png" src="../_images/30e242f730308aaa37749aebaf5be0f78ee53ad41596b5b8f15d0306dfe27e09.png" />
+<img alt="../_images/f1b4738ccb3f53636341fd7fdea9431dfd561ec6eeddb5fd5d4d1cd0ca0663e1.png" src="../_images/f1b4738ccb3f53636341fd7fdea9431dfd561ec6eeddb5fd5d4d1cd0ca0663e1.png" />
 </div>
 </div>
 </section>
@@ -548,7 +578,7 @@ s=sizes, c=colors, vmin=0, vmax=100</p></li>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/7cfde745ea01cf53fa0f55780a374cf9e67a098a3a6ed911deb1a91de40f1d73.png" src="../_images/7cfde745ea01cf53fa0f55780a374cf9e67a098a3a6ed911deb1a91de40f1d73.png" />
+<img alt="../_images/49967748cb3eccaf0806c3d2665d5872d5bf62a7db936c346947ea21be80386e.png" src="../_images/49967748cb3eccaf0806c3d2665d5872d5bf62a7db936c346947ea21be80386e.png" />
 </div>
 </div>
 </section>
@@ -611,7 +641,7 @@ s=sizes, c=colors, vmin=0, vmax=100</p></li>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/f5bfbef9a4b92c09bc4a9754027e86a6598642a5ddc1a84f6862c098f6bba101.png" src="../_images/f5bfbef9a4b92c09bc4a9754027e86a6598642a5ddc1a84f6862c098f6bba101.png" />
+<img alt="../_images/e1ed29301bf215b2cba618e99f1493a283d1d7a254319e0c05fb92dc7fddef42.png" src="../_images/e1ed29301bf215b2cba618e99f1493a283d1d7a254319e0c05fb92dc7fddef42.png" />
 </div>
 </div>
 </section>
@@ -759,15 +789,11 @@ Jupyter jegyzetben megjelenítésre több lehetőség van:</p>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">pie</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="s2">&quot;population&quot;</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="s2">&quot;countryName&quot;</span><span class="p">)</span>
 
-<span class="c1">#fig</span>
-
-<span class="n">fig</span><span class="o">.</span><span class="n">write_image</span><span class="p">(</span><span class="s2">&quot;pie_1.png&quot;</span><span class="p">)</span>
-<span class="n">Image</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s2">&quot;pie_1.png&quot;</span><span class="p">)</span>
+<span class="n">fig</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/671c75db4a18a5c46c190318e04d7920fe3c21dcbff496c2116c60fd2e746d01.png" src="../_images/671c75db4a18a5c46c190318e04d7920fe3c21dcbff496c2116c60fd2e746d01.png" />
 </div>
 </div>
 <p>A diagram ebben a formában még nem tökéletes. Próbáljunk meg adatokat szűrni.</p>
@@ -779,14 +805,11 @@ Jupyter jegyzetben megjelenítésre több lehetőség van:</p>
     <span class="n">top5</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="s2">&quot;population&quot;</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="s2">&quot;countryName&quot;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;A legnépesebb 5 ország&quot;</span>
 <span class="p">)</span>
 
-<span class="c1">#fig</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">write_image</span><span class="p">(</span><span class="s2">&quot;pie_2.png&quot;</span><span class="p">)</span>
-<span class="n">Image</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s2">&quot;pie_2.png&quot;</span><span class="p">)</span>
+<span class="n">fig</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/51fd204b35af17b1bd332cfe6d7b69b7dceafd6fffcd32853d63f0e96f2317cb.png" src="../_images/51fd204b35af17b1bd332cfe6d7b69b7dceafd6fffcd32853d63f0e96f2317cb.png" />
 </div>
 </div>
 <p>A diagram Plotly esetén is magas szinten testreszabható. Pl.: a szöveg mérete beállítható <code>fig.update_traces(textfont_size = érték)</code> vonalvastagság <code>fig.update_traces(marker = dict(line = dict(color = “szín”, width = érték)))</code> paranccsal.</p>
@@ -795,14 +818,11 @@ Jupyter jegyzetben megjelenítésre több lehetőség van:</p>
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="o">.</span><span class="n">update_traces</span><span class="p">(</span><span class="n">textfont_size</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">update_traces</span><span class="p">(</span><span class="n">marker</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">line</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">2</span><span class="p">)))</span>
 
-<span class="c1">#fig</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">write_image</span><span class="p">(</span><span class="s2">&quot;pie_3.png&quot;</span><span class="p">)</span>
-<span class="n">Image</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s2">&quot;pie_3.png&quot;</span><span class="p">)</span>
+<span class="n">fig</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/4245d67c8140bac8a6046b97f0e1371b84045cc2c54d1e434b343efec70c3a68.png" src="../_images/4245d67c8140bac8a6046b97f0e1371b84045cc2c54d1e434b343efec70c3a68.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -813,14 +833,11 @@ Jupyter jegyzetben megjelenítésre több lehetőség van:</p>
     <span class="n">top20</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;countryName&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;areaInSqKm&quot;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;A 20 legnagyobb területű ország&quot;</span>
 <span class="p">)</span>
 
-<span class="c1">#fig.show()</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">write_image</span><span class="p">(</span><span class="s2">&quot;column_1.png&quot;</span><span class="p">)</span>
-<span class="n">Image</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s2">&quot;column_1.png&quot;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/0dcafa306cb6ab3c86f6453fd29dd5399bd5e1447a709fdb1ca0b4a4883d6968.png" src="../_images/0dcafa306cb6ab3c86f6453fd29dd5399bd5e1447a709fdb1ca0b4a4883d6968.png" />
 </div>
 </div>
 </section>
@@ -863,14 +880,11 @@ Jupyter jegyzetben megjelenítésre több lehetőség van:</p>
     <span class="n">height</span><span class="o">=</span><span class="mi">600</span><span class="p">,</span>
 <span class="p">)</span>
 
-<span class="c1">#fig.show()</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">write_image</span><span class="p">(</span><span class="s2">&quot;tree_1.png&quot;</span><span class="p">)</span>
-<span class="n">Image</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s2">&quot;tree_1.png&quot;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/5177122fe6c81a01c812e88cb2974492828887039dd73d1062973e5a6b9a8aac.png" src="../_images/5177122fe6c81a01c812e88cb2974492828887039dd73d1062973e5a6b9a8aac.png" />
 </div>
 </div>
 </section>
@@ -890,14 +904,11 @@ Jupyter jegyzetben megjelenítésre több lehetőség van:</p>
 
 <span class="n">fig</span><span class="o">.</span><span class="n">update_traces</span><span class="p">(</span><span class="n">textposition</span><span class="o">=</span><span class="s2">&quot;inside&quot;</span><span class="p">,</span> <span class="n">textinfo</span><span class="o">=</span><span class="s2">&quot;label+value&quot;</span><span class="p">)</span>
 
-<span class="c1">#fig.show()</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">write_image</span><span class="p">(</span><span class="s2">&quot;pie_4.png&quot;</span><span class="p">)</span>
-<span class="n">Image</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s2">&quot;pie_4.png&quot;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/a211834617b22253d28e9801fdb8c67a0779cf96c5eba403c83f6c03cf53e6bb.png" src="../_images/a211834617b22253d28e9801fdb8c67a0779cf96c5eba403c83f6c03cf53e6bb.png" />
 </div>
 </div>
 </section>
@@ -1227,6 +1238,9 @@ Jupyter jegyzetben megjelenítésre több lehetőség van:</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bevezetes">1. Bevezetés</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#abra-letrehozasa">Ábra létrehozása</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ertekek-hozzaadasa-az-abrahoz">Értékek hozzáadása az ábrához</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#abrak-mentese-es-megnyitasa">Ábrák mentése és megnyitása</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reszletek-hozzaadasa">Részletek hozzáadása</a></li>
 </ul>
 </li>
