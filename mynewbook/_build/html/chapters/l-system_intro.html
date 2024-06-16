@@ -1,0 +1,1190 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>L-rendszerek &#8212; Témakörök Python oktatásához</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/l-system_intro';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Vizualizáció térképen" href="visualization_map.html" />
+    <link rel="prev" title="PIL és Cairo könyvtárak összehasonlítása" href="generative_13_comparison.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Témakörök Python oktatásához - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Témakörök Python oktatásához - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Témakörök Python oktatásához
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Webes adatbányászat - Web Scraping</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="web_scraping_intro.html">Adatbányászat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="web_scraping_wikipeadia_plants.html">Wikipédia növénycsaládok</a></li>
+<li class="toctree-l1"><a class="reference internal" href="web_scraping_wikipedia_birds.html">Wikipédia madárcsaládok</a></li>
+<li class="toctree-l1"><a class="reference internal" href="web_scraping_wikipedia_marvel.html">Wikipédia Marvel karakterek</a></li>
+<li class="toctree-l1"><a class="reference internal" href="web_scraping_index.html">Index híreinek kigyűjtése</a></li>
+<li class="toctree-l1"><a class="reference internal" href="web_scraping_telex.html">Telex főoldalán található hírek kigyűjtése</a></li>
+<li class="toctree-l1"><a class="reference internal" href="web_scraping_google_news.html">Google News híreinek kigyűjtése</a></li>
+<li class="toctree-l1"><a class="reference internal" href="web_scraping_alza.html">Webshop termékadatainak gyűjtése</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Adatvizualizáció - Data Visualization</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="visualization_intro.html">Adatvizualizáció</a></li>
+<li class="toctree-l1"><a class="reference internal" href="visualization_pandas.html">Vizualizáció Pandas könyvtár segítségével</a></li>
+<li class="toctree-l1"><a class="reference internal" href="visualization_alza.html">Webshop termékeinek vizualizálása</a></li>
+<li class="toctree-l1"><a class="reference internal" href="visualization_crypto.html">Kriptovaluták értékének ábrázolása</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Generatív képalkotás - Generative art</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="generative_1_intro.html">Generatív képalkotás - variációk egy témára</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generative_2_triangles.html">Háromszög csempék</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generative_3_circlerows.html">Sorokat alkotó körök</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generative_4_dots.html">Perlin zaj - vonal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generative_5_circle.html">Perlin zaj - körvonal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generative_7_packing.html">Halmozó algoritmus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generative_8_tiles.html">Csempék</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generative_9_rasterize.html">Raszterizálás</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generative_10_lines.html">Véletlen vonalak</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generative_11_patterns.html">Minták létrehozása</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generative_12_random.html">Fokozatos kitöltés</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generative_13_comparison.html">PIL és Cairo könyvtárak összehasonlítása</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">L-rendszerek</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">L-rendszerek</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Egyéb</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="visualization_map.html">Vizualizáció térképen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="language_processing.html">Szöveg elemzése</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Források</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../sources.html">Források</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Jelmagyarázat</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">Jelmagyarázat</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/chapters/l-system_intro.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>L-rendszerek</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bevezetes">Bevezetés</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#l-rendszer-megvalositasa">L-rendszer megvalósítása:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pelda-egyszeru-szabalyrendszer">1. Példa - egyszerű szabályrendszer</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#feladat"><p style="color:green;">1. Feladat</p></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"><p style="color:green;">2. Feladat </p></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#forraskod">Forráskód:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pelda-koch-gorbe-leirasa">2. Példa - Koch-görbe leírása</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#alap-problema-megoldasa-nyelv-generalasa">2.1. Alap probléma megoldása, nyelv generálása:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nyelv-generalasa-fuggveny-formajaban">2.2. Nyelv generálása - függvény formájában</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nyelvtan-szavainak-abrazolasa-turtle-graphics">3. Nyelvtan szavainak ábrázolása - Turtle Graphics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2"><p style="color:green;">3. Feladat </p></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#agak-abrazolasa-es-a-verem-adatszerkezet">4. Ágak ábrázolása és a verem adatszerkezet</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pelda-egyszeru-pelda-verem-adatszerkezetre">4.1 Példa - egyszerű példa verem adatszerkezetre</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pelda-forditott-sorrend-verem-segitsegevel">4.2 Példa - fordított sorrend verem segítségével</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pelda-egy-ag-kirajzolasa">4.3 Példa - egy ág kirajzolása</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pelda-agak-kirzajzolasa-ciklussal">4.4 Példa - ágak kirzajzolása ciklussal</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#egyszeru-noveny-abrazolasa">5. Egyszerű növény ábrázolása</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tovabbi-novenyek-es-mintak-leirasa">6. További növények és minták leírása</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#feladat-kvadratikus-koch-sziget"><p style="color:green;">4. Feladat - Kvadratikus Koch sziget</p></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#feladat-sarkany-gorbe"><p style="color:green;">5. Feladat - Sárkány-görbe</p></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#feladat-noveny-elek-ujrairasaval"><p style="color:green;">6. Feladat - Növény élek újraírásával</p></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#feladat-noveny-csomopontok-ujrairasaval"><p style="color:green;">7. Feladat - Növény csomópontok újraírásával</p></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#feladat-hilbert-mintaja"><p style="color:green;">8. Feladat - Hilbert mintája</p></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#feladat-negyzetes-sierpinski"><p style="color:green;">9. Feladat - Négyzetes Sierpinski</p></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#feladat-level"><p style="color:green;">10. Feladat - Levél</p></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ipyturtle3">Ipyturtle3</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="l-rendszerek">
+<h1>L-rendszerek<a class="headerlink" href="#l-rendszerek" title="Link to this heading">#</a></h1>
+<section id="bevezetes">
+<h2>Bevezetés<a class="headerlink" href="#bevezetes" title="Link to this heading">#</a></h2>
+<p>Az L-system (Lindenmayer rendszer) egy matematikai formális nyelv. Sorozatokat hoz létre azáltal, hogy ismételten alkalmaz bizonyos szabályokat egy kiindulási állapoton. Az “L” az L-rendszerben Aristid Lindenmayer magyar kutató nevéből származik. Lindenmayer élesztőgombákkal foglalkozott. Az L-rendszer eredetileg egyszerű biológiai struktúrák (gombák és baktériumok) fejlődésének leírására és modellezésére készült, ám később növények és más élőlények alaktanára is használták.</p>
+<p>Formálisan következőképpen adható meg:</p>
+<p><b>G = (T; s; H)</b>, ahol <b>T</b> egy véges ábécé, <b>s</b> az axióma, <b>H</b> a szabályok halmaza.</p>
+<ul class="simple">
+<li><p>A <b>T</b> véges ábécé szimbólumokat tartalmaz, például X, F, +, [, ].</p></li>
+<li><p>Az <b>s</b> axióma a kezdeti állapotot jelöli.</p></li>
+<li><p>A <b>H</b> szabályok halmaza, amelyek leírják az adott L-rendszerben végbemenő átmeneteket.</p></li>
+</ul>
+<p><img alt="l-system_1" src="../_images/l-system_1.png" /></p>
+<p>A <b>karakterek</b> és <b>szabályok</b> iteratív alkalmazásával geometriai alakzatokat lehet készíteni. Az alakzatok létrejötte az </b>axiómából</b> indul, majd a rendszer szabályait ismételten alkalmazva alakulnak ki. Minden iterációban a karakterláncot a szabályoknak megfelelően módosítják, és így alakul ki a végleges geometriai forma.</p>
+<p>Az L-rendszerek rendkívül hatékonyak lehetnek a növények struktúrájának modellezésére. A növények ágazódása, leveleinek elrendeződése és számos más aspektusa leírható szabályokkal és iterációkkal. Például, egy egyszerű L-rendszer képlet segítségével lehetséges faágakat és leveleket modellezni. Játékfejlesztésben például procedurális térképgenerálás, terep, növényzet létrehozásánál használatos.</p>
+<p>Az eredeti rendszerek determinisztikusak és önhasonlóság jellemzi őket.</p>
+<p><img alt="l-system_2" src="../_images/l-system_2.gif" /></p>
+<p>Kipróbálható: <a class="reference external" href="https://kevs3d.co.uk/dev/lsystems/">https://kevs3d.co.uk/dev/lsystems/</a>
+{cite:p}</p>
+<section id="l-rendszer-megvalositasa">
+<h3>L-rendszer megvalósítása:<a class="headerlink" href="#l-rendszer-megvalositasa" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Szabályok értelmezése - pl.: H={F→F+F−F−F+F} - szabály azt jelenti, hogy minden F szimbólum az L-rendszerben az F+F−F−F+F karakterláncra változik.</p></li>
+<li><p>Nyelvtant alkalmazó függvény elkészítése - szabály(ok) alkalmazásával létrehozza a soron következő iteráció kimenetét, ami egy karakterlánc és <b>szó</b>-nak nevezünk.</p></li>
+<li><p>Megjelenítésért felelős függvény elkészítése - a karakterlánc egyes szimbólumai információt hordoznak, ezeket grafikus instrukciókká alakítjuk és ábrázoljuk.</p></li>
+</ol>
+</section>
+</section>
+<section id="pelda-egyszeru-szabalyrendszer">
+<h2>1. Példa - egyszerű szabályrendszer<a class="headerlink" href="#pelda-egyszeru-szabalyrendszer" title="Link to this heading">#</a></h2>
+<p>Például adott a G = ({a, b}; a; {a → b}) L-rendszer. Az ismétlések (iterációk) során alkalmazzuk a szabályokat az aktuális sorozatra, létrehozva egyre bonyolultabb és részletesebb struktúrákat. Az L-rendszer axiómája “A” és a szabály az, hogy minden “A” cserélődik “AB” sorozatra, akkor az iterációk során a sorozat így fejlődik:</p>
+<ol class="arabic simple" start="0">
+<li><p>Iteráció: A (kezdeti állapot, maga az axióma)</p></li>
+<li><p>Iteráció: AB (az “A” helyettesítve “AB”-vel)</p></li>
+<li><p>Iteráció: ABB</p></li>
+<li><p>Iteráció: ABBB</p></li>
+</ol>
+<p><b>Pszeudokód:</b></p>
+<p>A program bekéri a végrehajtandó iterációk számát, utána végigmegy az aktuális szó minden karakterén és a <code>”new”</code> nevű változóhoz szabályok alapján hozzáadja a szükséges karaktereket. Minden iteráció végén kiírja a szót, <code>”axiom”</code> nevű változót aktualizálja és a <code>”new”</code> változót kiüríti.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ({A,B}; A; {A-&gt;AB, B-&gt;B})</span>
+
+<span class="n">axiom</span> <span class="o">=</span> <span class="s2">&quot;A&quot;</span>
+<span class="n">new</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+
+<span class="c1"># n = int(input(&quot;Adja meg az iterációk számát: &quot;))</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">5</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;. iteráció: &quot;</span> <span class="o">+</span> <span class="n">axiom</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">letter</span> <span class="ow">in</span> <span class="n">axiom</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">letter</span> <span class="o">==</span> <span class="s2">&quot;A&quot;</span><span class="p">:</span>
+            <span class="n">new</span> <span class="o">+=</span> <span class="s2">&quot;AB&quot;</span>
+        <span class="k">elif</span> <span class="n">letter</span> <span class="o">==</span> <span class="s2">&quot;B&quot;</span><span class="p">:</span>
+            <span class="n">new</span> <span class="o">+=</span> <span class="s2">&quot;B&quot;</span>
+    <span class="n">axiom</span> <span class="o">=</span> <span class="n">new</span>
+    <span class="n">new</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0. iteráció: A
+1. iteráció: AB
+2. iteráció: ABB
+3. iteráció: ABBB
+4. iteráció: ABBBB
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="feladat">
+<h2><p style="color:green;">1. Feladat<a class="headerlink" href="#feladat" title="Link to this heading">#</a></h2>
+<p>Ábrázolja a következő rendszer 4 iterációját az alábbi specifikáció alapján!</p>
+<p><b>Kezdeti állapot</b>: F</p>
+<p><b>Szabályok</b>: (F → FR), (R → FR)</p>
+<p>Ahol:</p>
+<ul class="simple">
+<li><p>“F” jelentése “előre rajzol”</p></li>
+<li><p>“R” jelentése “jobbra fordul 90°-kal”</p></li>
+</ul>
+</section>
+<section id="id1">
+<h2><p style="color:green;">2. Feladat </p><a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<p>Az előző kódok alapján készítse el a következő rendszer megvalósítását:</p>
+<p><b>Kezdeti állpot</b>: X</p>
+<p><b>Szabályok</b>: (X → F+[[X]-X]-F[-FX]+X), (F → FF)</p>
+<p>Ahol:</p>
+<ul class="simple">
+<li><p>“F” jelentése “előre rajzol”</p></li>
+<li><p>“−” jelentése “jobbra fordul 25°-kal”</p></li>
+<li><p>“+” jelentése “balra fordul 25°-kal”</p></li>
+<li><p>“X” jelentése nem felel meg semmiféle rajzolási műveletnek, és a görbe alakulásának irányítására szolgál</p></li>
+<li><p>“[” jelentése a jelenlegi pozíció és szög értékek mentése</p></li>
+<li><p>“]” jelentése az utolsó mentett pozíció és szög visszaállítása és a mentett adatsor törlése</p></li>
+</ul>
+<section id="forraskod">
+<h3>Forráskód:<a class="headerlink" href="#forraskod" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># (X → F+[[X]-X]-F[-FX]+X), (F → FF)</span>
+
+<span class="n">axiom</span> <span class="o">=</span> <span class="s2">&quot;X&quot;</span>
+
+<span class="c1"># n = int(input(&quot;Adja meg az iterációk számát: &quot;))</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">2</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+    <span class="n">new</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;. iteráció: &quot;</span> <span class="o">+</span> <span class="n">axiom</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">letter</span> <span class="ow">in</span> <span class="n">axiom</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">letter</span> <span class="o">==</span> <span class="s2">&quot;X&quot;</span><span class="p">:</span>
+            <span class="n">new</span> <span class="o">+=</span> <span class="s2">&quot;F+[[X]-X]-F[-FX]+X&quot;</span>
+        <span class="k">elif</span> <span class="n">letter</span> <span class="o">==</span> <span class="s2">&quot;F&quot;</span><span class="p">:</span>
+            <span class="n">new</span> <span class="o">+=</span> <span class="s2">&quot;FF&quot;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">new</span> <span class="o">+=</span> <span class="n">letter</span>
+    <span class="n">axiom</span> <span class="o">=</span> <span class="n">new</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0. iteráció: X
+1. iteráció: F+[[X]-X]-F[-FX]+X
+2. iteráció: FF+[[F+[[X]-X]-F[-FX]+X]-F+[[X]-X]-F[-FX]+X]-FF[-FFF+[[X]-X]-F[-FX]+X]+F+[[X]-X]-F[-FX]+X
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="pelda-koch-gorbe-leirasa">
+<h2>2. Példa - Koch-görbe leírása<a class="headerlink" href="#pelda-koch-gorbe-leirasa" title="Link to this heading">#</a></h2>
+<p>Az alábbi példa a Koch-görbe leírását mutatja be. A szabályok a következők:</p>
+<p>G=({F,+,−};F;{F→F+F−F−F+F})</p>
+<p>Ahol:</p>
+<ul class="simple">
+<li><p>“F” jelentése “előre”</p></li>
+<li><p>“+” jelentése “fordulj balra 90°-ot”</p></li>
+<li><p>“-” jelentése “fordulj jobbra 90°-ot”</p></li>
+</ul>
+<section id="alap-problema-megoldasa-nyelv-generalasa">
+<h3>2.1. Alap probléma megoldása, nyelv generálása:<a class="headerlink" href="#alap-problema-megoldasa-nyelv-generalasa" title="Link to this heading">#</a></h3>
+<p>Figyeljük meg, hogy a szabály alapján minden egyes ‘F’ betű helyét 5db ‘F’ betű kerül. Ez azt jelenti, hogy a generált nyelv hossza 5<sup>n</sup>, ahol n az iterációk számát jelenti (pl.: 3. iteráció  125db ‘F’ karaktert eredményez). Könnyen belátható, hogy ez exponenciális növekedést eredményez. A kiindulási állapot megjelenítése miatt szükséges a ciklus első iterációját külön kezelni.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># F → F+F−F−F+F</span>
+
+<span class="n">axiom</span> <span class="o">=</span> <span class="s2">&quot;F&quot;</span>
+<span class="n">new</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+
+<span class="c1"># n = int(input(&quot;Adja meg az iterációk számát: &quot;))</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">3</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;. iteráció: &quot;</span> <span class="o">+</span> <span class="n">axiom</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">letter</span> <span class="ow">in</span> <span class="n">axiom</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">letter</span> <span class="o">==</span> <span class="s2">&quot;F&quot;</span><span class="p">:</span>
+            <span class="n">new</span> <span class="o">+=</span> <span class="s2">&quot;F+F-F-F+F&quot;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">new</span> <span class="o">+=</span> <span class="n">letter</span>
+    <span class="n">axiom</span> <span class="o">=</span> <span class="n">new</span>
+    <span class="n">new</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0. iteráció: F
+1. iteráció: F+F-F-F+F
+2. iteráció: F+F-F-F+F+F+F-F-F+F-F+F-F-F+F-F+F-F-F+F+F+F-F-F+F
+3. iteráció: F+F-F-F+F+F+F-F-F+F-F+F-F-F+F-F+F-F-F+F+F+F-F-F+F+F+F-F-F+F+F+F-F-F+F-F+F-F-F+F-F+F-F-F+F+F+F-F-F+F-F+F-F-F+F+F+F-F-F+F-F+F-F-F+F-F+F-F-F+F+F+F-F-F+F-F+F-F-F+F+F+F-F-F+F-F+F-F-F+F-F+F-F-F+F+F+F-F-F+F+F+F-F-F+F+F+F-F-F+F-F+F-F-F+F-F+F-F-F+F+F+F-F-F+F
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="nyelv-generalasa-fuggveny-formajaban">
+<h3>2.2. Nyelv generálása - függvény formájában<a class="headerlink" href="#nyelv-generalasa-fuggveny-formajaban" title="Link to this heading">#</a></h3>
+<p>A Python nyelv szintaxisa alapján az előző rövid kódot függvénnyé alakítottuk és kicsit módosítottuk. Ez segíti a kód későbbi felhasználhatóságát.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">axiom</span> <span class="o">=</span> <span class="s2">&quot;F&quot;</span>
+
+
+<span class="k">def</span> <span class="nf">generateSentence</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="n">new</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+        <span class="k">for</span> <span class="n">letter</span> <span class="ow">in</span> <span class="n">ax</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">letter</span> <span class="o">==</span> <span class="s2">&quot;F&quot;</span><span class="p">:</span>
+                <span class="n">new</span> <span class="o">+=</span> <span class="s2">&quot;F+F-F-F+F&quot;</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">new</span> <span class="o">+=</span> <span class="n">letter</span>
+        <span class="n">ax</span> <span class="o">=</span> <span class="n">new</span>
+        <span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;. iteráció: &quot;</span> <span class="o">+</span> <span class="n">ax</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">ax</span>
+
+
+<span class="c1"># n = int(input(&quot;Adja meg az iterációk számát: &quot;))</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">3</span>
+
+<span class="n">sentence</span> <span class="o">=</span> <span class="n">generateSentence</span><span class="p">(</span><span class="n">axiom</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Kimenet: &quot;</span> <span class="o">+</span> <span class="n">sentence</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1. iteráció: F+F-F-F+F
+2. iteráció: F+F-F-F+F+F+F-F-F+F-F+F-F-F+F-F+F-F-F+F+F+F-F-F+F
+3. iteráció: F+F-F-F+F+F+F-F-F+F-F+F-F-F+F-F+F-F-F+F+F+F-F-F+F+F+F-F-F+F+F+F-F-F+F-F+F-F-F+F-F+F-F-F+F+F+F-F-F+F-F+F-F-F+F+F+F-F-F+F-F+F-F-F+F-F+F-F-F+F+F+F-F-F+F-F+F-F-F+F+F+F-F-F+F-F+F-F-F+F-F+F-F-F+F+F+F-F-F+F+F+F-F-F+F+F+F-F-F+F-F+F-F-F+F-F+F-F-F+F+F+F-F-F+F
+Kimenet: F+F-F-F+F+F+F-F-F+F-F+F-F-F+F-F+F-F-F+F+F+F-F-F+F+F+F-F-F+F+F+F-F-F+F-F+F-F-F+F-F+F-F-F+F+F+F-F-F+F-F+F-F-F+F+F+F-F-F+F-F+F-F-F+F-F+F-F-F+F+F+F-F-F+F-F+F-F-F+F+F+F-F-F+F-F+F-F-F+F-F+F-F-F+F+F+F-F-F+F+F+F-F-F+F+F+F-F-F+F-F+F-F-F+F-F+F-F-F+F+F+F-F-F+F
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="nyelvtan-szavainak-abrazolasa-turtle-graphics">
+<h2>3. Nyelvtan szavainak ábrázolása - Turtle Graphics<a class="headerlink" href="#nyelvtan-szavainak-abrazolasa-turtle-graphics" title="Link to this heading">#</a></h2>
+<p>Turtle egy könnyen kezelhető könyvtár grafikai munkák elvégzésére</p>
+<p>A <code>turtleStart()</code> függvény tartalmazza a grafikára vonatkozó alap beállításokat: középre helyezi a kurzort, engedélyezi a rajzolást és meghatározza a használt vászon(kép) méretét.</p>
+<ul class="simple">
+<li><p><code>penup()</code> - megszünteti a rajzolást (következő <i>pendown()</i> eseményig nem rajzol vonalat)</p></li>
+<li><p><code>pendown()</code> - előző utasítás párja, ez után következő parancsok rajzolnak</p></li>
+<li><p><code>speed()</code> - meghatározza a rajzolás sebességét, értéke megadható “slowest” - “fastest” között, vagy egész számmal 1-10-ig.</p></li>
+<li><p><code>hideturtle()</code> - elrejti kurzort</p></li>
+<li><p><code>screensize()</code> - megjelnítéshez használt vászon méretét és színét lehet állítani, <code>canvwidth</code>, <code>canvheight</code>, <code>bg</code> paraméterek megadásával</p></li>
+<li><p><code>exitonclick()</code> - bezárja az elkészített ábrát</p></li>
+<li><p><code>tracer()</code> - alapértelmezett esetben (1) mutatja az animációt, 0 érték esetén a kész ábrát mutatja</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">turtle</span>
+
+
+<span class="k">def</span> <span class="nf">turtleStart</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="n">turtle</span><span class="o">.</span><span class="n">screensize</span><span class="p">(</span><span class="n">canvwidth</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">canvheight</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">bg</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">)</span>
+    <span class="n">turtle</span><span class="o">.</span><span class="n">hideturtle</span><span class="p">()</span>
+    <span class="n">turtle</span><span class="o">.</span><span class="n">penup</span><span class="p">()</span>
+    <span class="n">turtle</span><span class="o">.</span><span class="n">setposition</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+    <span class="n">turtle</span><span class="o">.</span><span class="n">pendown</span><span class="p">()</span>
+    <span class="n">turtle</span><span class="o">.</span><span class="n">speed</span><span class="p">(</span><span class="s2">&quot;fastest&quot;</span><span class="p">)</span>
+    <span class="n">turtle</span><span class="o">.</span><span class="n">tracer</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><b>Alapvető vezérlési utasítások</b></p>
+<ul class="simple">
+<li><p><code>forward()</code> - előre megy</p></li>
+<li><p><code>left()</code> - balra fordul</p></li>
+<li><p><code>right()</code> - jobbra fordul</p></li>
+<li><p><code>goto()</code> - adott koordinátára rakja a kurzort</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">importlib</span>
+
+<span class="n">importlib</span><span class="o">.</span><span class="n">reload</span><span class="p">(</span><span class="n">turtle</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">drawSentence</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">s</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="s2">&quot;F&quot;</span><span class="p">:</span>
+            <span class="n">turtle</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">i</span> <span class="o">==</span> <span class="s2">&quot;+&quot;</span><span class="p">:</span>
+            <span class="n">turtle</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">i</span> <span class="o">==</span> <span class="s2">&quot;-&quot;</span><span class="p">:</span>
+            <span class="n">turtle</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+
+
+<span class="n">turtleStart</span><span class="p">(</span><span class="o">-</span><span class="mi">350</span><span class="p">,</span> <span class="o">-</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">drawSentence</span><span class="p">(</span><span class="n">sentence</span><span class="p">)</span>
+<span class="n">turtle</span><span class="o">.</span><span class="n">exitonclick</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><img alt="l-system_output_1" src="../_images/l-system_output_1.png" /></p>
+</section>
+<section id="id2">
+<h2><p style="color:green;">3. Feladat </p><a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<p>A Koch-görbének több változata is ismert. Készítsük el az alábbi nyelvtan által megadott verziót!</p>
+<p>G=({F,+,−};F;{F→F-F++F-F})</p>
+<p>Ahol:</p>
+<ul class="simple">
+<li><p>“F” jelentése “előre”</p></li>
+<li><p>“+” jelentése “fordulj balra 60°-ot”</p></li>
+<li><p>“-” jelentése “fordulj jobbra 60°-ot”</p></li>
+</ul>
+<p><img alt="l-system_3" src="../_images/l-system_3.gif" /></p>
+<p>Változtassuk meg a kezdeti állapotot a következők szerint:</p>
+<p>G=({F,+,−};F++F++F;{F→F-F++F-F})</p>
+</section>
+<section id="agak-abrazolasa-es-a-verem-adatszerkezet">
+<h2>4. Ágak ábrázolása és a verem adatszerkezet<a class="headerlink" href="#agak-abrazolasa-es-a-verem-adatszerkezet" title="Link to this heading">#</a></h2>
+<p>A fa megrajzolása áganként történik olyan módon, hogy először a program megrajzol egy teljes ágat, utána visszatér a “törzshöz” és új ág rajzolásába kezd. Ebből adódik a probléma, hogy hogyan fog visszatérni a megfelelő helyre program? Az ágak kezdetét mindig elágazás (jelölést tekintve általában +,- szimbólumok) jelzi.</p>
+<p>A verem egy LIFO (Last In First Out) adatszerkezet, a mi esetünkben az aktuális pozíciót és szöget tárolja el. Adattárolásra használjuk.</p>
+<p>Képzeld el,hogy vannak játékkockáid, amiket csak egymásra rakhatsz, mintha egy tornyot építenél. A torony szétszedésénél, mindig a legutolsó kocka, amit tettél rá (vagyis a legfelső), veheted le először.</p>
+<p>Két jellegzetes hozzá kapcsolódó parancs a <code>push</code> (<b>Python</b> esetén <code>append</code>) és a <code>pop</code>:</p>
+<p><code>push</code> - verembe helyezi a kijelölt adatot</p>
+<p><code>pop</code> - eltávolítja az utoljára verembe helyezett adatot</p>
+<p><img alt="l-system_4" src="../_images/l-system_4.png" /></p>
+<section id="pelda-egyszeru-pelda-verem-adatszerkezetre">
+<h3>4.1 Példa - egyszerű példa verem adatszerkezetre<a class="headerlink" href="#pelda-egyszeru-pelda-verem-adatszerkezetre" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">verem</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="n">verem</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">verem</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">verem</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">verem</span><span class="p">)</span>
+
+<span class="n">verem</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">verem</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2, 3]
+[1, 2]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="pelda-forditott-sorrend-verem-segitsegevel">
+<h3>4.2 Példa - fordított sorrend verem segítségével<a class="headerlink" href="#pelda-forditott-sorrend-verem-segitsegevel" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">verem</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="n">verem</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">verem</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">verem</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">verem</span><span class="p">)</span>
+
+<span class="k">while</span> <span class="n">verem</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">verem</span><span class="o">.</span><span class="n">pop</span><span class="p">(),</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2, 3]
+3 2 1 
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="pelda-egy-ag-kirajzolasa">
+<h3>4.3 Példa - egy ág kirajzolása<a class="headerlink" href="#pelda-egy-ag-kirajzolasa" title="Link to this heading">#</a></h3>
+<div class="cell tag_skip docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">turtle</span>
+<span class="kn">import</span> <span class="nn">importlib</span>
+
+<span class="n">importlib</span><span class="o">.</span><span class="n">reload</span><span class="p">(</span><span class="n">turtle</span><span class="p">)</span>
+
+<span class="n">verem</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="n">turtle</span><span class="o">.</span><span class="n">setposition</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">turtle</span><span class="o">.</span><span class="n">tracer</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">turtle</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+
+<span class="n">turtle</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">verem</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">turtle</span><span class="o">.</span><span class="n">pos</span><span class="p">())</span>
+<span class="n">turtle</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="mi">45</span><span class="p">)</span>
+<span class="n">turtle</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+<span class="n">elmentett_pozicio</span> <span class="o">=</span> <span class="n">verem</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+<span class="n">turtle</span><span class="o">.</span><span class="n">penup</span><span class="p">()</span>
+<span class="n">turtle</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="n">elmentett_pozicio</span><span class="p">)</span>
+<span class="n">turtle</span><span class="o">.</span><span class="n">pendown</span><span class="p">()</span>
+<span class="n">turtle</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="mi">45</span><span class="p">)</span>
+<span class="n">turtle</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+
+<span class="n">turtle</span><span class="o">.</span><span class="n">exitonclick</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><img alt="l-system_output_2" src="../_images/l-system_output_2.png" /></p>
+</section>
+<section id="pelda-agak-kirzajzolasa-ciklussal">
+<h3>4.4 Példa - ágak kirzajzolása ciklussal<a class="headerlink" href="#pelda-agak-kirzajzolasa-ciklussal" title="Link to this heading">#</a></h3>
+<div class="cell tag_skip docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">importlib</span><span class="o">.</span><span class="n">reload</span><span class="p">(</span><span class="n">turtle</span><span class="p">)</span>
+<span class="n">verem</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="n">turtle</span><span class="o">.</span><span class="n">setposition</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">turtle</span><span class="o">.</span><span class="n">tracer</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">turtle</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">draw_branch</span><span class="p">():</span>
+    <span class="n">verem</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">turtle</span><span class="o">.</span><span class="n">pos</span><span class="p">())</span>
+    <span class="n">turtle</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="mi">45</span><span class="p">)</span>
+    <span class="n">turtle</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+    <span class="n">elmentett_pozicio</span> <span class="o">=</span> <span class="n">verem</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+    <span class="n">turtle</span><span class="o">.</span><span class="n">penup</span><span class="p">()</span>
+    <span class="n">turtle</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="n">elmentett_pozicio</span><span class="p">)</span>
+    <span class="n">turtle</span><span class="o">.</span><span class="n">pendown</span><span class="p">()</span>
+    <span class="n">turtle</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="mi">45</span><span class="p">)</span>
+
+
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">):</span>
+    <span class="n">turtle</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+    <span class="n">draw_branch</span><span class="p">()</span>
+
+<span class="n">turtle</span><span class="o">.</span><span class="n">exitonclick</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><img alt="l-system_output_3" src="../_images/l-system_output_3.png" /></p>
+<p>A mi esetünkben az ág kezdeténél lévő pozíciót és szöget fogja eltárolni.</p>
+<ul class="simple">
+<li><p><code>turtle.pos()</code> - teknős aktuális X és Y koordinátája</p></li>
+<li><p><code>turtle.heading()</code> - szög, azaz merre néz a teknős</p></li>
+<li><p>append (hozzáad): Ha kigenerált nyelvben a soron következő karakter a ‘[’ , akkor a jelenlegi állapotot (pozíciót és szöget) hozzáadjuk a veremhez.
+verem.append((turtle.pos(), turtle.heading()))</p></li>
+<li><p>pop (levesz): Ha kigenerált nyelvben a soron következő karakter a ‘]’ , akkor kivesszük a veremből a legfelső elemét.
+<code>pozicio, szog_irany = verem.pop()</code>
+Ezek után visszatérünk a veremből kiszedett pozícióhoz és folytatjuk a rajzolást a tárolt szöggel.</p></li>
+<li><p><code>turtle.goto(pozicio)</code> - adott helyre mozgatja a teknőst</p></li>
+<li><p><code>turtle.setheading(szog_irany)</code> - beállítja a szöget</p></li>
+</ul>
+</section>
+</section>
+<section id="egyszeru-noveny-abrazolasa">
+<h2>5. Egyszerű növény ábrázolása<a class="headerlink" href="#egyszeru-noveny-abrazolasa" title="Link to this heading">#</a></h2>
+<p>Az alábbi példa egy egyszerű növény grafikus ábrázolását mutatja be. A rendszer az “X” és “F” változókat, valamint a “+” és “-” szimbólumokat használja. A szabályok a következők:</p>
+<p>G = ({X, F, +, [, ], -}; X; {X → F+[[X]-X]-F[-FX]+X, F → FF})</p>
+<p>Ahol:</p>
+<ul class="simple">
+<li><p>“F” jelentése “előre”</p></li>
+<li><p>“+” jelentése “fordulj balra 25°-ot”</p></li>
+<li><p>“-” jelentése “fordulj jobbra 25°-ot”</p></li>
+</ul>
+<div class="cell tag_skip docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">turtle</span>
+<span class="kn">import</span> <span class="nn">importlib</span>
+
+<span class="n">importlib</span><span class="o">.</span><span class="n">reload</span><span class="p">(</span><span class="n">turtle</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">turtle_start</span><span class="p">():</span>
+    <span class="n">turtle</span><span class="o">.</span><span class="n">screensize</span><span class="p">(</span><span class="n">canvwidth</span><span class="o">=</span><span class="mi">800</span><span class="p">,</span> <span class="n">canvheight</span><span class="o">=</span><span class="mi">600</span><span class="p">,</span> <span class="n">bg</span><span class="o">=</span><span class="s2">&quot;#C7E2E7&quot;</span><span class="p">)</span>
+    <span class="n">turtle</span><span class="o">.</span><span class="n">hideturtle</span><span class="p">()</span>
+    <span class="n">turtle</span><span class="o">.</span><span class="n">penup</span><span class="p">()</span>
+    <span class="n">turtle</span><span class="o">.</span><span class="n">setposition</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">250</span><span class="p">)</span>
+    <span class="n">turtle</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+    <span class="n">turtle</span><span class="o">.</span><span class="n">pendown</span><span class="p">()</span>
+    <span class="n">turtle</span><span class="o">.</span><span class="n">tracer</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>  <span class="c1"># rajzolási sebesség 0 - azonnali, 1 - lassú, 2 - gyors</span>
+
+
+<span class="k">def</span> <span class="nf">general_noveny</span><span class="p">(</span><span class="n">axiom</span><span class="p">,</span> <span class="n">iteraciok</span><span class="p">):</span>
+    <span class="n">aktualis_kifejezes</span> <span class="o">=</span> <span class="n">axiom</span>
+    <span class="n">uj_kifejezes</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">iteraciok</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">betu</span> <span class="ow">in</span> <span class="n">aktualis_kifejezes</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">betu</span> <span class="o">==</span> <span class="s2">&quot;X&quot;</span><span class="p">:</span>
+                <span class="n">uj_kifejezes</span> <span class="o">+=</span> <span class="s2">&quot;F+[[X]-X]-F[-FX]+X&quot;</span>
+            <span class="k">elif</span> <span class="n">betu</span> <span class="o">==</span> <span class="s2">&quot;F&quot;</span><span class="p">:</span>
+                <span class="n">uj_kifejezes</span> <span class="o">+=</span> <span class="s2">&quot;FF&quot;</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">uj_kifejezes</span> <span class="o">+=</span> <span class="n">betu</span>
+        <span class="n">aktualis_kifejezes</span> <span class="o">=</span> <span class="n">uj_kifejezes</span>
+        <span class="n">uj_kifejezes</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">aktualis_kifejezes</span>
+
+
+<span class="k">def</span> <span class="nf">rajzol_noveny</span><span class="p">(</span><span class="n">kifejezes</span><span class="p">,</span> <span class="n">szog</span><span class="p">,</span> <span class="n">lepes_hossz</span><span class="p">):</span>
+    <span class="n">verem</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">turtle</span><span class="o">.</span><span class="n">speed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">szimbolum</span> <span class="ow">in</span> <span class="n">kifejezes</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">szimbolum</span> <span class="o">==</span> <span class="s2">&quot;F&quot;</span><span class="p">:</span>
+            <span class="n">turtle</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="n">lepes_hossz</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">szimbolum</span> <span class="o">==</span> <span class="s2">&quot;+&quot;</span><span class="p">:</span>
+            <span class="n">turtle</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="n">szog</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">szimbolum</span> <span class="o">==</span> <span class="s2">&quot;-&quot;</span><span class="p">:</span>
+            <span class="n">turtle</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="n">szog</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">szimbolum</span> <span class="o">==</span> <span class="s2">&quot;[&quot;</span><span class="p">:</span>
+            <span class="n">verem</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">turtle</span><span class="o">.</span><span class="n">pos</span><span class="p">(),</span> <span class="n">turtle</span><span class="o">.</span><span class="n">heading</span><span class="p">()))</span>
+        <span class="k">elif</span> <span class="n">szimbolum</span> <span class="o">==</span> <span class="s2">&quot;]&quot;</span><span class="p">:</span>
+            <span class="n">pozicio</span><span class="p">,</span> <span class="n">szog_irany</span> <span class="o">=</span> <span class="n">verem</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+            <span class="n">turtle</span><span class="o">.</span><span class="n">penup</span><span class="p">()</span>
+            <span class="n">turtle</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="n">pozicio</span><span class="p">)</span>
+            <span class="n">turtle</span><span class="o">.</span><span class="n">pendown</span><span class="p">()</span>
+            <span class="n">turtle</span><span class="o">.</span><span class="n">setheading</span><span class="p">(</span><span class="n">szog_irany</span><span class="p">)</span>
+
+
+<span class="n">turtle_start</span><span class="p">()</span>
+<span class="n">final_sentence</span> <span class="o">=</span> <span class="n">general_noveny</span><span class="p">(</span><span class="s2">&quot;X&quot;</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">rajzol_noveny</span><span class="p">(</span><span class="n">final_sentence</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">turtle</span><span class="o">.</span><span class="n">exitonclick</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><img alt="l-system_output_4" src="../_images/l-system_output_4.png" /></p>
+</section>
+<section id="tovabbi-novenyek-es-mintak-leirasa">
+<h2>6. További növények és minták leírása<a class="headerlink" href="#tovabbi-novenyek-es-mintak-leirasa" title="Link to this heading">#</a></h2>
+</section>
+<section id="feladat-kvadratikus-koch-sziget">
+<h2><p style="color:green;">4. Feladat - Kvadratikus Koch sziget</p><a class="headerlink" href="#feladat-kvadratikus-koch-sziget" title="Link to this heading">#</a></h2>
+<p>G=({F,+,−};F-F-F-F;{F→F-F+F+FF-F-F+F})</p>
+<p>Ahol:</p>
+<ul class="simple">
+<li><p>“F” jelentése “előre”</p></li>
+<li><p>“+” jelentése “fordulj balra 90°-ot”</p></li>
+<li><p>“-” jelentése “fordulj jobbra 90°-ot”</p></li>
+</ul>
+</section>
+<section id="feladat-sarkany-gorbe">
+<h2><p style="color:green;">5. Feladat - Sárkány-görbe</p><a class="headerlink" href="#feladat-sarkany-gorbe" title="Link to this heading">#</a></h2>
+<p>G=({F,G,+,−};F;{F→F+G+,F→-F-G})</p>
+<p>Ahol:</p>
+<ul class="simple">
+<li><p>“F” jelentése “előre”</p></li>
+<li><p>“G” jelentése “előre”</p></li>
+<li><p>“+” jelentése “fordulj balra 90°-ot”</p></li>
+<li><p>“-” jelentése “fordulj jobbra 90°-ot”</p></li>
+</ul>
+</section>
+<section id="feladat-noveny-elek-ujrairasaval">
+<h2><p style="color:green;">6. Feladat - Növény élek újraírásával</p><a class="headerlink" href="#feladat-noveny-elek-ujrairasaval" title="Link to this heading">#</a></h2>
+<p>G=({F,+,−};F;{F→F[+F]F[-F][F]})</p>
+<p>Ahol:</p>
+<ul class="simple">
+<li><p>“F” jelentése “előre”</p></li>
+<li><p>“+” jelentése “fordulj balra 20°-ot”</p></li>
+<li><p>“-” jelentése “fordulj jobbra 20°-ot”</p></li>
+</ul>
+</section>
+<section id="feladat-noveny-csomopontok-ujrairasaval">
+<h2><p style="color:green;">7. Feladat - Növény csomópontok újraírásával</p><a class="headerlink" href="#feladat-noveny-csomopontok-ujrairasaval" title="Link to this heading">#</a></h2>
+<p>G=({F,X,+,−};X;{X→F[+X]F[-X]+X,F→FF})</p>
+<p>Ahol:</p>
+<ul class="simple">
+<li><p>“X” jelentése “előre”</p></li>
+<li><p>“F” jelentése “előre”</p></li>
+<li><p>“+” jelentése “fordulj balra 20°-ot”</p></li>
+<li><p>“-” jelentése “fordulj jobbra 20°-ot”</p></li>
+</ul>
+</section>
+<section id="feladat-hilbert-mintaja">
+<h2><p style="color:green;">8. Feladat - Hilbert mintája</p><a class="headerlink" href="#feladat-hilbert-mintaja" title="Link to this heading">#</a></h2>
+<p>G=({F,X,Y,+,−};X;{X→-YF+XFX+FY-,Y→+XF-YFY-FX+})</p>
+<p>Ahol:</p>
+<ul class="simple">
+<li><p>“F” jelentése “előre”</p></li>
+<li><p>“X” nincs grafikus jelentése</p></li>
+<li><p>“Y” nincs grafikus jelentése</p></li>
+<li><p>“+” jelentése “fordulj balra 90°-ot”</p></li>
+<li><p>“-” jelentése “fordulj jobbra 90°-ot”</p></li>
+</ul>
+</section>
+<section id="feladat-negyzetes-sierpinski">
+<h2><p style="color:green;">9. Feladat - Négyzetes Sierpinski</p><a class="headerlink" href="#feladat-negyzetes-sierpinski" title="Link to this heading">#</a></h2>
+<p>G=({F,X,+,−};F+XF+F+XF;{X→XF-F+F-XF+F+XF-F+F-X})</p>
+<p>Ahol:</p>
+<ul class="simple">
+<li><p>“F” jelentése “előre”</p></li>
+<li><p>“X” nincs grafikus jelentése</p></li>
+<li><p>“+” jelentése “fordulj balra 90°-ot”</p></li>
+<li><p>“-” jelentése “fordulj jobbra 90°-ot”</p></li>
+</ul>
+</section>
+<section id="feladat-level">
+<h2><p style="color:green;">10. Feladat - Levél</p><a class="headerlink" href="#feladat-level" title="Link to this heading">#</a></h2>
+<p>G=({F,X,+,−};X;{X→F[+X][-X]FX,F→FF})</p>
+<p>Ahol:</p>
+<ul class="simple">
+<li><p>“F” jelentése “előre”</p></li>
+<li><p>“X” nincs grafikus jelentése</p></li>
+<li><p>“+” jelentése “fordulj balra 35°-ot”</p></li>
+<li><p>“-” jelentése “fordulj jobbra 35°-ot”</p></li>
+</ul>
+<section id="ipyturtle3">
+<h3>Ipyturtle3<a class="headerlink" href="#ipyturtle3" title="Link to this heading">#</a></h3>
+<p>Ipyturtle képes Jupyter jegyzetben beágyazott megjelenítésre, azonban a parancskészlete limitált.</p>
+<p>Telepítése: <code>pip install ipyturtle3</code></p>
+<p>Dokumentáció: <a class="github reference external" href="https://github.com/williamnavaraj/ipyturtle3">williamnavaraj/ipyturtle3</a></p>
+<p><code>position(self)</code></p>
+<p><code>forward(self, length)</code></p>
+<p><code>back(self, length)</code></p>
+<p><code>heading(self)</code></p>
+<p><code>goto(self, x, y=None)</code></p>
+<p><code>setpos(self, x, y=None)</code></p>
+<p><code>setposition(self, x, y=None)</code></p>
+<p><code>left(self, degree=None)</code></p>
+<p><code>right(self, degree=None)</code></p>
+<p><code>penup(self)</code></p>
+<p><code>pendown(self)</code></p>
+<p><code>isdown(self)</code></p>
+<p><code>hideturtle(self)</code></p>
+<p><code>showturtle(self)</code></p>
+<p><code>isvisible(self)</code></p>
+<p><code>reset(self)</code></p>
+<p><code>pencolor(self,r=-1,g=-1,b=-1)</code></p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./chapters"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="generative_13_comparison.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">PIL és Cairo könyvtárak összehasonlítása</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="visualization_map.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Vizualizáció térképen</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bevezetes">Bevezetés</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#l-rendszer-megvalositasa">L-rendszer megvalósítása:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pelda-egyszeru-szabalyrendszer">1. Példa - egyszerű szabályrendszer</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#feladat"><p style="color:green;">1. Feladat</p></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"><p style="color:green;">2. Feladat </p></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#forraskod">Forráskód:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pelda-koch-gorbe-leirasa">2. Példa - Koch-görbe leírása</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#alap-problema-megoldasa-nyelv-generalasa">2.1. Alap probléma megoldása, nyelv generálása:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nyelv-generalasa-fuggveny-formajaban">2.2. Nyelv generálása - függvény formájában</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nyelvtan-szavainak-abrazolasa-turtle-graphics">3. Nyelvtan szavainak ábrázolása - Turtle Graphics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2"><p style="color:green;">3. Feladat </p></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#agak-abrazolasa-es-a-verem-adatszerkezet">4. Ágak ábrázolása és a verem adatszerkezet</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pelda-egyszeru-pelda-verem-adatszerkezetre">4.1 Példa - egyszerű példa verem adatszerkezetre</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pelda-forditott-sorrend-verem-segitsegevel">4.2 Példa - fordított sorrend verem segítségével</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pelda-egy-ag-kirajzolasa">4.3 Példa - egy ág kirajzolása</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pelda-agak-kirzajzolasa-ciklussal">4.4 Példa - ágak kirzajzolása ciklussal</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#egyszeru-noveny-abrazolasa">5. Egyszerű növény ábrázolása</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tovabbi-novenyek-es-mintak-leirasa">6. További növények és minták leírása</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#feladat-kvadratikus-koch-sziget"><p style="color:green;">4. Feladat - Kvadratikus Koch sziget</p></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#feladat-sarkany-gorbe"><p style="color:green;">5. Feladat - Sárkány-görbe</p></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#feladat-noveny-elek-ujrairasaval"><p style="color:green;">6. Feladat - Növény élek újraírásával</p></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#feladat-noveny-csomopontok-ujrairasaval"><p style="color:green;">7. Feladat - Növény csomópontok újraírásával</p></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#feladat-hilbert-mintaja"><p style="color:green;">8. Feladat - Hilbert mintája</p></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#feladat-negyzetes-sierpinski"><p style="color:green;">9. Feladat - Négyzetes Sierpinski</p></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#feladat-level"><p style="color:green;">10. Feladat - Levél</p></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ipyturtle3">Ipyturtle3</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Csóka Márk
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
