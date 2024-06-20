@@ -1,0 +1,840 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Növény generálása rekurzióval &#8212; Témakörök Python oktatásához</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/plant_gen';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Vizualizáció térképen" href="visualization_map.html" />
+    <link rel="prev" title="L-rendszerek" href="l-system_intro.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Témakörök Python oktatásához - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Témakörök Python oktatásához - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Témakörök Python oktatásához
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Webes adatbányászat - Web Scraping</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="web_scraping_intro.html">Adatbányászat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="web_scraping_wikipeadia_plants.html">Wikipédia növénycsaládok</a></li>
+<li class="toctree-l1"><a class="reference internal" href="web_scraping_wikipedia_birds.html">Wikipédia madárcsaládok</a></li>
+<li class="toctree-l1"><a class="reference internal" href="web_scraping_wikipedia_marvel.html">Wikipédia Marvel karakterek</a></li>
+<li class="toctree-l1"><a class="reference internal" href="web_scraping_index.html">Index híreinek kigyűjtése</a></li>
+<li class="toctree-l1"><a class="reference internal" href="web_scraping_telex.html">Telex főoldalán található hírek kigyűjtése</a></li>
+<li class="toctree-l1"><a class="reference internal" href="web_scraping_google_news.html">Google News híreinek kigyűjtése</a></li>
+<li class="toctree-l1"><a class="reference internal" href="web_scraping_alza.html">Webshop termékadatainak gyűjtése</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Adatvizualizáció - Data Visualization</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="visualization_intro.html">Adatvizualizáció</a></li>
+<li class="toctree-l1"><a class="reference internal" href="visualization_pandas.html">Vizualizáció Pandas könyvtár segítségével</a></li>
+<li class="toctree-l1"><a class="reference internal" href="visualization_alza.html">Webshop termékeinek vizualizálása</a></li>
+<li class="toctree-l1"><a class="reference internal" href="visualization_crypto.html">Kriptovaluták értékének ábrázolása</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Generatív képalkotás - Generative art</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="generative_1_intro.html">Generatív képalkotás - variációk egy témára</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generative_2_triangles.html">Háromszög csempék</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generative_3_circlerows.html">Sorokat alkotó körök</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generative_4_dots.html">Perlin zaj - vonal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generative_5_circle.html">Perlin zaj - körvonal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generative_7_packing.html">Halmozó algoritmus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generative_8_tiles.html">Csempék</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generative_9_rasterize.html">Raszterizálás</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generative_10_lines.html">Véletlen vonalak</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generative_11_patterns.html">Minták létrehozása</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generative_12_random.html">Fokozatos kitöltés</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generative_13_comparison.html">PIL és Cairo könyvtárak összehasonlítása</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">L-rendszerek</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="l-system_intro.html">L-rendszerek</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Növény generálása rekurzióval</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Egyéb</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="visualization_map.html">Vizualizáció térképen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="language_processing.html">Szöveg elemzése</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Források</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../sources.html">Források</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Jelmagyarázat</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">Jelmagyarázat</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/chapters/plant_gen.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Növény generálása rekurzióval</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#szukseges-konyvtarak-letoltese-importalasa">Szükséges könyvtárak letöltése, importálása</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#alapok">Alapok</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rajzfelulet-letrehozasa">Rajzfelület létrehozása</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#agak-rajzolasa-hogyan-juthatunk-vissza-a-csomoponthoz">Ágak rajzolása - hogyan juthatunk vissza a csomóponthoz?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rekurzio">Rekurzió</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#alap-megvalositas">Alap megvalósítás</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fa-vastagsaga-es-agak-fokozatos-csokkentese">Fa vastagsága és ágak fokozatos csökkentése</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#veletlen-implementalasa">Véletlen implementálása</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-teljes-kod">A teljes kód</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="noveny-generalasa-rekurzioval">
+<h1>Növény generálása rekurzióval<a class="headerlink" href="#noveny-generalasa-rekurzioval" title="Link to this heading">#</a></h1>
+<p><b>Forrás: </b><span id="id1">[<a class="reference internal" href="../sources.html#id2" title="Coding Cassowary. Generative art in python: fractal trees. Mar 2022. URL: https://www.youtube.com/watch?v=EICpm9rnPjE.">13</a>]</span></p>
+<section id="szukseges-konyvtarak-letoltese-importalasa">
+<h2>Szükséges könyvtárak letöltése, importálása<a class="headerlink" href="#szukseges-konyvtarak-letoltese-importalasa" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># %pip install </span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">turtle</span>
+<span class="kn">import</span> <span class="nn">importlib</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">random</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="alapok">
+<h2>Alapok<a class="headerlink" href="#alapok" title="Link to this heading">#</a></h2>
+<p>A kód alapvetően a turtle könyvtárat használja és formális nyelvek bevonása helyett egy egyszerűbb rekurzív megoldást alkalmaz. A készülő kód rekurzív és egyetlen függvény implementálása elegendő. Ezt később véletlen hozzáadásával lehetséges bőívteni.</p>
+</section>
+<section id="rajzfelulet-letrehozasa">
+<h2>Rajzfelület létrehozása<a class="headerlink" href="#rajzfelulet-letrehozasa" title="Link to this heading">#</a></h2>
+<p>A teknőc többszöri futtatása problémákat okozhat, ezért érdemes a <code>reload</code> paranccsal újraindítani a könyvtárat. A <code>setup</code> segítségével megadhatjuk a szükséges felület méretét.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">importlib</span><span class="o">.</span><span class="n">reload</span><span class="p">(</span><span class="n">turtle</span><span class="p">)</span>
+<span class="n">turtle</span><span class="o">.</span><span class="n">setup</span><span class="p">(</span><span class="mi">800</span><span class="p">,</span><span class="mi">800</span><span class="p">)</span>
+<span class="n">turtle</span><span class="o">.</span><span class="n">exitonclick</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="agak-rajzolasa-hogyan-juthatunk-vissza-a-csomoponthoz">
+<h2>Ágak rajzolása - hogyan juthatunk vissza a csomóponthoz?<a class="headerlink" href="#agak-rajzolasa-hogyan-juthatunk-vissza-a-csomoponthoz" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">importlib</span><span class="o">.</span><span class="n">reload</span><span class="p">(</span><span class="n">turtle</span><span class="p">)</span>
+
+<span class="n">turtle</span><span class="o">.</span><span class="n">penup</span><span class="p">()</span>
+<span class="n">turtle</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">turtle</span><span class="o">.</span><span class="n">pendown</span><span class="p">()</span>
+
+<span class="n">turtle</span><span class="o">.</span><span class="n">color</span><span class="p">(</span><span class="s2">&quot;red&quot;</span><span class="p">)</span>
+<span class="n">turtle</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+<span class="n">turtle</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">turtle</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+
+<span class="n">turtle</span><span class="o">.</span><span class="n">exitonclick</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><img alt="plant_1" src="../_images/plant_1.png" /></p>
+<p>Ha az előbb használt utasítások ellentétét használjuk, akkor könnyen visszajutunk a kiindulási pontra.</p>
+<p><code>forward()</code> -&gt; <code>backward()</code></p>
+<p><code>left()</code> -&gt; <code>right()</code></p>
+<p><code>right()</code> -&gt; <code>left()</code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">importlib</span><span class="o">.</span><span class="n">reload</span><span class="p">(</span><span class="n">turtle</span><span class="p">)</span>
+
+<span class="n">turtle</span><span class="o">.</span><span class="n">tracer</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">turtle</span><span class="o">.</span><span class="n">penup</span><span class="p">()</span>
+<span class="n">turtle</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">turtle</span><span class="o">.</span><span class="n">pendown</span><span class="p">()</span>
+
+<span class="n">turtle</span><span class="o">.</span><span class="n">color</span><span class="p">(</span><span class="s2">&quot;red&quot;</span><span class="p">)</span>
+<span class="n">turtle</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+<span class="n">turtle</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">turtle</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">turtle</span><span class="o">.</span><span class="n">color</span><span class="p">(</span><span class="s2">&quot;green&quot;</span><span class="p">)</span>
+<span class="n">turtle</span><span class="o">.</span><span class="n">back</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">turtle</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">turtle</span><span class="o">.</span><span class="n">back</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+
+<span class="n">turtle</span><span class="o">.</span><span class="n">exitonclick</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><img alt="plant_2" src="../_images/plant_2.png" /></p>
+</section>
+<section id="rekurzio">
+<h2>Rekurzió<a class="headerlink" href="#rekurzio" title="Link to this heading">#</a></h2>
+<p>Oldjuk meg rekurzívan - érdemes megfigyelni, hogy utasítások vannak a függvény önmeghívása előtt és után</p>
+<p><code>step</code> - iterációk számát limitáljuk</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">importlib</span><span class="o">.</span><span class="n">reload</span><span class="p">(</span><span class="n">turtle</span><span class="p">)</span>
+
+<span class="n">turtle</span><span class="o">.</span><span class="n">tracer</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">turtle</span><span class="o">.</span><span class="n">penup</span><span class="p">()</span>
+<span class="n">turtle</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">turtle</span><span class="o">.</span><span class="n">pendown</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">move</span><span class="p">(</span><span class="n">length</span><span class="p">,</span> <span class="n">angle</span><span class="p">,</span> <span class="n">step</span><span class="p">):</span>
+    <span class="n">step</span> <span class="o">=</span>  <span class="n">step</span><span class="o">-</span><span class="mi">1</span>
+    <span class="k">if</span>  <span class="n">step</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">turtle</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="n">length</span><span class="p">)</span>
+        <span class="n">turtle</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span>
+        <span class="n">move</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span> <span class="n">step</span><span class="p">)</span>
+        <span class="n">turtle</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span>
+        <span class="n">turtle</span><span class="o">.</span><span class="n">back</span><span class="p">(</span><span class="n">length</span><span class="p">)</span>
+
+<span class="n">move</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span><span class="mi">90</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">turtle</span><span class="o">.</span><span class="n">exitonclick</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><img alt="plant_3" src="../_images/plant_3.png" /></p>
+</section>
+<section id="alap-megvalositas">
+<h2>Alap megvalósítás<a class="headerlink" href="#alap-megvalositas" title="Link to this heading">#</a></h2>
+<p>A rekurzív függvény itt kerül megvalósításra, innentől csak extra funkciókkal bővítve lesz.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">grow_basic</span><span class="p">(</span><span class="n">length</span><span class="p">,</span><span class="n">step</span><span class="p">,</span><span class="n">angle</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">length</span> <span class="o">&gt;=</span><span class="mi">10</span><span class="p">:</span>        
+        <span class="n">turtle</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="n">length</span><span class="p">)</span>
+        <span class="n">new_length</span> <span class="o">=</span> <span class="n">length</span><span class="o">-</span><span class="mi">10</span>     
+               
+        <span class="n">turtle</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span>
+        <span class="n">grow_basic</span><span class="p">(</span><span class="n">new_length</span><span class="p">,</span><span class="n">step</span><span class="p">,</span> <span class="n">angle</span><span class="p">)</span>
+        <span class="n">turtle</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span>
+
+        <span class="n">turtle</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span>
+        <span class="n">grow_basic</span><span class="p">(</span><span class="n">new_length</span><span class="p">,</span><span class="n">step</span><span class="p">,</span> <span class="n">angle</span><span class="p">)</span>
+        <span class="n">turtle</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span>
+
+        <span class="n">turtle</span><span class="o">.</span><span class="n">backward</span><span class="p">(</span><span class="n">length</span><span class="p">)</span>        
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">importlib</span><span class="o">.</span><span class="n">reload</span><span class="p">(</span><span class="n">turtle</span><span class="p">)</span>
+<span class="n">turtle</span><span class="o">.</span><span class="n">setup</span><span class="p">(</span><span class="mi">800</span><span class="p">,</span><span class="mi">800</span><span class="p">)</span>
+<span class="n">turtle</span><span class="o">.</span><span class="n">tracer</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">turtle</span><span class="o">.</span><span class="n">hideturtle</span><span class="p">()</span>
+
+<span class="n">turtle</span><span class="o">.</span><span class="n">penup</span><span class="p">()</span>
+<span class="n">turtle</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">250</span><span class="p">)</span>
+<span class="n">turtle</span><span class="o">.</span><span class="n">pendown</span><span class="p">()</span>
+<span class="n">turtle</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+
+<span class="n">grow_basic</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">turtle</span><span class="o">.</span><span class="n">exitonclick</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><img alt="plant_4" src="../_images/plant_4.png" /></p>
+</section>
+<section id="fa-vastagsaga-es-agak-fokozatos-csokkentese">
+<h2>Fa vastagsága és ágak fokozatos csökkentése<a class="headerlink" href="#fa-vastagsaga-es-agak-fokozatos-csokkentese" title="Link to this heading">#</a></h2>
+<p>Az ágak hosszáért a <code>length</code> változó a felelős és mindig 10 egységgel csökkentettük a hosszát. Ebben az esetben határozzuk meg egy kicsit precízebb képlettel. Ehhez hasonlóan állítsunk be fokozatos vonalvastagságot.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">grow_advanced</span><span class="p">(</span><span class="n">length</span><span class="p">,</span><span class="n">angle</span><span class="p">,</span><span class="n">coef</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">length</span> <span class="o">&gt;=</span><span class="mi">10</span><span class="p">:</span>        
+        <span class="n">turtle</span><span class="o">.</span><span class="n">width</span><span class="p">(</span><span class="n">length</span><span class="o">/</span><span class="mi">10</span><span class="p">)</span>
+        <span class="n">turtle</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="n">length</span><span class="p">)</span>
+        <span class="n">new_length</span> <span class="o">=</span> <span class="n">length</span><span class="o">*</span><span class="n">coef</span>     
+               
+        <span class="n">turtle</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span>
+        <span class="n">grow_advanced</span><span class="p">(</span><span class="n">new_length</span><span class="p">,</span> <span class="n">angle</span><span class="p">,</span><span class="n">coef</span><span class="p">)</span>
+        <span class="n">turtle</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span>
+
+        <span class="n">turtle</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span>
+        <span class="n">grow_advanced</span><span class="p">(</span><span class="n">new_length</span><span class="p">,</span> <span class="n">angle</span><span class="p">,</span><span class="n">coef</span><span class="p">)</span>
+        <span class="n">turtle</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span>
+
+        <span class="n">turtle</span><span class="o">.</span><span class="n">backward</span><span class="p">(</span><span class="n">length</span><span class="p">)</span>   
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">importlib</span><span class="o">.</span><span class="n">reload</span><span class="p">(</span><span class="n">turtle</span><span class="p">)</span>
+<span class="n">turtle</span><span class="o">.</span><span class="n">setup</span><span class="p">(</span><span class="mi">800</span><span class="p">,</span><span class="mi">800</span><span class="p">)</span>
+<span class="n">turtle</span><span class="o">.</span><span class="n">tracer</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">turtle</span><span class="o">.</span><span class="n">hideturtle</span><span class="p">()</span>
+
+<span class="n">turtle</span><span class="o">.</span><span class="n">penup</span><span class="p">()</span>
+<span class="n">turtle</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">250</span><span class="p">)</span>
+<span class="n">turtle</span><span class="o">.</span><span class="n">pendown</span><span class="p">()</span>
+<span class="n">turtle</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+
+<span class="n">grow_advanced</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="mf">0.8</span><span class="p">)</span>
+<span class="n">turtle</span><span class="o">.</span><span class="n">exitonclick</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><img alt="plant_5" src="../_images/plant_5.png" /></p>
+</section>
+<section id="veletlen-implementalasa">
+<h2>Véletlen implementálása<a class="headerlink" href="#veletlen-implementalasa" title="Link to this heading">#</a></h2>
+<p>Véletlen számokkal természetesebb hatást érhetünk el. Ezért ennek segítségével fogjuk manipulálni az egyes ágak irányát és hosszát. Ezen kívül a váaszon létrehozását is megadjuk függvényként.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">reset_turtle</span><span class="p">():</span>
+    <span class="n">importlib</span><span class="o">.</span><span class="n">reload</span><span class="p">(</span><span class="n">turtle</span><span class="p">)</span>
+    <span class="n">turtle</span><span class="o">.</span><span class="n">setup</span><span class="p">(</span><span class="mi">800</span><span class="p">,</span><span class="mi">800</span><span class="p">)</span>
+    <span class="n">turtle</span><span class="o">.</span><span class="n">tracer</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">turtle</span><span class="o">.</span><span class="n">hideturtle</span><span class="p">()</span>
+
+    <span class="n">turtle</span><span class="o">.</span><span class="n">penup</span><span class="p">()</span>
+    <span class="n">turtle</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">250</span><span class="p">)</span>
+    <span class="n">turtle</span><span class="o">.</span><span class="n">pendown</span><span class="p">()</span>
+    <span class="n">turtle</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">grow_expert</span><span class="p">(</span><span class="n">length</span><span class="p">,</span><span class="n">angle</span><span class="p">,</span><span class="n">len_coef</span><span class="p">,</span><span class="n">angle_coef</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">length</span> <span class="o">&gt;=</span><span class="mi">10</span><span class="p">:</span>        
+        <span class="n">turtle</span><span class="o">.</span><span class="n">width</span><span class="p">(</span><span class="n">length</span><span class="o">/</span><span class="mi">10</span><span class="p">)</span>
+        <span class="n">turtle</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="n">length</span><span class="p">)</span>
+        <span class="n">new_length</span> <span class="o">=</span> <span class="n">length</span><span class="o">*</span><span class="n">len_coef</span>     
+
+        <span class="n">angle_l</span> <span class="o">=</span> <span class="n">angle</span> <span class="o">+</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">angle_coef</span><span class="p">)</span>  
+        <span class="n">angle_r</span> <span class="o">=</span> <span class="n">angle</span> <span class="o">+</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">angle_coef</span><span class="p">)</span>      
+        <span class="n">turtle</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="n">angle_l</span><span class="p">)</span>
+        <span class="n">grow_expert</span><span class="p">(</span><span class="n">new_length</span><span class="p">,</span><span class="n">angle</span><span class="p">,</span><span class="n">len_coef</span><span class="p">,</span><span class="n">angle_coef</span><span class="p">)</span>
+        <span class="n">turtle</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="n">angle_l</span><span class="p">)</span>
+
+        <span class="n">turtle</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="n">angle_r</span><span class="p">)</span>
+        <span class="n">grow_expert</span><span class="p">(</span><span class="n">new_length</span><span class="p">,</span><span class="n">angle</span><span class="p">,</span><span class="n">len_coef</span><span class="p">,</span><span class="n">angle_coef</span><span class="p">)</span>
+        <span class="n">turtle</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="n">angle_r</span><span class="p">)</span>
+
+        <span class="n">turtle</span><span class="o">.</span><span class="n">backward</span><span class="p">(</span><span class="n">length</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">reset_turtle</span><span class="p">()</span>
+<span class="n">grow_expert</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="mf">0.8</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">turtle</span><span class="o">.</span><span class="n">exitonclick</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><img alt="plant_6" src="../_images/plant_6.png" /></p>
+</section>
+<section id="a-teljes-kod">
+<h2>A teljes kód<a class="headerlink" href="#a-teljes-kod" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">turtle</span>
+<span class="kn">import</span> <span class="nn">random</span>
+
+<span class="n">bg_color</span> <span class="o">=</span> <span class="s2">&quot;#E0695A&quot;</span>
+<span class="n">fg_color</span> <span class="o">=</span> <span class="s2">&quot;#5AE09D&quot;</span>
+
+<span class="n">importlib</span><span class="o">.</span><span class="n">reload</span><span class="p">(</span><span class="n">turtle</span><span class="p">)</span>
+<span class="n">turtle</span><span class="o">.</span><span class="n">setup</span><span class="p">(</span><span class="mi">800</span><span class="p">,</span><span class="mi">600</span><span class="p">)</span>
+<span class="n">turtle</span><span class="o">.</span><span class="n">tracer</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">turtle</span><span class="o">.</span><span class="n">color</span><span class="p">(</span><span class="n">fg_color</span><span class="p">)</span>
+<span class="n">turtle</span><span class="o">.</span><span class="n">bgcolor</span><span class="p">(</span><span class="n">bg_color</span><span class="p">)</span>
+<span class="n">turtle</span><span class="o">.</span><span class="n">hideturtle</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">grow</span><span class="p">(</span><span class="n">length</span><span class="p">,</span> <span class="n">decrease</span><span class="p">,</span> <span class="n">angle</span><span class="p">,</span> <span class="n">noise</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">length</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">:</span>
+        <span class="n">turtle</span><span class="o">.</span><span class="n">width</span><span class="p">(</span><span class="n">length</span><span class="o">/</span><span class="mi">10</span><span class="p">)</span>
+        <span class="n">turtle</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="n">length</span><span class="p">)</span>
+        <span class="n">new_length</span> <span class="o">=</span> <span class="n">length</span> <span class="o">*</span> <span class="n">decrease</span>
+        <span class="k">if</span> <span class="n">noise</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">new_length</span> <span class="o">*=</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mf">0.9</span><span class="p">,</span><span class="mf">1.1</span><span class="p">)</span>
+        <span class="n">angle_l</span> <span class="o">=</span> <span class="n">angle</span> <span class="o">+</span> <span class="n">random</span><span class="o">.</span><span class="n">gauss</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">noise</span><span class="p">)</span>
+        <span class="n">angle_r</span> <span class="o">=</span> <span class="n">angle</span> <span class="o">+</span> <span class="n">random</span><span class="o">.</span><span class="n">gauss</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">noise</span><span class="p">)</span>
+
+        <span class="n">turtle</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="n">angle_l</span><span class="p">)</span>
+        <span class="n">grow</span><span class="p">(</span><span class="n">new_length</span><span class="p">,</span> <span class="n">decrease</span><span class="p">,</span> <span class="n">angle</span><span class="p">,</span> <span class="n">noise</span><span class="p">)</span>
+        <span class="n">turtle</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="n">angle_l</span><span class="p">)</span>
+
+        <span class="n">turtle</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="n">angle_r</span><span class="p">)</span>
+        <span class="n">grow</span><span class="p">(</span><span class="n">new_length</span><span class="p">,</span> <span class="n">decrease</span><span class="p">,</span> <span class="n">angle</span><span class="p">,</span> <span class="n">noise</span><span class="p">)</span>
+        <span class="n">turtle</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="n">angle_r</span><span class="p">)</span>
+
+        <span class="n">turtle</span><span class="o">.</span><span class="n">backward</span><span class="p">(</span><span class="n">length</span><span class="p">)</span>
+
+<span class="n">turtle</span><span class="o">.</span><span class="n">penup</span><span class="p">()</span>
+<span class="n">turtle</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">400</span><span class="p">)</span>
+<span class="n">turtle</span><span class="o">.</span><span class="n">pendown</span><span class="p">()</span>
+<span class="n">turtle</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">grow</span><span class="p">(</span><span class="mi">125</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+
+<span class="n">turtle</span><span class="o">.</span><span class="n">exitonclick</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><img alt="plant_7" src="../_images/plant_7.png" /></p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./chapters"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="l-system_intro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">L-rendszerek</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="visualization_map.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Vizualizáció térképen</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#szukseges-konyvtarak-letoltese-importalasa">Szükséges könyvtárak letöltése, importálása</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#alapok">Alapok</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rajzfelulet-letrehozasa">Rajzfelület létrehozása</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#agak-rajzolasa-hogyan-juthatunk-vissza-a-csomoponthoz">Ágak rajzolása - hogyan juthatunk vissza a csomóponthoz?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rekurzio">Rekurzió</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#alap-megvalositas">Alap megvalósítás</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fa-vastagsaga-es-agak-fokozatos-csokkentese">Fa vastagsága és ágak fokozatos csökkentése</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#veletlen-implementalasa">Véletlen implementálása</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-teljes-kod">A teljes kód</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Csóka Márk
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
