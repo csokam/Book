@@ -40,6 +40,7 @@ parts:
   - caption: L-rendszerek    
     chapters:
     - file: chapters/l-system_intro
+    - file: chapters/plant_gen
   - caption: Egyéb
     chapters:
     - file: chapters/visualization_map
