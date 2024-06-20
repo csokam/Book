@@ -9,5 +9,4 @@ Dokumentáció elérhető: [the Jupyter Book documentation](https://jupyterbook.
 
 ```{tableofcontents}
 :style: unsrt
-:depth: 2
-```
+:depth: 2```
